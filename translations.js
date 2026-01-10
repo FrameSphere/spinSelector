@@ -18,7 +18,6 @@ const translations = {
         'canvas-empty': 'Add options',
         'result-prefix': '🎉 ',
         'confirm-clear': 'Do you really want to delete all options?',
-        'default-options': ['Pizza', 'Burger', 'Pasta', 'Sushi', 'Salad', 'Steak']
     },
     de: {
         'page-title': 'SpinSelector - Lass das Schicksal entscheiden!',
@@ -38,7 +37,6 @@ const translations = {
         'canvas-empty': 'Füge Optionen hinzu',
         'result-prefix': '🎉 ',
         'confirm-clear': 'Möchtest du wirklich alle Optionen löschen?',
-        'default-options': ['Pizza', 'Burger', 'Pasta', 'Sushi', 'Salat', 'Steak']
     },
     fr: {
         'page-title': 'SpinSelector - Laissez le destin décider!',
@@ -58,7 +56,6 @@ const translations = {
         'canvas-empty': 'Ajoutez des options',
         'result-prefix': '🎉 ',
         'confirm-clear': 'Voulez-vous vraiment supprimer toutes les options?',
-        'default-options': ['Pizza', 'Burger', 'Pâtes', 'Sushi', 'Salade', 'Steak']
     },
     es: {
         'page-title': 'SpinSelector - ¡Deja que el destino decida!',
@@ -78,7 +75,6 @@ const translations = {
         'canvas-empty': 'Añade opciones',
         'result-prefix': '🎉 ',
         'confirm-clear': '¿Realmente quieres eliminar todas las opciones?',
-        'default-options': ['Pizza', 'Hamburguesa', 'Pasta', 'Sushi', 'Ensalada', 'Bistec']
     }
 };
 

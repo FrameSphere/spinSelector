@@ -426,12 +426,4 @@ initTheme();
 window.i18n.initLanguage();
 loadFromLocalStorage();
 
-// Standardoptionen wenn leer
-if (options.length === 0) {
-    const defaultOptions = window.i18n.t('default-options');
-    defaultOptions.forEach(option => {
-        addOption(option);
-    });
-}
-
 updateUI();

@@ -76,6 +76,7 @@ function addOption(text) {
     };
     
     options.push(option);
+    lastDrawnRotation = -1; // BUGFIX: Force sofortigen Redraw für neue Optionen
     updateUI();
     saveToLocalStorage();
 }
@@ -281,17 +282,32 @@ function finishSpin() {
     isSpinning = false;
     spinBtn.disabled = false;
     
+    // BUGFIX: Korrekte Berechnung für Pfeil OBEN
     const normalizedRotation = ((currentRotation % (2 * Math.PI)) + (2 * Math.PI)) % (2 * Math.PI);
     const anglePerSegment = (2 * Math.PI) / options.length;
-    let pointerAngle = (2 * Math.PI - normalizedRotation) % (2 * Math.PI);
-    let winningIndex = Math.floor(pointerAngle / anglePerSegment);
-    winningIndex = winningIndex % options.length;
     
-    if (winningIndex < 0 || winningIndex >= options.length) {
-        winningIndex = 0;
-    }
+    // Der Zeiger ist OBEN bei -90° (bzw. 270° = 3π/2)
+    // Canvas startet bei 0° RECHTS und dreht im Uhrzeigersinn
+    const pointerAngle = Math.PI * 1.5; // 270° = oben
+    
+    // Berechne relativen Winkel zwischen Zeiger und aktueller Rotation
+    let relativeAngle = (pointerAngle - normalizedRotation) % (2 * Math.PI);
+    if (relativeAngle < 0) relativeAngle += 2 * Math.PI;
+    
+    // Finde das Segment unter dem Zeiger
+    let winningIndex = Math.floor(relativeAngle / anglePerSegment) % options.length;
+    if (winningIndex < 0) winningIndex = 0;
     
     const winner = options[winningIndex];
+    
+    console.log('🎯 Gewinner-Berechnung:', {
+        rotation: (normalizedRotation * 180 / Math.PI).toFixed(1) + '°',
+        pointerAt: '270° (oben)',
+        relativeAngle: (relativeAngle * 180 / Math.PI).toFixed(1) + '°',
+        segmentSize: (anglePerSegment * 180 / Math.PI).toFixed(1) + '°',
+        index: winningIndex,
+        winner: winner.text
+    });
     
     // Ergebnis anzeigen
     resultDisplay.textContent = `${window.i18n.t('result-prefix')}${winner.text}`;

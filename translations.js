@@ -16,7 +16,7 @@ const translations = {
         'footer-privacy': 'Privacy',
         'empty-state': 'No options available.<br>Add at least 2 options!',
         'canvas-empty': 'Add options',
-        'result-prefix': '🎉 ',
+        'result-prefix': '',
         'confirm-clear': 'Do you really want to delete all options?',
     },
     de: {
@@ -35,7 +35,7 @@ const translations = {
         'footer-privacy': 'Datenschutz',
         'empty-state': 'Keine Optionen vorhanden.<br>Füge mindestens 2 Optionen hinzu!',
         'canvas-empty': 'Füge Optionen hinzu',
-        'result-prefix': '🎉 ',
+        'result-prefix': '',
         'confirm-clear': 'Möchtest du wirklich alle Optionen löschen?',
     },
     fr: {
@@ -54,7 +54,7 @@ const translations = {
         'footer-privacy': 'Confidentialité',
         'empty-state': 'Aucune option disponible.<br>Ajoutez au moins 2 options!',
         'canvas-empty': 'Ajoutez des options',
-        'result-prefix': '🎉 ',
+        'result-prefix': '',
         'confirm-clear': 'Voulez-vous vraiment supprimer toutes les options?',
     },
     es: {
@@ -73,7 +73,7 @@ const translations = {
         'footer-privacy': 'Privacidad',
         'empty-state': 'No hay opciones disponibles.<br>¡Añade al menos 2 opciones!',
         'canvas-empty': 'Añade opciones',
-        'result-prefix': '🎉 ',
+        'result-prefix': '',
         'confirm-clear': '¿Realmente quieres eliminar todas las opciones?',
     }
 };

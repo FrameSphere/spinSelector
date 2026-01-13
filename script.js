@@ -237,7 +237,7 @@ function spinWheel() {
     
     isSpinning = true;
     spinBtn.disabled = true;
-    resultDisplay.textContent = '';
+    resultDisplay.innerHTML = '';
     resultDisplay.classList.remove('show');
     
     const spinDuration = 3500;
@@ -324,8 +324,17 @@ function finishSpin() {
         totalOptions: options.length
     });
     
-    // Ergebnis anzeigen
-    resultDisplay.textContent = `${window.i18n.t('result-prefix')}${winner.text}`;
+    // Ergebnis anzeigen mit Icon
+    const winnerIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+    `;
+    resultDisplay.innerHTML = `${winnerIcon}<span style="margin-left: 12px;">${escapeHtml(winner.text)}</span>`;
+    resultDisplay.style.display = 'flex';
+    resultDisplay.style.alignItems = 'center';
+    resultDisplay.style.justifyContent = 'center';
     resultDisplay.style.background = winner.color;
     resultDisplay.style.color = '#ffffff';
     resultDisplay.classList.add('show');
@@ -369,7 +378,7 @@ function clearAllOptions() {
     options = [];
     currentRotation = 0;
     lastDrawnRotation = -1; // Force redraw
-    resultDisplay.textContent = '';
+    resultDisplay.innerHTML = '';
     resultDisplay.classList.remove('show');
     updateUI();
     saveToLocalStorage();

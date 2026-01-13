@@ -32,6 +32,7 @@ themeToggle.addEventListener('click', () => {
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+    lastDrawnRotation = -1; // Force redraw
     drawWheel();
 });
 
@@ -76,7 +77,6 @@ function addOption(text) {
     };
     
     options.push(option);
-    lastDrawnRotation = -1; // BUGFIX: Force sofortigen Redraw für neue Optionen
     updateUI();
     saveToLocalStorage();
 }
@@ -86,7 +86,7 @@ function removeOption(id) {
     if (isSpinning) return;
     
     options = options.filter(opt => opt.id !== id);
-    lastDrawnRotation = -1;
+    lastDrawnRotation = -1; // Force redraw
     updateUI();
     saveToLocalStorage();
 }
@@ -138,9 +138,14 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// Rad zeichnen (MAXIMAL OPTIMIERT)
+// Rad zeichnen (OPTIMIERT)
 function drawWheel() {
-    if (lastDrawnRotation === currentRotation && options.length > 0 && !isSpinning) return;
+    // WICHTIG: Nur während Animation optimieren, sonst immer neu zeichnen
+    if (!isSpinning && lastDrawnRotation === currentRotation && options.length > 0) {
+        // Während nicht-Animation: Nur bei exakt gleicher Rotation überspringen
+        return;
+    }
+    
     lastDrawnRotation = currentRotation;
     
     const centerX = canvas.width / 2;
@@ -282,32 +287,17 @@ function finishSpin() {
     isSpinning = false;
     spinBtn.disabled = false;
     
-    // BUGFIX: Korrekte Berechnung für Pfeil OBEN
     const normalizedRotation = ((currentRotation % (2 * Math.PI)) + (2 * Math.PI)) % (2 * Math.PI);
     const anglePerSegment = (2 * Math.PI) / options.length;
+    let pointerAngle = (2 * Math.PI - normalizedRotation) % (2 * Math.PI);
+    let winningIndex = Math.floor(pointerAngle / anglePerSegment);
+    winningIndex = winningIndex % options.length;
     
-    // Der Zeiger ist OBEN bei -90° (bzw. 270° = 3π/2)
-    // Canvas startet bei 0° RECHTS und dreht im Uhrzeigersinn
-    const pointerAngle = Math.PI * 1.5; // 270° = oben
-    
-    // Berechne relativen Winkel zwischen Zeiger und aktueller Rotation
-    let relativeAngle = (pointerAngle - normalizedRotation) % (2 * Math.PI);
-    if (relativeAngle < 0) relativeAngle += 2 * Math.PI;
-    
-    // Finde das Segment unter dem Zeiger
-    let winningIndex = Math.floor(relativeAngle / anglePerSegment) % options.length;
-    if (winningIndex < 0) winningIndex = 0;
+    if (winningIndex < 0 || winningIndex >= options.length) {
+        winningIndex = 0;
+    }
     
     const winner = options[winningIndex];
-    
-    console.log('🎯 Gewinner-Berechnung:', {
-        rotation: (normalizedRotation * 180 / Math.PI).toFixed(1) + '°',
-        pointerAt: '270° (oben)',
-        relativeAngle: (relativeAngle * 180 / Math.PI).toFixed(1) + '°',
-        segmentSize: (anglePerSegment * 180 / Math.PI).toFixed(1) + '°',
-        index: winningIndex,
-        winner: winner.text
-    });
     
     // Ergebnis anzeigen
     resultDisplay.textContent = `${window.i18n.t('result-prefix')}${winner.text}`;
@@ -338,7 +328,7 @@ function shuffleOptions() {
         [options[i], options[j]] = [options[j], options[i]];
     }
     
-    lastDrawnRotation = -1;
+    lastDrawnRotation = -1; // Force redraw
     updateUI();
     saveToLocalStorage();
 }
@@ -353,7 +343,7 @@ function clearAllOptions() {
     
     options = [];
     currentRotation = 0;
-    lastDrawnRotation = -1;
+    lastDrawnRotation = -1; // Force redraw
     resultDisplay.textContent = '';
     resultDisplay.classList.remove('show');
     updateUI();
@@ -374,7 +364,7 @@ function loadFromLocalStorage() {
         const saved = localStorage.getItem('wheelOptions');
         if (saved) {
             options = JSON.parse(saved);
-            updateUI();
+            lastDrawnRotation = -1; // WICHTIG: Force initial draw
         }
     } catch (e) {
         console.error('Fehler beim Laden der Daten:', e);
@@ -409,8 +399,8 @@ clearBtn.addEventListener('click', clearAllOptions);
 
 // Sprache geändert - UI aktualisieren
 window.addEventListener('languageChanged', () => {
+    lastDrawnRotation = -1; // Force redraw mit neuer Sprache
     updateUI();
-    drawWheel();
 });
 
 // Cleanup
@@ -437,9 +427,28 @@ window.addEventListener('pagehide', () => {
     }
 });
 
-// Initialisierung
-initTheme();
-window.i18n.initLanguage();
-loadFromLocalStorage();
+// INITIALISIERUNG - Richtige Reihenfolge!
+function initApp() {
+    // 1. Theme initialisieren
+    initTheme();
+    
+    // 2. Sprache initialisieren (synchron)
+    window.i18n.initLanguage();
+    
+    // 3. Optionen aus localStorage laden
+    loadFromLocalStorage();
+    
+    // 4. Standardoptionen wenn keine vorhanden
+    if (options.length === 0) {
+        const defaultOptions = window.i18n.t('default-options');
+        defaultOptions.forEach(option => {
+            addOption(option);
+        });
+    } else {
+        // WICHTIG: Wenn Optionen geladen wurden, UI aktualisieren
+        updateUI();
+    }
+}
 
-updateUI();
+// App starten
+initApp();

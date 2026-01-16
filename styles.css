@@ -543,6 +543,97 @@ input[type="checkbox"] {
     opacity: 0.5;
 }
 
+/* How to Play Section - Collapsible */
+.how-to-play {
+    margin: 40px auto;
+    max-width: 800px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.how-to-play-toggle {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.how-to-play-toggle:hover {
+    background: var(--bg-secondary);
+}
+
+.how-to-play-toggle .section-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+    color: var(--text-primary);
+}
+
+.how-to-play-toggle[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.how-to-play .instructions {
+    max-height: 500px;
+    opacity: 1;
+    padding: 0 24px 24px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.how-to-play .instructions.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 24px;
+}
+
+.instruction-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.instruction-item:hover {
+    transform: translateX(5px);
+    border-left: 4px solid var(--primary);
+}
+
+.instruction-number {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.instruction-item p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
 footer {
     background: var(--bg-secondary);
     border-top: 2px solid var(--border);

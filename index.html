@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="page-title">SpinSelector - Let faith decide!</title>
-    <meta name="description" content="Free online spin wheel for random decisions. Add your own options and let fate decide! Perfect for games, giveaways, and choosing between options.">
-    <meta name="keywords" content="spin wheel, random picker, decision maker, wheel of fortune, random selector, online wheel, decision wheel, picker wheel, fortune wheel, raffle wheel">
-    <meta name="author" content="FrameSphere">
-    <meta name="robots" content="index, follow">
+    <title data-i18n="page-title">SpinSelector - Glücksrad Online | Zufallsgenerator für Entscheidungen</title>
+    <meta name="description" content="Kostenloses Online-Glücksrad für zufällige Entscheidungen. Füge eigene Optionen hinzu und lass das Schicksal entscheiden! Perfekt für Spiele, Verlosungen und Auswahlentscheidungen.">
+    <meta name="keywords" content="Glücksrad, Glücksrad online, Zufallsgenerator, Entscheidungsrad, Rad des Schicksals, Zufallsauswahl, online Rad, Entscheidungshilfe, Picker Rad, Losrad, Verlosungsrad, Spin Wheel">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/favicon.svg">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="SpinSelector - Let faith decide!">
-    <meta property="og:description" content="Free online spin wheel for random decisions. Add your own options and let fate decide!">
+    <meta property="og:title" content="SpinSelector - Glücksrad Online | Zufallsgenerator">
+    <meta property="og:description" content="Kostenloses Online-Glücksrad für zufällige Entscheidungen. Füge eigene Optionen hinzu und lass das Schicksal entscheiden!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://spinselector.pages.dev/">
     <meta property="og:site_name" content="SpinSelector">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SpinSelector - Let faith decide!">
-    <meta name="twitter:description" content="Free online spin wheel for random decisions. Add your own options and let fate decide!">
+    <meta name="twitter:title" content="SpinSelector - Glücksrad Online">
+    <meta name="twitter:description" content="Kostenloses Online-Glücksrad für zufällige Entscheidungen. Füge eigene Optionen hinzu!">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://spinselector.pages.dev/">
     
     <!-- Mobile Web App Meta Tags -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -138,6 +143,34 @@
                 </div>
             </div>
         </div>
+
+        <!-- How to Play Section (Collapsible) -->
+        <section class="how-to-play">
+            <button class="how-to-play-toggle" onclick="toggleHowToPlay()" aria-expanded="false">
+                <h2 class="section-title" data-i18n="how-to-play-title">So funktioniert's</h2>
+                <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="instructions collapsed">
+                <div class="instruction-item">
+                    <span class="instruction-number">1</span>
+                    <p data-i18n="instruction-1">Füge deine Optionen über das Eingabefeld hinzu</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">2</span>
+                    <p data-i18n="instruction-2">Klicke auf "SPIN", um das Rad zu drehen</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">3</span>
+                    <p data-i18n="instruction-3">Das Rad wählt zufällig eine Option aus</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">4</span>
+                    <p data-i18n="instruction-4">Nutze "Shuffle" um die Reihenfolge zu ändern</p>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer>
@@ -155,5 +188,15 @@
     
     <script src="translations.js"></script>
     <script src="script.js"></script>
+    <script>
+        function toggleHowToPlay() {
+            const instructions = document.querySelector('.how-to-play .instructions');
+            const toggle = document.querySelector('.how-to-play-toggle');
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            
+            instructions.classList.toggle('collapsed');
+            toggle.setAttribute('aria-expanded', !isExpanded);
+        }
+    </script>
 </body>
 </html>

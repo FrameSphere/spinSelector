@@ -1,8 +1,8 @@
 // Übersetzungen für alle unterstützten Sprachen
 const translations = {
     en: {
-        'page-title': 'SpinSelector - Let faith decide!',
-        'subtitle': 'Let faith decide!',
+        'page-title': 'SpinSelector - Let fate decide!',
+        'subtitle': 'Let fate decide!',
         'btn-spin': 'SPIN',
         'heading-add-options': 'Add Options',
         'input-placeholder': 'Enter new option...',

@@ -18,6 +18,11 @@ const translations = {
         'canvas-empty': 'Add options',
         'result-prefix': '',
         'confirm-clear': 'Do you really want to delete all options?',
+        'how-to-play-title': 'How It Works',
+        'instruction-1': 'Add your options using the input field',
+        'instruction-2': 'Click "SPIN" to spin the wheel',
+        'instruction-3': 'The wheel will randomly select an option',
+        'instruction-4': 'Use "Shuffle" to change the order',
     },
     de: {
         'page-title': 'SpinSelector - Lass das Schicksal entscheiden!',
@@ -37,6 +42,11 @@ const translations = {
         'canvas-empty': 'Füge Optionen hinzu',
         'result-prefix': '',
         'confirm-clear': 'Möchtest du wirklich alle Optionen löschen?',
+        'how-to-play-title': 'So funktioniert\'s',
+        'instruction-1': 'Füge deine Optionen über das Eingabefeld hinzu',
+        'instruction-2': 'Klicke auf "SPIN", um das Rad zu drehen',
+        'instruction-3': 'Das Rad wählt zufällig eine Option aus',
+        'instruction-4': 'Nutze "Shuffle" um die Reihenfolge zu ändern',
     },
     fr: {
         'page-title': 'SpinSelector - Laissez le destin décider!',
@@ -56,6 +66,11 @@ const translations = {
         'canvas-empty': 'Ajoutez des options',
         'result-prefix': '',
         'confirm-clear': 'Voulez-vous vraiment supprimer toutes les options?',
+        'how-to-play-title': 'Comment ça marche',
+        'instruction-1': 'Ajoutez vos options via le champ de saisie',
+        'instruction-2': 'Cliquez sur "TOURNER" pour faire tourner la roue',
+        'instruction-3': 'La roue sélectionnera aléatoirement une option',
+        'instruction-4': 'Utilisez "Mélanger" pour changer l\'ordre',
     },
     es: {
         'page-title': 'SpinSelector - ¡Deja que el destino decida!',
@@ -75,6 +90,11 @@ const translations = {
         'canvas-empty': 'Añade opciones',
         'result-prefix': '',
         'confirm-clear': '¿Realmente quieres eliminar todas las opciones?',
+        'how-to-play-title': 'Cómo funciona',
+        'instruction-1': 'Añade tus opciones usando el campo de entrada',
+        'instruction-2': 'Haz clic en "GIRAR" para girar la rueda',
+        'instruction-3': 'La rueda seleccionará aleatoriamente una opción',
+        'instruction-4': 'Usa "Mezclar" para cambiar el orden',
     }
 };
 

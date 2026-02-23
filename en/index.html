@@ -98,10 +98,13 @@
     <style>
         .seo-section { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
         .quick-nav { background: var(--card-bg,#1e293b); border-radius: 16px; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
-        .quick-nav-heading { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted,#94a3b8); margin: 0 0 0.9rem; }
-        .quick-nav-links { display: flex; flex-wrap: wrap; gap: 0.55rem; }
-        .quick-nav-links a { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.45rem 1.05rem; border-radius: 999px; background: var(--accent,#6366f1); color: #fff; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: opacity .18s, transform .18s; }
-        .quick-nav-links a:hover { opacity: 0.82; transform: translateY(-2px); }
+        .quick-nav-heading { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted,#94a3b8); margin: 0 0 1rem; }
+        .quick-nav-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+        .quick-nav-links a { display: flex; align-items: center; gap: 0.55rem; padding: 0.85rem 1.1rem; border-radius: 10px; background: var(--accent,#6366f1); color: #fff; text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: opacity .18s, transform .18s, background .18s; line-height: 1.3; }
+        .quick-nav-links a:hover { opacity: 0.88; transform: translateY(-2px); background: #4f52d6; }
+        .quick-nav-links a .nav-icon { font-size: 1.15rem; flex-shrink: 0; }
+        .quick-nav-links a .nav-label { display: flex; flex-direction: column; }
+        .quick-nav-links a .nav-label span { font-size: 0.72rem; font-weight: 400; opacity: 0.8; }
         .seo-accordion { display: flex; flex-direction: column; gap: 0.9rem; }
         .acc-item { background: var(--card-bg,#1e293b); border-radius: 14px; overflow: hidden; }
         .acc-btn { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 1.4rem; background: none; border: none; color: var(--text,#f8fafc); font-size: 0.97rem; font-weight: 700; cursor: pointer; text-align: left; gap: 1rem; line-height: 1.4; }
@@ -118,7 +121,8 @@
         .ad-slot { margin: 1.5rem 0; text-align: center; min-height: 90px; }
         @media (max-width: 640px) {
             .acc-btn { font-size: 0.88rem; padding: 0.95rem 1.1rem; }
-            .quick-nav-links a { font-size: 0.76rem; padding: 0.4rem 0.85rem; }
+            .quick-nav-links { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+            .quick-nav-links a { font-size: 0.8rem; padding: 0.7rem 0.85rem; }
             .seo-section { padding: 0 0.75rem; }
         }
     </style>
@@ -243,11 +247,13 @@
             <nav class="quick-nav" aria-label="Explore more">
                 <p class="quick-nav-heading">Explore More</p>
                 <div class="quick-nav-links">
-                    <a href="/en/faq.html">❓ FAQ</a>
-                    <a href="/en/party-games.html">🎉 Party Games</a>
-                    <a href="/en/classroom.html">🎓 Classroom Use</a>
-                    <a href="/en/tutorials.html">📖 Tutorials</a>
-                    <a href="/en/decisions.html">🤔 Decision Helper</a>
+                    <a href="/en/faq.html"><span class="nav-icon">❓</span><span class="nav-label">FAQ<span>Common questions</span></span></a>
+                    <a href="/en/party-games.html"><span class="nav-icon">🎉</span><span class="nav-label">Party Games<span>Ideas & templates</span></span></a>
+                    <a href="/en/classroom.html"><span class="nav-icon">🎓</span><span class="nav-label">Classroom Use<span>For teachers</span></span></a>
+                    <a href="/en/tutorials.html"><span class="nav-icon">📖</span><span class="nav-label">Tutorials<span>Step by step</span></span></a>
+                    <a href="/en/decisions.html"><span class="nav-icon">🤔</span><span class="nav-label">Decision Helper<span>Everyday choices</span></span></a>
+                    <a href="/en/history.html"><span class="nav-icon">🏛️</span><span class="nav-label">History<span>Origins & culture</span></span></a>
+                    <a href="/en/famous-wheels.html"><span class="nav-icon">🎰</span><span class="nav-label">Famous Wheels<span>TV shows & games</span></span></a>
                 </div>
             </nav>
 

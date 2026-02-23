@@ -99,10 +99,13 @@
         /* ── Quick Navigation ──────────────────────────── */
         .seo-section { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
         .quick-nav { background: var(--card-bg,#1e293b); border-radius: 16px; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
-        .quick-nav-heading { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted,#94a3b8); margin: 0 0 0.9rem; }
-        .quick-nav-links { display: flex; flex-wrap: wrap; gap: 0.55rem; }
-        .quick-nav-links a { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.45rem 1.05rem; border-radius: 999px; background: var(--accent,#6366f1); color: #fff; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: opacity .18s, transform .18s; }
-        .quick-nav-links a:hover { opacity: 0.82; transform: translateY(-2px); }
+        .quick-nav-heading { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted,#94a3b8); margin: 0 0 1rem; }
+        .quick-nav-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+        .quick-nav-links a { display: flex; align-items: center; gap: 0.55rem; padding: 0.85rem 1.1rem; border-radius: 10px; background: var(--accent,#6366f1); color: #fff; text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: opacity .18s, transform .18s, background .18s; line-height: 1.3; }
+        .quick-nav-links a:hover { opacity: 0.88; transform: translateY(-2px); background: #4f52d6; }
+        .quick-nav-links a .nav-icon { font-size: 1.15rem; flex-shrink: 0; }
+        .quick-nav-links a .nav-label { display: flex; flex-direction: column; }
+        .quick-nav-links a .nav-label span { font-size: 0.72rem; font-weight: 400; opacity: 0.8; }
 
         /* ── Accordion ─────────────────────────────────── */
         .seo-accordion { display: flex; flex-direction: column; gap: 0.9rem; }
@@ -124,7 +127,8 @@
 
         @media (max-width: 640px) {
             .acc-btn { font-size: 0.88rem; padding: 0.95rem 1.1rem; }
-            .quick-nav-links a { font-size: 0.76rem; padding: 0.4rem 0.85rem; }
+            .quick-nav-links { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+            .quick-nav-links a { font-size: 0.8rem; padding: 0.7rem 0.85rem; }
             .seo-section { padding: 0 0.75rem; }
         }
     </style>
@@ -255,11 +259,13 @@
             <nav class="quick-nav" aria-label="Weitere Seiten">
                 <p class="quick-nav-heading">Mehr entdecken</p>
                 <div class="quick-nav-links">
-                    <a href="/de/faq.html">❓ FAQ</a>
-                    <a href="/de/partyspiele.html">🎉 Partyspiele</a>
-                    <a href="/de/unterricht.html">🎓 Im Unterricht</a>
-                    <a href="/de/tutorials.html">📖 Tutorials</a>
-                    <a href="/de/entscheidungen.html">🤔 Entscheidungshilfe</a>
+                    <a href="/de/faq.html"><span class="nav-icon">❓</span><span class="nav-label">FAQ<span>Häufige Fragen</span></span></a>
+                    <a href="/de/partyspiele.html"><span class="nav-icon">🎉</span><span class="nav-label">Partyspiele<span>Ideen & Vorlagen</span></span></a>
+                    <a href="/de/unterricht.html"><span class="nav-icon">🎓</span><span class="nav-label">Im Unterricht<span>Für Lehrkräfte</span></span></a>
+                    <a href="/de/tutorials.html"><span class="nav-icon">📖</span><span class="nav-label">Tutorials<span>Schritt für Schritt</span></span></a>
+                    <a href="/de/entscheidungen.html"><span class="nav-icon">🤔</span><span class="nav-label">Entscheidungshilfe<span>Alltag & Freizeit</span></span></a>
+                    <a href="/de/geschichte.html"><span class="nav-icon">🏛️</span><span class="nav-label">Geschichte<span>Ursprung & Kultur</span></span></a>
+                    <a href="/de/beruehmte-gluecksspiele.html"><span class="nav-icon">🎰</span><span class="nav-label">Berühmte Glücksspiele<span>TV-Shows & Räder</span></span></a>
                 </div>
             </nav>
 

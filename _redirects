@@ -34,11 +34,13 @@
 /es/                   /es/index.html         200
 
 # ── SEO-Unterseiten DE (vorbereitet) ───────────────────
-/de/faq.html           /de/faq.html           200
-/de/partyspiele.html   /de/partyspiele.html   200
-/de/unterricht.html    /de/unterricht.html    200
-/de/tutorials.html     /de/tutorials.html     200
-/de/entscheidungen.html /de/entscheidungen.html 200
+/de/faq.html                     /de/faq.html                     200
+/de/partyspiele.html             /de/partyspiele.html             200
+/de/unterricht.html              /de/unterricht.html              200
+/de/tutorials.html               /de/tutorials.html               200
+/de/entscheidungen.html          /de/entscheidungen.html          200
+/de/geschichte.html              /de/geschichte.html              200
+/de/beruehmte-gluecksspiele.html /de/beruehmte-gluecksspiele.html 200
 
 # ── SEO-Unterseiten EN (vorbereitet) ───────────────────
 /en/faq.html           /en/faq.html           200
@@ -46,20 +48,26 @@
 /en/classroom.html     /en/classroom.html     200
 /en/tutorials.html     /en/tutorials.html     200
 /en/decisions.html     /en/decisions.html     200
+/en/history.html       /en/history.html       200
+/en/famous-wheels.html /en/famous-wheels.html 200
 
 # ── SEO-Unterseiten FR (vorbereitet) ───────────────────
-/fr/faq.html           /fr/faq.html           200
-/fr/jeux-de-fete.html  /fr/jeux-de-fete.html  200
-/fr/classe.html        /fr/classe.html        200
-/fr/tutoriels.html     /fr/tutoriels.html     200
-/fr/decisions.html     /fr/decisions.html     200
+/fr/faq.html              /fr/faq.html              200
+/fr/jeux-de-fete.html     /fr/jeux-de-fete.html     200
+/fr/classe.html           /fr/classe.html           200
+/fr/tutoriels.html        /fr/tutoriels.html        200
+/fr/decisions.html        /fr/decisions.html        200
+/fr/histoire.html         /fr/histoire.html         200
+/fr/jeux-celebres.html    /fr/jeux-celebres.html    200
 
 # ── SEO-Unterseiten ES (vorbereitet) ───────────────────
-/es/faq.html           /es/faq.html           200
+/es/faq.html              /es/faq.html              200
 /es/juegos-de-fiesta.html /es/juegos-de-fiesta.html 200
-/es/aula.html          /es/aula.html          200
-/es/tutoriales.html    /es/tutoriales.html    200
-/es/decisiones.html    /es/decisiones.html    200
+/es/aula.html             /es/aula.html             200
+/es/tutoriales.html       /es/tutoriales.html       200
+/es/decisiones.html       /es/decisiones.html       200
+/es/historia.html         /es/historia.html         200
+/es/juegos-famosos.html   /es/juegos-famosos.html   200
 
 # ── Root → Spracherkennung (JS-Redirect) ───────────────
 /                      /index.html            200

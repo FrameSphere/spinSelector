@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Chooser – Entscheidung per Zufall online | SpinSelector</title>
+    <meta name="description" content="Random Chooser online: Optionen eingeben und per Zufallsrad entscheiden lassen. Kostenloser Decision Maker und Picker Tool – für Alltag, Teams und Partys.">
+    <meta name="keywords" content="random chooser, decision maker online, picker tool, Entscheidung Zufall, random picker, Auswahl zufällig, chooser online, random decision maker, Entscheidungshelfer">
+    <link rel="canonical" href="https://spinselector.pages.dev/de/chooser.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/chooser.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/de/chooser.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Random Chooser – Entscheidungen per Zufall treffen">
+    <meta property="og:description" content="Optionen eingeben, Rad drehen, Entscheidung getroffen. Kostenloser Random Chooser und Decision Maker für alle Situationen.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinselector.pages.dev/de/chooser.html">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta name="theme-color" content="#0f172a">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Random Chooser","url":"https://spinselector.pages.dev/de/chooser.html","description":"Kostenloser Random Chooser und Decision Maker: Optionen ins Rad eingeben und per Zufall eine Entscheidung treffen lassen.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","inLanguage":"de","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+    </script>
+    <link rel="stylesheet" href="/styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <style>
+        .seo-section { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
+        .mode-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin: 0 auto 1.25rem; max-width: 900px; }
+        .mode-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--card-bg,#1e293b); color: var(--text-secondary,#cbd5e1); text-decoration: none; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, color .18s, transform .18s; white-space: nowrap; }
+        .mode-btn:hover { background: var(--accent,#6366f1); color: #fff; transform: translateY(-1px); border-color: transparent; }
+        .mode-btn.active { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
+        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.15rem; font-weight: 800; margin: 0 0 0.75rem; }
+        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.78; font-size: 0.95rem; margin: 0 0 0.75rem; }
+        .seo-box p:last-child { margin: 0; }
+        .seo-box a { color: var(--accent,#818cf8); text-decoration: underline; }
+        .seo-box strong { color: var(--text,#f8fafc); }
+        .scenario-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.65rem; margin-top: 0.75rem; }
+        .sc-card { background: var(--bg,#0f172a); border-radius: 10px; padding: 0.85rem 1rem; }
+        .sc-card .sc-title { font-size: 0.78rem; font-weight: 700; color: var(--accent,#818cf8); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.06em; }
+        .sc-card ul { list-style: none; padding: 0; margin: 0; }
+        .sc-card ul li { font-size: 0.82rem; color: var(--text-secondary,#cbd5e1); padding: 0.15rem 0; }
+        .sc-card ul li::before { content: "· "; color: var(--accent,#818cf8); }
+        @media (max-width: 640px) { .seo-section { padding: 0 0.75rem; } .mode-nav { gap: 0.35rem; padding: 0 0.75rem; } .mode-btn { font-size: 0.76rem; padding: 0.45rem 0.8rem; } .scenario-row { grid-template-columns: 1fr; } }
+    </style>
+    <script>
+        window.i18n = {
+            t: function(k){ var s={'empty-state':'Keine Optionen vorhanden.<br>Füge mindestens 2 Optionen hinzu!','canvas-empty':'Optionen hinzufügen','confirm-clear':'Alle löschen?','default-options':['Pizza','Pasta','Sushi','Burger']}; return s[k]||k; },
+            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
+            initLanguage: function(){}, currentLanguage: function(){ return 'de'; }
+        };
+        (function(){
+            try {
+                var existing = JSON.parse(localStorage.getItem('wheelOptions')||'[]');
+                if (!existing.length) {
+                    var colors=['#FF6B6B','#4ECDC4','#45B7D1','#FFA07A'];
+                    var opts=['Pizza','Pasta','Sushi','Burger'].map(function(t,i){return{text:t,color:colors[i%colors.length],id:Date.now()+i};});
+                    localStorage.setItem('wheelOptions', JSON.stringify(opts));
+                }
+            } catch(e){}
+        })();
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Sprache wechseln">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">DE</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">&#127465;&#127466; Deutsch</button>
+            <button data-lang="en" class="lang-option">&#127468;&#127463; English</button>
+            <button data-lang="fr" class="lang-option">&#127467;&#127479; Français</button>
+            <button data-lang="es" class="lang-option">&#127466;&#127480; Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Theme wechseln">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>&#129300; Random Chooser</h1>
+            <p class="subtitle">Lass den Zufall deine Entscheidung treffen!</p>
+        </header>
+
+        <nav class="mode-nav" aria-label="Spielmodi">
+            <a href="/de/" class="mode-btn">&#127921; Glücksrad</a>
+            <a href="/de/wheel-of-names.html" class="mode-btn">&#128100; Namen ziehen</a>
+            <a href="/de/zufallszahl-generator.html" class="mode-btn">&#127922; Zufallszahl</a>
+            <a href="/de/chooser.html" class="mode-btn active">&#129300; Chooser</a>
+            <a href="/de/spin-the-wheel.html" class="mode-btn">&#127757; Spin the Wheel</a>
+            <a href="/de/gluecksrad-vorlagen.html" class="mode-btn">&#128204; Vorlagen</a>
+        </nav>
+
+        <div class="main-content">
+            <div class="wheel-section">
+                <div class="wheel-container">
+                    <div class="wheel-pointer"></div>
+                    <canvas id="wheelCanvas" width="500" height="500" aria-label="Random Chooser – Zufallsentscheidung"></canvas>
+                    <button id="spinBtn" class="spin-button" aria-label="Entscheiden">
+                        <span class="spin-text">WÄHLEN</span>
+                    </button>
+                </div>
+                <div class="result-display" id="resultDisplay" aria-live="polite"></div>
+            </div>
+            <div class="controls-section">
+                <div class="card">
+                    <h2>Optionen eingeben</h2>
+                    <div class="input-group">
+                        <input type="text" id="optionInput" placeholder="Option hinzufügen …" maxlength="50" aria-label="Option eingeben">
+                        <button id="addBtn" class="btn btn-primary">Hinzufügen</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Aktionen</h2>
+                    <div class="action-buttons">
+                        <button id="shuffleBtn" class="btn btn-secondary" aria-label="Mischen">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+                            <span>Mischen</span>
+                        </button>
+                        <button id="clearBtn" class="btn btn-danger" aria-label="Alle löschen">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                            <span>Alle löschen</span>
+                        </button>
+                    </div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="autoRemove">
+                            <span>Gewählte Option entfernen</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Optionen (<span id="optionCount">0</span>)</h2>
+                    <div id="optionsList" class="options-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="seo-section" aria-label="Random Chooser Informationen">
+            <div class="seo-box">
+                <h2>Random Chooser – Entscheidungen ohne Stress</h2>
+                <p>Der <strong>Random Chooser</strong> auf SpinSelector ist dein persönlicher Entscheidungshelfer für alle Situationen, in denen du einfach nicht weißt, was du wählen sollst. Trage alle Optionen ins Rad ein, drücke auf „Wählen" und lass den Zufall das letzte Wort haben – schnell, fair und ohne endlose Diskussionen.</p>
+                <p>Als <strong>Decision Maker</strong> eignet sich SpinSelector besonders gut, wenn alle zur Wahl stehenden Optionen gleichwertig sind und keine davon wirklich falsch wäre. Der Zufallsalgorithmus behandelt jede Option identisch – kein Positions-Bias, keine unbewussten Präferenzen. Mehr dazu auf der Seite <a href="/de/vorteile.html">Vorteile &amp; fairer Zufall</a>.</p>
+            </div>
+
+            <div class="seo-box">
+                <h2>Beispiel-Szenarien für den Random Chooser</h2>
+                <div class="scenario-row">
+                    <div class="sc-card">
+                        <div class="sc-title">&#127829; Mittagessen</div>
+                        <ul>
+                            <li>Pizza</li>
+                            <li>Pasta</li>
+                            <li>Sushi</li>
+                            <li>Burger</li>
+                            <li>Salat</li>
+                        </ul>
+                    </div>
+                    <div class="sc-card">
+                        <div class="sc-title">&#127916; Filmabend</div>
+                        <ul>
+                            <li>Action</li>
+                            <li>Komödie</li>
+                            <li>Horror</li>
+                            <li>Dokumentation</li>
+                            <li>Animation</li>
+                        </ul>
+                    </div>
+                    <div class="sc-card">
+                        <div class="sc-title">&#128188; Team</div>
+                        <ul>
+                            <li>Alex moderiert</li>
+                            <li>Jana präsentiert</li>
+                            <li>Tim protokolliert</li>
+                            <li>Sofia leitet</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seo-box">
+                <h2>Picker Tool für alle Lebenslagen</h2>
+                <p>Dank des <strong>Random Picker</strong>-Prinzips entfällt das mühsame Abwägen: Du gibst alle Möglichkeiten ins Rad, das Rad dreht sich, und die Entscheidung ist gefallen. Das Ergebnis wird von allen Beteiligten leichter akzeptiert, weil der Prozess transparent und fair ist – niemand kann dem Chooser Parteilichkeit vorwerfen. Mehr über die Psychologie hinter Zufallsentscheidungen erfährst du auf der <a href="/de/entscheidungen.html">Entscheidungshilfe-Seite</a>.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/de/" class="footer-link">&#127921; Glücksrad</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Impressum</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Datenschutz</a>
+                <span class="footer-separator">·</span>
+                <a href="/de/faq.html" class="footer-link">FAQ</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
+</body>
+</html>

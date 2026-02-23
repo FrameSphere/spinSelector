@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ═══ SEO: Meta Title & Description ═══ -->
+    <title>Spin Wheel Online – Free Random Decision Maker | SpinSelector</title>
+    <meta name="description" content="Free online spin wheel: add your own options, spin, and let random chance decide. Perfect for giveaways, party games, classroom activities and team decisions.">
+    <meta name="keywords" content="spin wheel online, random wheel, decision wheel, wheel of fortune online, random picker, lucky wheel free, name picker wheel">
+
+    <!-- ═══ Open Graph ═══ -->
+    <meta property="og:title" content="SpinSelector – Free Online Spin Wheel">
+    <meta property="og:description" content="Add your own options and let fate decide. Free, no signup required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinselector.pages.dev/en/">
+    <meta property="og:site_name" content="SpinSelector">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ═══ Twitter Card ═══ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SpinSelector – Spin Wheel Online">
+    <meta name="twitter:description" content="Free online spin wheel. Add options, spin, let fate decide!">
+    <meta name="twitter:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+
+    <!-- ═══ Canonical & hreflang ═══ -->
+    <link rel="canonical" href="https://spinselector.pages.dev/en/">
+    <link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/">
+    <link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/">
+    <link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/">
+    <link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/">
+
+    <!-- ═══ Favicon ═══ -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/favicon.svg">
+
+    <!-- ═══ Structured Data: WebApplication ═══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SpinSelector – Spin Wheel Online",
+      "url": "https://spinselector.pages.dev/en/",
+      "description": "Free online spin wheel for random decisions.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web Browser",
+      "inLanguage": "en",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "image": "https://spinselector.pages.dev/assets/favicon.svg"
+    }
+    </script>
+
+    <!-- ═══ Structured Data: FAQPage ═══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is SpinSelector free to use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, SpinSelector is completely free and requires no registration or download." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many options can I add to the wheel?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You can add up to 20 options to the spin wheel at the same time." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data stored or shared?",
+          "acceptedAnswer": { "@type": "Answer", "text": "All options are saved locally in your browser only. No data is sent to any server." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SpinSelector work on mobile?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, SpinSelector is fully optimized for all modern smartphones and tablets." }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══ PWA / Mobile ═══ -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SpinSelector">
+    <meta name="theme-color" content="#0f172a">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- ═══ AdSense ═══ -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+
+    <!-- ═══ SEO Section Styles ═══ -->
+    <style>
+        .seo-section { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
+        .quick-nav { background: var(--card-bg,#1e293b); border-radius: 16px; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+        .quick-nav-heading { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted,#94a3b8); margin: 0 0 0.9rem; }
+        .quick-nav-links { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+        .quick-nav-links a { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.45rem 1.05rem; border-radius: 999px; background: var(--accent,#6366f1); color: #fff; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: opacity .18s, transform .18s; }
+        .quick-nav-links a:hover { opacity: 0.82; transform: translateY(-2px); }
+        .seo-accordion { display: flex; flex-direction: column; gap: 0.9rem; }
+        .acc-item { background: var(--card-bg,#1e293b); border-radius: 14px; overflow: hidden; }
+        .acc-btn { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 1.4rem; background: none; border: none; color: var(--text,#f8fafc); font-size: 0.97rem; font-weight: 700; cursor: pointer; text-align: left; gap: 1rem; line-height: 1.4; }
+        .acc-chevron { flex-shrink: 0; transition: transform .3s ease; }
+        .acc-btn[aria-expanded="true"] .acc-chevron { transform: rotate(180deg); }
+        .acc-body { max-height: 0; overflow: hidden; transition: max-height .38s ease; }
+        .acc-body.open { max-height: 3000px; }
+        .acc-inner { padding: 0 1.4rem 1.4rem; color: var(--text-secondary,#cbd5e1); line-height: 1.78; font-size: 0.93rem; }
+        .acc-inner h3 { color: var(--text,#f8fafc); font-size: 0.95rem; margin: 1.1rem 0 0.35rem; }
+        .acc-inner p { margin: 0 0 0.75rem; }
+        .acc-inner ul { padding-left: 1.3rem; margin: 0 0 0.75rem; }
+        .acc-inner ul li { margin-bottom: 0.3rem; }
+        .acc-inner a { color: var(--accent,#818cf8); text-decoration: underline; text-underline-offset: 3px; }
+        .ad-slot { margin: 1.5rem 0; text-align: center; min-height: 90px; }
+        @media (max-width: 640px) {
+            .acc-btn { font-size: 0.88rem; padding: 0.95rem 1.1rem; }
+            .quick-nav-links a { font-size: 0.76rem; padding: 0.4rem 0.85rem; }
+            .seo-section { padding: 0 0.75rem; }
+        }
+    </style>
+
+    <!-- ═══ i18n Shim (replaces translations.js) ═══ -->
+    <script>
+        window.i18n = {
+            t: function(key) {
+                var s = {
+                    'empty-state':     'No options available.<br>Add at least 2 options!',
+                    'canvas-empty':    'Add options',
+                    'confirm-clear':   'Do you really want to delete all options?',
+                    'default-options': ['Option 1', 'Option 2', 'Option 3']
+                };
+                return s.hasOwnProperty(key) ? s[key] : key;
+            },
+            setLanguage: function(lang) {
+                localStorage.setItem('language', lang);
+                window.location.href = '/' + lang + '/';
+            },
+            initLanguage: function() { /* no-op: language is determined by URL */ },
+            currentLanguage: function() { return 'en'; }
+        };
+    </script>
+</head>
+<body>
+
+    <!-- ═══ Language Selector ═══ -->
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Change language">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">EN</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+            <button data-lang="en" class="lang-option">🇬🇧 English</button>
+            <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+            <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+        </div>
+    </div>
+
+    <!-- ═══ Theme Toggle ═══ -->
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>🎡 SpinSelector</h1>
+            <p class="subtitle">Let fate decide!</p>
+        </header>
+
+        <div class="ad-slot" aria-label="Advertisement">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3654554314003005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div class="main-content">
+            <div class="wheel-section">
+                <div class="wheel-container">
+                    <div class="wheel-pointer"></div>
+                    <canvas id="wheelCanvas" width="500" height="500" aria-label="Interactive spin wheel"></canvas>
+                    <button id="spinBtn" class="spin-button" aria-label="Spin the wheel">
+                        <span class="spin-text">SPIN</span>
+                    </button>
+                </div>
+                <div class="result-display" id="resultDisplay" aria-live="polite"></div>
+            </div>
+
+            <div class="controls-section">
+                <div class="card">
+                    <h2>Add Options</h2>
+                    <div class="input-group">
+                        <input type="text" id="optionInput" placeholder="Enter new option…" maxlength="50" aria-label="Enter new option">
+                        <button id="addBtn" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Actions</h2>
+                    <div class="action-buttons">
+                        <button id="shuffleBtn" class="btn btn-secondary" aria-label="Shuffle options">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+                            <span>Shuffle</span>
+                        </button>
+                        <button id="clearBtn" class="btn btn-danger" aria-label="Clear all options">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                            <span>Clear All</span>
+                        </button>
+                    </div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="autoRemove" checked>
+                            <span>Auto-remove after spin</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Options (<span id="optionCount">0</span>)</h2>
+                    <div id="optionsList" class="options-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="how-to-play" aria-label="How SpinSelector works">
+            <button class="how-to-play-toggle" onclick="toggleHowToPlay()" aria-expanded="false">
+                <h2 class="section-title">How It Works</h2>
+                <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="instructions collapsed">
+                <div class="instruction-item"><span class="instruction-number">1</span><p>Add your options using the input field</p></div>
+                <div class="instruction-item"><span class="instruction-number">2</span><p>Click "SPIN" to start the wheel</p></div>
+                <div class="instruction-item"><span class="instruction-number">3</span><p>The wheel randomly selects one option</p></div>
+                <div class="instruction-item"><span class="instruction-number">4</span><p>Use "Shuffle" to randomize the order</p></div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             SEO SECTION
+        ═══════════════════════════════════════════════════════ -->
+        <section class="seo-section" aria-label="More information and resources">
+
+            <nav class="quick-nav" aria-label="Explore more">
+                <p class="quick-nav-heading">Explore More</p>
+                <div class="quick-nav-links">
+                    <a href="/en/faq.html">❓ FAQ</a>
+                    <a href="/en/party-games.html">🎉 Party Games</a>
+                    <a href="/en/classroom.html">🎓 Classroom Use</a>
+                    <a href="/en/tutorials.html">📖 Tutorials</a>
+                    <a href="/en/decisions.html">🤔 Decision Helper</a>
+                </div>
+            </nav>
+
+            <div class="ad-slot" aria-label="Advertisement">
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3654554314003005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <div class="seo-accordion">
+
+                <div class="acc-item">
+                    <button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)">
+                        <span>What is an Online Spin Wheel? – SpinSelector Explained</span>
+                        <svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <p>SpinSelector is a <strong>free online spin wheel</strong> that helps you make fair, random decisions instantly – right in your browser, with no download or signup required. Simply enter your options, click "SPIN", and the animated wheel picks a winner using a truly random algorithm.</p>
+                            <p>Spinning wheels have been entertaining people for centuries: from medieval fairground games to iconic TV shows like <em>"Wheel of Fortune"</em>, all the way to modern digital random generators. SpinSelector brings that familiar, exciting feeling to every device – smartphone, tablet or desktop.</p>
+                            <h3>How SpinSelector Works Technically</h3>
+                            <p>The wheel is rendered on an HTML5 Canvas and spins with a physically realistic deceleration curve. The randomization algorithm ensures every spin is completely unpredictable. Your options are stored locally in your browser's Local Storage – no data is ever sent to a server, making it both private and fast.</p>
+                            <h3>Key Features</h3>
+                            <ul>
+                                <li>Add up to 20 custom options freely</li>
+                                <li>Shuffle button randomizes segment order</li>
+                                <li>"Auto-remove" deletes the winner after each spin</li>
+                                <li>Smooth Light and Dark mode toggle</li>
+                                <li>100% free, ad-supported – no account needed</li>
+                                <li>Fully responsive for all screen sizes</li>
+                            </ul>
+                            <p>SpinSelector is perfect for <strong>giveaways, quiz rounds, team splits, party games</strong> and countless other use cases. Explore more ideas on our <a href="/en/party-games.html">Party Games page</a> and in our <a href="/en/tutorials.html">Tutorials</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item">
+                    <button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)">
+                        <span>What Can I Use a Spin Wheel For? – Use Case Ideas</span>
+                        <svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <p>An online spin wheel is far more versatile than you might think. SpinSelector accompanies users in a huge range of everyday situations – here are the most popular use cases:</p>
+                            <h3>🎉 Parties & Gatherings</h3>
+                            <p>At birthday parties, house parties, or game nights, the spin wheel brings spontaneous fun and plenty of laughter. Enter game ideas, truth-or-dare challenges, drink options or any other choices and let the wheel decide – perfectly fair for everyone! Get all ideas on our <a href="/en/party-games.html">Party Games page</a>.</p>
+                            <h3>🎓 School & Classroom</h3>
+                            <p>Teachers use SpinSelector to randomly call on students, run vocabulary drills, organize quiz rounds, split groups or assign classroom tasks. It makes every lesson more interactive and motivating. See all ideas on the <a href="/en/classroom.html">Classroom page</a>.</p>
+                            <h3>💼 Teams & Meetings</h3>
+                            <p>Who presents first? Who brings coffee? Who leads today's standup? SpinSelector makes small team decisions neutral, transparent and fun – ideal for remote teams via screen sharing too.</p>
+                            <h3>🍽️ Everyday Decisions</h3>
+                            <p>Can't decide what to have for lunch? Which movie to watch? Which restaurant to try? Enter your options and let chance decide – stress-free and playful. More ideas on our <a href="/en/decisions.html">Decision Helper page</a>.</p>
+                            <h3>🎰 Giveaways & Raffles</h3>
+                            <p>For fair and transparent raffles, SpinSelector is ideal: enter all participants' names, spin live in front of your audience – done. The "auto-remove" feature prevents any option from being drawn twice.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item">
+                    <button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)">
+                        <span>Tips & Tricks – Get the Most Out of Your Spin Wheel</span>
+                        <svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <p>SpinSelector is intuitive, but a few insider tips will make your experience even better:</p>
+                            <h3>Prepare Options in Advance</h3>
+                            <p>Since SpinSelector automatically saves your options in Local Storage, you don't need to retype them on your next visit. Great for recurring game nights, regular team decisions or the weekly office cake rota.</p>
+                            <h3>Use "Auto-Remove" Wisely</h3>
+                            <p>Enable the "Auto-remove after spin" checkbox when each option should only be drawn once – for raffles, calling on students or tournaments. Disable it when repeats are allowed, like in classic party games.</p>
+                            <h3>Shuffle Before Every Round</h3>
+                            <p>The "Shuffle" button randomizes the segment order on the wheel. Use it before each round for maximum unpredictability – and extra suspense!</p>
+                            <h3>Dark Mode for Evening Events</h3>
+                            <p>In a dimly lit party room or during movie nights, the elegant dark mode makes the wheel even more impressive. Your chosen mode is saved automatically.</p>
+                            <h3>Screen Share in Online Meetings</h3>
+                            <p>SpinSelector works perfectly for remote teams: just share your tab via screen sharing – everyone watches live as the wheel spins. No plugin or extra tool needed, just a browser.</p>
+                            <h3>Keep Option Names Short</h3>
+                            <p>Segments display about 20 characters readably. For long names, use abbreviations or first names. Keep the full names in a separate note if needed.</p>
+                            <p>Step-by-step guides for all scenarios are available in our <a href="/en/tutorials.html">Tutorials</a> and <a href="/en/faq.html">FAQ</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- ═══ End SEO Section ═══ -->
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/impressum.html" class="footer-link">Imprint</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Privacy</a>
+                <span class="footer-separator">·</span>
+                <a href="/en/faq.html" class="footer-link">FAQ</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+        function toggleHowToPlay() {
+            var el  = document.querySelector('.how-to-play .instructions');
+            var btn = document.querySelector('.how-to-play-toggle');
+            el.classList.toggle('collapsed');
+            btn.setAttribute('aria-expanded', String(btn.getAttribute('aria-expanded') !== 'true'));
+        }
+        function toggleAcc(btn) {
+            var body = btn.nextElementSibling;
+            var open = body.classList.toggle('open');
+            btn.setAttribute('aria-expanded', String(open));
+        }
+    </script>
+</body>
+</html>

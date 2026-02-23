@@ -1,26 +1,68 @@
-# ===============================
-# Cloudflare Pages Redirects
-# SpinSelector (Glücksrad)
-# ===============================
+# ═══════════════════════════════════════════════════════
+# Cloudflare Pages – _redirects
+# SpinSelector | URL-basiertes Sprachsystem
+# ═══════════════════════════════════════════════════════
 
-# ---- Static files (serve directly)
-/styles.css           /styles.css          200
-/script.js            /script.js           200
-/translations.js      /translations.js     200
+# ── Statische Assets direkt servieren ──────────────────
+/styles.css            /styles.css            200
+/script.js             /script.js             200
+/translations.js       /translations.js       200
+/assets/*              /assets/:splat         200
 
-# ---- Ads.txt (important for AdSense)
-/ads.txt      /ads.txt           200
+# ── AdSense & Google Verification ──────────────────────
+/ads.txt               /ads.txt               200
+/google7ef57c38ed213579.html  /google7ef57c38ed213579.html  200
 
-# ---- Robots & Sitemap
-/robots.txt   /robots.txt        200
-/sitemap.xml  /sitemap.xml       200
+# ── Robots & Sitemap ───────────────────────────────────
+/robots.txt            /robots.txt            200
+/sitemap.xml           /sitemap.xml           200
 
-# ---- Legal Pages
-/impressum.html     /impressum.html      200
-/datenschutz.html   /datenschutz.html    200
+# ── Legal Pages (sprachunabhängig, immer im Root) ──────
+/impressum.html        /impressum.html        200
+/datenschutz.html      /datenschutz.html      200
 
-# ---- Google Verification
-/google7ef57c38ed213579.html   /google7ef57c38ed213579.html   200
+# ── Sprach-Unterordner ohne trailing slash → mit ───────
+/de                    /de/                   301
+/en                    /en/                   301
+/fr                    /fr/                   301
+/es                    /es/                   301
 
-# ---- SPA Fallback (ALWAYS LAST RULE!)
-/*            /index.html        200
+# ── Sprach-Index-Seiten direkt servieren ───────────────
+/de/                   /de/index.html         200
+/en/                   /en/index.html         200
+/fr/                   /fr/index.html         200
+/es/                   /es/index.html         200
+
+# ── SEO-Unterseiten DE (vorbereitet) ───────────────────
+/de/faq.html           /de/faq.html           200
+/de/partyspiele.html   /de/partyspiele.html   200
+/de/unterricht.html    /de/unterricht.html    200
+/de/tutorials.html     /de/tutorials.html     200
+/de/entscheidungen.html /de/entscheidungen.html 200
+
+# ── SEO-Unterseiten EN (vorbereitet) ───────────────────
+/en/faq.html           /en/faq.html           200
+/en/party-games.html   /en/party-games.html   200
+/en/classroom.html     /en/classroom.html     200
+/en/tutorials.html     /en/tutorials.html     200
+/en/decisions.html     /en/decisions.html     200
+
+# ── SEO-Unterseiten FR (vorbereitet) ───────────────────
+/fr/faq.html           /fr/faq.html           200
+/fr/jeux-de-fete.html  /fr/jeux-de-fete.html  200
+/fr/classe.html        /fr/classe.html        200
+/fr/tutoriels.html     /fr/tutoriels.html     200
+/fr/decisions.html     /fr/decisions.html     200
+
+# ── SEO-Unterseiten ES (vorbereitet) ───────────────────
+/es/faq.html           /es/faq.html           200
+/es/juegos-de-fiesta.html /es/juegos-de-fiesta.html 200
+/es/aula.html          /es/aula.html          200
+/es/tutoriales.html    /es/tutoriales.html    200
+/es/decisiones.html    /es/decisiones.html    200
+
+# ── Root → Spracherkennung (JS-Redirect) ───────────────
+/                      /index.html            200
+
+# ── Catch-All Fallback (IMMER LETZTE REGEL) ────────────
+/*                     /index.html            200

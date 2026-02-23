@@ -41,8 +41,9 @@
     </script>
 
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
-    <style>
+    <!--<style>
         .page-wrap { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
         .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted,#94a3b8); margin-bottom: 2rem; flex-wrap: wrap; }
         .breadcrumb a { color: var(--accent,#818cf8); text-decoration: none; }
@@ -97,7 +98,7 @@
             setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
             initLanguage: function(){}, currentLanguage: function(){ return 'de'; }
         };
-    </script>
+    </script>-->
 </head>
 <body>
     <div class="language-selector">
@@ -189,6 +190,9 @@
                         <li>furthermore</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['appointment','approximately','consequence','distinguish','encounter','furthermore'])">
+                🎡 Ins Glücksrad laden
+                </button>
             </div>
             <div class="use-card">
                 <span class="fach-badge">Mathematik</span>
@@ -205,6 +209,9 @@
                         <li>√49 = ?</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['12 × 7 = ?','144 ÷ 12 = ?','3² + 4² = ?','15 % von 80 = ?','½ + ⅓ = ?','√49 = ?'])">
+                🎡 Ins Glücksrad laden
+                </button>
             </div>
             <div class="use-card">
                 <span class="fach-badge">Geschichte / Politik</span>
@@ -220,6 +227,9 @@
                         <li>Kriegsschuldparagraph</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Inflation 1923','Dolchstoßlegende','Ermächtigungsgesetz','Reichstag','Kriegsschuldparagraph'])">
+                🎡 Ins Glücksrad laden
+                </button>
             </div>
             <div class="use-card">
                 <span class="fach-badge">Biologie / Chemie</span>
@@ -236,6 +246,9 @@
                         <li>Chloroplast</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Mitochondrien','Photosynthese','DNA-Replikation','Osmose','Enzym','Chloroplast'])">
+                🎡 Ins Glücksrad laden
+                </button>
             </div>
         </div>
 
@@ -275,6 +288,9 @@
                         <li>Offene Frage stellen</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Wichtigstes Lernziel','Ein Beispiel nennen','Fachbegriff erklären','Bezug zur letzten Stunde','Offene Frage stellen'])">
+                🎡 Ins Glücksrad laden
+                </button>
             </div>
             <div class="use-card">
                 <span class="fach-badge">Sport / Pausen</span>
@@ -290,6 +306,9 @@
                         <li>Koordinationsübungen</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Völkerball','Staffelrennen','Yoga-Einheit','Badminton','Koordinationsübungen'])">
+                🎡 Ins Glücksrad laden
+                </button>
             </div>
             <div class="use-card">
                 <span class="fach-badge">Hausaufgaben</span>
@@ -305,6 +324,9 @@
                         <li>Thema: Sport & Gesundheit</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Thema: Umweltschutz','Thema: Digitalisierung','Thema: Schule der Zukunft','Thema: Haustiere','Thema: Sport & Gesundheit'])">
+                🎡 Ins Glücksrad laden
+                </button>
             </div>
             <div class="use-card">
                 <span class="fach-badge">Präsentationen</span>
@@ -319,6 +341,9 @@
                         <li>Projizieren auf Beamer</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Namen erst nach der Vorbereitungszeit ins Rad eintragen','Auto-Entfernen aktivieren','Mischen vor dem Start','Projizieren auf Beamer'])">
+                🎡 Ins Glücksrad laden
+                </button>
             </div>
         </div>
 
@@ -366,6 +391,7 @@
         </div>
     </footer>
     <script src="/script.js"></script>
+    <script src="/seo-pages.js"></script>
     <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
 </body>
 </html>

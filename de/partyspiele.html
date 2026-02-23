@@ -42,51 +42,8 @@
     </script>
 
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
-    <style>
-        .page-wrap { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-        .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted,#94a3b8); margin-bottom: 2rem; flex-wrap: wrap; }
-        .breadcrumb a { color: var(--accent,#818cf8); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-        .breadcrumb span { opacity: 0.5; }
-        .page-hero { margin-bottom: 2.5rem; }
-        .page-hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin: 0 0 0.75rem; line-height: 1.2; }
-        .page-hero .lead { font-size: 1.05rem; color: var(--text-secondary,#cbd5e1); line-height: 1.7; margin: 0; }
-        .ad-slot { margin: 2rem 0; text-align: center; min-height: 90px; }
-        .section-title { font-size: 1.35rem; font-weight: 800; margin: 2.5rem 0 1.25rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border,#334155); }
-        .game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
-        .game-card { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.3rem 1.4rem; }
-        .game-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
-        .game-card p { color: var(--text-secondary,#cbd5e1); font-size: 0.9rem; line-height: 1.65; margin: 0 0 0.75rem; }
-        .game-card .option-list { background: var(--bg,#0f172a); border-radius: 8px; padding: 0.75rem 1rem; }
-        .game-card .option-list p { font-size: 0.8rem; font-weight: 600; color: var(--text-muted,#94a3b8); margin: 0 0 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
-        .game-card .option-list ul { padding-left: 1.1rem; margin: 0; color: var(--text-secondary,#cbd5e1); font-size: 0.85rem; }
-        .game-card .option-list ul li { margin-bottom: 0.2rem; }
-        .cta-banner { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); border-radius: 16px; padding: 1.75rem 2rem; margin: 2.5rem 0; text-align: center; }
-        .cta-banner h2 { color: #fff; font-size: 1.3rem; margin: 0 0 0.6rem; }
-        .cta-banner p { color: rgba(255,255,255,0.85); font-size: 0.95rem; margin: 0 0 1.2rem; line-height: 1.6; }
-        .cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: #fff; color: #6366f1; padding: 0.75rem 1.75rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: transform .18s, box-shadow .18s; }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
-        .content-prose { color: var(--text-secondary,#cbd5e1); line-height: 1.8; font-size: 0.97rem; }
-        .content-prose h2 { color: var(--text,#f8fafc); font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.75rem; }
-        .content-prose h3 { color: var(--text,#f8fafc); font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 0.5rem; }
-        .content-prose p { margin: 0 0 1rem; }
-        .content-prose ul { padding-left: 1.4rem; margin: 0 0 1rem; }
-        .content-prose ul li { margin-bottom: 0.4rem; }
-        .content-prose a { color: var(--accent,#818cf8); text-decoration: underline; text-underline-offset: 3px; }
-        .tip-box { background: var(--card-bg,#1e293b); border-left: 4px solid #6366f1; border-radius: 0 12px 12px 0; padding: 1rem 1.3rem; margin: 1.5rem 0; }
-        .tip-box p { color: var(--text-secondary,#cbd5e1); font-size: 0.93rem; margin: 0; line-height: 1.7; }
-        .tip-box strong { color: var(--text,#f8fafc); }
-        .related-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 2rem; }
-        .related-links a { display: flex; align-items: center; gap: 0.55rem; padding: 0.85rem 1.1rem; border-radius: 10px; background: var(--card-bg,#1e293b); color: var(--text,#f8fafc); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: background .18s, transform .18s; border: 1px solid var(--border,#334155); }
-        .related-links a:hover { background: var(--accent,#6366f1); transform: translateY(-1px); }
-        @media (max-width: 640px) {
-            .page-wrap { padding: 1.25rem 0.75rem 3rem; }
-            .game-grid { grid-template-columns: 1fr; }
-            .related-links { grid-template-columns: 1fr; }
-            .cta-banner { padding: 1.3rem 1.2rem; }
-        }
-    </style>
     <script>
         window.i18n = {
             t: function(k){ var s={'empty-state':'Keine Optionen vorhanden.<br>Füge mindestens 2 Optionen hinzu!','canvas-empty':'Füge Optionen hinzu','confirm-clear':'Möchtest du wirklich alle Optionen löschen?','default-options':['Option 1','Option 2','Option 3']}; return s[k]||k; },
@@ -158,6 +115,7 @@
                         <li>Pflicht: Tanz-Challenge</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Wahrheit: Erste Liebe','Pflicht: 10 Liegestütze','Wahrheit: Peinlichster Moment','Pflicht: Nachahmung','Wahrheit: Geheimnis verraten','Pflicht: Tanz-Challenge'])">🎡 Ins Glücksrad laden</button>
             </div>
             <div class="game-card">
                 <h3>🎂 Kindergeburtstag – Wahrheit oder Pflicht (zahm)</h3>
@@ -173,6 +131,7 @@
                         <li>Erzähl einen Witz</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Mach das Tier-Geräusch deiner Wahl','Singe 10 Sekunden ein Lied','Was magst du an der Person neben dir?','Mach 5 Hampelmann','Zeig deinen besten Tanzschritt','Erzähl einen Witz'])">🎡 Ins Glücksrad laden</button>
             </div>
         </div>
 
@@ -199,6 +158,7 @@
                         <li>Exploding Kittens</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Catan','Codenames','UNO','Werwölfe','Ticket to Ride','Taboo','Exploding Kittens'])">🎡 Ins Glücksrad laden</button>
             </div>
             <div class="game-card">
                 <h3>🍕 Filmabend – Was schauen wir?</h3>
@@ -214,6 +174,7 @@
                         <li>Netflix-Empfehlung</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Komödie','Thriller','Actionfilm','Dokumentation','Animationsfilm','Netflix-Empfehlung'])">🎡 Ins Glücksrad laden</button>
             </div>
         </div>
 
@@ -247,6 +208,7 @@
                         <li>Kissenschlacht</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Tanzwettbewerb','Bastelstation','Schatzsuche','Musik-Stuhlspiel','Malwettbewerb','Sackhüpfen','Kissenschlacht'])">🎡 Ins Glücksrad laden</button>
             </div>
             <div class="game-card">
                 <h3>🎁 Geschenke-Reihenfolge auslosen</h3>
@@ -262,6 +224,7 @@
                         <li>Noah</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Emma','Luca','Sophie','Max','Lena','Noah'])">🎡 Ins Glücksrad laden</button>
             </div>
         </div>
 
@@ -296,6 +259,7 @@
                         <li>Trinken verboten (1 Min.)</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Alle trinken','Regel aufstellen','Niemals habe ich...','Ich packe meinen Koffer','Wähle jemanden aus','Trinken verboten (1 Min.)'])">🎡 Ins Glücksrad laden</button>
             </div>
             <div class="game-card">
                 <h3>🍹 Cocktail-Auswahl-Rad</h3>
@@ -311,6 +275,7 @@
                         <li>Wasser (Joker!)</li>
                     </ul>
                 </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Mojito','Aperol Spritz','Pina Colada','Wein','Bier','Wasser (Joker!)'])">🎡 Ins Glücksrad laden</button>
             </div>
         </div>
 
@@ -366,10 +331,8 @@
             <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
         </div>
     </footer>
+    <script src="/seo-pages.js"></script>
     <script src="/script.js"></script>
-    <script>
-        function initTheme() { var t=localStorage.getItem('theme')||'dark'; document.documentElement.setAttribute('data-theme',t); }
-        initTheme();
-    </script>
+    <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
 </body>
 </html>

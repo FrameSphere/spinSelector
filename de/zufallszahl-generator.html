@@ -3,72 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zufallszahl Generator – Zufällige Zahlen online generieren | SpinSelector</title>
-    <meta name="description" content="Zufallszahl Generator online: Zufällige Zahlen im Bereich 1–100, 1–10, 1–1000 oder eigener Bereich generieren. Kostenlos, sofort, ohne Download. Auch als Rad-Version.">
-    <meta name="keywords" content="Zufallszahl Generator, Zufallszahl online, Random Number Generator, Zufallszahlen generieren, zufällige Zahl, Würfeln online, Lotto Zahlen, Zufallszahl 1 bis 100, random number online">
+    <title>Zufallszahl Generator – Zufällige Zahlen online | SpinSelector</title>
+    <meta name="description" content="Zufallszahl Generator online: Zufällige Zahlen in beliebigem Bereich generieren – 1 bis 100, Würfeln, Lotto 1–49 und mehr. Kostenlos, sofort, kein Download.">
+    <meta name="keywords" content="Zufallszahl Generator, Zufallszahl online, Random Number Generator, zufällige Zahl, Würfeln online, Lotto Zahlen, Zufallszahl 1 bis 100, random number online, zufällige Zahl generieren">
     <link rel="canonical" href="https://spinselector.pages.dev/de/zufallszahl-generator.html">
     <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/zufallszahl-generator.html">
-    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/de/zufallszahl-generator.html">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <meta property="og:title" content="Zufallszahl Generator – Zufällige Zahlen online">
-    <meta property="og:description" content="Zufällige Zahlen sofort generieren: eigenen Bereich wählen, auf Generieren klicken, fertig. Kostenlos und ohne Login.">
+    <meta property="og:title" content="Zufallszahl Generator – Zufällige Zahlen online generieren">
+    <meta property="og:description" content="Zufällige Zahlen sofort online generieren: eigenen Bereich wählen, Schnelloptionen für Würfel, 1–100 und Lotto. Kostenlos, kein Login.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://spinselector.pages.dev/de/zufallszahl-generator.html">
-    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
     <meta name="theme-color" content="#0f172a">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Zufallszahl Generator","url":"https://spinselector.pages.dev/de/zufallszahl-generator.html","description":"Kostenloser Zufallszahl Generator: Zufällige Zahlen in beliebigem Bereich online generieren. Auch als Glücksrad mit Zahlen.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","inLanguage":"de","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Zufallszahl Generator","url":"https://spinselector.pages.dev/de/zufallszahl-generator.html","description":"Kostenloser Zufallszahl Generator: Zufällige Zahlen in beliebigem Bereich online generieren. Würfeln, Lotto-Zahlen, eigener Bereich.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","inLanguage":"de","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
     </script>
     <link rel="stylesheet" href="/styles.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
     <style>
-        .seo-section { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
+        /* ── Mode Nav ── */
         .mode-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin: 0 auto 1.25rem; max-width: 900px; }
         .mode-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--card-bg,#1e293b); color: var(--text-secondary,#cbd5e1); text-decoration: none; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, color .18s, transform .18s; white-space: nowrap; }
         .mode-btn:hover { background: var(--accent,#6366f1); color: #fff; transform: translateY(-1px); border-color: transparent; }
         .mode-btn.active { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
-        /* Number Generator Tool */
-        .num-tool { max-width: 900px; margin: 0 auto 2rem; padding: 0 1.25rem; }
-        .num-card { background: var(--card-bg,#1e293b); border-radius: 18px; padding: 2rem 2.25rem; }
-        .num-card h2 { color: var(--text,#f8fafc); font-size: 1.25rem; font-weight: 800; margin: 0 0 1.5rem; }
-        .num-inputs { display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap; margin-bottom: 1.5rem; }
-        .num-field { display: flex; flex-direction: column; gap: 0.4rem; }
-        .num-field label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted,#94a3b8); }
-        .num-field input { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 10px; padding: 0.65rem 0.9rem; color: var(--text,#f8fafc); font-size: 1.05rem; font-weight: 600; width: 110px; text-align: center; }
-        .num-field input:focus { outline: none; border-color: var(--accent,#6366f1); }
-        .num-gen-btn { background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; border: none; border-radius: 12px; padding: 0.7rem 1.8rem; font-size: 1rem; font-weight: 800; cursor: pointer; transition: opacity .18s, transform .18s; }
-        .num-gen-btn:hover { opacity: 0.88; transform: translateY(-1px); }
-        .num-result { text-align: center; margin-top: 1rem; }
-        .num-result .result-number { font-size: 4rem; font-weight: 900; color: var(--accent,#818cf8); line-height: 1; display: block; }
-        .num-result .result-label { font-size: 0.85rem; color: var(--text-secondary,#cbd5e1); margin-top: 0.4rem; }
-        .quick-ranges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
-        .range-btn { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 8px; padding: 0.4rem 0.85rem; font-size: 0.82rem; font-weight: 600; color: var(--text-secondary,#cbd5e1); cursor: pointer; transition: background .15s, color .15s; }
-        .range-btn:hover { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
-        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
-        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.15rem; font-weight: 800; margin: 0 0 0.75rem; }
-        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.78; font-size: 0.95rem; margin: 0 0 0.75rem; }
+
+        /* ── Generator ── */
+        .gen-wrap { max-width: 700px; margin: 0 auto 2.5rem; padding: 0 1.25rem; }
+        .gen-card  { background: var(--card-bg,#1e293b); border-radius: 20px; padding: 2rem 2.25rem; }
+        .gen-card h2 { font-size: 1.2rem; font-weight: 800; color: var(--text,#f8fafc); margin: 0 0 1.25rem; }
+
+        /* quick ranges */
+        .quick-ranges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .range-btn { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 9px; padding: 0.45rem 0.95rem; font-size: 0.82rem; font-weight: 700; color: var(--text-secondary,#cbd5e1); cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+        .range-btn:hover, .range-btn.selected { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
+
+        /* inputs */
+        .gen-inputs { display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap; margin-bottom: 1.75rem; }
+        .gen-field { display: flex; flex-direction: column; gap: 0.4rem; }
+        .gen-field label { font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted,#94a3b8); }
+        .gen-field input { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 11px; padding: 0.7rem 0.95rem; color: var(--text,#f8fafc); font-size: 1.15rem; font-weight: 700; width: 120px; text-align: center; }
+        .gen-field input:focus { outline: none; border-color: var(--accent,#6366f1); box-shadow: 0 0 0 2px rgba(99,102,241,0.2); }
+        .gen-sep { font-size: 1.5rem; color: var(--text-muted,#94a3b8); padding-bottom: 0.4rem; font-weight: 300; }
+        .gen-btn { background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; border: none; border-radius: 12px; padding: 0.75rem 2rem; font-size: 1rem; font-weight: 800; cursor: pointer; transition: opacity .18s, transform .18s; }
+        .gen-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+        .gen-btn:active { transform: translateY(0); }
+
+        /* result display */
+        .gen-result { text-align: center; padding: 1.5rem 1rem; }
+        .result-number { font-size: 5.5rem; font-weight: 900; line-height: 1; display: block; background: linear-gradient(135deg,#818cf8,#a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; transition: transform .3s cubic-bezier(.34,1.56,.64,1); }
+        .result-number.pop { transform: scale(1.18); }
+        .result-range { font-size: 0.85rem; color: var(--text-muted,#94a3b8); margin-top: 0.5rem; }
+
+        /* multi-draw */
+        .multi-section { border-top: 1px solid var(--border,#334155); margin-top: 1.75rem; padding-top: 1.5rem; }
+        .multi-section h3 { font-size: 0.95rem; font-weight: 800; color: var(--text,#f8fafc); margin: 0 0 0.75rem; }
+        .multi-controls { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
+        .multi-controls label { font-size: 0.8rem; color: var(--text-secondary,#cbd5e1); font-weight: 600; }
+        .multi-controls input { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 8px; padding: 0.4rem 0.6rem; color: var(--text,#f8fafc); font-size: 0.9rem; font-weight: 600; width: 64px; text-align: center; }
+        .multi-draw-btn { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 9px; padding: 0.45rem 1rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: background .15s, color .15s; }
+        .multi-draw-btn:hover { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
+        .multi-unique-label { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--text-secondary,#cbd5e1); cursor: pointer; }
+        .multi-results { display: flex; flex-wrap: wrap; gap: 0.5rem; min-height: 2rem; }
+        .multi-pill { background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.9rem; font-weight: 700; }
+
+        /* lotto section */
+        .lotto-section { border-top: 1px solid var(--border,#334155); margin-top: 1.75rem; padding-top: 1.5rem; }
+        .lotto-section h3 { font-size: 0.95rem; font-weight: 800; color: var(--text,#f8fafc); margin: 0 0 0.75rem; }
+        .lotto-draw-btn { background: linear-gradient(135deg,#f59e0b,#d97706); color: #fff; border: none; border-radius: 12px; padding: 0.6rem 1.5rem; font-size: 0.9rem; font-weight: 800; cursor: pointer; margin-bottom: 0.9rem; transition: opacity .18s, transform .18s; }
+        .lotto-draw-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+        .lotto-balls { display: flex; flex-wrap: wrap; gap: 0.6rem; min-height: 2.5rem; align-items: center; }
+        .lotto-ball { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800; color: #fff; }
+
+        /* SEO */
+        .seo-wrap { max-width: 700px; margin: 0 auto 3rem; padding: 0 1.25rem; }
+        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.4rem 1.75rem; margin-bottom: 1rem; }
+        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.1rem; font-weight: 800; margin: 0 0 0.65rem; }
+        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.78; font-size: 0.93rem; margin: 0 0 0.65rem; }
         .seo-box p:last-child { margin: 0; }
         .seo-box a { color: var(--accent,#818cf8); text-decoration: underline; }
         .seo-box strong { color: var(--text,#f8fafc); }
-        .seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
-        @media (max-width: 640px) { .seo-section { padding: 0 0.75rem; } .mode-nav { gap: 0.35rem; padding: 0 0.75rem; } .mode-btn { font-size: 0.76rem; padding: 0.45rem 0.8rem; } .seo-grid { grid-template-columns: 1fr; } .num-tool { padding: 0 0.75rem; } .num-card { padding: 1.25rem 1.1rem; } .num-inputs { gap: 0.75rem; } .num-result .result-number { font-size: 3rem; } }
+
+        @media (max-width: 640px) {
+            .gen-wrap, .seo-wrap { padding: 0 0.75rem; }
+            .gen-card { padding: 1.3rem 1rem; }
+            .mode-nav { gap: 0.35rem; padding: 0 0.75rem; }
+            .mode-btn { font-size: 0.76rem; padding: 0.45rem 0.8rem; }
+            .result-number { font-size: 4rem; }
+            .gen-inputs { gap: 0.75rem; }
+        }
     </style>
     <script>
-        window.i18n = {
-            t: function(k){ var s={'empty-state':'Keine Zahlen vorhanden.<br>Füge mindestens 2 Zahlen hinzu!','canvas-empty':'Zahlen hinzufügen','confirm-clear':'Alle löschen?','default-options':['1','2','3','4','5','6']}; return s[k]||k; },
-            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
-            initLanguage: function(){}, currentLanguage: function(){ return 'de'; }
-        };
-        (function(){
-            try {
-                var existing = JSON.parse(localStorage.getItem('wheelOptions')||'[]');
-                if (!existing.length) {
-                    var colors=['#FF6B6B','#4ECDC4','#45B7D1','#FFA07A','#98D8C8','#F7DC6F'];
-                    var opts=['1','2','3','4','5','6'].map(function(t,i){return{text:t,color:colors[i%colors.length],id:Date.now()+i};});
-                    localStorage.setItem('wheelOptions', JSON.stringify(opts));
-                }
-            } catch(e){}
-        })();
+        window.i18n = { t: function(k){ return k; }, setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; }, initLanguage: function(){}, currentLanguage: function(){ return 'de'; } };
     </script>
 </head>
 <body>
@@ -94,7 +118,7 @@
     <div class="container">
         <header>
             <h1>&#127922; Zufallszahl Generator</h1>
-            <p class="subtitle">Zufällige Zahlen in Sekunden generieren!</p>
+            <p class="subtitle">Zufällige Zahlen sofort generieren!</p>
         </header>
 
         <nav class="mode-nav" aria-label="Spielmodi">
@@ -103,101 +127,77 @@
             <a href="/de/zufallszahl-generator.html" class="mode-btn active">&#127922; Zufallszahl</a>
             <a href="/de/chooser.html" class="mode-btn">&#129300; Chooser</a>
             <a href="/de/spin-the-wheel.html" class="mode-btn">&#127757; Spin the Wheel</a>
-            <a href="/de/gluecksrad-vorlagen.html" class="mode-btn">&#128204; Vorlagen</a>
         </nav>
+    </div>
 
-        <!-- Number Generator Tool -->
-        <div class="num-tool">
-            <div class="num-card">
-                <h2>&#127922; Zufallszahl generieren</h2>
-                <div class="quick-ranges">
-                    <button class="range-btn" onclick="setRange(1,6)">1–6 (Würfel)</button>
-                    <button class="range-btn" onclick="setRange(1,10)">1–10</button>
-                    <button class="range-btn" onclick="setRange(1,100)">1–100</button>
-                    <button class="range-btn" onclick="setRange(1,1000)">1–1000</button>
-                    <button class="range-btn" onclick="setRange(1,49)">Lotto (1–49)</button>
+    <div class="gen-wrap">
+        <div class="gen-card">
+            <h2>&#127922; Zufallszahl generieren</h2>
+
+            <!-- Quick Ranges -->
+            <div class="quick-ranges">
+                <button class="range-btn" id="rb6"    onclick="setRange(1,6)">&#127922; Würfel (1–6)</button>
+                <button class="range-btn" id="rb10"   onclick="setRange(1,10)">1–10</button>
+                <button class="range-btn" id="rb100"  onclick="setRange(1,100)">1–100</button>
+                <button class="range-btn" id="rb1000" onclick="setRange(1,1000)">1–1000</button>
+                <button class="range-btn" id="rb49"   onclick="setRange(1,49)">Lotto (1–49)</button>
+            </div>
+
+            <!-- Range Inputs + Generate -->
+            <div class="gen-inputs">
+                <div class="gen-field">
+                    <label for="numMin">Von</label>
+                    <input type="number" id="numMin" value="1" min="-9999999" max="9999999">
                 </div>
-                <div class="num-inputs">
-                    <div class="num-field">
-                        <label for="numMin">Von</label>
-                        <input type="number" id="numMin" value="1" min="-999999" max="999999">
-                    </div>
-                    <div class="num-field">
-                        <label for="numMax">Bis</label>
-                        <input type="number" id="numMax" value="100" min="-999999" max="999999">
-                    </div>
-                    <button class="num-gen-btn" onclick="generateNumber()">Generieren!</button>
+                <span class="gen-sep">–</span>
+                <div class="gen-field">
+                    <label for="numMax">Bis</label>
+                    <input type="number" id="numMax" value="100" min="-9999999" max="9999999">
                 </div>
-                <div class="num-result" id="numResult">
-                    <span class="result-number" id="numDisplay">–</span>
-                    <div class="result-label" id="numLabel">Bereich wählen und auf „Generieren" klicken</div>
+                <button class="gen-btn" onclick="generateOne()">Generieren!</button>
+            </div>
+
+            <!-- Big Result -->
+            <div class="gen-result">
+                <span class="result-number" id="numDisplay">?</span>
+                <div class="result-range" id="rangeLabel">Bereich wählen und auf Generieren klicken</div>
+            </div>
+
+            <!-- Multi Draw -->
+            <div class="multi-section">
+                <h3>Mehrere Zahlen auf einmal</h3>
+                <div class="multi-controls">
+                    <label>Anzahl:</label>
+                    <input type="number" id="multiCount" value="5" min="1" max="20">
+                    <label class="multi-unique-label">
+                        <input type="checkbox" id="multiUnique" checked>
+                        Keine Wiederholungen
+                    </label>
+                    <button class="multi-draw-btn" onclick="generateMulti()">Ziehen</button>
                 </div>
+                <div class="multi-results" id="multiResults"></div>
+            </div>
+
+            <!-- Lotto Quickpick -->
+            <div class="lotto-section">
+                <h3>&#127381; Lotto-Quickpick (6 aus 49)</h3>
+                <button class="lotto-draw-btn" onclick="generateLotto()">6 Zahlen ziehen</button>
+                <div class="lotto-balls" id="lottoBalls"></div>
             </div>
         </div>
+    </div>
 
-        <!-- Wheel with Numbers -->
-        <div class="main-content">
-            <div class="wheel-section">
-                <div class="wheel-container">
-                    <div class="wheel-pointer"></div>
-                    <canvas id="wheelCanvas" width="500" height="500" aria-label="Zufallszahl Glücksrad"></canvas>
-                    <button id="spinBtn" class="spin-button" aria-label="Zahl ziehen">
-                        <span class="spin-text">DREHEN</span>
-                    </button>
-                </div>
-                <div class="result-display" id="resultDisplay" aria-live="polite"></div>
-            </div>
-            <div class="controls-section">
-                <div class="card">
-                    <h2>Zahlen ins Rad</h2>
-                    <div class="input-group">
-                        <input type="text" id="optionInput" placeholder="Zahl eingeben …" maxlength="10" aria-label="Zahl eingeben">
-                        <button id="addBtn" class="btn btn-primary">Hinzufügen</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <h2>Aktionen</h2>
-                    <div class="action-buttons">
-                        <button id="shuffleBtn" class="btn btn-secondary" aria-label="Mischen">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
-                            <span>Mischen</span>
-                        </button>
-                        <button id="clearBtn" class="btn btn-danger" aria-label="Alle löschen">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                            <span>Alle löschen</span>
-                        </button>
-                    </div>
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" id="autoRemove" checked>
-                            <span>Gezogene Zahl entfernen</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="card">
-                    <h2>Zahlen (<span id="optionCount">0</span>)</h2>
-                    <div id="optionsList" class="options-list"></div>
-                </div>
-            </div>
+    <!-- SEO Content -->
+    <div class="seo-wrap">
+        <div class="seo-box">
+            <h2>Zufallszahl Generator – fair, schnell, kryptografisch sicher</h2>
+            <p>Der <strong>Zufallszahl Generator</strong> auf SpinSelector erzeugt echte Zufallszahlen über <code>window.crypto.getRandomValues()</code> – die kryptografisch sichere Zufallsfunktion moderner Browser. Das Ergebnis ist mathematisch unvorhersehbar und nicht reproduzierbar: kein Pseudo-Zufall, keine versteckten Muster.</p>
+            <p>Alle Berechnungen laufen ausschließlich in deinem Browser ab – keine Daten verlassen dein Gerät. Der Generator ist kostenlos, benötigt kein Login und funktioniert auf jedem modernen Smartphone, Tablet oder Desktop.</p>
         </div>
-
-        <section class="seo-section" aria-label="Zufallszahl Generator Informationen">
-            <div class="seo-box">
-                <h2>Zufallszahl Generator – kostenlos &amp; sofort</h2>
-                <p>Der <strong>Zufallszahl Generator</strong> auf SpinSelector erzeugt in Sekundenbruchteilen eine echte Zufallszahl in deinem gewünschten Bereich. Ob du eine Zufallszahl zwischen 1 und 100 brauchst, einen virtuellen Würfelwurf (1–6) simulieren willst oder Lotto-Zahlen zwischen 1 und 49 ziehen möchtest – unser kostenloser Random Number Generator ist für jeden Einsatz gerüstet.</p>
-                <p>Oben findest du den schnellen <strong>Direkt-Generator</strong> mit frei wählbarem Bereich und praktischen Schnellauswahlen. Darunter kannst du das Glücksrad mit eigenen Zahlen befüllen und dann drehen – für maximale visuelle Spannung beim Ziehen.</p>
-            </div>
-            <div class="seo-grid">
-                <div class="seo-box">
-                    <h2>Wofür eignet sich der Generator?</h2>
-                    <p>Würfeln ohne Würfel, Lotto-Zahlen ziehen, zufällige Seitenzahl für Hausaufgaben auswählen, Spielreihenfolge festlegen, Quizfragen nummerieren oder einfach einen fairen Losentscheid treffen.</p>
-                </div>
-                <div class="seo-box">
-                    <h2>Technische Details</h2>
-                    <p>Der Generator nutzt <strong>window.crypto.getRandomValues()</strong> – die kryptografisch sichere Zufallsfunktion moderner Browser. Das Ergebnis ist nicht vorhersehbar und nicht reproduzierbar. Keine Daten verlassen deinen Browser.</p>
-                </div>
-            </div>
-        </section>
+        <div class="seo-box">
+            <h2>Wofür eignet sich der Generator?</h2>
+            <p><strong>Würfeln ohne Würfel:</strong> Einfach den Schnellbereich 1–6 wählen und generieren – sofort hast du einen fairen Würfelwurf. Für Brettspiele, Rollenspiele oder spontane Entscheidungen. <strong>Lotto-Zahlen:</strong> Mit dem Quickpick-Knopf erhältst du 6 einmalige, zufällige Zahlen aus dem Bereich 1 bis 49, wie beim echten Lotto-Tippschein. <strong>Aufgaben zuweisen:</strong> Vergib Nummern an Teilnehmer und lass das Tool die nächste Aufgabe auswählen. <strong>Für Lehrkräfte:</strong> Zufällige Seitenzahlen, Aufgabennummern oder Gruppenreihenfolgen in Sekunden – mehr Ideen auf der <a href="/de/unterricht.html">Unterrichts-Seite</a>.</p>
+        </div>
     </div>
 
     <footer>
@@ -214,26 +214,81 @@
             <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
         </div>
     </footer>
+
     <script src="/script.js"></script>
     <script>
-        function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();
-        function setRange(min, max) {
-            document.getElementById('numMin').value = min;
-            document.getElementById('numMax').value = max;
+        function initTheme(){ var t=localStorage.getItem('theme')||'dark'; document.documentElement.setAttribute('data-theme',t); }
+        initTheme();
+
+        var LOTTO_COLORS=['#e74c3c','#e67e22','#f1c40f','#2ecc71','#3498db','#9b59b6'];
+
+        function rng(min,max){ var a=new Uint32Array(1); window.crypto.getRandomValues(a); return min+(a[0]%(max-min+1)); }
+
+        function setRange(min,max){
+            document.getElementById('numMin').value=min;
+            document.getElementById('numMax').value=max;
+            document.querySelectorAll('.range-btn').forEach(function(b){ b.classList.remove('selected'); });
+            var map={'1,6':'rb6','1,10':'rb10','1,100':'rb100','1,1000':'rb1000','1,49':'rb49'};
+            var key=min+','+max;
+            if(map[key]) document.getElementById(map[key]).classList.add('selected');
         }
-        function generateNumber() {
-            var min = parseInt(document.getElementById('numMin').value) || 1;
-            var max = parseInt(document.getElementById('numMax').value) || 100;
-            if (min > max) { var tmp = min; min = max; max = tmp; }
-            var arr = new Uint32Array(1);
-            window.crypto.getRandomValues(arr);
-            var result = min + (arr[0] % (max - min + 1));
-            document.getElementById('numDisplay').textContent = result;
-            document.getElementById('numLabel').textContent = 'Zufallszahl aus dem Bereich ' + min + ' bis ' + max;
-            // Animate
-            var el = document.getElementById('numDisplay');
-            el.style.transform = 'scale(1.2)';
-            setTimeout(function(){ el.style.transform = 'scale(1)'; el.style.transition = 'transform 0.3s'; }, 50);
+
+        function generateOne(){
+            var min=parseInt(document.getElementById('numMin').value)||1;
+            var max=parseInt(document.getElementById('numMax').value)||100;
+            if(min>max){ var t=min; min=max; max=t; }
+            var r=rng(min,max);
+            var el=document.getElementById('numDisplay');
+            el.textContent=r;
+            el.classList.remove('pop');
+            void el.offsetWidth;
+            el.classList.add('pop');
+            document.getElementById('rangeLabel').textContent='Zufallszahl aus '+min+' bis '+max;
+            setTimeout(function(){ el.classList.remove('pop'); },350);
+        }
+
+        function generateMulti(){
+            var min=parseInt(document.getElementById('numMin').value)||1;
+            var max=parseInt(document.getElementById('numMax').value)||100;
+            if(min>max){ var t=min; min=max; max=t; }
+            var count=Math.min(20,Math.max(1,parseInt(document.getElementById('multiCount').value)||5));
+            var unique=document.getElementById('multiUnique').checked;
+            var results=[]; var tries=0; var maxRange=max-min+1;
+            if(unique&&count>maxRange) count=maxRange;
+            while(results.length<count && tries<1000){
+                var n=rng(min,max);
+                if(!unique||results.indexOf(n)===-1) results.push(n);
+                tries++;
+            }
+            results.sort(function(a,b){return a-b;});
+            var container=document.getElementById('multiResults');
+            container.innerHTML='';
+            results.forEach(function(n){
+                var p=document.createElement('span');
+                p.className='multi-pill'; p.textContent=n;
+                container.appendChild(p);
+            });
+        }
+
+        function generateLotto(){
+            var pool=[]; for(var i=1;i<=49;i++) pool.push(i);
+            var picks=[];
+            for(var j=0;j<6;j++){
+                var arr=new Uint32Array(1);
+                window.crypto.getRandomValues(arr);
+                var idx=arr[0]%(pool.length);
+                picks.push(pool.splice(idx,1)[0]);
+            }
+            picks.sort(function(a,b){return a-b;});
+            var container=document.getElementById('lottoBalls');
+            container.innerHTML='';
+            picks.forEach(function(n,i){
+                var b=document.createElement('div');
+                b.className='lotto-ball';
+                b.style.background=LOTTO_COLORS[i];
+                b.textContent=n;
+                container.appendChild(b);
+            });
         }
     </script>
 </body>

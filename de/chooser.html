@@ -2,61 +2,136 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Chooser – Entscheidung per Zufall online | SpinSelector</title>
-    <meta name="description" content="Random Chooser online: Optionen eingeben und per Zufallsrad entscheiden lassen. Kostenloser Decision Maker und Picker Tool – für Alltag, Teams und Partys.">
-    <meta name="keywords" content="random chooser, decision maker online, picker tool, Entscheidung Zufall, random picker, Auswahl zufällig, chooser online, random decision maker, Entscheidungshelfer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Finger Chooser – Wer ist dran? Zufallsauswahl per Touch | SpinSelector</title>
+    <meta name="description" content="Finger Chooser: Alle legen einen Finger auf den Bildschirm, das Gerät wählt zufällig eine Person aus. Kostenloser Touch-Picker für Entscheidungen in der Gruppe.">
+    <meta name="keywords" content="finger chooser, wer ist dran, random chooser touch, Zufallsauswahl Gruppe, finger picker online, Entscheidung Gruppe, wer geht zuerst, touch picker">
     <link rel="canonical" href="https://spinselector.pages.dev/de/chooser.html">
     <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/chooser.html">
-    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/de/chooser.html">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <meta property="og:title" content="Random Chooser – Entscheidungen per Zufall treffen">
-    <meta property="og:description" content="Optionen eingeben, Rad drehen, Entscheidung getroffen. Kostenloser Random Chooser und Decision Maker für alle Situationen.">
+    <meta property="og:title" content="Finger Chooser – Alle tippen, einer wird gewählt">
+    <meta property="og:description" content="Jeder legt einen Finger auf den Bildschirm. Der Chooser wählt zufällig eine Person aus. Kostenlos, kein Login.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://spinselector.pages.dev/de/chooser.html">
-    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
     <meta name="theme-color" content="#0f172a">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Random Chooser","url":"https://spinselector.pages.dev/de/chooser.html","description":"Kostenloser Random Chooser und Decision Maker: Optionen ins Rad eingeben und per Zufall eine Entscheidung treffen lassen.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","inLanguage":"de","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Finger Chooser","url":"https://spinselector.pages.dev/de/chooser.html","description":"Touch-basierter Zufallsauswähler für Gruppen: Alle legen einen Finger auf den Bildschirm, eine Person wird zufällig ausgewählt.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","inLanguage":"de","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
     </script>
     <link rel="stylesheet" href="/styles.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
     <style>
-        .seo-section { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
+        /* ── Mode Nav ── */
         .mode-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin: 0 auto 1.25rem; max-width: 900px; }
         .mode-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--card-bg,#1e293b); color: var(--text-secondary,#cbd5e1); text-decoration: none; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, color .18s, transform .18s; white-space: nowrap; }
         .mode-btn:hover { background: var(--accent,#6366f1); color: #fff; transform: translateY(-1px); border-color: transparent; }
         .mode-btn.active { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
-        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
-        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.15rem; font-weight: 800; margin: 0 0 0.75rem; }
-        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.78; font-size: 0.95rem; margin: 0 0 0.75rem; }
+
+        /* ── Touch Arena ── */
+        .chooser-wrap { max-width: 900px; margin: 0 auto 2rem; padding: 0 1.25rem; }
+        .chooser-card { background: var(--card-bg,#1e293b); border-radius: 20px; overflow: hidden; }
+
+        /* instruction bar */
+        .chooser-instruction { padding: 1.25rem 1.5rem; text-align: center; border-bottom: 1px solid var(--border,#334155); }
+        .chooser-instruction h2 { font-size: 1.1rem; font-weight: 800; color: var(--text,#f8fafc); margin: 0 0 0.3rem; }
+        .chooser-instruction p { font-size: 0.88rem; color: var(--text-secondary,#cbd5e1); margin: 0; line-height: 1.5; }
+
+        /* touch field */
+        #touchField {
+            position: relative;
+            width: 100%;
+            height: 52vw;
+            max-height: 420px;
+            min-height: 260px;
+            background: var(--bg,#0f172a);
+            cursor: crosshair;
+            touch-action: none;
+            user-select: none;
+            -webkit-user-select: none;
+            overflow: hidden;
+        }
+        #touchField .field-hint {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            gap: 0.6rem;
+            color: var(--text-muted,#94a3b8);
+            font-size: 0.9rem;
+            font-weight: 600;
+            pointer-events: none;
+            transition: opacity .3s;
+        }
+        #touchField .field-hint .hint-icon { font-size: 2.5rem; }
+        #touchField.has-touches .field-hint { opacity: 0; }
+
+        /* finger dots */
+        .finger-dot {
+            position: absolute;
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            transform: translate(-50%,-50%) scale(0);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; font-weight: 800; color: #fff;
+            transition: transform .15s cubic-bezier(.34,1.56,.64,1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            pointer-events: none;
+        }
+        .finger-dot.active { transform: translate(-50%,-50%) scale(1); }
+        .finger-dot.winner {
+            transform: translate(-50%,-50%) scale(1.45) !important;
+            z-index: 10;
+            box-shadow: 0 0 0 6px #fff, 0 8px 30px rgba(0,0,0,0.5);
+            animation: pulse-winner 0.6s ease infinite alternate;
+        }
+        @keyframes pulse-winner {
+            from { box-shadow: 0 0 0 4px rgba(255,255,255,0.6), 0 8px 30px rgba(0,0,0,0.5); }
+            to   { box-shadow: 0 0 0 12px rgba(255,255,255,0.15), 0 8px 30px rgba(0,0,0,0.5); }
+        }
+        .finger-dot.loser {
+            transform: translate(-50%,-50%) scale(0.5) !important;
+            opacity: 0.25;
+        }
+
+        /* result bar */
+        .chooser-result {
+            padding: 1rem 1.5rem;
+            text-align: center;
+            min-height: 56px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.6rem;
+            border-top: 1px solid var(--border,#334155);
+        }
+        .chooser-result .res-text { font-size: 1.05rem; font-weight: 700; color: var(--text,#f8fafc); }
+        .chooser-result .res-sub  { font-size: 0.82rem; color: var(--text-secondary,#cbd5e1); }
+
+        /* counter bar */
+        .chooser-counter { padding: 0.6rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; border-top: 1px solid var(--border,#334155); background: var(--bg,#0f172a); }
+        .chooser-counter .cnt-label { font-size: 0.78rem; color: var(--text-muted,#94a3b8); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; flex: 1; }
+        .cnt-badge { background: var(--accent,#6366f1); color: #fff; border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.82rem; font-weight: 700; }
+        .chooser-reset-btn { background: none; border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 8px; padding: 0.3rem 0.75rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background .15s, color .15s; }
+        .chooser-reset-btn:hover { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
+
+        /* SEO section */
+        .seo-wrap { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
+        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.4rem 1.75rem; margin-bottom: 1rem; }
+        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.1rem; font-weight: 800; margin: 0 0 0.65rem; }
+        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.78; font-size: 0.93rem; margin: 0 0 0.65rem; }
         .seo-box p:last-child { margin: 0; }
         .seo-box a { color: var(--accent,#818cf8); text-decoration: underline; }
         .seo-box strong { color: var(--text,#f8fafc); }
-        .scenario-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.65rem; margin-top: 0.75rem; }
-        .sc-card { background: var(--bg,#0f172a); border-radius: 10px; padding: 0.85rem 1rem; }
-        .sc-card .sc-title { font-size: 0.78rem; font-weight: 700; color: var(--accent,#818cf8); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.06em; }
-        .sc-card ul { list-style: none; padding: 0; margin: 0; }
-        .sc-card ul li { font-size: 0.82rem; color: var(--text-secondary,#cbd5e1); padding: 0.15rem 0; }
-        .sc-card ul li::before { content: "· "; color: var(--accent,#818cf8); }
-        @media (max-width: 640px) { .seo-section { padding: 0 0.75rem; } .mode-nav { gap: 0.35rem; padding: 0 0.75rem; } .mode-btn { font-size: 0.76rem; padding: 0.45rem 0.8rem; } .scenario-row { grid-template-columns: 1fr; } }
+        .steps { counter-reset: steps; list-style: none; padding: 0; margin: 0.75rem 0 0; display: flex; flex-direction: column; gap: 0.6rem; }
+        .steps li { counter-increment: steps; display: flex; gap: 0.75rem; align-items: flex-start; color: var(--text-secondary,#cbd5e1); font-size: 0.92rem; line-height: 1.6; }
+        .steps li::before { content: counter(steps); background: var(--accent,#6366f1); color: #fff; min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+        .steps li strong { color: var(--text,#f8fafc); }
+
+        @media (max-width: 640px) {
+            .chooser-wrap { padding: 0 0.75rem; }
+            .mode-nav { gap: 0.35rem; padding: 0 0.75rem; }
+            .mode-btn { font-size: 0.76rem; padding: 0.45rem 0.8rem; }
+            #touchField { height: 65vw; min-height: 240px; }
+            .seo-wrap { padding: 0 0.75rem; }
+        }
     </style>
     <script>
-        window.i18n = {
-            t: function(k){ var s={'empty-state':'Keine Optionen vorhanden.<br>Füge mindestens 2 Optionen hinzu!','canvas-empty':'Optionen hinzufügen','confirm-clear':'Alle löschen?','default-options':['Pizza','Pasta','Sushi','Burger']}; return s[k]||k; },
-            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
-            initLanguage: function(){}, currentLanguage: function(){ return 'de'; }
-        };
-        (function(){
-            try {
-                var existing = JSON.parse(localStorage.getItem('wheelOptions')||'[]');
-                if (!existing.length) {
-                    var colors=['#FF6B6B','#4ECDC4','#45B7D1','#FFA07A'];
-                    var opts=['Pizza','Pasta','Sushi','Burger'].map(function(t,i){return{text:t,color:colors[i%colors.length],id:Date.now()+i};});
-                    localStorage.setItem('wheelOptions', JSON.stringify(opts));
-                }
-            } catch(e){}
-        })();
+        window.i18n = { t: function(k){ return k; }, setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; }, initLanguage: function(){}, currentLanguage: function(){ return 'de'; } };
     </script>
 </head>
 <body>
@@ -81,8 +156,8 @@
 
     <div class="container">
         <header>
-            <h1>&#129300; Random Chooser</h1>
-            <p class="subtitle">Lass den Zufall deine Entscheidung treffen!</p>
+            <h1>&#129300; Finger Chooser</h1>
+            <p class="subtitle">Alle tippen – einer wird ausgewählt!</p>
         </header>
 
         <nav class="mode-nav" aria-label="Spielmodi">
@@ -91,101 +166,52 @@
             <a href="/de/zufallszahl-generator.html" class="mode-btn">&#127922; Zufallszahl</a>
             <a href="/de/chooser.html" class="mode-btn active">&#129300; Chooser</a>
             <a href="/de/spin-the-wheel.html" class="mode-btn">&#127757; Spin the Wheel</a>
-            <a href="/de/gluecksrad-vorlagen.html" class="mode-btn">&#128204; Vorlagen</a>
         </nav>
+    </div>
 
-        <div class="main-content">
-            <div class="wheel-section">
-                <div class="wheel-container">
-                    <div class="wheel-pointer"></div>
-                    <canvas id="wheelCanvas" width="500" height="500" aria-label="Random Chooser – Zufallsentscheidung"></canvas>
-                    <button id="spinBtn" class="spin-button" aria-label="Entscheiden">
-                        <span class="spin-text">WÄHLEN</span>
-                    </button>
-                </div>
-                <div class="result-display" id="resultDisplay" aria-live="polite"></div>
+    <!-- Touch Arena (außerhalb .container für volle Breite auf Mobile) -->
+    <div class="chooser-wrap">
+        <div class="chooser-card">
+            <div class="chooser-instruction">
+                <h2>&#128072; Alle Finger gleichzeitig auf das Feld legen</h2>
+                <p>Jede Person hält einen Finger auf die Fläche unten. Nach 2 Sekunden leuchtet eine Person auf – die ist dran!</p>
             </div>
-            <div class="controls-section">
-                <div class="card">
-                    <h2>Optionen eingeben</h2>
-                    <div class="input-group">
-                        <input type="text" id="optionInput" placeholder="Option hinzufügen …" maxlength="50" aria-label="Option eingeben">
-                        <button id="addBtn" class="btn btn-primary">Hinzufügen</button>
-                    </div>
+
+            <div id="touchField">
+                <div class="field-hint">
+                    <span class="hint-icon">&#128072;</span>
+                    <span>Finger auflegen zum Starten</span>
                 </div>
-                <div class="card">
-                    <h2>Aktionen</h2>
-                    <div class="action-buttons">
-                        <button id="shuffleBtn" class="btn btn-secondary" aria-label="Mischen">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
-                            <span>Mischen</span>
-                        </button>
-                        <button id="clearBtn" class="btn btn-danger" aria-label="Alle löschen">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                            <span>Alle löschen</span>
-                        </button>
-                    </div>
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" id="autoRemove">
-                            <span>Gewählte Option entfernen</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="card">
-                    <h2>Optionen (<span id="optionCount">0</span>)</h2>
-                    <div id="optionsList" class="options-list"></div>
-                </div>
+            </div>
+
+            <div class="chooser-result" id="chooserResult">
+                <span class="res-sub">Warte auf Finger …</span>
+            </div>
+
+            <div class="chooser-counter">
+                <span class="cnt-label">Finger auf dem Feld</span>
+                <span class="cnt-badge" id="fingerCount">0</span>
+                <button class="chooser-reset-btn" onclick="resetChooser()">&#8635; Reset</button>
             </div>
         </div>
+    </div>
 
-        <section class="seo-section" aria-label="Random Chooser Informationen">
-            <div class="seo-box">
-                <h2>Random Chooser – Entscheidungen ohne Stress</h2>
-                <p>Der <strong>Random Chooser</strong> auf SpinSelector ist dein persönlicher Entscheidungshelfer für alle Situationen, in denen du einfach nicht weißt, was du wählen sollst. Trage alle Optionen ins Rad ein, drücke auf „Wählen" und lass den Zufall das letzte Wort haben – schnell, fair und ohne endlose Diskussionen.</p>
-                <p>Als <strong>Decision Maker</strong> eignet sich SpinSelector besonders gut, wenn alle zur Wahl stehenden Optionen gleichwertig sind und keine davon wirklich falsch wäre. Der Zufallsalgorithmus behandelt jede Option identisch – kein Positions-Bias, keine unbewussten Präferenzen. Mehr dazu auf der Seite <a href="/de/vorteile.html">Vorteile &amp; fairer Zufall</a>.</p>
-            </div>
-
-            <div class="seo-box">
-                <h2>Beispiel-Szenarien für den Random Chooser</h2>
-                <div class="scenario-row">
-                    <div class="sc-card">
-                        <div class="sc-title">&#127829; Mittagessen</div>
-                        <ul>
-                            <li>Pizza</li>
-                            <li>Pasta</li>
-                            <li>Sushi</li>
-                            <li>Burger</li>
-                            <li>Salat</li>
-                        </ul>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-title">&#127916; Filmabend</div>
-                        <ul>
-                            <li>Action</li>
-                            <li>Komödie</li>
-                            <li>Horror</li>
-                            <li>Dokumentation</li>
-                            <li>Animation</li>
-                        </ul>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-title">&#128188; Team</div>
-                        <ul>
-                            <li>Alex moderiert</li>
-                            <li>Jana präsentiert</li>
-                            <li>Tim protokolliert</li>
-                            <li>Sofia leitet</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="seo-box">
-                <h2>Picker Tool für alle Lebenslagen</h2>
-                <p>Dank des <strong>Random Picker</strong>-Prinzips entfällt das mühsame Abwägen: Du gibst alle Möglichkeiten ins Rad, das Rad dreht sich, und die Entscheidung ist gefallen. Das Ergebnis wird von allen Beteiligten leichter akzeptiert, weil der Prozess transparent und fair ist – niemand kann dem Chooser Parteilichkeit vorwerfen. Mehr über die Psychologie hinter Zufallsentscheidungen erfährst du auf der <a href="/de/entscheidungen.html">Entscheidungshilfe-Seite</a>.</p>
-            </div>
-        </section>
+    <!-- SEO Content -->
+    <div class="seo-wrap">
+        <div class="seo-box">
+            <h2>So funktioniert der Finger Chooser</h2>
+            <ul class="steps">
+                <li><strong>Alle bereit?</strong> Reicht das Smartphone oder Tablet in die Runde. Jede Person, die mitmacht, legt gleichzeitig einen Finger auf die dunkle Fläche.</li>
+                <li><strong>Halten!</strong> Sobald mindestens 2 Finger erkannt werden, startet der Countdown automatisch. Alle Finger müssen für 2 Sekunden liegen bleiben.</li>
+                <li><strong>Aufleuchtende Person!</strong> Der Chooser wählt per Zufall einen Finger aus – dieser Punkt leuchtet auf und wird groß. Diese Person ist ausgewählt!</li>
+                <li><strong>Nochmal?</strong> Tippe auf „Reset" und startet eine neue Runde.</li>
+            </ul>
+        </div>
+        <div class="seo-box">
+            <h2>Wann ist der Finger Chooser ideal?</h2>
+            <p>Wer fängt beim Kartenspiel an? Wer stellt heute die Frage? Wer zahlt den ersten Kaffee? Der <strong>Finger Chooser</strong> macht solche Gruppenentscheidungen in Sekunden – fair, lustig und ohne Diskussion. Alle sind gleichzeitig beteiligt, niemand kann sich drücken, und das Ergebnis ist für alle sichtbar.</p>
+            <p>Besonders beliebt ist das Tool bei <strong>Partyspiele-Abenden</strong>, spontanen Entscheidungsrunden im Freundeskreis, im <strong>Unterricht</strong> für die faire Auswahl von Schülerinnen und Schülern sowie bei <strong>Teamspielen</strong> und Gruppenaktivitäten. Mehr Ideen findest du auf der <a href="/de/partyspiele.html">Partyspiele-Seite</a>.</p>
+        </div>
     </div>
 
     <footer>
@@ -202,7 +228,158 @@
             <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
         </div>
     </footer>
+
     <script src="/script.js"></script>
-    <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
+    <script>
+        function initTheme(){ var t=localStorage.getItem('theme')||'dark'; document.documentElement.setAttribute('data-theme',t); }
+        initTheme();
+
+        // ── Finger Chooser Logic ──────────────────────────────────────
+        var DOT_COLORS = ['#FF6B6B','#4ECDC4','#45B7D1','#FFA07A','#98D8C8','#F7DC6F','#BB8FCE','#85C1E2','#F8B739','#52B788'];
+        var field      = document.getElementById('touchField');
+        var resultEl   = document.getElementById('chooserResult');
+        var countEl    = document.getElementById('fingerCount');
+        var touches    = {};   // identifier → {el, x, y}
+        var timer      = null;
+        var chosen     = false;
+        var HOLD_MS    = 2000; // hold duration before pick
+        var countdown  = null;
+        var countdownVal = HOLD_MS / 1000;
+
+        function colorFor(idx){ return DOT_COLORS[idx % DOT_COLORS.length]; }
+
+        function makeDot(id, x, y) {
+            var idx  = Object.keys(touches).length;
+            var dot  = document.createElement('div');
+            dot.className = 'finger-dot';
+            dot.style.left  = x + 'px';
+            dot.style.top   = y + 'px';
+            dot.style.background = colorFor(idx);
+            dot.textContent = idx + 1;
+            field.appendChild(dot);
+            requestAnimationFrame(function(){ dot.classList.add('active'); });
+            touches[id] = { el: dot, x: x, y: y, idx: idx };
+            updateUI();
+        }
+
+        function removeDot(id) {
+            if (!touches[id]) return;
+            var dot = touches[id].el;
+            dot.classList.remove('active');
+            setTimeout(function(){ if(dot.parentNode) dot.parentNode.removeChild(dot); }, 200);
+            delete touches[id];
+            updateUI();
+        }
+
+        function updateUI() {
+            var n = Object.keys(touches).length;
+            countEl.textContent = n;
+            field.classList.toggle('has-touches', n > 0);
+            if (chosen) return;
+            if (n === 0) {
+                clearTimers();
+                resultEl.innerHTML = '<span class="res-sub">Warte auf Finger …</span>';
+            } else if (n === 1) {
+                clearTimers();
+                resultEl.innerHTML = '<span class="res-sub">Noch ' + (n > 0 ? 'mehr Finger hinzufügen …' : '') + '</span>';
+            } else {
+                if (!timer) startCountdown();
+            }
+        }
+
+        function startCountdown() {
+            clearTimers();
+            countdownVal = HOLD_MS / 1000;
+            updateCountdownDisplay();
+            countdown = setInterval(function(){
+                countdownVal = Math.max(0, countdownVal - 0.1);
+                updateCountdownDisplay();
+            }, 100);
+            timer = setTimeout(pickWinner, HOLD_MS);
+        }
+
+        function updateCountdownDisplay() {
+            if (chosen) return;
+            var n = Object.keys(touches).length;
+            resultEl.innerHTML = '<span class="res-sub">Finger halten … ' + countdownVal.toFixed(1) + 's</span>';
+        }
+
+        function clearTimers() {
+            if (timer)     { clearTimeout(timer);   timer = null; }
+            if (countdown) { clearInterval(countdown); countdown = null; }
+        }
+
+        function pickWinner() {
+            clearTimers();
+            var ids  = Object.keys(touches);
+            if (ids.length < 2) return;
+            chosen = true;
+            var arr  = new Uint32Array(1);
+            window.crypto.getRandomValues(arr);
+            var winId = ids[arr[0] % ids.length];
+            ids.forEach(function(id){
+                if (id === winId) {
+                    touches[id].el.classList.add('winner');
+                } else {
+                    touches[id].el.classList.add('loser');
+                }
+            });
+            var num = touches[winId].idx + 1;
+            resultEl.innerHTML = '<span class="res-text">&#127881; Finger ' + num + ' wurde ausgewählt!</span>';
+        }
+
+        function resetChooser() {
+            clearTimers();
+            chosen = false;
+            Object.keys(touches).forEach(function(id){
+                var dot = touches[id].el;
+                if (dot.parentNode) dot.parentNode.removeChild(dot);
+            });
+            touches = {};
+            countEl.textContent = '0';
+            field.classList.remove('has-touches');
+            resultEl.innerHTML = '<span class="res-sub">Warte auf Finger …</span>';
+        }
+
+        // ── Touch Events ──────────────────────────────────────────────
+        field.addEventListener('touchstart', function(e){
+            e.preventDefault();
+            if (chosen) return;
+            Array.from(e.changedTouches).forEach(function(t){
+                var rect = field.getBoundingClientRect();
+                makeDot(t.identifier, t.clientX - rect.left, t.clientY - rect.top);
+            });
+        }, { passive: false });
+
+        field.addEventListener('touchend', function(e){
+            e.preventDefault();
+            if (chosen) return;
+            Array.from(e.changedTouches).forEach(function(t){ removeDot(t.identifier); });
+            if (Object.keys(touches).length < 2) clearTimers();
+        }, { passive: false });
+
+        field.addEventListener('touchcancel', function(e){
+            e.preventDefault();
+            Array.from(e.changedTouches).forEach(function(t){ removeDot(t.identifier); });
+        }, { passive: false });
+
+        // ── Mouse fallback (desktop demo) ────────────────────────────
+        var mouseDown = false;
+        field.addEventListener('mousedown', function(e){
+            if ('ontouchstart' in window) return;
+            mouseDown = true;
+            var rect = field.getBoundingClientRect();
+            makeDot('mouse', e.clientX - rect.left, e.clientY - rect.top);
+            // Simulate a second finger at mirrored position for demo
+            if (Object.keys(touches).length === 1) {
+                makeDot('mouse2', rect.width - (e.clientX - rect.left), rect.height - (e.clientY - rect.top));
+            }
+        });
+        document.addEventListener('mouseup', function(){
+            if (!mouseDown || 'ontouchstart' in window) return;
+            mouseDown = false;
+            if (!chosen) { removeDot('mouse'); removeDot('mouse2'); }
+        });
+    </script>
 </body>
 </html>

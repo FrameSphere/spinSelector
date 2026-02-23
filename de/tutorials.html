@@ -38,55 +38,7 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
-    
-    <!--<style>
-        .page-wrap { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-        .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted,#94a3b8); margin-bottom: 2rem; flex-wrap: wrap; }
-        .breadcrumb a { color: var(--accent,#818cf8); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-        .breadcrumb span { opacity: 0.5; }
-        .page-hero { margin-bottom: 2.5rem; }
-        .page-hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin: 0 0 0.75rem; line-height: 1.2; }
-        .page-hero .lead { font-size: 1.05rem; color: var(--text-secondary,#cbd5e1); line-height: 1.7; margin: 0; }
-        .section-title { font-size: 1.35rem; font-weight: 800; margin: 2.5rem 0 1.25rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border,#334155); }
-        .content-prose { color: var(--text-secondary,#cbd5e1); line-height: 1.8; font-size: 0.97rem; }
-        .content-prose h3 { color: var(--text,#f8fafc); font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 0.5rem; }
-        .content-prose p { margin: 0 0 1rem; }
-        .content-prose ul, .content-prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-        .content-prose li { margin-bottom: 0.45rem; }
-        .content-prose a { color: var(--accent,#818cf8); text-decoration: underline; text-underline-offset: 3px; }
-        .content-prose strong { color: var(--text,#f8fafc); }
-        .tut-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin: 1.5rem 0 2.5rem; }
-        .tut-nav a { display: flex; align-items: center; gap: 0.6rem; padding: 0.9rem 1.1rem; border-radius: 10px; background: var(--card-bg,#1e293b); color: var(--text,#f8fafc); text-decoration: none; font-size: 0.9rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, transform .18s; }
-        .tut-nav a:hover { background: var(--accent,#6366f1); transform: translateY(-1px); }
-        .tut-block { background: var(--card-bg,#1e293b); border-radius: 16px; padding: 1.75rem 1.8rem; margin-bottom: 1.5rem; }
-        .tut-block .tut-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent,#818cf8); margin-bottom: 0.5rem; }
-        .tut-block h2 { font-size: 1.2rem; font-weight: 800; color: var(--text,#f8fafc); margin: 0 0 0.85rem; }
-        .tut-block p { color: var(--text-secondary,#cbd5e1); font-size: 0.95rem; line-height: 1.75; margin: 0 0 0.75rem; }
-        .tut-block p:last-child { margin: 0; }
-        .tut-block a { color: var(--accent,#818cf8); text-decoration: underline; text-underline-offset: 3px; }
-        .step-list { counter-reset: steps; list-style: none; padding: 0; margin: 1rem 0 0.5rem; }
-        .step-list li { counter-increment: steps; display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; }
-        .step-list li::before { content: counter(steps); background: var(--accent,#6366f1); color: #fff; min-width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 800; flex-shrink: 0; margin-top: 2px; }
-        .step-list li .step-text { color: var(--text-secondary,#cbd5e1); font-size: 0.95rem; line-height: 1.65; }
-        .step-list li .step-text strong { color: var(--text,#f8fafc); }
-        .tip-box { background: var(--card-bg,#1e293b); border-left: 4px solid #6366f1; border-radius: 0 12px 12px 0; padding: 1rem 1.3rem; margin: 1.5rem 0; }
-        .tip-box p { color: var(--text-secondary,#cbd5e1); font-size: 0.93rem; margin: 0; line-height: 1.7; }
-        .tip-box strong { color: var(--text,#f8fafc); }
-        .keyboard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 0.75rem; margin: 1rem 0; }
-        .shortcut-card { background: var(--bg,#0f172a); border-radius: 10px; padding: 0.85rem 1rem; border: 1px solid var(--border,#334155); }
-        .shortcut-card .key { display: inline-block; background: var(--card-bg,#1e293b); border: 1px solid var(--border,#334155); border-radius: 5px; padding: 0.15rem 0.5rem; font-family: monospace; font-size: 0.85rem; color: var(--text,#f8fafc); margin-bottom: 0.35rem; }
-        .shortcut-card p { color: var(--text-secondary,#cbd5e1); font-size: 0.82rem; margin: 0; line-height: 1.5; }
-        .related-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 2rem; }
-        .related-links a { display: flex; align-items: center; gap: 0.55rem; padding: 0.85rem 1.1rem; border-radius: 10px; background: var(--card-bg,#1e293b); color: var(--text,#f8fafc); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: background .18s, transform .18s; border: 1px solid var(--border,#334155); }
-        .related-links a:hover { background: var(--accent,#6366f1); transform: translateY(-1px); }
-        @media (max-width: 640px) {
-            .page-wrap { padding: 1.25rem 0.75rem 3rem; }
-            .tut-nav { grid-template-columns: 1fr; }
-            .related-links { grid-template-columns: 1fr; }
-            .tut-block { padding: 1.25rem 1.1rem; }
-        }
-    </style>-->
+
     <script>
         window.i18n = {
             t: function(k){ var s={'empty-state':'Keine Optionen vorhanden.<br>Füge mindestens 2 Optionen hinzu!','canvas-empty':'Füge Optionen hinzu','confirm-clear':'Alle löschen?','default-options':['Option 1','Option 2','Option 3']}; return s[k]||k; },

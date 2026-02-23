@@ -42,13 +42,6 @@
     margin: 0;
 }
 
-/* ── Ad Slot ────────────────────────────────────────────────────────────── */
-.ad-slot {
-    margin: 2rem 0;
-    text-align: center;
-    min-height: 90px;
-}
-
 /* ── Section Title ──────────────────────────────────────────────────────── */
 .section-title {
     font-size: 1.35rem;

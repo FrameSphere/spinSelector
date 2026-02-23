@@ -43,62 +43,13 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
-    <!--<style>
-        .page-wrap { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-        .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted,#94a3b8); margin-bottom: 2rem; flex-wrap: wrap; }
-        .breadcrumb a { color: var(--accent,#818cf8); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-        .breadcrumb span { opacity: 0.5; }
-        .page-hero { margin-bottom: 2.5rem; }
-        .page-hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin: 0 0 0.75rem; line-height: 1.2; }
-        .page-hero .lead { font-size: 1.05rem; color: var(--text-secondary,#cbd5e1); line-height: 1.7; margin: 0; }
-        .section-title { font-size: 1.35rem; font-weight: 800; margin: 2.5rem 0 1.25rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border,#334155); }
-        .content-prose { color: var(--text-secondary,#cbd5e1); line-height: 1.8; font-size: 0.97rem; }
-        .content-prose h2 { color: var(--text,#f8fafc); font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.75rem; }
-        .content-prose h3 { color: var(--text,#f8fafc); font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 0.5rem; }
-        .content-prose p { margin: 0 0 1rem; }
-        .content-prose ul, .content-prose ol { padding-left: 1.4rem; margin: 0 0 1rem; }
-        .content-prose li { margin-bottom: 0.45rem; }
-        .content-prose a { color: var(--accent,#818cf8); text-decoration: underline; text-underline-offset: 3px; }
-        .content-prose strong { color: var(--text,#f8fafc); }
-        .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
-        .use-card { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.3rem 1.4rem; }
-        .use-card h3 { font-size: 0.97rem; font-weight: 700; margin: 0 0 0.6rem; display: flex; align-items: center; gap: 0.45rem; color: var(--text,#f8fafc); }
-        .use-card p { color: var(--text-secondary,#cbd5e1); font-size: 0.88rem; line-height: 1.65; margin: 0 0 0.75rem; }
-        .use-card .options-box { background: var(--bg,#0f172a); border-radius: 8px; padding: 0.7rem 0.9rem; }
-        .use-card .options-box span { display: block; font-size: 0.76rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted,#94a3b8); margin-bottom: 0.35rem; }
-        .use-card .options-box ul { padding-left: 1rem; margin: 0; color: var(--text-secondary,#cbd5e1); font-size: 0.83rem; }
-        .use-card .options-box ul li { margin-bottom: 0.15rem; }
-        .tip-box { background: var(--card-bg,#1e293b); border-left: 4px solid #6366f1; border-radius: 0 12px 12px 0; padding: 1rem 1.3rem; margin: 1.5rem 0; }
-        .tip-box p { color: var(--text-secondary,#cbd5e1); font-size: 0.93rem; margin: 0; line-height: 1.7; }
-        .tip-box strong { color: var(--text,#f8fafc); }
-        .step-list { counter-reset: steps; list-style: none; padding: 0; margin: 1rem 0 1.5rem; }
-        .step-list li { counter-increment: steps; display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; }
-        .step-list li::before { content: counter(steps); background: var(--accent,#6366f1); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
-        .step-list li .step-text { color: var(--text-secondary,#cbd5e1); font-size: 0.95rem; line-height: 1.65; }
-        .step-list li .step-text strong { color: var(--text,#f8fafc); }
-        .cta-banner { background: linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%); border-radius: 16px; padding: 1.75rem 2rem; margin: 2.5rem 0; text-align: center; }
-        .cta-banner h2 { color: #fff; font-size: 1.3rem; margin: 0 0 0.6rem; }
-        .cta-banner p { color: rgba(255,255,255,0.85); font-size: 0.95rem; margin: 0 0 1.2rem; line-height: 1.6; }
-        .cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: #fff; color: #6366f1; padding: 0.75rem 1.75rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: transform .18s, box-shadow .18s; }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
-        .related-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 2rem; }
-        .related-links a { display: flex; align-items: center; gap: 0.55rem; padding: 0.85rem 1.1rem; border-radius: 10px; background: var(--card-bg,#1e293b); color: var(--text,#f8fafc); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: background .18s, transform .18s; border: 1px solid var(--border,#334155); }
-        .related-links a:hover { background: var(--accent,#6366f1); transform: translateY(-1px); }
-        .fach-badge { display: inline-block; padding: 0.2rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 700; background: rgba(99,102,241,0.15); color: #818cf8; border: 1px solid rgba(99,102,241,0.3); margin-bottom: 0.5rem; }
-        @media (max-width: 640px) {
-            .page-wrap { padding: 1.25rem 0.75rem 3rem; }
-            .card-grid { grid-template-columns: 1fr; }
-            .related-links { grid-template-columns: 1fr; }
-        }
-    </style>
     <script>
         window.i18n = {
             t: function(k){ var s={'empty-state':'Keine Optionen vorhanden.<br>Füge mindestens 2 Optionen hinzu!','canvas-empty':'Füge Optionen hinzu','confirm-clear':'Alle löschen?','default-options':['Option 1','Option 2','Option 3']}; return s[k]||k; },
             setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
             initLanguage: function(){}, currentLanguage: function(){ return 'de'; }
         };
-    </script>-->
+    </script>
 </head>
 <body>
     <div class="language-selector">

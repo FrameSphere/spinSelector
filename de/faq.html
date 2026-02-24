@@ -21,6 +21,9 @@
     <meta name="theme-color" content="#0f172a">
 
     <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/de/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://spinselector.pages.dev/de/faq.html"}]}
+    </script>
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -34,7 +37,10 @@
         {"@type":"Question","name":"Kann ich das Rad für Verlosungen nutzen?","acceptedAnswer":{"@type":"Answer","text":"Absolut. Trage alle Teilnehmernamen ein, aktiviere die Funktion Automatisch entfernen nach Drehen und ziehe Runde für Runde – jeder Name kann so nur einmal gezogen werden."}},
         {"@type":"Question","name":"Was bedeutet Auto-Entfernen?","acceptedAnswer":{"@type":"Answer","text":"Ist die Checkbox Automatisch entfernen nach Drehen aktiviert, wird die gewonnene Option nach jeder Drehung automatisch vom Rad entfernt. Ideal für Turniere, Verlosungen und Schüleraufrufe."}},
         {"@type":"Question","name":"Wie ändere ich die Sprache?","acceptedAnswer":{"@type":"Answer","text":"Klicke oben rechts auf das Globus-Symbol. Im Dropdown kannst du zwischen Deutsch, English, Français und Español wählen. Die gewählte Sprache wird gespeichert."}},
-        {"@type":"Question","name":"Gibt es eine App für SpinSelector?","acceptedAnswer":{"@type":"Answer","text":"Derzeit gibt es keine native App. SpinSelector ist jedoch als Progressive Web App konzipiert und kann auf dem Smartphone-Homescreen installiert werden – es verhält sich dann wie eine App."}}
+        {"@type":"Question","name":"Gibt es eine App für SpinSelector?","acceptedAnswer":{"@type":"Answer","text":"Derzeit gibt es keine native App. SpinSelector ist jedoch als Progressive Web App konzipiert und kann auf dem Smartphone-Homescreen installiert werden – es verhält sich dann wie eine App."}},
+        {"@type":"Question","name":"Kann ich mit SpinSelector zufällig Teams erstellen?","acceptedAnswer":{"@type":"Answer","text":"Ja – der kostenlose Team Generator auf SpinSelector teilt beliebig viele Teilnehmer fair und zufällig auf Teams auf. Anzahl der Teams frei wählbar, mit farblich kodierten Team-Karten."}},
+        {"@type":"Question","name":"Gibt es Wahrheit oder Pflicht auf SpinSelector?","acceptedAnswer":{"@type":"Answer","text":"Ja! Das vollständige Wahrheit-oder-Pflicht-Spiel mit über 100 Fragen und Aufgaben, 3 Schwierigkeitsstufen, 5 Kategorien und Spielerverwaltung steht kostenlos zur Verfügung."}},
+        {"@type":"Question","name":"Wie funktioniert der Name Picker \"Namen ziehen\"?","acceptedAnswer":{"@type":"Answer","text":"Der Namen-Picker erlaubt es, eine beliebige Teilnehmerliste einzugeben und dann per Zufallsalgorithmus einen oder mehrere Namen zu ziehen. Mit Verlauf, Anti-Wiederholungs-Funktion und Bulk-Import."}}
       ]
     }
     </script>
@@ -304,12 +310,13 @@
             <h3>Für welche Situationen eignet sich SpinSelector besonders gut?</h3>
             <p>SpinSelector ist extrem vielseitig. Hier sind die beliebtesten Einsatzgebiete unserer Nutzer:</p>
             <ul>
-                <li><strong>🎉 Partys & Feiern:</strong> Trinkspiele, Wahrheit oder Pflicht, Aufgaben-Rad, Gewinnerauswahl – mehr Ideen auf unserer <a href="/de/partyspiele.html">Partyspiele-Seite</a></li>
-                <li><strong>🎓 Schule & Unterricht:</strong> Schüler zufällig aufrufen, Gruppen bilden, Themen verteilen – ausführlich erklärt auf der <a href="/de/unterricht.html">Unterrichts-Seite</a></li>
-                <li><strong>💼 Team & Büro:</strong> Reihenfolge für Präsentationen, Kuchenbringer, Meetingmoderator bestimmen</li>
-                <li><strong>🍽️ Alltag:</strong> Restaurant wählen, Tagesplan erstellen, Filmabend-Entscheidung – mehr auf der <a href="/de/entscheidungen.html">Entscheidungshilfe-Seite</a></li>
+                <li><strong>🎉 Partys & Feiern:</strong> <a href="/de/truth-or-dare.html">Wahrheit oder Pflicht</a>, Trinkspiele, Aufgaben-Rad, Gewinnerauswahl – mehr Ideen auf unserer <a href="/de/partyspiele.html">Partyspiele-Seite</a></li>
+                <li><strong>🎓 Schule & Unterricht:</strong> Schüler zufällig aufrufen, <a href="/de/team-generator.html">Gruppen fair aufteilen</a>, <a href="/de/wheel-of-names.html">Namen ziehen</a> – mehr auf der <a href="/de/unterricht.html">Unterrichts-Seite</a></li>
+                <li><strong>💼 Team & Büro:</strong> Reihenfolge für Präsentationen bestimmen oder mit dem <a href="/de/team-generator.html">Team Generator</a> faire Projektgruppen erstellen</li>
+                <li><strong>📝 Namen ziehen:</strong> Mit dem <a href="/de/wheel-of-names.html">Name Picker</a> Teilnehmer eintragen und zufällig ziehen – ideal für Verlosungen</li>
+                <li><strong>🍽️ Alltag:</strong> Restaurant wählen, Filmabend-Entscheidung, Tagesplan – mehr auf der <a href="/de/entscheidungen.html">Entscheidungshilfe-Seite</a></li>
                 <li><strong>🎰 Verlosungen:</strong> Gewinnspiele, Tombola, Adventskalender-Türchen vergeben</li>
-                <li><strong>🎮 Gaming:</strong> Zufälliger Spielmodus, Map-Auswahl, Team-Zusammenstellung</li>
+                <li><strong>🎮 Gaming:</strong> Zufälliger Spielmodus, Map-Auswahl, Team-Zusammenstellung mit dem <a href="/de/team-generator.html">Team Generator</a></li>
             </ul>
         </div>
 
@@ -318,10 +325,12 @@
         <nav class="related-links" aria-label="Verwandte Seiten">
             <a href="/de/tutorials.html">📖 Tutorials & Anleitungen</a>
             <a href="/de/partyspiele.html">🎉 Partyspiele-Ideen</a>
+            <a href="/de/truth-or-dare.html">🤥 Wahrheit oder Pflicht</a>
+            <a href="/de/team-generator.html">👥 Team Generator</a>
+            <a href="/de/wheel-of-names.html">👤 Namen ziehen</a>
             <a href="/de/unterricht.html">🎓 Glücksrad im Unterricht</a>
             <a href="/de/entscheidungen.html">🤔 Entscheidungshilfe</a>
             <a href="/de/geschichte.html">🏛️ Geschichte des Glücksrads</a>
-            <a href="/de/beruehmte-gluecksspiele.html">🎰 Berühmte Glücksspiele</a>
         </nav>
 
     </div>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahrheit oder Pflicht – Online Partyspiel kostenlos | SpinSelector</title>
+    <meta name="description" content="Wahrheit oder Pflicht online spielen – kostenlos, ohne Download. Wähle Kategorie und Schwierigkeitsgrad, drehe das Rad und beantworte Fragen oder erfülle Aufgaben. Perfekt für Partys!">
+    <meta name="keywords" content="Wahrheit oder Pflicht online, Truth or Dare, Wahrheit oder Pflicht Fragen, Partyspiel online, Wahrheit Pflicht Generator, Partyspiele kostenlos, Truth or Dare deutsch">
+    <link rel="canonical" href="https://spinselector.pages.dev/de/truth-or-dare.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/truth-or-dare.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Wahrheit oder Pflicht – Kostenloses Online Partyspiel">
+    <meta property="og:description" content="Drehe das Rad, wähle Wahrheit oder Pflicht und spiel direkt los. Mit Schwierigkeitsstufen, Kategorien und über 200 Fragen und Aufgaben.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinselector.pages.dev/de/truth-or-dare.html">
+    <meta name="theme-color" content="#0f172a">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Wahrheit oder Pflicht","url":"https://spinselector.pages.dev/de/truth-or-dare.html","description":"Kostenloses Wahrheit-oder-Pflicht-Spiel online: Rad drehen, Kategorie wählen, sofort spielen. Über 200 Fragen und Aufgaben in verschiedenen Schwierigkeitsgraden.","applicationCategory":"GameApplication","operatingSystem":"Web Browser","inLanguage":"de","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+    </script>
+    <link rel="stylesheet" href="/styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <style>
+        /* ── Mode Nav ── */
+        .mode-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin: 0 auto 1.5rem; max-width: 960px; }
+        .mode-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--card-bg,#1e293b); color: var(--text-secondary,#cbd5e1); text-decoration: none; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, color .18s, transform .18s; white-space: nowrap; }
+        .mode-btn:hover { background: var(--accent,#6366f1); color: #fff; transform: translateY(-1px); border-color: transparent; }
+        .mode-btn.active { background: linear-gradient(135deg,#ec4899,#f43f5e); color: #fff; border-color: transparent; }
+
+        /* ── Game Layout ── */
+        .game-wrap { max-width: 960px; margin: 0 auto 2rem; padding: 0 1.25rem; }
+
+        /* ── Player bar ── */
+        .player-bar { background: var(--card-bg,#1e293b); border-radius: 16px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+        .player-bar h3 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted,#94a3b8); margin: 0; white-space: nowrap; }
+        .players-list { display: flex; flex-wrap: wrap; gap: 0.4rem; flex: 1; }
+        .player-chip { display: flex; align-items: center; gap: 0.35rem; border-radius: 999px; padding: 0.3rem 0.7rem 0.3rem 0.4rem; font-size: 0.83rem; font-weight: 700; color: #fff; cursor: pointer; transition: opacity .15s; }
+        .player-chip .pc-dot { width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 800; }
+        .player-chip:hover { opacity: 0.8; }
+        .player-chip.active-player { box-shadow: 0 0 0 3px #fff; transform: scale(1.05); }
+        .add-player-row { display: flex; gap: 0.4rem; }
+        .add-player-row input { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 9px; padding: 0.4rem 0.7rem; color: var(--text,#f8fafc); font-size: 0.85rem; width: 130px; }
+        .add-player-row input:focus { outline: none; border-color: #ec4899; }
+        .btn-add-player { background: linear-gradient(135deg,#ec4899,#f43f5e); color: #fff; border: none; border-radius: 9px; padding: 0.4rem 0.75rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+        .current-player-label { font-size: 0.78rem; color: var(--text-muted,#94a3b8); white-space: nowrap; }
+        .current-player-name { font-weight: 800; color: var(--text,#f8fafc); }
+
+        /* ── Config bar ── */
+        .config-bar { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; align-items: center; }
+        .config-group { background: var(--card-bg,#1e293b); border-radius: 12px; padding: 0.5rem 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .config-group label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted,#94a3b8); white-space: nowrap; }
+        .config-group select { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 7px; padding: 0.3rem 0.55rem; color: var(--text,#f8fafc); font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+        .config-group select:focus { outline: none; }
+        .diff-pills { display: flex; gap: 0.3rem; }
+        .diff-pill { border: 1px solid var(--border,#334155); background: var(--bg,#0f172a); color: var(--text-secondary,#cbd5e1); border-radius: 7px; padding: 0.3rem 0.65rem; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
+        .diff-pill.active { border-color: transparent; color: #fff; }
+        .diff-pill[data-d="leicht"].active   { background: #10b981; }
+        .diff-pill[data-d="mittel"].active   { background: #f59e0b; }
+        .diff-pill[data-d="krass"].active    { background: #ef4444; }
+
+        /* ── Main card ── */
+        .main-card { border-radius: 24px; overflow: hidden; margin-bottom: 1.25rem; position: relative; min-height: 340px; display: flex; flex-direction: column; }
+
+        /* resting state – choice screen */
+        .choice-screen { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; gap: 1.25rem; background: var(--card-bg,#1e293b); }
+        .choice-screen.hidden { display: none; }
+        .choice-who { font-size: 0.9rem; color: var(--text-muted,#94a3b8); margin-bottom: -0.5rem; }
+        .choice-who strong { color: var(--text,#f8fafc); }
+        .choice-btns { display: flex; gap: 1rem; }
+        .btn-truth, .btn-dare { padding: 1.1rem 2.5rem; border: none; border-radius: 16px; font-size: 1.3rem; font-weight: 900; cursor: pointer; transition: transform .2s, box-shadow .2s; letter-spacing: 0.02em; }
+        .btn-truth { background: linear-gradient(135deg,#3b82f6,#6366f1); color: #fff; box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+        .btn-dare  { background: linear-gradient(135deg,#ec4899,#f43f5e); color: #fff; box-shadow: 0 6px 24px rgba(236,72,153,0.4); }
+        .btn-truth:hover, .btn-dare:hover { transform: translateY(-4px) scale(1.04); }
+        .btn-truth:active, .btn-dare:active { transform: translateY(0) scale(0.98); }
+        .btn-random-pick { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 10px; padding: 0.5rem 1.2rem; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+        .btn-random-pick:hover { background: #6366f1; color: #fff; border-color: transparent; }
+
+        /* task screen */
+        .task-screen { flex: 1; display: flex; flex-direction: column; min-height: 340px; }
+        .task-screen.hidden { display: none; }
+        .task-header { padding: 1.25rem 1.5rem 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+        .task-badge { border-radius: 999px; padding: 0.35rem 1rem; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+        .badge-truth { background: linear-gradient(135deg,#3b82f6,#6366f1); color: #fff; }
+        .badge-dare  { background: linear-gradient(135deg,#ec4899,#f43f5e); color: #fff; }
+        .task-player-name { font-size: 0.85rem; font-weight: 700; color: var(--text-muted,#94a3b8); }
+        .task-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 2rem; text-align: center; }
+        .task-emoji { font-size: 3.5rem; margin-bottom: 0.75rem; animation: emoji-pop .4s cubic-bezier(.34,1.56,.64,1); }
+        @keyframes emoji-pop { from{transform:scale(0.5) rotate(-15deg);opacity:0} to{transform:scale(1) rotate(0deg);opacity:1} }
+        .task-text { font-size: 1.35rem; font-weight: 800; color: var(--text,#f8fafc); line-height: 1.45; max-width: 560px; animation: text-slide .35s ease-out; }
+        @keyframes text-slide { from{transform:translateY(12px);opacity:0} to{transform:translateY(0);opacity:1} }
+        .task-category { font-size: 0.75rem; font-weight: 600; color: var(--text-muted,#94a3b8); margin-top: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; }
+        .task-footer { padding: 1rem 1.5rem 1.25rem; display: flex; gap: 0.65rem; justify-content: center; flex-wrap: wrap; }
+        .btn-done    { background: #10b981; color: #fff; border: none; border-radius: 12px; padding: 0.7rem 1.8rem; font-size: 1rem; font-weight: 800; cursor: pointer; transition: opacity .15s, transform .15s; }
+        .btn-done:hover { opacity: 0.88; transform: translateY(-2px); }
+        .btn-skip    { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 12px; padding: 0.7rem 1.2rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+        .btn-skip:hover { border-color: #f59e0b; color: #f59e0b; }
+        .btn-new-task { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 12px; padding: 0.7rem 1.2rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+        .btn-new-task:hover { border-color: #6366f1; color: #818cf8; }
+
+        /* BG glow per type */
+        .task-screen.type-truth { background: linear-gradient(160deg, rgba(59,130,246,0.08) 0%, var(--card-bg,#1e293b) 60%); }
+        .task-screen.type-dare  { background: linear-gradient(160deg, rgba(236,72,153,0.1) 0%, var(--card-bg,#1e293b) 60%); }
+
+        /* ── Scoreboard ── */
+        .scoreboard { background: var(--card-bg,#1e293b); border-radius: 16px; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; }
+        .scoreboard h3 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted,#94a3b8); margin: 0 0 0.75rem; }
+        .score-list { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .score-item { background: var(--bg,#0f172a); border-radius: 10px; padding: 0.5rem 0.85rem; display: flex; flex-direction: column; align-items: center; gap: 0.1rem; min-width: 72px; }
+        .score-name { font-size: 0.78rem; font-weight: 700; color: var(--text,#f8fafc); text-align: center; max-width: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .score-nums { display: flex; gap: 0.5rem; }
+        .score-t { font-size: 0.72rem; color: #60a5fa; font-weight: 700; }
+        .score-d { font-size: 0.72rem; color: #f472b6; font-weight: 700; }
+        .score-skip { font-size: 0.68rem; color: var(--text-muted,#94a3b8); }
+
+        /* ── History ── */
+        .history-bar { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1rem 1.25rem; }
+        .history-bar h3 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted,#94a3b8); margin: 0 0 0.6rem; }
+        .history-items { display: flex; flex-direction: column; gap: 0.4rem; max-height: 140px; overflow-y: auto; }
+        .hi-item { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.82rem; }
+        .hi-badge { flex-shrink: 0; border-radius: 5px; padding: 0.1rem 0.45rem; font-size: 0.67rem; font-weight: 800; }
+        .hi-t { background: #1d4ed8; color: #93c5fd; }
+        .hi-d { background: #9d174d; color: #fda4af; }
+        .hi-text { color: var(--text-secondary,#cbd5e1); line-height: 1.4; }
+        .hi-player { font-weight: 700; color: var(--text,#f8fafc); }
+
+        /* ── SEO ── */
+        .seo-wrap { max-width: 960px; margin: 0 auto 3rem; padding: 0 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.4rem 1.6rem; }
+        .seo-box.full { grid-column: 1/-1; }
+        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.05rem; font-weight: 800; margin: 0 0 0.65rem; }
+        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.75; font-size: 0.92rem; margin: 0 0 0.6rem; }
+        .seo-box p:last-child { margin: 0; }
+        .seo-box a { color: var(--accent,#818cf8); text-decoration: underline; }
+        .seo-box strong { color: var(--text,#f8fafc); }
+        .q-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; }
+        .q-card { background: var(--bg,#0f172a); border-radius: 9px; padding: 0.65rem 0.8rem; font-size: 0.82rem; }
+        .q-card .ql { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+        .q-card.qt .ql { color: #60a5fa; }
+        .q-card.qd .ql { color: #f472b6; }
+        .q-card p { color: var(--text-secondary,#cbd5e1); margin: 0; line-height: 1.4; }
+
+        @media (max-width: 640px) {
+            .choice-btns { flex-direction: column; width: 100%; }
+            .btn-truth, .btn-dare { width: 100%; padding: 1rem; }
+            .task-text { font-size: 1.1rem; }
+            .mode-nav { gap: 0.35rem; padding: 0 0.75rem; }
+            .mode-btn { font-size: 0.76rem; padding: 0.45rem 0.8rem; }
+            .seo-wrap { grid-template-columns: 1fr; }
+            .seo-box.full { grid-column: 1; }
+            .q-preview { grid-template-columns: 1fr; }
+            .config-bar { gap: 0.5rem; }
+            .game-wrap { padding: 0 0.75rem; }
+        }
+    </style>
+    <script>window.i18n={t:function(k){return k;},setLanguage:function(l){localStorage.setItem('language',l);window.location.href='/'+l+'/';},initLanguage:function(){},currentLanguage:function(){return'de';}};</script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Sprache wechseln">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">DE</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">&#127465;&#127466; Deutsch</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Theme wechseln">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>&#129325; Wahrheit oder Pflicht</h1>
+            <p class="subtitle">Das klassische Partyspiel – online, kostenlos, sofort!</p>
+        </header>
+        <nav class="mode-nav" aria-label="Spielmodi">
+            <a href="/de/" class="mode-btn">&#127921; Glücksrad</a>
+            <a href="/de/wheel-of-names.html" class="mode-btn">&#128100; Namen</a>
+            <a href="/de/zufallszahl-generator.html" class="mode-btn">&#127922; Zufallszahl</a>
+            <a href="/de/chooser.html" class="mode-btn">&#129300; Chooser</a>
+            <a href="/de/team-generator.html" class="mode-btn">&#128101; Teams</a>
+            <a href="/de/truth-or-dare.html" class="mode-btn active">&#129325; Wahrheit/Pflicht</a>
+        </nav>
+    </div>
+
+    <div class="game-wrap">
+
+        <!-- Player Bar -->
+        <div class="player-bar">
+            <h3>Spieler</h3>
+            <div class="players-list" id="playersList"></div>
+            <div class="add-player-row">
+                <input type="text" id="playerInput" placeholder="Name…" maxlength="20">
+                <button class="btn-add-player" onclick="addPlayer()">+</button>
+            </div>
+            <div class="current-player-label" id="currentPlayerLabel" style="display:none">
+                Dran: <span class="current-player-name" id="currentPlayerName"></span>
+            </div>
+        </div>
+
+        <!-- Config Bar -->
+        <div class="config-bar">
+            <div class="config-group">
+                <label>Kategorie</label>
+                <select id="catSelect">
+                    <option value="alle">&#127775; Alle</option>
+                    <option value="freundschaft">&#128149; Freundschaft</option>
+                    <option value="peinlich">&#128514; Peinlich</option>
+                    <option value="abenteuer">&#128640; Abenteuer</option>
+                    <option value="kreativ">&#127775; Kreativ</option>
+                    <option value="sport">&#9917; Sport</option>
+                </select>
+            </div>
+            <div class="config-group">
+                <label>Level</label>
+                <div class="diff-pills">
+                    <button class="diff-pill active" data-d="leicht" onclick="setDiff('leicht')">&#128994; Leicht</button>
+                    <button class="diff-pill" data-d="mittel" onclick="setDiff('mittel')">&#128993; Mittel</button>
+                    <button class="diff-pill" data-d="krass" onclick="setDiff('krass')">&#128308; Krass</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Game Card -->
+        <div class="main-card">
+            <!-- Choice Screen -->
+            <div class="choice-screen" id="choiceScreen">
+                <div class="choice-who" id="choiceWho"><strong>Alle</strong> – wählt:</div>
+                <div class="choice-btns">
+                    <button class="btn-truth" onclick="showTask('truth')">&#128161; Wahrheit</button>
+                    <button class="btn-dare"  onclick="showTask('dare')">&#128293; Pflicht</button>
+                </div>
+                <button class="btn-random-pick" onclick="showTask(Math.random()<0.5?'truth':'dare')">&#127922; Zufällig wählen</button>
+            </div>
+
+            <!-- Task Screen -->
+            <div class="task-screen hidden" id="taskScreen">
+                <div class="task-header">
+                    <span class="task-badge" id="taskBadge">Wahrheit</span>
+                    <span class="task-player-name" id="taskPlayerName"></span>
+                </div>
+                <div class="task-body">
+                    <div class="task-emoji" id="taskEmoji">&#128161;</div>
+                    <div class="task-text" id="taskText">Lade…</div>
+                    <div class="task-category" id="taskCat"></div>
+                </div>
+                <div class="task-footer">
+                    <button class="btn-done"     onclick="markDone()">&#9989; Erledigt!</button>
+                    <button class="btn-new-task" onclick="reroll()">&#127922; Andere Aufgabe</button>
+                    <button class="btn-skip"     onclick="markSkip()">&#128704; Überspringen</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard" id="scoreboard" style="display:none">
+            <h3>&#127942; Punkte</h3>
+            <div class="score-list" id="scoreList"></div>
+        </div>
+
+        <!-- History -->
+        <div class="history-bar">
+            <h3>&#128221; Verlauf</h3>
+            <div class="history-items" id="historyItems">
+                <div style="font-size:0.82rem;color:var(--text-muted,#94a3b8)">Noch keine Runden gespielt.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO -->
+    <div class="seo-wrap">
+        <div class="seo-box full">
+            <h2>Wahrheit oder Pflicht online – über 200 Fragen &amp; Aufgaben</h2>
+            <p>Unser <strong>Wahrheit oder Pflicht Generator</strong> bringt das klassische Partyspiel direkt in deinen Browser – kostenlos, ohne App-Download, sofort einsatzbereit. Wähle Schwierigkeit und Kategorie, tippe auf „Wahrheit" oder „Pflicht" und erhalte sofort eine zufällige Frage oder Aufgabe aus unserem Datenbank mit über 200 einzigartigen Einträgen.</p>
+            <div class="q-preview">
+                <div class="q-card qt"><div class="ql">&#128161; Wahrheit – Freundschaft</div><p>Was war dein peinlichstes Erlebnis mit jemandem in dieser Runde?</p></div>
+                <div class="q-card qd"><div class="ql">&#128293; Pflicht – Abenteuer</div><p>Ruf jemanden an und sing die ersten 10 Sekunden deines Lieblingslieds.</p></div>
+                <div class="q-card qt"><div class="ql">&#128161; Wahrheit – Peinlich</div><p>Was war die cringe-igste Nachricht, die du je verschickt hast?</p></div>
+                <div class="q-card qd"><div class="ql">&#128293; Pflicht – Sport</div><p>Mach 20 Liegestütze ohne Pause – alle zählen laut mit.</p></div>
+            </div>
+        </div>
+        <div class="seo-box">
+            <h2>Tipps für die beste Runde</h2>
+            <p>Füge oben alle Spielernamen hinzu – das Spiel merkt sich, wer dran ist und führt automatisch Punkte. Wähle „Leicht" für Runden mit Kindern, „Mittel" für Freundesabende und „Krass" für richtig mutige Gruppen. Kombiniere es mit dem <a href="/de/wheel-of-names.html">Namen-Picker</a> um die Reihenfolge festzulegen!</p>
+        </div>
+        <div class="seo-box">
+            <h2>Regeln des Spiels</h2>
+            <p>Der aktuelle Spieler wählt <strong>Wahrheit</strong> (eine Frage ehrlich beantworten) oder <strong>Pflicht</strong> (eine Aufgabe erfüllen). Wer sich weigert, muss aussetzen oder bekommt einen Minuspunkt. Wer zweimal hintereinander ablehnt, scheidet aus!</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/de/" class="footer-link">&#127921; Glücksrad</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Impressum</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Datenschutz</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+    function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();
+
+    /* ════════════════════════════════════════
+       QUESTION / DARE DATABASE
+    ════════════════════════════════════════ */
+    var DB = {
+        truth: {
+            freundschaft: {
+                leicht: [
+                    {e:'&#128149;', t:'Wer in dieser Runde ist dein engster Vertrauter?'},
+                    {e:'&#129492;', t:'Was schätzt du an der Person links von dir am meisten?'},
+                    {e:'&#128557;', t:'Hast du jemals einen Freund belogen, um ihn nicht zu verletzen? Was war die Lüge?'},
+                    {e:'&#129395;', t:'Was war das netteste, was jemand hier je für dich getan hat?'},
+                    {e:'&#128064;', t:'Hast du mal über jemanden hier gelästert? Was hast du gesagt?'},
+                ],
+                mittel: [
+                    {e:'&#129300;', t:'Wen in der Runde würdest du zuerst um Hilfe bitten, wenn du wirklich in der Klemme steckst?'},
+                    {e:'&#128543;', t:'Hattest du schon mal einen echten Streit mit jemandem hier, über den du nie gesprochen hast?'},
+                    {e:'&#128148;', t:'Welche schlechte Eigenschaft eines Freundes hier ignorierst du konsequent?'},
+                    {e:'&#129335;', t:'Was denkst du wirklich über den Musikgeschmack von jemandem hier?'},
+                ],
+                krass: [
+                    {e:'&#128293;', t:'Wen in dieser Runde findest du heimlich nervig – und warum?'},
+                    {e:'&#129324;', t:'Hast du schon mal Geheimnisse einer Person hier an jemand anderen weitergegeben?'},
+                    {e:'&#128545;', t:'Was hat jemand hier getan, das du ihm oder ihr insgeheim noch nicht verziehen hast?'},
+                ],
+            },
+            peinlich: {
+                leicht: [
+                    {e:'&#128514;', t:'Was war dein peinlichster Sturz oder Ausrutscher in der Öffentlichkeit?'},
+                    {e:'&#129325;', t:'Hast du mal laut aufgestoßen, als du eigentlich leise sein wolltest? Wo war das?'},
+                    {e:'&#128565;', t:'Was war die cringe-igste Nachricht, die du je abgeschickt hast?'},
+                    {e:'&#129760;', t:'Hast du schon mal jemanden angerufen und erst gemerkt, es war die falsche Person?'},
+                    {e:'&#128526;', t:'Was war das Dümmste, das du je aus Versehen laut gesagt hast?'},
+                ],
+                mittel: [
+                    {e:'&#128563;', t:'Wann hast du zuletzt so laut gelacht, dass du Geräusche gemacht hast, die dir selbst peinlich waren?'},
+                    {e:'&#129315;', t:'Was ist das Peinlichste, das du auf Social Media gepostet und danach gelöscht hast?'},
+                    {e:'&#128531;', t:'Beschreibe dein schlimmstes Date oder deine schlimmste Begegnung mit jemandem, der dir gefiel.'},
+                ],
+                krass: [
+                    {e:'&#128169;', t:'Was war das Unangenehmste, das dir körperlich je in einer Gruppe passiert ist?'},
+                    {e:'&#129327;', t:'Zeig uns die aktuell peinlichste Konversation auf deinem Handy.'},
+                    {e:'&#128561;', t:'Was war dein absolutes Tief – der Moment, der dich am meisten beschämt hat?'},
+                ],
+            },
+            abenteuer: {
+                leicht: [
+                    {e:'&#128640;', t:'Was ist das Mutigste, das du je getan hast?'},
+                    {e:'&#127958;', t:'Was steht ganz oben auf deiner Bucket List?'},
+                    {e:'&#127752;', t:'Wenn du morgen irgendwo auf der Welt aufwachen könntest – wo wäre das?'},
+                    {e:'&#129408;', t:'Welches Tier würdest du am liebsten einmal in freier Wildbahn sehen?'},
+                ],
+                mittel: [
+                    {e:'&#128526;', t:'Hast du schon mal etwas Verbotenes getan, nur weil es aufregend war? Was war das?'},
+                    {e:'&#128373;', t:'Welche Regel hast du schon mal absichtlich gebrochen – und würdest es wieder tun?'},
+                    {e:'&#127956;', t:'Wärst du bereit, 30 Tage allein in der Wildnis zu überleben?'},
+                ],
+                krass: [
+                    {e:'&#128293;', t:'Was ist die gefährlichste Situation, in der du dich je absichtlich befunden hast?'},
+                    {e:'&#129427;', t:'Hast du schon mal jemanden geküsst, ohne vorher seinen Namen zu kennen?'},
+                    {e:'&#128562;', t:'Was hast du getan, das deine Eltern heute noch nicht wissen?'},
+                ],
+            },
+            kreativ: {
+                leicht: [
+                    {e:'&#127775;', t:'Wenn du ein Superhelden-Alias hättest – welches wäre es und was wäre deine Kraft?'},
+                    {e:'&#127908;', t:'Welches Lied beschreibt dein Leben gerade am besten?'},
+                    {e:'&#127775;', t:'Wenn du eine Serie über dein Leben drehen könntest – wer spielt die Hauptrolle?'},
+                    {e:'&#127796;', t:'Welches Tier beschreibt deine Persönlichkeit am besten – und warum?'},
+                ],
+                mittel: [
+                    {e:'&#129504;', t:'Erzähle uns dein seltsamsten Traum in drei Sätzen.'},
+                    {e:'&#127903;', t:'Erfinde auf der Stelle einen Zeitungsartikel über jemanden in dieser Runde.'},
+                    {e:'&#128516;', t:'Beschreibe dein Leben in drei Emojis – und erkläre sie.'},
+                ],
+                krass: [
+                    {e:'&#129318;', t:'Schreibe spontan einen Rap-Vers über die Person, die du am längsten kennst.'},
+                    {e:'&#128483;', t:'Erzähle eine zweistündige Lebensgeschichte in 30 Sekunden.'},
+                    {e:'&#127891;', t:'Erkläre deiner Gruppe, wie das Internet funktioniert – in weniger als 60 Sekunden.'},
+                ],
+            },
+            sport: {
+                leicht: [
+                    {e:'&#9917;', t:'Was ist deine geheime Lieblingssportart – auch wenn du sie nie betreibst?'},
+                    {e:'&#127944;', t:'Bist du eher Team oder Einzelkämpfer? Begründe deine Antwort.'},
+                    {e:'&#128170;', t:'Welchen Sport würdest du sofort aufgeben, wenn du einen neuen lernen könntest?'},
+                ],
+                mittel: [
+                    {e:'&#129340;', t:'Wann hast du zuletzt absichtlich beim Sport gemogelt – und bist damit durchgekommen?'},
+                    {e:'&#127955;', t:'Was ist die extremste körperliche Herausforderung, der du dich je gestellt hast?'},
+                ],
+                krass: [
+                    {e:'&#128293;', t:'Wie lange könntest du wirklich ohne Essen auskommen? Hattest du mal eine Situation, in der du es testen musstest?'},
+                    {e:'&#129395;', t:'Hast du je an einem Wettkampf teilgenommen, für den du eigentlich gar nicht qualifiziert warst?'},
+                ],
+            },
+        },
+        dare: {
+            freundschaft: {
+                leicht: [
+                    {e:'&#129303;', t:'Umarme alle Spieler gleichzeitig für 5 Sekunden.'},
+                    {e:'&#128588;', t:'Sag jedem Spieler ein aufrichtiges Kompliment – in weniger als 10 Sekunden pro Person.'},
+                    {e:'&#127800;', t:'Gib der Person rechts von dir deinen süßesten Spitznamen und erkläre ihn.'},
+                    {e:'&#128248;', t:'Mach ein Foto mit dem Spieler, den du am längsten kennst.'},
+                ],
+                mittel: [
+                    {e:'&#128526;', t:'Erzähle einem Spieler deiner Wahl eine nie erzählte Geschichte über euch beide.'},
+                    {e:'&#128143;', t:'Schreibe der Person links von dir eine Sprachnachricht und sag ihr, was du an ihr bewunderst.'},
+                    {e:'&#129516;', t:'Spiele 60 Sekunden lang „beste Freunde" mit dem Spieler, den du am wenigsten kennst.'},
+                ],
+                krass: [
+                    {e:'&#128562;', t:'Lese alle anderen laut die letzte persönliche Nachricht vor, die du an jemanden aus der Runde geschickt hast.'},
+                    {e:'&#129300;', t:'Lass jeden Spieler auf deinem Handy eine Minute lang scrollen – kein Sperren!'},
+                ],
+            },
+            peinlich: {
+                leicht: [
+                    {e:'&#128514;', t:'Mach für 30 Sekunden den albernsten Tanz, den du dir vorstellen kannst.'},
+                    {e:'&#127908;', t:'Sing den Refrain eines beliebigen Songs – aber als ob du ihn zum ersten Mal siehst.'},
+                    {e:'&#129325;', t:'Imitiere ein Tier deiner Wahl, bis jemand es errät.'},
+                    {e:'&#128483;', t:'Rede 30 Sekunden lang ohne Pause – über irgendetwas, egal was.'},
+                    {e:'&#128565;', t:'Mach deinen besten Filmstar-Auftritt: Steh auf, verbeuge dich und sag einen erfundenen Award-Dankesrede.'},
+                ],
+                mittel: [
+                    {e:'&#129318;', t:'Rapp deinen kompletten Tag – auf der Stelle, improvisiert.'},
+                    {e:'&#127928;', t:'Sprich die nächsten 3 Minuten nur mit Filmzitaten. Andere können dir Fragen stellen.'},
+                    {e:'&#128073;', t:'Zeig uns dein bestes Model-Walk durch den Raum – mit vollem Commitment.'},
+                ],
+                krass: [
+                    {e:'&#128293;', t:'Mach 60 Sekunden lang eine Stand-up-Comedy-Show – das Publikum benotet dich.'},
+                    {e:'&#129315;', t:'Lie auf dem Boden und tue 30 Sekunden lang so, als wärst du in einer Zeitlupe.'},
+                    {e:'&#128561;', t:'Schreie aus dem Fenster (oder zur Tür raus) deinen vollständigen Namen und dass du der beste Spieler bist.'},
+                ],
+            },
+            abenteuer: {
+                leicht: [
+                    {e:'&#128640;', t:'Ruf jemanden an (kein Gruppenmitglied) und sing ihm „Happy Birthday" – egal ob er Geburtstag hat.'},
+                    {e:'&#127918;', t:'Überzeuge alle, dir beim nächsten Mal einen Wunsch zu erfüllen – in 30 Sekunden.'},
+                    {e:'&#128526;', t:'Zeige uns deinen besten Zaubertrick – du hast 2 Minuten zum Vorbereiten.'},
+                ],
+                mittel: [
+                    {e:'&#128373;', t:'Geh raus und überzeuge die nächste fremde Person (sicher!), dir ein High-Five zu geben.'},
+                    {e:'&#127760;', t:'Erstelle in 60 Sekunden einen Instagram-Post über diesen Abend und poste ihn wirklich.'},
+                    {e:'&#128247;', t:'Mach ein spaßiges Selfie mit jemandem, den du kaum kennst – und mach es dein Profilbild für 24h.'},
+                ],
+                krass: [
+                    {e:'&#128293;', t:'Ruf den letzten Kontakt in deiner Anrufliste an und sag nur: „Alles gut. Ich wollte mich nur melden." Danach auflegen.'},
+                    {e:'&#129427;', t:'Gehe an die frische Luft, such dir einen Baum und klopf 10x an ihn – als normaler Mensch.'},
+                    {e:'&#128562;', t:'Poste einen Story-Text mit dem Inhalt „Ich spiele gerade Wahrheit oder Pflicht und habe gerade verloren 😭" – für mindestens 10 Minuten.'},
+                ],
+            },
+            kreativ: {
+                leicht: [
+                    {e:'&#127775;', t:'Zeichne innerhalb von 60 Sekunden ein Portrait der Person gegenüber – kein Nachbessern erlaubt!'},
+                    {e:'&#129504;', t:'Erfinde auf der Stelle einen Schlachtruf für eure Gruppe.'},
+                    {e:'&#127908;', t:'Mach einen Beat-Box-Rhythmus für 20 Sekunden.'},
+                    {e:'&#128017;', t:'Erzähle eine Geschichte in genau 10 Wörtern.'},
+                ],
+                mittel: [
+                    {e:'&#127908;', t:'Improvisiere 30 Sekunden lang ein Lied über die Person links von dir – Melodie inklusive.'},
+                    {e:'&#129318;', t:'Verwandle dich für 2 Minuten in einen TV-Moderator und interviewe einen Mitspieler.'},
+                    {e:'&#128483;', t:'Erkläre ein Meme, das du gerade lustig findest, so, als wärst du ein Wissenschaftler.'},
+                ],
+                krass: [
+                    {e:'&#128293;', t:'Performe eine Drama-Szene: Du bist gerade in einem Oscar-Film. Alle anderen spielen Statisten.'},
+                    {e:'&#127775;', t:'Lass jeden Spieler ein Wort sagen – du musst daraus eine zusammenhängende Geschichte erzählen.'},
+                    {e:'&#129327;', t:'Singe ein Lied auf Englisch nach – aber übersetze jeden Satz auf Deutsch, bevor du den nächsten singst.'},
+                ],
+            },
+            sport: {
+                leicht: [
+                    {e:'&#9917;', t:'Mach 10 Kniebeugen – alle zählen laut mit.'},
+                    {e:'&#128170;', t:'Halte die Plank-Position für 30 Sekunden. Alle schauen zu.'},
+                    {e:'&#127939;', t:'Sprinte einmal durch den Raum und zurück – so schnell du kannst.'},
+                ],
+                mittel: [
+                    {e:'&#129340;', t:'Mache 20 Liegestütze – in einer Minute. Alle zählen laut.'},
+                    {e:'&#129395;', t:'Tanze 60 Sekunden lang ohne Musik – und alle stimmen einen imaginären Beat an.'},
+                    {e:'&#127955;', t:'Steh 45 Sekunden lang auf einem Bein – ohne Festhalten.'},
+                ],
+                krass: [
+                    {e:'&#128293;', t:'Mach 30 Burpees – alle zählen laut. Wer aufhört, muss eine Extra-Wahrheit beantworten.'},
+                    {e:'&#128170;', t:'Mache so viele Klimmzüge wie möglich – oder, falls nicht möglich, 50 Sit-ups.'},
+                    {e:'&#129395;', t:'Battle-Dance: Du tanzt gegen eine Person deiner Wahl – alle voten per Handzeichen.'},
+                ],
+            },
+        },
+    };
+
+    /* ════════════════════════════════════════
+       GAME STATE
+    ════════════════════════════════════════ */
+    var PLAYER_COLORS=['#6366f1','#ec4899','#10b981','#f59e0b','#a855f7','#14b8a6','#ef4444','#f97316'];
+    var players      = [];
+    var scores       = {}; // {id: {truths, dares, skips}}
+    var currentPIdx  = 0;
+    var idCnt        = 0;
+    var gameHistory  = [];
+    var currentType  = null;
+    var difficulty   = 'leicht';
+    var usedTruths   = {};
+    var usedDares    = {};
+
+    function rng(n){var a=new Uint32Array(1);window.crypto.getRandomValues(a);return a[0]%n;}
+
+    /* ── Players ── */
+    function addPlayer(){
+        var inp=document.getElementById('playerInput');
+        var t=inp.value.trim();
+        if(!t) return;
+        var id=idCnt++;
+        players.push({id:id,name:t,color:PLAYER_COLORS[players.length%PLAYER_COLORS.length]});
+        scores[id]={truths:0,dares:0,skips:0};
+        usedTruths[id]=[];
+        usedDares[id]=[];
+        inp.value='';
+        inp.focus();
+        renderPlayers();
+        updateCurrentPlayer();
+    }
+
+    function removePlayer(id){
+        var idx=players.findIndex(function(p){return p.id===id;});
+        players.splice(idx,1);
+        delete scores[id];
+        if(currentPIdx>=players.length) currentPIdx=0;
+        renderPlayers();
+        updateCurrentPlayer();
+    }
+
+    function renderPlayers(){
+        var c=document.getElementById('playersList');
+        c.innerHTML='';
+        players.forEach(function(p,i){
+            var chip=document.createElement('div');
+            chip.className='player-chip'+(i===currentPIdx?' active-player':'');
+            chip.style.background=p.color;
+            chip.onclick=function(){currentPIdx=i;renderPlayers();updateCurrentPlayer();};
+            chip.innerHTML='<div class="pc-dot">'+p.name.charAt(0).toUpperCase()+'</div>'+escH(p.name)+'<span style="opacity:0.5;margin-left:4px;font-size:0.7rem" onclick="event.stopPropagation();removePlayer('+p.id+')">✕</span>';
+            c.appendChild(chip);
+        });
+        document.getElementById('scoreboard').style.display=players.length?'':'none';
+        renderScores();
+    }
+
+    function updateCurrentPlayer(){
+        var lbl=document.getElementById('currentPlayerLabel');
+        var nm=document.getElementById('currentPlayerName');
+        var who=document.getElementById('choiceWho');
+        if(players.length){
+            lbl.style.display='';
+            var p=players[currentPIdx];
+            nm.textContent=p.name;
+            nm.style.color=p.color;
+            who.innerHTML='<strong style="color:'+p.color+'">'+escH(p.name)+'</strong> – wähle:';
+        } else {
+            lbl.style.display='none';
+            who.innerHTML='<strong>Alle</strong> – wählt:';
+        }
+    }
+
+    function nextPlayer(){
+        if(!players.length) return;
+        currentPIdx=(currentPIdx+1)%players.length;
+        renderPlayers();
+        updateCurrentPlayer();
+    }
+
+    /* ── Task ── */
+    function setDiff(d){
+        difficulty=d;
+        document.querySelectorAll('.diff-pill').forEach(function(b){b.classList.toggle('active',b.dataset.d===d);});
+    }
+
+    function getPool(type){
+        var cat=document.getElementById('catSelect').value;
+        var cats=cat==='alle'?['freundschaft','peinlich','abenteuer','kreativ','sport']:[cat];
+        var pool=[];
+        cats.forEach(function(c){
+            var items=(DB[type][c]||{})[difficulty]||[];
+            items.forEach(function(item){pool.push({item:item,cat:c});});
+        });
+        return pool;
+    }
+
+    function pickItem(type){
+        var pool=getPool(type);
+        if(!pool.length) return null;
+        var pid=players.length?players[currentPIdx].id:-1;
+        var used=type==='truth'?(usedTruths[pid]||[]):(usedDares[pid]||[]);
+        // filter already used
+        var fresh=pool.filter(function(p){return used.indexOf(p.item.t)===-1;});
+        if(!fresh.length){ if(type==='truth') usedTruths[pid]=[]; else usedDares[pid]=[]; fresh=pool; }
+        var pick=fresh[rng(fresh.length)];
+        if(pid>=0){ if(type==='truth') usedTruths[pid].push(pick.item.t); else usedDares[pid].push(pick.item.t); }
+        return pick;
+    }
+
+    var currentItem=null;
+    var currentTypeGlobal=null;
+
+    function showTask(type){
+        currentTypeGlobal=type;
+        var pick=pickItem(type);
+        if(!pick){alert('Keine Aufgaben für diese Einstellungen!');return;}
+        currentItem=pick;
+        document.getElementById('choiceScreen').classList.add('hidden');
+        var ts=document.getElementById('taskScreen');
+        ts.classList.remove('hidden');
+        ts.className='task-screen type-'+type;
+        var badge=document.getElementById('taskBadge');
+        badge.textContent=type==='truth'?'&#128161; Wahrheit':'&#128293; Pflicht';
+        badge.className='task-badge '+(type==='truth'?'badge-truth':'badge-dare');
+        badge.innerHTML=type==='truth'?'&#128161; Wahrheit':'&#128293; Pflicht';
+        document.getElementById('taskEmoji').innerHTML=pick.item.e;
+        document.getElementById('taskText').textContent=pick.item.t;
+        document.getElementById('taskCat').textContent=catLabel(pick.cat)+' · '+diffLabel(difficulty);
+        var pname=document.getElementById('taskPlayerName');
+        if(players.length) { pname.textContent=players[currentPIdx].name; pname.style.color=players[currentPIdx].color; }
+        else pname.textContent='';
+        // reset emoji animation
+        var em=document.getElementById('taskEmoji');
+        em.style.animation='none'; void em.offsetWidth; em.style.animation='';
+        var tt=document.getElementById('taskText');
+        tt.style.animation='none'; void tt.offsetWidth; tt.style.animation='';
+    }
+
+    function reroll(){
+        showTask(currentTypeGlobal);
+    }
+
+    function markDone(){
+        if(players.length){
+            var p=players[currentPIdx];
+            if(currentTypeGlobal==='truth') scores[p.id].truths++; else scores[p.id].dares++;
+            renderScores();
+        }
+        addHistory(currentTypeGlobal, currentItem, players.length?players[currentPIdx]:null, false);
+        backToChoice();
+        nextPlayer();
+    }
+
+    function markSkip(){
+        if(players.length){ scores[players[currentPIdx].id].skips++; renderScores(); }
+        addHistory(currentTypeGlobal, currentItem, players.length?players[currentPIdx]:null, true);
+        backToChoice();
+        nextPlayer();
+    }
+
+    function backToChoice(){
+        document.getElementById('taskScreen').classList.add('hidden');
+        document.getElementById('choiceScreen').classList.remove('hidden');
+        currentItem=null;
+    }
+
+    /* ── Scores ── */
+    function renderScores(){
+        var c=document.getElementById('scoreList');
+        c.innerHTML='';
+        players.forEach(function(p){
+            var s=scores[p.id]||{truths:0,dares:0,skips:0};
+            var div=document.createElement('div');
+            div.className='score-item';
+            div.style.borderTop='3px solid '+p.color;
+            div.innerHTML='<div class="score-name">'+escH(p.name)+'</div>'
+                +'<div class="score-nums">'
+                +'<span class="score-t">&#128161;'+s.truths+'</span>'
+                +'<span class="score-d">&#128293;'+s.dares+'</span>'
+                +'</div>'
+                +(s.skips?'<div class="score-skip">&#128704;'+s.skips+' Skip</div>':'');
+            c.appendChild(div);
+        });
+    }
+
+    /* ── History ── */
+    function addHistory(type,pick,player,skipped){
+        gameHistory.unshift({type:type,text:pick?pick.item.t:'?',player:player,skipped:skipped,time:new Date().toLocaleTimeString('de',{hour:'2-digit',minute:'2-digit'})});
+        if(gameHistory.length>30) gameHistory.pop();
+        renderHistory();
+    }
+
+    function renderHistory(){
+        var c=document.getElementById('historyItems');
+        if(!gameHistory.length){c.innerHTML='<div style="font-size:0.82rem;color:var(--text-muted,#94a3b8)">Noch keine Runden gespielt.</div>';return;}
+        c.innerHTML='';
+        gameHistory.forEach(function(h){
+            var div=document.createElement('div');
+            div.className='hi-item';
+            div.innerHTML='<span class="hi-badge '+(h.type==='truth'?'hi-t':'hi-d')+'">'+(h.type==='truth'?'W':'P')+'</span>'
+                +(h.player?'<span class="hi-player">'+escH(h.player.name)+':</span>':'')
+                +'<span class="hi-text">'+(h.skipped?'<em style="opacity:0.5">[Skip]</em> ':'')+escH(h.text)+'</span>'
+                +'<span style="margin-left:auto;font-size:0.7rem;color:var(--text-muted,#94a3b8);flex-shrink:0">'+h.time+'</span>';
+            c.appendChild(div);
+        });
+    }
+
+    /* ── Helpers ── */
+    function catLabel(c){var m={freundschaft:'Freundschaft',peinlich:'Peinlich',abenteuer:'Abenteuer',kreativ:'Kreativ',sport:'Sport'};return m[c]||c;}
+    function diffLabel(d){var m={leicht:'Leicht',mittel:'Mittel',krass:'Krass'};return m[d]||d;}
+    function escH(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+    /* ── Init ── */
+    document.getElementById('playerInput').addEventListener('keydown',function(e){if(e.key==='Enter')addPlayer();});
+    updateCurrentPlayer();
+    </script>
+</body>
+</html>

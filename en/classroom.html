@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin Wheel in the Classroom – Ideas for Teachers | SpinSelector</title>
+    <meta name="description" content="Spin wheel in the classroom: randomly call on students, form groups, run quizzes & vocabulary exercises. Ready-made templates for Maths, English, History & more. Free for teachers!">
+    <meta name="keywords" content="spin wheel classroom, random generator school, call on students random wheel, group split class, quiz spin wheel, teacher tool free, interactive classroom">
+    <link rel="canonical" href="https://spinselector.pages.dev/en/classroom.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/unterricht.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/classroom.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/classroom.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Spin Wheel in the Classroom – Ideas & Templates for Teachers">
+    <meta property="og:description" content="Ready-made templates and ideas: call on students, form groups, quizzes and vocabulary practice with the online spin wheel.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://spinselector.pages.dev/en/classroom.html">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta name="theme-color" content="#0f172a">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Spin Wheel in the Classroom – Ideas and Templates for Teachers",
+      "description": "Ready-made templates for school lessons: randomly call on students, form groups, run quiz rounds, vocabulary exercises and more.",
+      "url": "https://spinselector.pages.dev/en/classroom.html",
+      "inLanguage": "en",
+      "publisher": { "@type": "Organization", "name": "SpinSelector", "url": "https://spinselector.pages.dev" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"How do I use SpinSelector in the classroom?","acceptedAnswer":{"@type":"Answer","text":"Open SpinSelector on your class display or projector, enter all student names and spin the wheel for random call-ons. You can also enter topics, vocabulary or tasks."}},
+        {"@type":"Question","name":"Is SpinSelector free for teachers?","acceptedAnswer":{"@type":"Answer","text":"Yes, SpinSelector is completely free. No registration, no app installation required – it works on any device with a browser, making it ideal for school computers and tablets."}}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <script>
+        window.i18n = {
+            t: function(k){ var s={'empty-state':'No options available.<br>Add at least 2 options!','canvas-empty':'Add options','confirm-clear':'Clear all?','default-options':['Option 1','Option 2','Option 3']}; return s[k]||k; },
+            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
+            initLanguage: function(){}, currentLanguage: function(){ return 'en'; }
+        };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Change language">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">EN</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+            <button data-lang="en" class="lang-option">🇬🇧 English</button>
+            <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+            <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="page-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/en/">🎡 SpinSelector</a><span>›</span><span>Spin Wheel in the Classroom</span>
+        </nav>
+
+        <div class="page-hero">
+            <h1>🎓 Using the Spin Wheel in the Classroom</h1>
+            <p class="lead">SpinSelector is the free teacher tool that transforms dry classroom routines into interactive experiences. Call on students, form groups, run quiz rounds, practise vocabulary – here you'll find ready-made templates for every subject and every year group.</p>
+        </div>
+
+        <h2 class="section-title">Why the Spin Wheel Makes Lessons Better</h2>
+        <div class="content-prose">
+            <p>Teachers face the daily challenge of maintaining <strong>fairness, engagement and motivation</strong> all at once. The spin wheel solves several typical classroom problems in one go:</p>
+
+            <h3>The Problem with Call-On Patterns</h3>
+            <p>Studies on classroom interaction show that teachers unconsciously tend to call on the same students repeatedly – often those who actively raise their hands. This leads to part of the class remaining passive and not being prompted to think along. A random selector like SpinSelector breaks this pattern and ensures everyone prepares, because <em>any person</em> can be called on.</p>
+
+            <h3>Gamification Boosts Motivation</h3>
+            <p>The visual animation of the spinning wheel creates real suspense. Students who otherwise seem disengaged suddenly pay close attention. This form of <strong>gamification</strong> – integrating playful elements into the learning process – is well-researched and demonstrably leads to higher engagement and better retention of content.</p>
+
+            <h3>Transparency Builds Trust</h3>
+            <p>When the wheel spins in front of the whole class and everyone sees the random process, the selection feels fair. No student can claim to have been intentionally favoured or disadvantaged. This significantly improves classroom climate and acceptance of task assignments.</p>
+        </div>
+
+        <div class="cta-banner">
+            <h2>Try It Now – Free & No Sign-Up</h2>
+            <p>Open SpinSelector on the classroom PC, projector or tablet. Enter student names and spin the wheel live during the lesson.</p>
+            <a href="/en/" class="cta-btn">🎡 Open SpinSelector</a>
+        </div>
+
+        <h2 class="section-title">📋 Randomly Calling on Students</h2>
+        <div class="content-prose">
+            <p>This is the most popular use of SpinSelector in the classroom: enter all class names into the wheel, spin it for each question – whoever is selected answers it. Simple and effective.</p>
+
+            <h3>Step-by-Step Setup</h3>
+        </div>
+
+        <ol class="step-list">
+            <li><div class="step-text"><strong>Open SpinSelector</strong> – go directly to <a href="/en/" style="color:var(--accent,#818cf8)">spinselector.pages.dev/en/</a> in your browser, ideally on the classroom PC connected to a projector or interactive whiteboard.</div></li>
+            <li><div class="step-text"><strong>Enter all student names</strong> – type each name into the input field and click "Add". First names are sufficient. Names are automatically saved and will be there the next time you open it.</div></li>
+            <li><div class="step-text"><strong>Enable "Auto-remove"</strong> – this way each person is called on exactly once per lesson. For oral grading, leave it disabled to allow multiple call-ons.</div></li>
+            <li><div class="step-text"><strong>Ask the question, then spin</strong> – important: formulate the question first, then spin the wheel. This gives all students a moment to think before it becomes clear who will answer.</div></li>
+            <li><div class="step-text"><strong>Reset at the end of the lesson</strong> – click "Clear all" or leave the names saved for the next lesson. Both are possible.</div></li>
+        </ol>
+
+        <div class="tip-box">
+            <p><strong>Pro tip for teachers:</strong> Keep the class in suspense by spinning the wheel <em>before</em> asking the question. Only once the wheel stops and a name appears do you ask the actual question. This keeps everyone alert and curious!</p>
+        </div>
+
+        <h2 class="section-title">📚 Ready-Made Templates by Subject</h2>
+
+        <div class="card-grid">
+            <div class="use-card">
+                <span class="fach-badge">Languages</span>
+                <h3>🌍 Vocabulary Quiz</h3>
+                <p>Enter vocabulary words into the wheel. Whoever is called on must give the translation – or vice versa.</p>
+                <div class="options-box">
+                    <span>Example – B1 Vocabulary:</span>
+                    <ul>
+                        <li>appointment</li>
+                        <li>approximately</li>
+                        <li>consequence</li>
+                        <li>distinguish</li>
+                        <li>encounter</li>
+                        <li>furthermore</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['appointment','approximately','consequence','distinguish','encounter','furthermore'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">Mathematics</span>
+                <h3>➗ Maths Questions Wheel</h3>
+                <p>Enter maths problems directly as options. Whoever is called on must give the answer. Great as a lesson-start routine.</p>
+                <div class="options-box">
+                    <span>Example – Year 6:</span>
+                    <ul>
+                        <li>12 × 7 = ?</li>
+                        <li>144 ÷ 12 = ?</li>
+                        <li>3² + 4² = ?</li>
+                        <li>15% of 80 = ?</li>
+                        <li>½ + ⅓ = ?</li>
+                        <li>√49 = ?</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['12 × 7 = ?','144 ÷ 12 = ?','3² + 4² = ?','15% of 80 = ?','½ + ⅓ = ?','√49 = ?'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">History / Civics</span>
+                <h3>🏛️ Terms & Events</h3>
+                <p>Put historical dates, key terms or political concepts on the wheel – whoever is picked explains the term in their own words.</p>
+                <div class="options-box">
+                    <span>Example – WW2:</span>
+                    <ul>
+                        <li>D-Day 1944</li>
+                        <li>Marshall Plan</li>
+                        <li>Appeasement Policy</li>
+                        <li>Nuremberg Trials</li>
+                        <li>Cold War Origins</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['D-Day 1944','Marshall Plan','Appeasement Policy','Nuremberg Trials','Cold War Origins'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">Biology / Chemistry</span>
+                <h3>🔬 Key Terms Quiz</h3>
+                <p>Organelles, elements, chemical formulae or biological processes on the wheel. Whoever is picked defines the term or gives an example.</p>
+                <div class="options-box">
+                    <span>Example – Biology Year 9:</span>
+                    <ul>
+                        <li>Mitochondria</li>
+                        <li>Photosynthesis</li>
+                        <li>DNA Replication</li>
+                        <li>Osmosis</li>
+                        <li>Enzyme</li>
+                        <li>Chloroplast</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Mitochondria','Photosynthesis','DNA Replication','Osmosis','Enzyme','Chloroplast'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+        </div>
+
+        <h2 class="section-title">👥 Fair Group Formation by Wheel</h2>
+        <div class="content-prose">
+            <p>Group work often falls apart at the formation stage: friends want to be together, others feel left out, and the teacher has to weigh things up laboriously. The spin wheel makes group assignment in seconds – neutral and visibly fair for everyone.</p>
+
+            <h3>Method 1: Person Selection with Auto-Remove</h3>
+            <p>All student names in the wheel, "Auto-remove" enabled. Spin once for Group 1 – that person goes into Group 1 and is automatically removed. Spin again for Group 2, and so on. When a group is full, move on to the next.</p>
+
+            <h3>Method 2: Group Assignment Draw</h3>
+            <p>Instead of names, enter group numbers or group names into the wheel (e.g. "Group Red", "Group Blue", "Group Green"). Each student spins the wheel in turn to find out which group they're in.</p>
+
+            <h3>Method 3: Topic Assignment</h3>
+            <p>For presentations or project work: put all topics on the wheel. Each student spins once and works on the assigned topic. This prevents the same "popular" topics from always being snapped up first.</p>
+        </div>
+
+        <div class="tip-box">
+            <p><strong>Tip for group work:</strong> Shuffle the wheel before each group formation. This prevents any student from memorising the order of segments and predicting the outcome. Simply click the "Shuffle" button.</p>
+        </div>
+
+        <h2 class="section-title">💡 More Creative Classroom Ideas</h2>
+        <div class="card-grid">
+            <div class="use-card">
+                <span class="fach-badge">All Subjects</span>
+                <h3>🎯 Review Quickfire</h3>
+                <p>5 minutes before the end of the lesson: fill the wheel with topics from the lesson. Whoever is picked summarises the topic in one sentence. Excellent for lesson consolidation.</p>
+                <div class="options-box">
+                    <span>Wheel contents:</span>
+                    <ul>
+                        <li>Key learning objective</li>
+                        <li>Give one example</li>
+                        <li>Explain a key term</li>
+                        <li>Link to last lesson</li>
+                        <li>Ask an open question</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Key learning objective','Give one example','Explain a key term','Link to last lesson','Ask an open question'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">PE / Break</span>
+                <h3>⚽ Activity Selection for PE</h3>
+                <p>Which game or activity comes next? Let the class decide by wheel – hugely motivating and gives everyone a sense of influence.</p>
+                <div class="options-box">
+                    <span>Example – PE:</span>
+                    <ul>
+                        <li>Dodgeball</li>
+                        <li>Relay race</li>
+                        <li>Yoga session</li>
+                        <li>Badminton</li>
+                        <li>Coordination drills</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Dodgeball','Relay race','Yoga session','Badminton','Coordination drills'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">Homework</span>
+                <h3>📝 Fair Task Distribution</h3>
+                <p>Different homework variants on the wheel: different tasks, texts or projects are randomly assigned. Everyone has a different task – no copying possible!</p>
+                <div class="options-box">
+                    <span>Example – Essay topics:</span>
+                    <ul>
+                        <li>Topic: Climate change</li>
+                        <li>Topic: Digital technology</li>
+                        <li>Topic: School of the future</li>
+                        <li>Topic: Pets</li>
+                        <li>Topic: Sport & health</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Topic: Climate change','Topic: Digital technology','Topic: School of the future','Topic: Pets','Topic: Sport & health'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">Presentations</span>
+                <h3>🎤 Draw Presentation Order</h3>
+                <p>All presenters on the wheel. The wheel determines the order. Particularly fair since nobody can be advantaged and everyone has prepared for the same amount of time.</p>
+                <div class="options-box">
+                    <span>Tips:</span>
+                    <ul>
+                        <li>Enter names after prep time</li>
+                        <li>Enable Auto-remove</li>
+                        <li>Shuffle before starting</li>
+                        <li>Project on screen</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Enter names after prep time','Enable Auto-remove','Shuffle before starting','Project on screen'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+        </div>
+
+        <h2 class="section-title">💻 SpinSelector in the Digital Classroom</h2>
+        <div class="content-prose">
+            <p>Hybrid teaching, video conferences and digital tools are now firmly embedded in modern school life. SpinSelector integrates seamlessly into these environments:</p>
+
+            <h3>Video Conferences (Zoom, Teams, Meet)</h3>
+            <p>Open SpinSelector in a browser tab and share that tab via your conference tool's screen sharing feature. All students see the wheel spinning in real time – just like in a physical classroom. Particularly useful: the animation is designed to be clearly visible even with compressed video signals.</p>
+
+            <h3>Interactive Whiteboards</h3>
+            <p>SpinSelector's touch optimisation makes it ideal for interactive whiteboards. Students can come up to the board and start the wheel with a fingertip. This creates physical activation and increases the concentration of the whole class.</p>
+
+            <h3>1:1 Tablet Classrooms</h3>
+            <p>In classes with individual tablets, each student can open SpinSelector on their own device – for example, for self-directed learning tasks where the wheel determines the order in which different task blocks are completed.</p>
+
+            <h3>Google Classroom & Moodle</h3>
+            <p>Link SpinSelector as an external resource in your learning management system. Add the link <code>https://spinselector.pages.dev/en/</code> as a material or activity so students can access it at any time – including from home.</p>
+        </div>
+
+        <div class="section-title" style="font-size:1.1rem">Further Resources</div>
+        <nav class="related-links" aria-label="Related pages">
+            <a href="/en/">🎡 To the Spin Wheel</a>
+            <a href="/en/faq.html">❓ FAQ</a>
+            <a href="/en/tutorials.html">📖 Tutorials</a>
+            <a href="/en/party-games.html">🎉 Party Games</a>
+            <a href="/en/decisions.html">🤔 Decision Helper</a>
+            <a href="/en/team-generator.html">👥 Team Generator</a>
+            <a href="/en/wheel-of-names.html">👤 Name Picker</a>
+            <a href="/en/history.html">🏛️ History of the Spin Wheel</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/en/" class="footer-link">🎡 To the Spin Wheel</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Imprint</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Privacy</a>
+                <span class="footer-separator">·</span>
+                <a href="/en/faq.html" class="footer-link">FAQ</a>
+                <span class="footer-separator">·</span>
+                <a href="/en/about.html" class="footer-link">About</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script src="/seo-pages.js"></script>
+    <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
+</body>
+</html>

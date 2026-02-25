@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur d'Équipes – Créer des Équipes Aléatoires en Ligne | SpinSelector</title>
+    <meta name="description" content="Générateur d'équipes en ligne : entrez les participants, choisissez le nombre d'équipes et laissez-les répartir aléatoirement. Gratuit, équitable, immédiat. Pour l'école, le sport et le travail en groupe.">
+    <meta name="keywords" content="générateur d'équipes, créer des équipes en ligne, répartition de groupes, équipes aléatoires, diviser classe, team splitter, random team generator, créer des groupes, tirer au sort équipes">
+    <link rel="canonical" href="https://spinselector.pages.dev/fr/generateur-equipes.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/team-generator.html">
+    <link rel="alternate" hreflang="fr" href="https://spinselector.pages.dev/fr/generateur-equipes.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Générateur d'Équipes – Équipes Aléatoires en Quelques Secondes">
+    <meta property="og:description" content="Entrez les participants, choisissez le nombre d'équipes et répartissez aléatoirement. Gratuit, sans connexion, prêt immédiatement.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinselector.pages.dev/fr/generateur-equipes.html">
+    <meta name="theme-color" content="#0f172a">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Générateur d'équipes","url":"https://spinselector.pages.dev/fr/generateur-equipes.html","description":"Générateur d'équipes gratuit : entrez les participants et répartissez-les aléatoirement en équipes. Pour l'école, le sport, le travail en groupe et les événements.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","inLanguage":"fr","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+    </script>
+    <link rel="stylesheet" href="/styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <style>
+        .mode-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin: 0 auto 1.25rem; max-width: 960px; }
+        .mode-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--card-bg,#1e293b); color: var(--text-secondary,#cbd5e1); text-decoration: none; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, color .18s, transform .18s; white-space: nowrap; }
+        .mode-btn:hover { background: var(--accent,#6366f1); color: #fff; transform: translateY(-1px); border-color: transparent; }
+        .mode-btn.active { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
+        .tg-layout { max-width: 960px; margin: 0 auto 2rem; padding: 0 1.25rem; display: grid; grid-template-columns: 300px 1fr; gap: 1.25rem; align-items: start; }
+        .input-panel { background: var(--card-bg,#1e293b); border-radius: 20px; padding: 1.5rem; }
+        .input-panel h2 { font-size: 1rem; font-weight: 800; color: var(--text,#f8fafc); margin: 0 0 1rem; }
+        .name-input-row { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .name-input-row input { flex: 1; background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 10px; padding: 0.6rem 0.85rem; color: var(--text,#f8fafc); font-size: 0.92rem; }
+        .name-input-row input:focus { outline: none; border-color: #6366f1; }
+        .btn-add { background: #6366f1; color: #fff; border: none; border-radius: 10px; padding: 0.6rem 0.9rem; font-size: 0.95rem; font-weight: 700; cursor: pointer; }
+        .ex-strip { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
+        .ex-pill { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 999px; padding: 0.2rem 0.6rem; font-size: 0.78rem; color: var(--text-secondary,#cbd5e1); cursor: pointer; }
+        .ex-pill:hover { background: #6366f1; color: #fff; border-color: transparent; }
+        .participant-list { display: flex; flex-direction: column; gap: 0.35rem; max-height: 260px; overflow-y: auto; margin-bottom: 0.85rem; }
+        .p-item { display: flex; align-items: center; gap: 0.5rem; background: var(--bg,#0f172a); border-radius: 8px; padding: 0.45rem 0.7rem; font-size: 0.88rem; color: var(--text,#f8fafc); }
+        .p-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .p-name { flex: 1; }
+        .p-del { background: none; border: none; color: var(--text-muted,#94a3b8); cursor: pointer; font-size: 0.9rem; }
+        .p-del:hover { color: #ef4444; }
+        .p-count { font-size: 0.72rem; color: var(--text-muted,#94a3b8); margin-bottom: 0.5rem; }
+        .team-config { background: var(--bg,#0f172a); border-radius: 12px; padding: 1rem; margin-bottom: 1rem; }
+        .tc-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+        .tc-row:last-child { margin-bottom: 0; }
+        .tc-label { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary,#cbd5e1); flex: 1; }
+        .tc-num { display: flex; align-items: center; gap: 0.4rem; }
+        .tc-num button { background: var(--card-bg,#1e293b); border: 1px solid var(--border,#334155); color: var(--text,#f8fafc); border-radius: 7px; width: 30px; height: 30px; font-size: 1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .tc-num button:hover { background: #6366f1; border-color: transparent; }
+        .tc-num .tc-val { font-size: 1.1rem; font-weight: 800; color: var(--text,#f8fafc); min-width: 28px; text-align: center; }
+        .tc-toggle { display: flex; gap: 0.35rem; }
+        .tc-toggle button { flex: 1; background: var(--card-bg,#1e293b); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 7px; padding: 0.3rem 0.5rem; font-size: 0.78rem; font-weight: 600; cursor: pointer; }
+        .tc-toggle button.active { background: #6366f1; border-color: transparent; color: #fff; }
+        .bulk-row { margin-bottom: 0.75rem; }
+        .bulk-row textarea { width: 100%; background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 9px; padding: 0.6rem 0.85rem; color: var(--text,#f8fafc); font-size: 0.83rem; resize: vertical; min-height: 70px; box-sizing: border-box; }
+        .bulk-row textarea:focus { outline: none; border-color: #6366f1; }
+        .action-strip { display: flex; gap: 0.5rem; }
+        .btn-import { background: var(--card-bg,#1e293b); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 8px; padding: 0.4rem 0.75rem; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+        .btn-import:hover { background: #6366f1; color: #fff; border-color: transparent; }
+        .btn-clear { border: 1px solid #ef4444; color: #ef4444; background: none; border-radius: 8px; padding: 0.4rem 0.75rem; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+        .btn-clear:hover { background: #ef4444; color: #fff; }
+        .btn-generate { width: 100%; background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; border: none; border-radius: 13px; padding: 0.9rem; font-size: 1rem; font-weight: 800; cursor: pointer; transition: opacity .18s, transform .18s; margin-top: 0.75rem; }
+        .btn-generate:hover { opacity: 0.88; transform: translateY(-2px); }
+        .btn-generate:disabled { opacity: 0.38; cursor: not-allowed; transform: none; }
+        .results-panel { background: var(--card-bg,#1e293b); border-radius: 20px; padding: 1.5rem; }
+        .rp-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+        .rp-header h2 { font-size: 1rem; font-weight: 800; color: var(--text,#f8fafc); margin: 0; }
+        .btn-reshuffle { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 9px; padding: 0.45rem 0.9rem; font-size: 0.82rem; font-weight: 700; cursor: pointer; }
+        .btn-reshuffle:hover { background: #6366f1; color: #fff; border-color: transparent; }
+        .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-muted,#94a3b8); }
+        .empty-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+        .empty-state p { font-size: 0.9rem; line-height: 1.6; }
+        .teams-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.9rem; }
+        .team-card { border-radius: 14px; padding: 1.1rem 1.2rem; border-left: 4px solid; animation: slide-in .35s cubic-bezier(.34,1.56,.64,1) both; }
+        @keyframes slide-in { from{transform:translateY(20px);opacity:0} to{transform:translateY(0);opacity:1} }
+        .team-card .tc-name { font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.65rem; opacity: 0.85; }
+        .team-card .tc-members { display: flex; flex-direction: column; gap: 0.35rem; }
+        .tc-member { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text,#f8fafc); font-weight: 500; }
+        .tc-member-num { font-size: 0.7rem; font-weight: 700; opacity: 0.5; min-width: 16px; }
+        .team-size-badge { font-size: 0.7rem; font-weight: 700; opacity: 0.6; margin-top: 0.65rem; }
+        .seo-wrap { max-width: 960px; margin: 0 auto 3rem; padding: 0 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.4rem 1.6rem; }
+        .seo-box.full { grid-column: 1/-1; }
+        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.05rem; font-weight: 800; margin: 0 0 0.65rem; }
+        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.75; font-size: 0.92rem; margin: 0 0 0.6rem; }
+        .seo-box p:last-child { margin: 0; }
+        .seo-box a { color: var(--accent,#818cf8); text-decoration: underline; }
+        .seo-box strong { color: var(--text,#f8fafc); }
+        @media (max-width: 740px) {
+            .tg-layout { grid-template-columns: 1fr; }
+            .seo-wrap { grid-template-columns: 1fr; }
+            .seo-box.full { grid-column: 1; }
+        }
+    </style>
+    <script>window.i18n={t:function(k){return k;},setLanguage:function(l){localStorage.setItem('language',l);window.location.href='/'+l+'/';},initLanguage:function(){},currentLanguage:function(){return'fr';}};</script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Changer de langue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">FR</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">&#127465;&#127466; Deutsch</button>
+            <button data-lang="en" class="lang-option">&#127468;&#127463; English</button>
+            <button data-lang="fr" class="lang-option">&#127467;&#127479; Français</button>
+            <button data-lang="es" class="lang-option">&#127466;&#127480; Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Changer le thème">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>&#128101; Générateur d'Équipes</h1>
+            <p class="subtitle">Créer des équipes équitables en quelques secondes !</p>
+        </header>
+        <nav class="mode-nav" aria-label="Modes">
+            <a href="/fr/" class="mode-btn">&#127921; Roue</a>
+            <a href="/fr/tirage-au-sort.html" class="mode-btn">&#128100; Noms</a>
+            <a href="/fr/generateur-equipes.html" class="mode-btn active">&#128101; Équipes</a>
+            <a href="/fr/verite-ou-defi.html" class="mode-btn">&#129325; Vérité/Défi</a>
+        </nav>
+    </div>
+
+    <div class="tg-layout">
+        <div class="input-panel">
+            <h2>&#128100; Participants <span class="p-count" id="pCount">(0)</span></h2>
+            <div class="name-input-row">
+                <input type="text" id="nameInput" placeholder="Entrer un nom…" maxlength="40">
+                <button class="btn-add" onclick="addFromInput()">+</button>
+            </div>
+            <div class="ex-strip">
+                <span class="ex-pill" onclick="addP('Alice')">Alice</span>
+                <span class="ex-pill" onclick="addP('Maxime')">Maxime</span>
+                <span class="ex-pill" onclick="addP('Lucie')">Lucie</span>
+                <span class="ex-pill" onclick="addP('Thomas')">Thomas</span>
+                <span class="ex-pill" onclick="addP('Sophie')">Sophie</span>
+                <span class="ex-pill" onclick="addP('Jules')">Jules</span>
+                <span class="ex-pill" onclick="addP('Emma')">Emma</span>
+                <span class="ex-pill" onclick="addP('Hugo')">Hugo</span>
+                <span class="ex-pill" onclick="loadExample()">&#8618; Classe exemple</span>
+            </div>
+            <div class="participant-list" id="participantList"></div>
+
+            <div class="team-config">
+                <div class="tc-row">
+                    <span class="tc-label">Nombre d'équipes</span>
+                    <div class="tc-num">
+                        <button onclick="adjTeams(-1)">−</button>
+                        <span class="tc-val" id="teamCount">2</span>
+                        <button onclick="adjTeams(+1)">+</button>
+                    </div>
+                </div>
+                <div class="tc-row">
+                    <span class="tc-label">Mode de répartition</span>
+                    <div class="tc-toggle">
+                        <button id="modeTeams" class="active" onclick="setMode('teams')">N équipes</button>
+                        <button id="modePer" onclick="setMode('per')">N par équipe</button>
+                    </div>
+                </div>
+                <div class="tc-row">
+                    <span class="tc-label">Noms d'équipes</span>
+                    <div class="tc-toggle">
+                        <button id="nameAuto" class="active" onclick="setTeamNames('auto')">Auto</button>
+                        <button id="nameColor" onclick="setTeamNames('color')">Couleurs</button>
+                        <button id="nameNum" onclick="setTeamNames('num')">N°</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bulk-row">
+                <textarea id="bulkInput" placeholder="Plusieurs noms à la fois (un par ligne) :&#10;Alice&#10;Maxime&#10;Lucie…"></textarea>
+            </div>
+            <div class="action-strip">
+                <button class="btn-import" onclick="importBulk()">&#8618; Importer</button>
+                <button class="btn-clear" onclick="clearAll()">&#128465; Tout supprimer</button>
+            </div>
+            <button class="btn-generate" id="generateBtn" onclick="generateTeams()" disabled>&#9889; Créer les équipes !</button>
+        </div>
+
+        <div class="results-panel">
+            <div class="rp-header">
+                <h2>&#127942; Vos équipes</h2>
+                <button class="btn-reshuffle" id="reshuffleBtn" onclick="generateTeams()" style="display:none">&#8635; Remélanger</button>
+            </div>
+            <div id="teamsOutput">
+                <div class="empty-state">
+                    <div class="empty-icon">&#128101;</div>
+                    <p>Ajoutez au moins 2 participants<br>et cliquez sur « Créer les équipes ! »</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seo-wrap">
+        <div class="seo-box full">
+            <h2>Générateur d'équipes – créer des groupes aléatoires équitables</h2>
+            <p>Le <strong>générateur d'équipes</strong> de SpinSelector répartit en quelques secondes autant de participants que vous le souhaitez en équipes aléatoires et équilibrées. Que vous ayez besoin de 2 équipes ou de 10 groupes, que la classe compte 15 ou 30 élèves – le générateur veille à ce que tout le monde soit réparti équitablement et sans favoritisme. Il suffit d'entrer les noms, choisir le nombre d'équipes, c'est fait.</p>
+        </div>
+        <div class="seo-box">
+            <h2>&#127891; École & classe</h2>
+            <p>Répartir les travaux de groupe en classe de façon équitable et rapide – pas de longues négociations, pas de formation de cliques. Le générateur mélange tout aléatoirement et affiche les équipes en couleurs. Plus d'idées sur la <a href="/fr/classe.html">page Classe</a>.</p>
+        </div>
+        <div class="seo-box">
+            <h2>&#9917; Sport & événements</h2>
+            <p>Pour les événements sportifs d'entreprise, les tournois, les groupes d'escape room ou les soirées jeux : le générateur d'équipes crée en quelques secondes des équipes équilibrées et peut être mélangé autant de fois que vous le souhaitez.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/fr/" class="footer-link">&#127921; Roue de fortune</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Mentions légales</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Confidentialité</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script>
+    function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();
+
+    var TEAM_COLORS=[
+        {bg:'rgba(99,102,241,0.15)',border:'#6366f1',text:'#818cf8',name:'Équipe Bleue'},
+        {bg:'rgba(16,185,129,0.15)',border:'#10b981',text:'#34d399',name:'Équipe Verte'},
+        {bg:'rgba(239,68,68,0.15)',border:'#ef4444',text:'#f87171',name:'Équipe Rouge'},
+        {bg:'rgba(245,158,11,0.15)',border:'#f59e0b',text:'#fbbf24',name:'Équipe Or'},
+        {bg:'rgba(168,85,247,0.15)',border:'#a855f7',text:'#c084fc',name:'Équipe Violette'},
+        {bg:'rgba(20,184,166,0.15)',border:'#14b8a6',text:'#2dd4bf',name:'Équipe Cyan'},
+        {bg:'rgba(236,72,153,0.15)',border:'#ec4899',text:'#f472b6',name:'Équipe Rose'},
+        {bg:'rgba(249,115,22,0.15)',border:'#f97316',text:'#fb923c',name:'Équipe Orange'},
+    ];
+    var COLOR_NAMES=['Bleue','Verte','Rouge','Or','Violette','Cyan','Rose','Orange'];
+    var DOT_COLORS=['#6366f1','#10b981','#ef4444','#f59e0b','#a855f7','#14b8a6','#ec4899','#f97316'];
+    var participants=[],idCnt=0,numTeams=2,mode='teams',teamNameStyle='auto';
+
+    function rng(n){var a=new Uint32Array(1);window.crypto.getRandomValues(a);return a[0]%n;}
+    function addP(t){t=t.trim();if(!t)return;participants.push({id:idCnt++,text:t});renderParts();updateGen();}
+    function addFromInput(){var i=document.getElementById('nameInput');addP(i.value);i.value='';i.focus();}
+    function removeP(id){participants=participants.filter(function(p){return p.id!==id;});renderParts();updateGen();}
+    function clearAll(){participants=[];renderParts();updateGen();document.getElementById('teamsOutput').innerHTML='<div class="empty-state"><div class="empty-icon">&#128101;</div><p>Ajoutez au moins 2 participants<br>et cliquez sur « Créer les équipes ! »</p></div>';document.getElementById('reshuffleBtn').style.display='none';}
+    function loadExample(){['Alice','Maxime','Lucie','Thomas','Sophie','Jules','Léa','Emma','Hugo','Camille','Ben','Nora','Éric','Hanna','Paul','Julie'].forEach(function(n){addP(n);});}
+    function importBulk(){document.getElementById('bulkInput').value.split('\n').forEach(function(l){if(l.trim())addP(l.trim());});document.getElementById('bulkInput').value='';}
+
+    function renderParts(){
+        var c=document.getElementById('participantList');
+        document.getElementById('pCount').textContent='('+participants.length+')';
+        if(!participants.length){c.innerHTML='<div style="text-align:center;padding:0.75rem;color:var(--text-muted,#94a3b8);font-size:0.82rem">Aucun participant</div>';return;}
+        c.innerHTML='';
+        participants.forEach(function(p,i){
+            var d=document.createElement('div');d.className='p-item';
+            d.innerHTML='<div class="p-dot" style="background:'+DOT_COLORS[i%DOT_COLORS.length]+'"></div><span class="p-name">'+escH(p.text)+'</span><button class="p-del" onclick="removeP('+p.id+')">&#x2715;</button>';
+            c.appendChild(d);
+        });
+    }
+    function escH(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+    function updateGen(){document.getElementById('generateBtn').disabled=participants.length<2;}
+    function adjTeams(d){numTeams=Math.max(2,Math.min(10,numTeams+d));document.getElementById('teamCount').textContent=numTeams;}
+    function setMode(m){mode=m;document.getElementById('modeTeams').classList.toggle('active',m==='teams');document.getElementById('modePer').classList.toggle('active',m==='per');}
+    function setTeamNames(s){teamNameStyle=s;['auto','color','num'].forEach(function(x){document.getElementById('name'+x.charAt(0).toUpperCase()+x.slice(1)).classList.toggle('active',s===x);});}
+    function getTeamName(i){
+        if(teamNameStyle==='color')return COLOR_NAMES[i%COLOR_NAMES.length];
+        if(teamNameStyle==='num')return 'Équipe '+(i+1);
+        return TEAM_COLORS[i%TEAM_COLORS.length].name;
+    }
+    function generateTeams(){
+        if(participants.length<2)return;
+        var pool=participants.slice();
+        for(var i=pool.length-1;i>0;i--){var j=rng(i+1);var t=pool[i];pool[i]=pool[j];pool[j]=t;}
+        var n=mode==='per'?Math.max(1,Math.ceil(pool.length/numTeams)):numTeams;
+        var count=mode==='per'?Math.ceil(pool.length/n):n;
+        var teams=[];
+        for(var t2=0;t2<count;t2++){teams.push({name:getTeamName(t2),color:TEAM_COLORS[t2%TEAM_COLORS.length],members:[]});}
+        pool.forEach(function(p,idx){teams[idx%count].members.push(p);});
+        var out=document.getElementById('teamsOutput');
+        out.innerHTML='<div class="teams-grid" id="teamsGrid"></div>';
+        var grid=document.getElementById('teamsGrid');
+        teams.forEach(function(team,ti){
+            var card=document.createElement('div');card.className='team-card';
+            card.style.background=team.color.bg;card.style.borderLeftColor=team.color.border;card.style.animationDelay=(ti*0.07)+'s';
+            var membersHtml=team.members.map(function(m,mi){return '<div class="tc-member"><span class="tc-member-num">'+(mi+1)+'.</span>'+escH(m.text)+'</div>';}).join('');
+            card.innerHTML='<div class="tc-name" style="color:'+team.color.text+'">'+escH(team.name)+'</div><div class="tc-members">'+membersHtml+'</div><div class="team-size-badge" style="color:'+team.color.text+'">'+team.members.length+' membre'+(team.members.length>1?'s':'')+'</div>';
+            grid.appendChild(card);
+        });
+        document.getElementById('reshuffleBtn').style.display='';
+    }
+    document.getElementById('nameInput').addEventListener('keydown',function(e){if(e.key==='Enter')addFromInput();});
+    renderParts();
+    </script>
+</body>
+</html>

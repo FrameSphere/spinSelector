@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prendre des décisions avec la roue – Aide quotidienne | SpinSelector</title>
+    <meta name="description" content="Plus d'hésitation : utilisez la roue pour choisir le déjeuner, le film, le restaurant, répartir les tâches. Aide à la décision sans stress pour chaque jour.">
+    <meta name="keywords" content="aide à la décision roue, choisir déjeuner générateur aléatoire, choisir film roue, choisir restaurant hasard, répartir tâches outil, prendre décisions app gratuite">
+    <link rel="canonical" href="https://spinselector.pages.dev/fr/decisions.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/entscheidungen.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/decisions.html">
+    <link rel="alternate" hreflang="fr" href="https://spinselector.pages.dev/fr/decisions.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/decisions.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Prendre des décisions plus facilement – SpinSelector aide à décider">
+    <meta property="og:description" content="Déjeuner, film, restaurant, tâches – la roue décide équitablement et immédiatement. Gratuit, sans inscription.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://spinselector.pages.dev/fr/decisions.html">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta name="theme-color" content="#0f172a">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/fr/"},{"@type":"ListItem","position":2,"name":"Aide à la décision","item":"https://spinselector.pages.dev/fr/decisions.html"}]}
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <script>
+        window.i18n = {
+            t: function(k){ var s={'empty-state':'Aucune option disponible.<br>Ajoutez au moins 2 options !','canvas-empty':'Ajoutez des options','confirm-clear':'Supprimer toutes les options ?','default-options':['Option 1','Option 2','Option 3']}; return s[k]||k; },
+            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
+            initLanguage: function(){}, currentLanguage: function(){ return 'fr'; }
+        };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Changer de langue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">FR</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+            <button data-lang="en" class="lang-option">🇬🇧 English</button>
+            <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+            <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Changer le thème">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="page-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/fr/">🎡 SpinSelector</a><span>›</span><span>Aide à la décision</span>
+        </nav>
+
+        <div class="page-hero">
+            <h1>🤔 Prendre des décisions plus facilement grâce à la roue</h1>
+            <p class="lead">Chaque jour nous prenons des centaines de petites décisions – et beaucoup nous volent inutilement du temps et de l'énergie. SpinSelector y met fin : entrez les options, tournez la roue, décision prise. Sans stress, équitable et immédiat.</p>
+        </div>
+
+        <div class="psychology-block">
+            <h2>🧠 Pourquoi décider nous est si difficile ?</h2>
+            <p>La psychologie comportementale connaît ce phénomène sous le nom de <strong>« paralysie d'analyse »</strong> ou « fatigue décisionnelle » : plus nous prenons de décisions dans la journée, plus nos jugements ultérieurs sont mauvais – parce que notre budget mental pour décider est tout simplement épuisé.</p>
+            <p>Les études montrent aussi : plus nous avons d'options, plus il est difficile de choisir – même si toutes les options sont bonnes. Ce phénomène, connu sous le nom de <strong>Paradoxe du Choix</strong>, explique pourquoi même pour des questions simples comme « Qu'est-ce qu'on mange ce soir ? » on peut débattre pendant des heures.</p>
+            <p>La roue résout ce problème élégamment : au lieu de porter le poids mental de la décision, on le transfère consciemment au hasard. Le résultat se sent neutre et acceptable – pour tous les participants à la fois.</p>
+        </div>
+
+        <div class="cta-banner">
+            <h2>Laissez décider maintenant !</h2>
+            <p>Entrez des options, tournez la roue – en 10 secondes la décision est prise. Gratuit et sans inscription.</p>
+            <a href="/fr/" class="cta-btn">🎡 Ouvrir SpinSelector</a>
+        </div>
+
+        <h2 class="section-title">🍽️ Repas, boissons & restaurants</h2>
+        <div class="scenario-grid">
+            <div class="scenario-card">
+                <h3>🍕 Choisir le déjeuner</h3>
+                <p>Tous les plats que vous pouvez imaginer dans la roue. La roue décide. Parfait pour les colocataires, équipes de bureau ou couples avec des goûts différents.</p>
+                <div class="options-box">
+                    <span>Exemples d'options :</span>
+                    <ul>
+                        <li>Pâtes bolognaise</li>
+                        <li>Salade</li>
+                        <li>Sandwich</li>
+                        <li>Sushi</li>
+                        <li>Burger</li>
+                        <li>Restes réchauffés</li>
+                        <li>Kebab</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Pâtes bolognaise','Salade','Sandwich','Sushi','Burger','Restes réchauffés','Kebab'])">
+                🎡 Charger dans la roue
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🍣 Choisir le restaurant</h3>
+                <p>Vous avez cinq restaurants préférés et tout le monde est d'humeur différente. La roue résout le conflit en secondes – de façon neutre et contraignante pour tous.</p>
+                <div class="options-box">
+                    <span>Exemples d'options :</span>
+                    <ul>
+                        <li>Grec</li>
+                        <li>Indien</li>
+                        <li>Italien</li>
+                        <li>Thaï</li>
+                        <li>Mexicain</li>
+                        <li>Japonais</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Grec','Indien','Italien','Thaï','Mexicain','Japonais'])">
+                🎡 Charger dans la roue
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🥂 Qu'est-ce qu'on boit ce soir ?</h3>
+                <p>Cocktail, vin, bière ou sans alcool ? Toutes les options dans la roue et on tourne. Fonctionne aussi comme brise-glace en soirée.</p>
+                <div class="options-box">
+                    <span>Exemples d'options :</span>
+                    <ul>
+                        <li>Vin blanc</li>
+                        <li>Vin rouge</li>
+                        <li>Bière artisanale</li>
+                        <li>Cocktail</li>
+                        <li>Eau gazeuse</li>
+                        <li>Thé</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Vin blanc','Vin rouge','Bière artisanale','Cocktail','Eau gazeuse','Thé'])">
+                🎡 Charger dans la roue
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🍳 Cuisiner ou commander ?</h3>
+                <p>L'éternelle question après une longue journée. Toutes les options dans la roue – « Cuisiner à la maison » doit aussi y figurer pour que le résultat soit vraiment ouvert.</p>
+                <div class="options-box">
+                    <span>Exemples d'options :</span>
+                    <ul>
+                        <li>Cuisiner à la maison</li>
+                        <li>Commander pizza</li>
+                        <li>Commander sushi</li>
+                        <li>Commander burger</li>
+                        <li>Finir les restes</li>
+                        <li>Aller au restaurant</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Cuisiner à la maison','Commander pizza','Commander sushi','Commander burger','Finir les restes','Aller au restaurant'])">
+                🎡 Charger dans la roue
+                </button>
+            </div>
+        </div>
+
+        <h2 class="section-title">🎬 Loisirs, divertissement & week-end</h2>
+        <div class="scenario-grid">
+            <div class="scenario-card">
+                <h3>🎬 Quel film on regarde ?</h3>
+                <p>Soirée Netflix avec dix films possibles et pas d'accord ? Tous les candidats dans la roue. Ce que le destin choisit, on le regarde ce soir – sans discussion.</p>
+                <div class="options-box">
+                    <span>Exemples d'options :</span>
+                    <ul>
+                        <li>Film d'action</li>
+                        <li>Comédie romantique</li>
+                        <li>Documentaire</li>
+                        <li>Film d'horreur</li>
+                        <li>Film d'animation</li>
+                        <li>Thriller</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Film d\'action','Comédie romantique','Documentaire','Film d\'horreur','Film d\'animation','Thriller'])">
+                🎡 Charger dans la roue
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🏃 Sport ou détente ?</h3>
+                <p>Fitness, promenade, yoga, natation ou rester sur le canapé ? La roue décide comment vous passez votre soirée ou week-end.</p>
+                <div class="options-box">
+                    <span>Exemples d'options :</span>
+                    <ul>
+                        <li>Courir</li>
+                        <li>Yoga</li>
+                        <li>Vélo</li>
+                        <li>Natation</li>
+                        <li>Promenade</li>
+                        <li>Journée Netflix</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Courir','Yoga','Vélo','Natation','Promenade','Journée Netflix'])">
+                🎡 Charger dans la roue
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🌍 Où partir en vacances ?</h3>
+                <p>Tous les destinations de votre liste de souhaits dans la roue. Parfait pour les couples ou groupes avec des préférences de voyage différentes. Le résultat est contraignant !</p>
+                <div class="options-box">
+                    <span>Exemples d'options :</span>
+                    <ul>
+                        <li>Barcelone</li>
+                        <li>Japon</li>
+                        <li>Bretagne</li>
+                        <li>New York</li>
+                        <li>Thaïlande</li>
+                        <li>Portugal</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Barcelone','Japon','Bretagne','New York','Thaïlande','Portugal'])">
+                🎡 Charger dans la roue
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🎮 À quel jeu on joue ?</h3>
+                <p>Soirée jeux avec des amis et trop d'options ? La roue choisit le jeu – idéal pour les bibliothèques Steam, collections de jeux de société et soirées console.</p>
+                <div class="options-box">
+                    <span>Exemples d'options :</span>
+                    <ul>
+                        <li>FIFA</li>
+                        <li>Catan</li>
+                        <li>Minecraft</li>
+                        <li>Mario Kart</li>
+                        <li>Poker</li>
+                        <li>Among Us</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['FIFA','Catan','Minecraft','Mario Kart','Poker','Among Us'])">
+                🎡 Charger dans la roue
+                </button>
+            </div>
+        </div>
+
+        <h2 class="section-title">💼 Bureau, équipe & réunions</h2>
+        <div class="content-prose">
+            <h3>Modérateur, secrétaire, qui apporte les croissants</h3>
+            <p>Qui modère la prochaine réunion ? Qui prend les notes ? Qui apporte des gâteaux la semaine prochaine ? Ces questions coûtent souvent plus de temps que nécessaire. Tous les noms dans la roue, on tourne, c'est réglé – pas de discussions, pas de « c'était moi la semaine dernière ».</p>
+
+            <h3>Répartir les tâches équitablement</h3>
+            <p>Pour des tâches équivalentes mais de popularité différente (ex. différents sujets de présentation, rapports de voyage ou parties de projet), la roue garantit une attribution équitable sans favoritisme.</p>
+
+            <h3>Prioriser les points de l'ordre du jour</h3>
+            <p>Réunion avec trop de sujets et peu de temps ? Entrez tous les points dans la roue. La roue détermine l'ordre. Ce qui n'a pas été traité passe à la prochaine réunion.</p>
+        </div>
+
+        <div class="tip-box">
+            <p><strong>Astuce psychologique :</strong> Si après le résultat de la roue vous pensez « Oh, c'est pas vraiment ce que je voulais » – c'est un signal précieux ! Vous venez de découvrir ce que vous voulez vraiment. Utilisez la roue aussi pour voir vos propres préférences plus clairement.</p>
+        </div>
+
+        <h2 class="section-title">🏠 Maison, colocation & famille</h2>
+        <div class="content-prose">
+            <h3>Répartir les tâches ménagères</h3>
+            <p>Entrez toutes les obligations ménagères récurrentes dans la roue (aspirateur, vaisselle, sortir les poubelles, courses). Chaque personne tourne une fois – la tâche assignée est contraignante pour la semaine.</p>
+
+            <h3>Qui a le droit en premier de... ?</h3>
+            <p>L'ordre de la salle de bain le matin, l'utilisation de l'ordinateur, la télécommande le soir – la roue résout les conflits équitablement. Les enfants acceptent souvent mieux les résultats quand ils sont clairement aléatoires.</p>
+
+            <h3>Planifier des activités en famille</h3>
+            <p>Chaque membre de la famille peut faire une proposition pour le week-end. Toutes les propositions vont dans la roue. Le résultat respecte tout le monde également.</p>
+        </div>
+
+        <nav class="related-links" aria-label="Pages associées">
+            <a href="/fr/">🎡 Ouvrir la roue</a>
+            <a href="/fr/faq.html">❓ FAQ</a>
+            <a href="/fr/tutoriels.html">📖 Tutoriels</a>
+            <a href="/fr/jeux-de-fete.html">🎉 Jeux de fête</a>
+            <a href="/fr/classe.html">🎓 En classe</a>
+            <a href="/fr/histoire.html">🏛️ Histoire de la roue</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/fr/" class="footer-link">🎡 Roue de la fortune</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Mentions légales</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Confidentialité</a>
+                <span class="footer-separator">·</span>
+                <a href="/fr/faq.html" class="footer-link">FAQ</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script src="/seo-pages.js"></script>
+    <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
+</body>
+</html>

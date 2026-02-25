@@ -52,6 +52,11 @@
     }
     </script>
 
+    <!-- ═══ Structured Data: BreadcrumbList ═══ -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/en/"}]}
+    </script>
+
     <!-- ═══ Structured Data: FAQPage ═══ -->
     <script type="application/ld+json">
     {
@@ -178,6 +183,17 @@
             <p class="subtitle">Let fate decide!</p>
         </header>
 
+        <!-- Mode Nav -->
+        <nav class="mode-nav" aria-label="App modes">
+            <a href="/en/" class="mode-btn active">&#127921; Spin Wheel</a>
+            <a href="/en/wheel-of-names.html" class="mode-btn">&#128100; Names</a>
+            <a href="/en/random-number.html" class="mode-btn">&#127922; Random Number</a>
+            <a href="/en/chooser.html" class="mode-btn">&#129300; Chooser</a>
+            <a href="/en/spin-the-wheel.html" class="mode-btn">&#127757; Spin the Wheel</a>
+            <a href="/en/team-generator.html" class="mode-btn">&#128101; Teams</a>
+            <a href="/en/truth-or-dare.html" class="mode-btn">&#129325; Truth/Dare</a>
+        </nav>
+
         <div class="main-content">
             <div class="wheel-section">
                 <div class="wheel-container">
@@ -254,6 +270,8 @@
                     <a href="/en/decisions.html"><span class="nav-icon">🤔</span><span class="nav-label">Decision Helper<span>Everyday choices</span></span></a>
                     <a href="/en/history.html"><span class="nav-icon">🏛️</span><span class="nav-label">History<span>Origins & culture</span></span></a>
                     <a href="/en/famous-wheels.html"><span class="nav-icon">🎰</span><span class="nav-label">Famous Wheels<span>TV shows & games</span></span></a>
+                    <a href="/en/advantages.html"><span class="nav-icon">&#9989;</span><span class="nav-label">Advantages &amp; Fairness<span>Why random is fair</span></span></a>
+                    <a href="/en/wheel-templates.html"><span class="nav-icon">&#128204;</span><span class="nav-label">Template Library<span>Ready-made wheel templates</span></span></a>
                 </div>
             </nav>
 
@@ -345,6 +363,8 @@
                 <a href="/datenschutz.html" class="footer-link">Privacy</a>
                 <span class="footer-separator">·</span>
                 <a href="/en/faq.html" class="footer-link">FAQ</a>
+                <span class="footer-separator">·</span>
+                <a href="/en/about.html" class="footer-link">About</a>
             </div>
             <div class="footer-copyright">
                 © 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a>

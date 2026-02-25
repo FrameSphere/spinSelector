@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ – Questions fréquentes sur la roue en ligne | SpinSelector</title>
+    <meta name="description" content="Toutes les réponses sur SpinSelector : Comment fonctionne la roue ? Est-ce gratuit ? Combien d'options puis-je entrer ? Confidentialité, technique & plus – répondu ici.">
+    <meta name="keywords" content="roue de la fortune FAQ, SpinSelector questions, aide roue en ligne, générateur aléatoire FAQ, roue gratuite questions">
+    <link rel="canonical" href="https://spinselector.pages.dev/fr/faq.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/faq.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/faq.html">
+    <link rel="alternate" hreflang="fr" href="https://spinselector.pages.dev/fr/faq.html">
+    <link rel="alternate" hreflang="es" href="https://spinselector.pages.dev/es/faq.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/faq.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="FAQ – Questions fréquentes sur SpinSelector">
+    <meta property="og:description" content="Toutes les réponses sur la roue de la fortune gratuite SpinSelector.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinselector.pages.dev/fr/faq.html">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta name="theme-color" content="#0f172a">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/fr/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://spinselector.pages.dev/fr/faq.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Qu'est-ce que SpinSelector ?","acceptedAnswer":{"@type":"Answer","text":"SpinSelector est une roue de la fortune gratuite en ligne qui vous permet de prendre des décisions par algorithme aléatoire. Saisissez vos propres options, cliquez sur Tourner et la roue animée choisit un gagnant au hasard – directement dans le navigateur, sans téléchargement."}},
+        {"@type":"Question","name":"SpinSelector est-il payant ?","acceptedAnswer":{"@type":"Answer","text":"Non. SpinSelector est entièrement gratuit et financé par la publicité. Aucune inscription, aucun abonnement et aucun téléchargement ne sont nécessaires."}},
+        {"@type":"Question","name":"Combien d'options puis-je entrer ?","acceptedAnswer":{"@type":"Answer","text":"Vous pouvez entrer jusqu'à 20 options simultanément dans la roue. Chaque option peut comporter jusqu'à 50 caractères."}},
+        {"@type":"Question","name":"Mes options sont-elles sauvegardées ?","acceptedAnswer":{"@type":"Answer","text":"Oui, vos options sont automatiquement sauvegardées dans le Local Storage de votre navigateur. Elles sont donc disponibles après avoir fermé et rouvert le navigateur. Aucune donnée n'est transmise à des serveurs externes."}},
+        {"@type":"Question","name":"L'algorithme aléatoire est-il vraiment équitable ?","acceptedAnswer":{"@type":"Answer","text":"SpinSelector utilise la fonction Math.random() de JavaScript combinée à la distance de rotation réelle de la roue. Chaque option a, à taille de segment égale, exactement la même probabilité de gagner."}},
+        {"@type":"Question","name":"SpinSelector fonctionne-t-il sur smartphone ?","acceptedAnswer":{"@type":"Answer","text":"Oui, SpinSelector est entièrement optimisé pour mobile et fonctionne sur tous les smartphones, tablettes et ordinateurs de bureau modernes."}},
+        {"@type":"Question","name":"Puis-je utiliser la roue pour des tirages au sort ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. Entrez tous les noms des participants, activez la fonction Suppression automatique après le tour et tirez tour après tour – chaque nom ne peut ainsi être tiré qu'une seule fois."}},
+        {"@type":"Question","name":"Que signifie la suppression automatique ?","acceptedAnswer":{"@type":"Answer","text":"Si la case Suppression automatique après le tour est cochée, l'option gagnante est automatiquement retirée de la roue après chaque tirage. Idéal pour les tournois, tirages au sort et appels d'élèves."}},
+        {"@type":"Question","name":"Comment changer la langue ?","acceptedAnswer":{"@type":"Answer","text":"Cliquez sur le symbole du globe en haut à droite. Dans le menu déroulant, vous pouvez choisir entre Deutsch, English, Français et Español. La langue choisie est sauvegardée."}},
+        {"@type":"Question","name":"Y a-t-il une application pour SpinSelector ?","acceptedAnswer":{"@type":"Answer","text":"Il n'existe pas d'application native pour l'instant. SpinSelector est cependant conçu comme une Progressive Web App et peut être installé sur l'écran d'accueil du smartphone – il se comporte alors comme une application."}}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <script>
+        window.i18n = {
+            t: function(k){ var s={'empty-state':'Aucune option disponible.<br>Ajoutez au moins 2 options !','canvas-empty':'Ajoutez des options','confirm-clear':'Supprimer toutes les options ?','default-options':['Option 1','Option 2','Option 3']}; return s[k]||k; },
+            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
+            initLanguage: function(){}, currentLanguage: function(){ return 'fr'; }
+        };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Changer de langue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">FR</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+            <button data-lang="en" class="lang-option">🇬🇧 English</button>
+            <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+            <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Changer le thème">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="page-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/fr/">🎡 SpinSelector</a>
+            <span>›</span>
+            <span>FAQ</span>
+        </nav>
+
+        <div class="page-hero">
+            <h1>❓ Questions fréquentes sur SpinSelector</h1>
+            <p class="lead">Vous avez des questions sur la roue de la fortune gratuite ? Trouvez ici des réponses détaillées sur les fonctionnalités, la technique, la confidentialité et tout ce qui rend SpinSelector unique.</p>
+        </div>
+
+        <div class="section-divider"><h2>Bases & premiers pas</h2></div>
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Qu'est-ce que SpinSelector et à quoi sert-il ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>SpinSelector est une <strong>roue de la fortune gratuite en ligne</strong> qui vous permet de saisir vos propres options et de laisser un algorithme aléatoire en choisir une. Il fonctionne entièrement dans le navigateur – sans téléchargement, sans installation d'application et sans inscription.</p>
+                    <p>Les possibilités d'utilisation sont extrêmement variées : des décisions quotidiennes simples (choisir le déjeuner, sélectionner un film) aux scénarios professionnels (désigner le modérateur de réunion, répartir les tâches en équipe) en passant par les jeux et le divertissement (jeux de fête, activités de classe, tirages au sort).</p>
+                    <p>La particularité de SpinSelector : l'animation visuelle de la roue qui tourne fait de la prise de décision une expérience – équitable, transparente et divertissante pour tous les participants.</p>
+                    <div class="tag-row">
+                        <span class="tag">Générateur aléatoire</span><span class="tag">Outil en ligne</span><span class="tag">Gratuit</span><span class="tag">Basé sur navigateur</span>
+                    </div>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>SpinSelector est-il payant ? Y a-t-il des coûts cachés ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>SpinSelector est et restera <strong>100 % gratuit</strong>. Il n'y a pas de version premium, pas d'abonnement, pas d'achats intégrés et pas de frais cachés. Le site se finance exclusivement par la publicité (Google AdSense).</p>
+                    <p>Vous n'avez pas besoin de vous inscrire ni de fournir une adresse e-mail. Ouvrez simplement la page et commencez directement.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Combien d'options puis-je entrer dans la roue ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Vous pouvez entrer <strong>jusqu'à 20 options</strong> simultanément dans la roue. Chaque option peut comporter au maximum 50 caractères. Sur la roue elle-même, seuls environ 20 caractères sont affichés lisiblement par manque de place – mais le nom complet reste visible dans la liste sous la roue.</p>
+                    <p>Pour la plupart des utilisations, c'est largement suffisant. Pour un très grand nombre de participants (par exemple des tirages au sort avec 50+ personnes), il est conseillé de procéder en plusieurs tours.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Dois-je ressaisir les options à chaque visite ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Non ! SpinSelector sauvegarde automatiquement vos options dans le <strong>Local Storage</strong> de votre navigateur. Cela signifie que si vous fermez la page et la rouvrez plus tard, vos options sont toujours là – sans avoir à les ressaisir.</p>
+                    <p>Important à savoir : le Local Storage est <strong>spécifique au navigateur</strong>. Si vous travaillez sur un autre appareil ou un autre navigateur, les options sauvegardées n'y seront pas disponibles. De plus, les données sont supprimées si vous videz le cache ou les données du site web de votre navigateur.</p>
+                </div></div>
+            </div>
+
+        </div>
+
+        <div class="section-divider"><h2>Technique, équité & algorithme aléatoire</h2></div>
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>L'algorithme aléatoire est-il équitable ? La roue est-elle vraiment aléatoire ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Oui, la roue est <strong>vraiment aléatoire et totalement équitable</strong>. SpinSelector utilise <code>Math.random()</code> de JavaScript combiné à une distance de rotation totale aléatoire. Chaque segment a – à nombre d'options égal – exactement la même probabilité de se trouver sous le pointeur.</p>
+                    <p>Concrètement, voici comment ça fonctionne : au clic sur « TOURNER », une distance de rotation totale aléatoire entre 5 et 7 tours complets est d'abord calculée. La roue tourne ensuite avec une courbe de décélération réaliste. À la fin, le segment se trouvant exactement sous le pointeur est déterminé avec précision.</p>
+                    <p>Comme tous les calculs se font <strong>côté client dans le navigateur</strong>, le résultat ne dépend pas d'un serveur ni d'autres facteurs externes.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Sur quels appareils et navigateurs SpinSelector fonctionne-t-il ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>SpinSelector fonctionne sur tous les appareils et navigateurs modernes prenant en charge HTML5 Canvas – c'est-à-dire pratiquement toutes les versions actuelles de :</p>
+                    <ul>
+                        <li><strong>Bureau :</strong> Chrome, Firefox, Safari, Edge, Opera</li>
+                        <li><strong>Mobile :</strong> Chrome pour Android, Safari pour iOS, Samsung Internet, Firefox Mobile</li>
+                        <li><strong>Tablettes :</strong> iPad (Safari), tablettes Android</li>
+                    </ul>
+                    <p>Pour la meilleure expérience, nous recommandons un navigateur Chrome ou Firefox récent.</p>
+                </div></div>
+            </div>
+
+        </div>
+
+        <div class="section-divider"><h2>Confidentialité & sécurité des données</h2></div>
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Quelles données SpinSelector collecte-t-il ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>SpinSelector lui-même ne collecte <strong>aucune donnée personnelle</strong>. Les options que vous saisissez sont stockées exclusivement en local dans votre navigateur et ne quittent jamais votre appareil.</p>
+                    <p>En tant que site financé par la publicité, <strong>Google AdSense</strong> est utilisé et peut déposer ses propres cookies pour personnaliser les annonces. Pour plus de détails, consultez notre <a href="/datenschutz.html">politique de confidentialité</a>.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Mes noms et options saisis sont-ils stockés quelque part ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p><strong>Non.</strong> Vos options saisies – qu'il s'agisse de prénoms, d'entrées de menu ou d'options de jeux – sont stockées <strong>exclusivement dans le Local Storage de votre propre navigateur</strong>. Il n'y a aucune base de données, aucun serveur qui reçoit ou traite ces données.</p>
+                </div></div>
+            </div>
+
+        </div>
+
+        <div class="section-divider"><h2>Fonctionnalités & utilisation</h2></div>
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Que fait la fonction « Suppression automatique après le tour » ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Lorsque cette case est cochée, l'<strong>option gagnante est automatiquement retirée de la roue après chaque tour</strong> – environ 2 secondes après la fin de l'animation. C'est particulièrement utile pour :</p>
+                    <ul>
+                        <li><strong>Tirages au sort :</strong> aucun participant ne peut être tiré deux fois</li>
+                        <li><strong>Déterminer un ordre :</strong> qui passe quand ?</li>
+                        <li><strong>Appel d'élèves :</strong> chaque élève est appelé exactement une fois</li>
+                        <li><strong>Tournois :</strong> tours éliminatoires sans répétition</li>
+                    </ul>
+                    <p>Si la case est décochée, chaque option reste dans la roue même après un tour – idéal pour les jeux de fête où la même personne peut être sélectionnée plusieurs fois.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>À quoi sert le bouton « Mélanger » ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Le <strong>bouton Mélanger</strong> réorganise les segments de la roue dans un nouvel ordre aléatoire. C'est utile pour éviter que les participants mémorisent les positions des segments ou les anticipent.</p>
+                    <p>Puisque la position de départ de la roue est toujours la même, un observateur expérimenté pourrait théoriquement reconnaître des patterns après quelques tours sans mélanger. Le bouton Mélanger rend cela impossible et augmente le caractère aléatoire réel du point de vue de l'utilisateur.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Puis-je utiliser SpinSelector pour des réunions en ligne ou visioconférences ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Absolument – c'est même l'un des cas d'utilisation les plus populaires ! SpinSelector convient parfaitement à <strong>Zoom, Teams, Google Meet ou Webex</strong>. Partagez simplement votre onglet de navigateur via le partage d'écran, et tous les participants voient la roue tourner en direct.</p>
+                    <ul>
+                        <li>Préparez les options (ex. noms des participants) avant la réunion</li>
+                        <li>Utilisez le mode sombre pour une meilleure visibilité sur les écrans partagés</li>
+                        <li>Activez « Suppression automatique » pour que chaque personne passe exactement une fois</li>
+                    </ul>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Comment changer la langue de SpinSelector ?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Cliquez sur le <strong>symbole du globe</strong> en haut à droite avec le code de langue. Dans le menu déroulant qui apparaît, choisissez la langue souhaitée – actuellement disponibles :</p>
+                    <ul>
+                        <li>🇩🇪 Deutsch</li>
+                        <li>🇬🇧 English</li>
+                        <li>🇫🇷 Français</li>
+                        <li>🇪🇸 Español</li>
+                    </ul>
+                    <p>Le choix de la langue est sauvegardé dans le Local Storage et restauré automatiquement lors de la prochaine visite.</p>
+                </div></div>
+            </div>
+
+        </div>
+
+        <div class="section-divider"><h2>Domaines d'utilisation & idées</h2></div>
+        <div class="content-block">
+            <h3>Quelles situations conviennent particulièrement bien à SpinSelector ?</h3>
+            <p>SpinSelector est extrêmement polyvalent. Voici les utilisations les plus populaires :</p>
+            <ul>
+                <li><strong>🎉 Fêtes & célébrations :</strong> <a href="/fr/decisions.html">Aide à la décision</a>, jeux à boire, roue de défis – plus d'idées sur notre <a href="/fr/jeux-de-fete.html">page Jeux de fête</a></li>
+                <li><strong>🎓 École & classe :</strong> Appeler des élèves au hasard, <a href="/fr/classe.html">former des groupes équitablement</a> – plus sur la <a href="/fr/classe.html">page Classe</a></li>
+                <li><strong>💼 Équipe & bureau :</strong> Déterminer l'ordre des présentations ou créer des groupes de projet équitables</li>
+                <li><strong>🍽️ Quotidien :</strong> Choisir un restaurant, décider d'un film, planifier la journée – plus sur la <a href="/fr/decisions.html">page Aide à la décision</a></li>
+                <li><strong>🎰 Tirages au sort :</strong> Concours, tombola, calendrier de l'Avent</li>
+            </ul>
+        </div>
+
+        <div class="section-divider"><h2>Autres pages utiles</h2></div>
+        <nav class="related-links" aria-label="Pages associées">
+            <a href="/fr/tutoriels.html">📖 Tutoriels & guides</a>
+            <a href="/fr/jeux-de-fete.html">🎉 Idées de jeux de fête</a>
+            <a href="/fr/classe.html">🎓 Roue en classe</a>
+            <a href="/fr/decisions.html">🤔 Aide à la décision</a>
+            <a href="/fr/histoire.html">🏛️ Histoire de la roue</a>
+            <a href="/fr/">🎡 Tourner maintenant</a>
+        </nav>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/fr/" class="footer-link">🎡 Roue de la fortune</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Mentions légales</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Confidentialité</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+        function toggleFaq(btn) {
+            var body = btn.nextElementSibling;
+            var open = body.classList.toggle('open');
+            btn.setAttribute('aria-expanded', String(open));
+        }
+        function initTheme() {
+            var t = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        }
+        initTheme();
+    </script>
+</body>
+</html>

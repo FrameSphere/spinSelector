@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriales – Crear y usar la ruleta de forma óptima | SpinSelector</title>
+    <meta name="description" content="Tutoriales de SpinSelector: crear la ruleta, organizar un sorteo, usar en el aula, configuraciones para fiestas. Guías paso a paso para principiantes y avanzados.">
+    <meta name="keywords" content="tutorial ruleta, guía spin wheel, crear ruleta, configurar generador aleatorio, instrucciones ruleta online, paso a paso">
+    <link rel="canonical" href="https://spinselector.pages.dev/es/tutoriales.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/tutorials.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/tutorials.html">
+    <link rel="alternate" hreflang="es" href="https://spinselector.pages.dev/es/tutoriales.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/tutorials.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Tutoriales de SpinSelector – Guías paso a paso">
+    <meta property="og:description" content="Aprende a usar la ruleta online de forma óptima para sorteos, clase, fiestas y decisiones cotidianas.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://spinselector.pages.dev/es/tutoriales.html">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta name="theme-color" content="#0f172a">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/es/"},{"@type":"ListItem","position":2,"name":"Tutoriales","item":"https://spinselector.pages.dev/es/tutoriales.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Configurar y usar la ruleta SpinSelector",
+      "description": "Guía paso a paso para configurar SpinSelector para sorteos, clases y juegos de fiesta.",
+      "url": "https://spinselector.pages.dev/es/tutoriales.html",
+      "inLanguage": "es",
+      "step": [
+        {"@type":"HowToStep","name":"Abrir la página","text":"Abre spinselector.pages.dev/es/ en tu navegador – sin instalación ni registro."},
+        {"@type":"HowToStep","name":"Añadir opciones","text":"Escribe tus primeras opciones en el campo de entrada y haz clic en Añadir."},
+        {"@type":"HowToStep","name":"Ajustar configuración","text":"Elige si la opción ganadora se debe eliminar automáticamente y usa el botón Mezclar para máxima aleatoriedad."},
+        {"@type":"HowToStep","name":"Girar la ruleta","text":"Haz clic en el gran botón GIRAR en el centro de la ruleta. La ruleta gira y se detiene en una opción aleatoria."}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <script>
+        window.i18n = {
+            t: function(k){ var s={'empty-state':'No hay opciones disponibles.<br>¡Añade al menos 2 opciones!','canvas-empty':'Añade opciones','confirm-clear':'¿Eliminar todo?','default-options':['Opción 1','Opción 2','Opción 3']}; return s[k]||k; },
+            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
+            initLanguage: function(){}, currentLanguage: function(){ return 'es'; }
+        };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Cambiar idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">ES</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+            <button data-lang="en" class="lang-option">🇬🇧 English</button>
+            <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+            <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="page-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/es/">🎡 SpinSelector</a><span>›</span><span>Tutoriales</span>
+        </nav>
+
+        <div class="page-hero">
+            <h1>📖 Tutoriales de SpinSelector – Paso a paso</h1>
+            <p class="lead">Desde la primera entrada de opciones hasta el sorteo profesional: aquí encontrarás todas las guías que necesitas para usar SpinSelector de forma óptima – explicadas de forma comprensible para principiantes y usuarios avanzados.</p>
+        </div>
+
+        <nav class="tut-nav" aria-label="Resumen de tutoriales">
+            <a href="#primeros-pasos">🚀 Primeros pasos</a>
+            <a href="#sorteo">🎰 Organizar sorteo</a>
+            <a href="#aula">🎓 Usar en el aula</a>
+            <a href="#fiesta">🎉 Fiesta y juegos</a>
+            <a href="#consejos">💡 Consejos profesionales</a>
+            <a href="#movil">📱 Móvil y proyector</a>
+        </nav>
+
+        <!-- PRIMEROS PASOS -->
+        <div class="tut-block" id="primeros-pasos">
+            <div class="tut-label">Tutorial 1 · Fundamentos</div>
+            <h2>🚀 Primeros pasos – SpinSelector en 2 minutos</h2>
+            <p>SpinSelector no requiere instalación, cuenta ni descarga. Solo necesitas un navegador moderno. Aquí todo lo que necesitas saber para empezar:</p>
+        </div>
+
+        <ol class="step-list">
+            <li><div class="step-text"><strong>Abrir la página.</strong> Ve a <a href="/es/">spinselector.pages.dev/es/</a> en Chrome, Firefox, Safari o Edge. La ruleta carga inmediatamente – sin esperas.</div></li>
+            <li><div class="step-text"><strong>Añadir la primera opción.</strong> Haz clic en el campo de texto con el texto de marcador «Ingresa una nueva opción…». Escribe tu primera entrada (máximo 50 caracteres) y haz clic en <em>«Añadir»</em> o pulsa Enter. La opción aparece inmediatamente como segmento en la ruleta.</div></li>
+            <li><div class="step-text"><strong>Añadir más opciones.</strong> Repite el paso 2 para todas las entradas adicionales. Puedes añadir hasta 20 opciones. La ruleta ajusta automáticamente el tamaño de los segmentos.</div></li>
+            <li><div class="step-text"><strong>Girar la ruleta.</strong> Haz clic en el gran botón <em>«GIRAR»</em> en el centro de la ruleta. La ruleta gira durante unos 3,5 segundos y se detiene en una opción aleatoria. El resultado se muestra debajo de la ruleta.</div></li>
+            <li><div class="step-text"><strong>Volver a girar o gestionar opciones.</strong> Haz clic de nuevo en «GIRAR» para la siguiente ronda. Se pueden eliminar opciones individuales con el icono de papelera en la lista. «Borrar todo» vacía la ruleta completamente.</div></li>
+        </ol>
+
+        <div class="tip-box">
+            <p><strong>Bueno saberlo:</strong> Tus opciones se guardan automáticamente en el almacenamiento del navegador (Local Storage). Si cierras la página y la vuelves a abrir más tarde, todas las entradas seguirán ahí – no necesitas empezar de nuevo.</p>
+        </div>
+
+        <!-- SORTEO -->
+        <div class="tut-block" id="sorteo">
+            <div class="tut-label">Tutorial 2 · Avanzado</div>
+            <h2>🎰 Realizar un sorteo justo con SpinSelector</h2>
+            <p>SpinSelector es ideal para sorteos, tombolas y concursos. Aquí aprenderás a realizar un sorteo profesional sin repeticiones – en directo ante tu público.</p>
+        </div>
+
+        <ol class="step-list">
+            <li><div class="step-text"><strong>Preparar la lista de participantes.</strong> Recoge de antemano todos los nombres de los participantes. Usa nombres cortos y únicos (nombre y apellido o número de participante). Con muchos participantes (50+) se recomienda una numeración.</div></li>
+            <li><div class="step-text"><strong>Añadir todos los nombres a la ruleta.</strong> Introduce el nombre de cada participante individualmente. Con muchos participantes puedes cargar la ruleta con hasta 20 nombres por ronda y luego iniciar una nueva ronda.</div></li>
+            <li><div class="step-text"><strong>Activar «Eliminar automáticamente».</strong> Marca la casilla <em>«Eliminar automáticamente después de girar»</em>. Así cada ganador se elimina de la ruleta tras el sorteo – un nombre no puede salir dos veces.</div></li>
+            <li><div class="step-text"><strong>Hacer la pantalla visible para todos.</strong> Proyecta la ruleta en un proyector, TV o comparte tu pantalla por videoconferencia. La transparencia es crucial en los sorteos – todos los participantes deben ver el proceso aleatorio en directo.</div></li>
+            <li><div class="step-text"><strong>Girar la ruleta y anunciar al ganador.</strong> Haz clic en «GIRAR». La ruleta elige al primer ganador, el nombre desaparece automáticamente poco después. Haz clic de nuevo para el siguiente ganador.</div></li>
+            <li><div class="step-text"><strong>Mezclar antes de cada ronda.</strong> Haz clic en el botón <em>«Mezclar»</em> para cambiar el orden de los segmentos. Aumenta la imparcialidad percibida e imposibilita los patrones en la ruleta.</div></li>
+        </ol>
+
+        <div class="tip-box">
+            <p><strong>Documentar el sorteo:</strong> Haz una captura de pantalla tras cada extracción o registra por escrito el orden de ganadores. Para concursos oficiales se recomienda documentar el proceso aleatorio.</p>
+        </div>
+
+        <!-- AULA -->
+        <div class="tut-block" id="aula">
+            <div class="tut-label">Tutorial 3 · Escuela</div>
+            <h2>🎓 Configurar SpinSelector en el aula</h2>
+            <p>Como profesor, SpinSelector te ahorra tiempo valioso y hace tus clases más interactivas. Así configuras la ruleta para el uso diario en el aula.</p>
+        </div>
+
+        <ol class="step-list">
+            <li><div class="step-text"><strong>Crear la lista de clase al inicio del curso.</strong> Abre SpinSelector en el PC del aula e introduce todos los alumnos. Los nombres quedan guardados permanentemente – solo tienes que introducirlos una vez.</div></li>
+            <li><div class="step-text"><strong>Decidir: ¿Eliminación automática activada o desactivada?</strong> Para llamadas aleatorias en una clase: <em>activada</em> (cada uno es llamado exactamente una vez). Para notas de participación oral a lo largo del tiempo: <em>desactivada</em> (se puede llamar cuantas veces sea necesario).</div></li>
+            <li><div class="step-text"><strong>Hacer la pregunta primero, luego girar.</strong> Formula la pregunta antes de girar la ruleta. Esto da a todos los alumnos un momento para pensar y aumenta la calidad de las respuestas.</div></li>
+            <li><div class="step-text"><strong>Reiniciar al final de la clase.</strong> Si la eliminación automática estaba activa y quieres recuperar todos los nombres para la próxima clase: recárgalos manualmente o recarga la página.</div></li>
+        </ol>
+
+        <div class="content-prose">
+            <p>Más ideas y plantillas listas para todas las asignaturas en la <a href="/es/aula.html">página del Aula</a>.</p>
+        </div>
+
+        <!-- FIESTA -->
+        <div class="tut-block" id="fiesta">
+            <div class="tut-label">Tutorial 4 · Entretenimiento</div>
+            <h2>🎉 Preparar SpinSelector para fiestas y noches de juegos</h2>
+            <p>Con un poco de preparación, SpinSelector se convierte en el protagonista de cualquier noche de juegos. Así preparas varias configuraciones de ruleta para una fiesta.</p>
+        </div>
+
+        <ol class="step-list">
+            <li><div class="step-text"><strong>Abrir varias pestañas del navegador.</strong> Abre SpinSelector en 2-3 pestañas diferentes. Cada pestaña tiene su propia configuración: Pestaña 1 con los nombres de los participantes, Pestaña 2 con los retos, Pestaña 3 con bebidas o actividades.</div></li>
+            <li><div class="step-text"><strong>Preconfigurar cada configuración.</strong> Añade las opciones correspondientes en cada pestaña. La configuración se guarda por separado en cada pestaña – puedes cambiar entre pestañas en cualquier momento.</div></li>
+            <li><div class="step-text"><strong>Conectar el dispositivo al TV o proyector.</strong> Conecta tu smartphone con un adaptador HDMI o casting (Chromecast, AirPlay) al TV. Así todo el grupo puede ver la ruleta.</div></li>
+            <li><div class="step-text"><strong>Modo oscuro para el ambiente de fiesta.</strong> Haz clic en el icono de la luna en la parte superior derecha para activar el modo oscuro. El diseño negro con colores brillantes queda espectacular en un TV.</div></li>
+            <li><div class="step-text"><strong>En cada ronda: ¡Mezcla!</strong> Haz clic en «Mezclar» antes de cada ronda de juego para cambiar el orden de los segmentos. Evita que los jugadores memoricen las posiciones.</div></li>
+        </ol>
+
+        <div class="content-prose">
+            <p>Plantillas listas para más de 20 juegos de fiesta en la <a href="/es/juegos-de-fiesta.html">página de Juegos de fiesta</a>.</p>
+        </div>
+
+        <!-- CONSEJOS PROFESIONALES -->
+        <h2 class="section-title" id="consejos">💡 Consejos profesionales para usuarios avanzados</h2>
+        <div class="content-prose">
+            <h3>Formular los nombres de las opciones de forma óptima</h3>
+            <p>La ruleta muestra legiblemente unos 20 caracteres por segmento como máximo. Con nombres largos estos se abrevian. Usa por tanto designaciones compactas y únicas. En lugar de «María García Martínez del grupo 3B» mejor solo «María G.» – todos los presentes ya saben quién es María García.</p>
+
+            <h3>Técnica de doble ruleta para juegos complejos</h3>
+            <p>Abre SpinSelector en dos pestañas diferentes. La Pestaña 1 contiene los nombres de los participantes (¿a quién le toca?), la Pestaña 2 los retos o acciones (¿qué hay que hacer?). Al cambiar entre pestañas se crea un sistema de juego con doble aleatoriedad – especialmente popular en variantes de Verdad o Reto.</p>
+
+            <h3>Determinar el orden de asientos de forma aleatoria</h3>
+            <p>Añade los números de asiento (Asiento 1, Asiento 2, …) a la ruleta. Cada persona gira una vez – el número mostrado es su asiento asignado. Ideal para exámenes, ensayos teatrales o eventos de cena donde se desea un orden de asientos aleatorio.</p>
+
+            <h3>Añadir a listas existentes en lugar de crearlas de nuevo</h3>
+            <p>Si participantes se apuntan a posteriori: simplemente añádelos a través del campo de entrada mientras todas las demás entradas se conservan. No tienes que volver a llenar la ruleta completamente.</p>
+
+            <h3>La ruleta como temporizador de moderación</h3>
+            <p>Uso creativo: añade intervalos de tiempo a la ruleta (por ejemplo «1 minuto», «2 minutos», «3 minutos»). La ruleta determina entonces cuánto tiempo dura una presentación o contribución. Crea clases variadas y evita que contribuciones individuales se alarguen demasiado.</p>
+        </div>
+
+        <!-- MÓVIL Y PROYECTOR -->
+        <h2 class="section-title" id="movil">📱 Usar SpinSelector en móvil y con proyector</h2>
+        <div class="content-prose">
+            <p>SpinSelector está totalmente optimizado para móvil y se puede usar perfectamente en cualquier dispositivo. Aquí los escenarios más importantes para el uso móvil:</p>
+
+            <h3>Smartphone en la mano</h3>
+            <p>Sostén el smartphone horizontalmente (apaisado) para que la ruleta se muestre lo más grande posible. Girar funciona tocando la pantalla igual que haciendo clic con el ratón en el escritorio. Todos los botones están optimizados para pantalla táctil y son suficientemente grandes.</p>
+
+            <h3>iPad / Tablet sobre la mesa</h3>
+            <p>Una tableta puesta en pie sobre la mesa es ideal para noches de juegos o fiestas: todos los sentados pueden ver la ruleta y cualquiera puede girar tocando. Instala SpinSelector a través de «Añadir a la pantalla de inicio» en Safari o Chrome para una experiencia similar a una app.</p>
+
+            <h3>Presentación con proyector</h3>
+            <p>Conecta tu portátil por HDMI al proyector. Abre SpinSelector en el modo de pantalla completa del navegador (F11 o modo presentación). La ruleta ocupa entonces toda la pantalla del proyector – máximo impacto para sorteos, clases o eventos.</p>
+
+            <h3>Compartir pantalla en videoconferencias</h3>
+            <p>Inicia tu herramienta de videoconferencia (Zoom, Teams, Meet, etc.) y elige «Compartir pestaña» o «Compartir ventana». Selecciona la pestaña de SpinSelector. Todos los participantes ven la ruleta en tiempo real. Consejo: comparte la pestaña, no todo el escritorio – así las demás pestañas y tu escritorio quedan privados.</p>
+        </div>
+
+        <div class="section-title" style="font-size:1.1rem">Más recursos</div>
+        <nav class="related-links" aria-label="Páginas relacionadas">
+            <a href="/es/">🎡 Ir a la ruleta</a>
+            <a href="/es/faq.html">❓ FAQ</a>
+            <a href="/es/juegos-de-fiesta.html">🎉 Juegos de fiesta</a>
+            <a href="/es/aula.html">🎓 En el aula</a>
+            <a href="/es/decisiones.html">🤔 Ayuda para decidir</a>
+            <a href="/es/verdad-o-reto.html">🤥 Verdad o reto</a>
+            <a href="/es/team-generator.html">👥 Generador de equipos</a>
+            <a href="/es/historia.html">🏛️ Historia de la ruleta</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/es/" class="footer-link">🎡 Ir a la ruleta</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Aviso legal</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Privacidad</a>
+                <span class="footer-separator">·</span>
+                <a href="/es/faq.html" class="footer-link">FAQ</a>
+                <span class="footer-separator">·</span>
+                <a href="/es/about.html" class="footer-link">Sobre nosotros</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
+</body>
+</html>

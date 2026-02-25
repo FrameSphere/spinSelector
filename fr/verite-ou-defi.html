@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérité ou Défi – Jeu de Soirée en Ligne Gratuit | SpinSelector</title>
+    <meta name="description" content="Jouer à Vérité ou Défi en ligne – gratuitement, sans téléchargement. Choisissez une catégorie et un niveau de difficulté, faites tourner la roue et répondez aux questions ou relevez les défis. Parfait pour les fêtes !">
+    <meta name="keywords" content="vérité ou défi en ligne, truth or dare, vérité ou défi questions, jeu de soirée en ligne, générateur vérité défi, jeux de fête gratuits, truth or dare français">
+    <link rel="canonical" href="https://spinselector.pages.dev/fr/verite-ou-defi.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/truth-or-dare.html">
+    <link rel="alternate" hreflang="fr" href="https://spinselector.pages.dev/fr/verite-ou-defi.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Vérité ou Défi – Jeu de Soirée Gratuit en Ligne">
+    <meta property="og:description" content="Faites tourner la roue, choisissez Vérité ou Défi et jouez directement. Avec niveaux de difficulté, catégories et plus de 200 questions et défis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinselector.pages.dev/fr/verite-ou-defi.html">
+    <meta name="theme-color" content="#0f172a">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Vérité ou Défi","url":"https://spinselector.pages.dev/fr/verite-ou-defi.html","description":"Jeu de Vérité ou Défi gratuit en ligne : faire tourner la roue, choisir une catégorie, jouer immédiatement. Plus de 200 questions et défis à différents niveaux de difficulté.","applicationCategory":"GameApplication","operatingSystem":"Web Browser","inLanguage":"fr","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+    </script>
+    <link rel="stylesheet" href="/styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <style>
+        .mode-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin: 0 auto 1.5rem; max-width: 960px; }
+        .mode-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--card-bg,#1e293b); color: var(--text-secondary,#cbd5e1); text-decoration: none; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, color .18s, transform .18s; white-space: nowrap; }
+        .mode-btn:hover { background: var(--accent,#6366f1); color: #fff; transform: translateY(-1px); border-color: transparent; }
+        .mode-btn.active { background: linear-gradient(135deg,#ec4899,#f43f5e); color: #fff; border-color: transparent; }
+        .game-wrap { max-width: 960px; margin: 0 auto 2rem; padding: 0 1.25rem; }
+        .player-bar { background: var(--card-bg,#1e293b); border-radius: 16px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+        .player-bar h3 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted,#94a3b8); margin: 0; white-space: nowrap; }
+        .players-list { display: flex; flex-wrap: wrap; gap: 0.4rem; flex: 1; }
+        .player-chip { display: flex; align-items: center; gap: 0.35rem; border-radius: 999px; padding: 0.3rem 0.7rem 0.3rem 0.4rem; font-size: 0.83rem; font-weight: 700; color: #fff; cursor: pointer; transition: opacity .15s; }
+        .player-chip .pc-dot { width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 800; }
+        .player-chip:hover { opacity: 0.8; }
+        .player-chip.active-player { box-shadow: 0 0 0 3px #fff; transform: scale(1.05); }
+        .add-player-row { display: flex; gap: 0.4rem; }
+        .add-player-row input { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 9px; padding: 0.4rem 0.7rem; color: var(--text,#f8fafc); font-size: 0.85rem; width: 130px; }
+        .add-player-row input:focus { outline: none; border-color: #ec4899; }
+        .btn-add-player { background: linear-gradient(135deg,#ec4899,#f43f5e); color: #fff; border: none; border-radius: 9px; padding: 0.4rem 0.75rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+        .current-player-label { font-size: 0.78rem; color: var(--text-muted,#94a3b8); white-space: nowrap; }
+        .current-player-name { font-weight: 800; color: var(--text,#f8fafc); }
+        .config-bar { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; align-items: center; }
+        .config-group { background: var(--card-bg,#1e293b); border-radius: 12px; padding: 0.5rem 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .config-group label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted,#94a3b8); white-space: nowrap; }
+        .config-group select { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 7px; padding: 0.3rem 0.55rem; color: var(--text,#f8fafc); font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+        .config-group select:focus { outline: none; }
+        .diff-pills { display: flex; gap: 0.3rem; }
+        .diff-pill { border: 1px solid var(--border,#334155); background: var(--bg,#0f172a); color: var(--text-secondary,#cbd5e1); border-radius: 7px; padding: 0.3rem 0.65rem; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
+        .diff-pill.active { border-color: transparent; color: #fff; }
+        .diff-pill[data-d="facile"].active   { background: #10b981; }
+        .diff-pill[data-d="moyen"].active    { background: #f59e0b; }
+        .diff-pill[data-d="extreme"].active  { background: #ef4444; }
+        .main-card { border-radius: 24px; overflow: hidden; margin-bottom: 1.25rem; position: relative; min-height: 340px; display: flex; flex-direction: column; }
+        .choice-screen { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; gap: 1.25rem; background: var(--card-bg,#1e293b); }
+        .choice-screen.hidden { display: none; }
+        .choice-who { font-size: 0.9rem; color: var(--text-muted,#94a3b8); margin-bottom: -0.5rem; }
+        .choice-who strong { color: var(--text,#f8fafc); }
+        .choice-btns { display: flex; gap: 1rem; }
+        .btn-truth, .btn-dare { padding: 1.1rem 2.5rem; border: none; border-radius: 16px; font-size: 1.3rem; font-weight: 900; cursor: pointer; transition: transform .2s, box-shadow .2s; letter-spacing: 0.02em; }
+        .btn-truth { background: linear-gradient(135deg,#3b82f6,#6366f1); color: #fff; box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+        .btn-dare  { background: linear-gradient(135deg,#ec4899,#f43f5e); color: #fff; box-shadow: 0 6px 24px rgba(236,72,153,0.4); }
+        .btn-truth:hover, .btn-dare:hover { transform: translateY(-4px) scale(1.04); }
+        .btn-random-pick { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 10px; padding: 0.5rem 1.2rem; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+        .btn-random-pick:hover { background: #6366f1; color: #fff; border-color: transparent; }
+        .task-screen { flex: 1; display: flex; flex-direction: column; min-height: 340px; }
+        .task-screen.hidden { display: none; }
+        .task-header { padding: 1.25rem 1.5rem 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+        .task-badge { border-radius: 999px; padding: 0.35rem 1rem; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+        .badge-truth { background: linear-gradient(135deg,#3b82f6,#6366f1); color: #fff; }
+        .badge-dare  { background: linear-gradient(135deg,#ec4899,#f43f5e); color: #fff; }
+        .task-player-name { font-size: 0.85rem; font-weight: 700; color: var(--text-muted,#94a3b8); }
+        .task-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 2rem; text-align: center; }
+        .task-emoji { font-size: 3.5rem; margin-bottom: 0.75rem; animation: emoji-pop .4s cubic-bezier(.34,1.56,.64,1); }
+        @keyframes emoji-pop { from{transform:scale(0.5) rotate(-15deg);opacity:0} to{transform:scale(1) rotate(0deg);opacity:1} }
+        .task-text { font-size: 1.35rem; font-weight: 800; color: var(--text,#f8fafc); line-height: 1.45; max-width: 560px; animation: text-slide .35s ease-out; }
+        @keyframes text-slide { from{transform:translateY(12px);opacity:0} to{transform:translateY(0);opacity:1} }
+        .task-category { font-size: 0.75rem; font-weight: 600; color: var(--text-muted,#94a3b8); margin-top: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; }
+        .task-footer { padding: 1rem 1.5rem 1.25rem; display: flex; gap: 0.65rem; justify-content: center; flex-wrap: wrap; }
+        .btn-done    { background: #10b981; color: #fff; border: none; border-radius: 12px; padding: 0.7rem 1.8rem; font-size: 1rem; font-weight: 800; cursor: pointer; transition: opacity .15s, transform .15s; }
+        .btn-done:hover { opacity: 0.88; transform: translateY(-2px); }
+        .btn-skip    { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 12px; padding: 0.7rem 1.2rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+        .btn-skip:hover { border-color: #f59e0b; color: #f59e0b; }
+        .btn-new-task { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 12px; padding: 0.7rem 1.2rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+        .btn-new-task:hover { border-color: #6366f1; color: #818cf8; }
+        .task-screen.type-truth { background: linear-gradient(160deg, rgba(59,130,246,0.08) 0%, var(--card-bg,#1e293b) 60%); }
+        .task-screen.type-dare  { background: linear-gradient(160deg, rgba(236,72,153,0.1) 0%, var(--card-bg,#1e293b) 60%); }
+        .scoreboard { background: var(--card-bg,#1e293b); border-radius: 16px; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; }
+        .scoreboard h3 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted,#94a3b8); margin: 0 0 0.75rem; }
+        .score-list { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .score-item { background: var(--bg,#0f172a); border-radius: 10px; padding: 0.5rem 0.85rem; display: flex; flex-direction: column; align-items: center; gap: 0.1rem; min-width: 72px; }
+        .score-name { font-size: 0.78rem; font-weight: 700; color: var(--text,#f8fafc); text-align: center; max-width: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .score-nums { display: flex; gap: 0.5rem; }
+        .score-t { font-size: 0.72rem; color: #60a5fa; font-weight: 700; }
+        .score-d { font-size: 0.72rem; color: #f472b6; font-weight: 700; }
+        .score-skip { font-size: 0.68rem; color: var(--text-muted,#94a3b8); }
+        .history-bar { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1rem 1.25rem; }
+        .history-bar h3 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted,#94a3b8); margin: 0 0 0.6rem; }
+        .history-items { display: flex; flex-direction: column; gap: 0.4rem; max-height: 140px; overflow-y: auto; }
+        .hi-item { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.82rem; }
+        .hi-badge { flex-shrink: 0; border-radius: 5px; padding: 0.1rem 0.45rem; font-size: 0.67rem; font-weight: 800; }
+        .hi-t { background: #1d4ed8; color: #93c5fd; }
+        .hi-d { background: #9d174d; color: #fda4af; }
+        .hi-text { color: var(--text-secondary,#cbd5e1); line-height: 1.4; }
+        .hi-player { font-weight: 700; color: var(--text,#f8fafc); }
+        .seo-wrap { max-width: 960px; margin: 0 auto 3rem; padding: 0 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.4rem 1.6rem; }
+        .seo-box.full { grid-column: 1/-1; }
+        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.05rem; font-weight: 800; margin: 0 0 0.65rem; }
+        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.75; font-size: 0.92rem; margin: 0 0 0.6rem; }
+        .seo-box p:last-child { margin: 0; }
+        .seo-box a { color: var(--accent,#818cf8); text-decoration: underline; }
+        .seo-box strong { color: var(--text,#f8fafc); }
+        .q-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; }
+        .q-card { background: var(--bg,#0f172a); border-radius: 9px; padding: 0.65rem 0.8rem; font-size: 0.82rem; }
+        .q-card .ql { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+        .q-card.qt .ql { color: #60a5fa; }
+        .q-card.qd .ql { color: #f472b6; }
+        .q-card p { color: var(--text-secondary,#cbd5e1); margin: 0; line-height: 1.4; }
+        @media (max-width: 640px) {
+            .choice-btns { flex-direction: column; width: 100%; }
+            .btn-truth, .btn-dare { width: 100%; padding: 1rem; }
+            .task-text { font-size: 1.1rem; }
+            .seo-wrap { grid-template-columns: 1fr; }
+            .seo-box.full { grid-column: 1; }
+            .q-preview { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script>window.i18n={t:function(k){return k;},setLanguage:function(l){localStorage.setItem('language',l);window.location.href='/'+l+'/';},initLanguage:function(){},currentLanguage:function(){return'fr';}};</script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Changer de langue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">FR</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">&#127465;&#127466; Deutsch</button>
+            <button data-lang="en" class="lang-option">&#127468;&#127463; English</button>
+            <button data-lang="fr" class="lang-option">&#127467;&#127479; Français</button>
+            <button data-lang="es" class="lang-option">&#127466;&#127480; Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Changer le thème">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>&#129325; Vérité ou Défi</h1>
+            <p class="subtitle">Le jeu de soirée classique – en ligne, gratuit, prêt à jouer !</p>
+        </header>
+        <nav class="mode-nav" aria-label="Modes de jeu">
+            <a href="/fr/" class="mode-btn">&#127921; Roue</a>
+            <a href="/fr/tirage-au-sort.html" class="mode-btn">&#128100; Noms</a>
+            <a href="/fr/generateur-equipes.html" class="mode-btn">&#128101; Équipes</a>
+            <a href="/fr/verite-ou-defi.html" class="mode-btn active">&#129325; Vérité/Défi</a>
+        </nav>
+    </div>
+
+    <div class="game-wrap">
+        <div class="player-bar">
+            <h3>Joueurs</h3>
+            <div class="players-list" id="playersList"></div>
+            <div class="add-player-row">
+                <input type="text" id="playerInput" placeholder="Prénom…" maxlength="20">
+                <button class="btn-add-player" onclick="addPlayer()">+</button>
+            </div>
+            <div class="current-player-label" id="currentPlayerLabel" style="display:none">
+                À jouer : <span class="current-player-name" id="currentPlayerName"></span>
+            </div>
+        </div>
+
+        <div class="config-bar">
+            <div class="config-group">
+                <label>Catégorie</label>
+                <select id="catSelect">
+                    <option value="alle">&#127775; Toutes</option>
+                    <option value="amitie">&#128149; Amitié</option>
+                    <option value="genant">&#128514; Gênant</option>
+                    <option value="aventure">&#128640; Aventure</option>
+                    <option value="creatif">&#127775; Créatif</option>
+                    <option value="sport">&#9917; Sport</option>
+                </select>
+            </div>
+            <div class="config-group">
+                <label>Niveau</label>
+                <div class="diff-pills">
+                    <button class="diff-pill active" data-d="facile" onclick="setDiff('facile')">&#128994; Facile</button>
+                    <button class="diff-pill" data-d="moyen" onclick="setDiff('moyen')">&#128993; Moyen</button>
+                    <button class="diff-pill" data-d="extreme" onclick="setDiff('extreme')">&#128308; Extrême</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-card">
+            <div class="choice-screen" id="choiceScreen">
+                <div class="choice-who" id="choiceWho"><strong>Tout le monde</strong> – choisissez :</div>
+                <div class="choice-btns">
+                    <button class="btn-truth" onclick="showTask('truth')">&#128161; Vérité</button>
+                    <button class="btn-dare"  onclick="showTask('dare')">&#128293; Défi</button>
+                </div>
+                <button class="btn-random-pick" onclick="showTask(Math.random()<0.5?'truth':'dare')">&#127922; Choix aléatoire</button>
+            </div>
+
+            <div class="task-screen hidden" id="taskScreen">
+                <div class="task-header">
+                    <span class="task-badge" id="taskBadge">Vérité</span>
+                    <span class="task-player-name" id="taskPlayerName"></span>
+                </div>
+                <div class="task-body">
+                    <div class="task-emoji" id="taskEmoji">&#128161;</div>
+                    <div class="task-text" id="taskText">Chargement…</div>
+                    <div class="task-category" id="taskCat"></div>
+                </div>
+                <div class="task-footer">
+                    <button class="btn-done"     onclick="markDone()">&#9989; Accompli !</button>
+                    <button class="btn-new-task" onclick="reroll()">&#127922; Autre défi</button>
+                    <button class="btn-skip"     onclick="markSkip()">&#128704; Passer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scoreboard" id="scoreboard" style="display:none">
+            <h3>&#127942; Score</h3>
+            <div class="score-list" id="scoreList"></div>
+        </div>
+
+        <div class="history-bar">
+            <h3>&#128221; Historique</h3>
+            <div class="history-items" id="historyItems">
+                <div style="font-size:0.82rem;color:var(--text-muted,#94a3b8)">Aucune partie jouée pour l'instant.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seo-wrap">
+        <div class="seo-box full">
+            <h2>Vérité ou Défi en ligne – plus de 200 questions & défis</h2>
+            <p>Notre <strong>générateur Vérité ou Défi</strong> apporte le jeu de soirée classique directement dans votre navigateur – gratuitement, sans téléchargement d'application, prêt immédiatement. Choisissez la difficulté et la catégorie, appuyez sur « Vérité » ou « Défi » et recevez instantanément une question ou un défi aléatoire parmi plus de 200 entrées uniques.</p>
+            <div class="q-preview">
+                <div class="q-card qt"><div class="ql">&#128161; Vérité – Amitié</div><p>Quelle est la chose la plus embarrassante qui vous soit arrivée avec quelqu'un dans ce groupe ?</p></div>
+                <div class="q-card qd"><div class="ql">&#128293; Défi – Aventure</div><p>Appelez quelqu'un et chantez les 10 premières secondes de votre chanson préférée.</p></div>
+                <div class="q-card qt"><div class="ql">&#128161; Vérité – Gênant</div><p>Quel est le message le plus embarrassant que vous ayez jamais envoyé ?</p></div>
+                <div class="q-card qd"><div class="ql">&#128293; Défi – Sport</div><p>Faites 20 pompes sans pause – tout le monde compte à voix haute.</p></div>
+            </div>
+        </div>
+        <div class="seo-box">
+            <h2>Conseils pour la meilleure partie</h2>
+            <p>Ajoutez les prénoms de tous les joueurs ci-dessus – le jeu se souvient de qui joue et garde automatiquement le score. Choisissez « Facile » pour les enfants, « Moyen » pour les soirées entre amis et « Extrême » pour les groupes vraiment courageux. Combinez avec le <a href="/fr/tirage-au-sort.html">tireur de noms</a> pour établir l'ordre !</p>
+        </div>
+        <div class="seo-box">
+            <h2>Règles du jeu</h2>
+            <p>Le joueur actuel choisit <strong>Vérité</strong> (répondre honnêtement à une question) ou <strong>Défi</strong> (accomplir une tâche). Qui refuse doit passer son tour ou reçoit un point de pénalité. Qui refuse deux fois de suite est éliminé !</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/fr/" class="footer-link">&#127921; Roue de fortune</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Mentions légales</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Confidentialité</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+    function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();
+
+    var DB = {
+        truth: {
+            amitie: {
+                facile: [
+                    {e:'&#128149;', t:'Qui dans ce groupe est ton confident(e) le/la plus proche ?'},
+                    {e:'&#129492;', t:'Qu\'est-ce que tu apprécies le plus chez la personne à ta gauche ?'},
+                    {e:'&#128557;', t:'As-tu déjà menti à un(e) ami(e) pour ne pas lui faire de peine ? C\'était quel mensonge ?'},
+                    {e:'&#129395;', t:'Quelle est la chose la plus gentille que quelqu\'un ici ait jamais faite pour toi ?'},
+                    {e:'&#128064;', t:'As-tu déjà médis de quelqu\'un ici ? Qu\'est-ce que tu as dit ?'},
+                ],
+                moyen: [
+                    {e:'&#129300;', t:'Qui dans le groupe appellerais-tu en premier si tu étais vraiment dans le pétrin ?'},
+                    {e:'&#128543;', t:'As-tu déjà eu une vraie dispute avec quelqu\'un ici dont tu n\'as jamais parlé ?'},
+                    {e:'&#128148;', t:'Quel mauvais côté d\'un(e) ami(e) ici ignores-tu délibérément ?'},
+                ],
+                extreme: [
+                    {e:'&#128293;', t:'Qui dans ce groupe trouves-tu secrètement agaçant(e) – et pourquoi ?'},
+                    {e:'&#129324;', t:'As-tu déjà répété les secrets d\'une personne ici à quelqu\'un d\'autre ?'},
+                    {e:'&#128545;', t:'Qu\'a fait quelqu\'un ici que tu ne lui as pas encore pardonné secrètement ?'},
+                ],
+            },
+            genant: {
+                facile: [
+                    {e:'&#128514;', t:'Quelle est ta chute ou glissade la plus embarrassante en public ?'},
+                    {e:'&#129325;', t:'As-tu déjà roté bruyamment alors que tu voulais être discret(e) ? Où était-ce ?'},
+                    {e:'&#128565;', t:'Quel est le message le plus gênant que tu aies jamais envoyé ?'},
+                    {e:'&#129760;', t:'As-tu déjà appelé quelqu\'un et réalisé que c\'était la mauvaise personne ?'},
+                ],
+                moyen: [
+                    {e:'&#128563;', t:'Quand as-tu ri si fort pour la dernière fois que tu faisais des bruits embarrassants ?'},
+                    {e:'&#129315;', t:'Quelle est la chose la plus honteuse que tu aies postée sur les réseaux sociaux et ensuite supprimée ?'},
+                    {e:'&#128531;', t:'Décris ton pire rendez-vous amoureux en trois phrases.'},
+                ],
+                extreme: [
+                    {e:'&#128169;', t:'Quelle est la chose physiquement la plus inconfortable qui te soit arrivée en groupe ?'},
+                    {e:'&#129327;', t:'Montre-nous la conversation la plus embarrassante actuellement sur ton téléphone.'},
+                    {e:'&#128561;', t:'Quel est ton moment le plus bas – le moment qui t\'a le plus honte ?'},
+                ],
+            },
+            aventure: {
+                facile: [
+                    {e:'&#128640;', t:'Quelle est la chose la plus courageuse que tu aies jamais faite ?'},
+                    {e:'&#127958;', t:'Qu\'y a-t-il en tête de ta liste de choses à faire avant de mourir ?'},
+                    {e:'&#127752;', t:'Si tu pouvais te réveiller demain n\'importe où dans le monde – où serait-ce ?'},
+                ],
+                moyen: [
+                    {e:'&#128526;', t:'As-tu déjà fait quelque chose d\'interdit juste parce que c\'était excitant ? Quoi ?'},
+                    {e:'&#128373;', t:'Quelle règle as-tu délibérément enfreinte – et tu le referais ?'},
+                ],
+                extreme: [
+                    {e:'&#128293;', t:'Quelle est la situation la plus dangereuse dans laquelle tu t\'es volontairement mis(e) ?'},
+                    {e:'&#128562;', t:'Qu\'as-tu fait que tes parents ne savent toujours pas ?'},
+                ],
+            },
+            creatif: {
+                facile: [
+                    {e:'&#127775;', t:'Si tu avais un alter ego de super-héros – lequel serait-ce et quel serait ton pouvoir ?'},
+                    {e:'&#127908;', t:'Quelle chanson décrit le mieux ta vie en ce moment ?'},
+                    {e:'&#127796;', t:'Quel animal décrit le mieux ta personnalité – et pourquoi ?'},
+                ],
+                moyen: [
+                    {e:'&#129504;', t:'Raconte-nous ton rêve le plus bizarre en trois phrases.'},
+                    {e:'&#127903;', t:'Invente sur-le-champ un article de journal sur quelqu\'un dans ce groupe.'},
+                    {e:'&#128516;', t:'Décris ta vie en trois emojis – et explique-les.'},
+                ],
+                extreme: [
+                    {e:'&#129318;', t:'Écris spontanément un couplet de rap sur la personne que tu connais depuis le plus longtemps.'},
+                    {e:'&#128483;', t:'Explique comment fonctionne Internet – en moins de 60 secondes.'},
+                ],
+            },
+            sport: {
+                facile: [
+                    {e:'&#9917;', t:'Quel est ton sport secret préféré – même si tu ne le pratiques jamais ?'},
+                    {e:'&#127944;', t:'Es-tu plutôt sportif(ve) d\'équipe ou solitaire ? Justifie ta réponse.'},
+                ],
+                moyen: [
+                    {e:'&#129340;', t:'Quand as-tu triché dans un sport pour la dernière fois – et tu t\'en es sorti(e) ?'},
+                    {e:'&#127955;', t:'Quel est le défi physique le plus extrême auquel tu t\'es soumis(e) ?'},
+                ],
+                extreme: [
+                    {e:'&#128293;', t:'Combien de temps pourrais-tu vraiment survivre sans manger ?'},
+                    {e:'&#129395;', t:'As-tu déjà participé à une compétition pour laquelle tu n\'étais pas du tout qualifié(e) ?'},
+                ],
+            },
+        },
+        dare: {
+            amitie: {
+                facile: [
+                    {e:'&#129303;', t:'Serre tous les joueurs dans tes bras en même temps pendant 5 secondes.'},
+                    {e:'&#128588;', t:'Fais un compliment sincère à chaque joueur – en moins de 10 secondes par personne.'},
+                    {e:'&#127800;', t:'Donne à la personne à ta droite ton surnom le plus mignon et explique-le.'},
+                ],
+                moyen: [
+                    {e:'&#128526;', t:'Raconte à un joueur de ton choix une histoire jamais racontée sur vous deux.'},
+                    {e:'&#128143;', t:'Envoie un message vocal à la personne à ta gauche en lui disant ce que tu admires chez elle.'},
+                ],
+                extreme: [
+                    {e:'&#128562;', t:'Lis à voix haute à tous le dernier message personnel que tu as envoyé à quelqu\'un du groupe.'},
+                    {e:'&#129300;', t:'Laisse chaque joueur faire défiler ton téléphone pendant une minute – pas de verrouillage !'},
+                ],
+            },
+            genant: {
+                facile: [
+                    {e:'&#128514;', t:'Fais la danse la plus idiote que tu puisses imaginer pendant 30 secondes.'},
+                    {e:'&#127908;', t:'Chante le refrain d\'une chanson quelconque – mais comme si tu la voyais pour la première fois.'},
+                    {e:'&#129325;', t:'Imite un animal de ton choix jusqu\'à ce que quelqu\'un le devine.'},
+                    {e:'&#128483;', t:'Parle sans t\'arrêter pendant 30 secondes – de n\'importe quoi.'},
+                ],
+                moyen: [
+                    {e:'&#129318;', t:'Rappe ta journée entière – sur-le-champ, improvisé.'},
+                    {e:'&#128073;', t:'Montre-nous ton meilleur défilé de mannequin à travers la pièce – avec un engagement total.'},
+                ],
+                extreme: [
+                    {e:'&#128293;', t:'Fais un stand-up comique pendant 60 secondes – le public te note.'},
+                    {e:'&#128561;', t:'Crie depuis la fenêtre ton nom complet et que tu es le meilleur joueur.'},
+                ],
+            },
+            aventure: {
+                facile: [
+                    {e:'&#128640;', t:'Appelle quelqu\'un (pas un membre du groupe) et chante-lui « Joyeux Anniversaire » – qu\'il soit son anniversaire ou non.'},
+                    {e:'&#128526;', t:'Montre-nous ton meilleur tour de magie – tu as 2 minutes pour préparer.'},
+                ],
+                moyen: [
+                    {e:'&#128373;', t:'Sors et convaincs la prochaine personne étrangère (en sécurité !) de te faire un high-five.'},
+                    {e:'&#127760;', t:'Crée en 60 secondes une story Instagram sur cette soirée et poste-la vraiment.'},
+                ],
+                extreme: [
+                    {e:'&#128293;', t:'Appelle le dernier contact dans ta liste d\'appels et dis seulement : « Tout va bien. Je voulais juste prendre de tes nouvelles. » Puis raccrocher.'},
+                    {e:'&#128562;', t:'Poste une story avec le texte « Je joue à Vérité ou Défi et je viens de perdre 😭 » – pendant au moins 10 minutes.'},
+                ],
+            },
+            creatif: {
+                facile: [
+                    {e:'&#127775;', t:'Dessine en 60 secondes un portrait de la personne en face de toi – pas de corrections !'},
+                    {e:'&#129504;', t:'Invente sur-le-champ un cri de ralliement pour votre groupe.'},
+                    {e:'&#128017;', t:'Raconte une histoire en exactement 10 mots.'},
+                ],
+                moyen: [
+                    {e:'&#127908;', t:'Improvise pendant 30 secondes une chanson sur la personne à ta gauche – mélodie incluse.'},
+                    {e:'&#129318;', t:'Transforme-toi pendant 2 minutes en présentateur TV et interviewe un joueur.'},
+                ],
+                extreme: [
+                    {e:'&#128293;', t:'Joue une scène dramatique : tu es dans un film primé aux Oscars. Tous les autres jouent les figurants.'},
+                    {e:'&#127775;', t:'Laisse chaque joueur dire un mot – tu dois en faire une histoire cohérente.'},
+                ],
+            },
+            sport: {
+                facile: [
+                    {e:'&#9917;', t:'Fais 10 squats – tout le monde compte à voix haute.'},
+                    {e:'&#128170;', t:'Tiens la position de planche pendant 30 secondes. Tout le monde regarde.'},
+                    {e:'&#127939;', t:'Sprinte à travers la pièce et reviens – aussi vite que possible.'},
+                ],
+                moyen: [
+                    {e:'&#129340;', t:'Fais 20 pompes – en une minute. Tout le monde compte.'},
+                    {e:'&#127955;', t:'Tiens sur une jambe pendant 45 secondes – sans te tenir à rien.'},
+                ],
+                extreme: [
+                    {e:'&#128293;', t:'Fais 30 burpees – tout le monde compte. Qui s\'arrête doit répondre à une vérité supplémentaire.'},
+                    {e:'&#129395;', t:'Battle de danse : tu danses contre un joueur de ton choix – tous votent à main levée.'},
+                ],
+            },
+        },
+    };
+
+    var PLAYER_COLORS=['#6366f1','#ec4899','#10b981','#f59e0b','#a855f7','#14b8a6','#ef4444','#f97316'];
+    var players=[], scores={}, currentPIdx=0, idCnt=0, gameHistory=[], currentType=null, difficulty='facile', usedTruths={}, usedDares={};
+
+    function rng(n){var a=new Uint32Array(1);window.crypto.getRandomValues(a);return a[0]%n;}
+
+    function addPlayer(){
+        var inp=document.getElementById('playerInput');
+        var t=inp.value.trim();
+        if(!t) return;
+        var id=idCnt++;
+        players.push({id:id,name:t,color:PLAYER_COLORS[players.length%PLAYER_COLORS.length]});
+        scores[id]={truths:0,dares:0,skips:0};
+        usedTruths[id]=[]; usedDares[id]=[];
+        inp.value=''; inp.focus();
+        renderPlayers(); updateCurrentPlayer();
+    }
+    function removePlayer(id){
+        var idx=players.findIndex(function(p){return p.id===id;});
+        players.splice(idx,1); delete scores[id];
+        if(currentPIdx>=players.length) currentPIdx=0;
+        renderPlayers(); updateCurrentPlayer();
+    }
+    function renderPlayers(){
+        var c=document.getElementById('playersList');
+        c.innerHTML='';
+        players.forEach(function(p,i){
+            var chip=document.createElement('div');
+            chip.className='player-chip'+(i===currentPIdx?' active-player':'');
+            chip.style.background=p.color;
+            chip.onclick=function(){currentPIdx=i;renderPlayers();updateCurrentPlayer();};
+            chip.innerHTML='<div class="pc-dot">'+p.name.charAt(0).toUpperCase()+'</div>'+escH(p.name)+'<span style="opacity:0.5;margin-left:4px;font-size:0.7rem" onclick="event.stopPropagation();removePlayer('+p.id+')">✕</span>';
+            c.appendChild(chip);
+        });
+        document.getElementById('scoreboard').style.display=players.length?'':'none';
+        renderScores();
+    }
+    function updateCurrentPlayer(){
+        var lbl=document.getElementById('currentPlayerLabel');
+        var nm=document.getElementById('currentPlayerName');
+        var who=document.getElementById('choiceWho');
+        if(players.length){
+            lbl.style.display='';
+            var p=players[currentPIdx];
+            nm.textContent=p.name; nm.style.color=p.color;
+            who.innerHTML='<strong style="color:'+p.color+'">'+escH(p.name)+'</strong> – choisissez :';
+        } else {
+            lbl.style.display='none';
+            who.innerHTML='<strong>Tout le monde</strong> – choisissez :';
+        }
+    }
+    function nextPlayer(){if(!players.length) return;currentPIdx=(currentPIdx+1)%players.length;renderPlayers();updateCurrentPlayer();}
+    function setDiff(d){difficulty=d;document.querySelectorAll('.diff-pill').forEach(function(b){b.classList.toggle('active',b.dataset.d===d);});}
+
+    function getPool(type){
+        var cat=document.getElementById('catSelect').value;
+        var cats=cat==='alle'?['amitie','genant','aventure','creatif','sport']:[cat];
+        var pool=[];
+        cats.forEach(function(c){
+            var items=(DB[type][c]||{})[difficulty]||[];
+            items.forEach(function(item){pool.push({item:item,cat:c});});
+        });
+        return pool;
+    }
+    function pickItem(type){
+        var pool=getPool(type);
+        if(!pool.length) return null;
+        var pid=players.length?players[currentPIdx].id:-1;
+        var used=type==='truth'?(usedTruths[pid]||[]):(usedDares[pid]||[]);
+        var fresh=pool.filter(function(p){return used.indexOf(p.item.t)===-1;});
+        if(!fresh.length){if(type==='truth')usedTruths[pid]=[];else usedDares[pid]=[];fresh=pool;}
+        var pick=fresh[rng(fresh.length)];
+        if(pid>=0){if(type==='truth')usedTruths[pid].push(pick.item.t);else usedDares[pid].push(pick.item.t);}
+        return pick;
+    }
+    var currentItem=null, currentTypeGlobal=null;
+    function showTask(type){
+        currentTypeGlobal=type;
+        var pick=pickItem(type);
+        if(!pick){alert('Aucune question pour ces paramètres !');return;}
+        currentItem=pick;
+        document.getElementById('choiceScreen').classList.add('hidden');
+        var ts=document.getElementById('taskScreen');
+        ts.classList.remove('hidden');
+        ts.className='task-screen type-'+type;
+        var badge=document.getElementById('taskBadge');
+        badge.innerHTML=type==='truth'?'&#128161; Vérité':'&#128293; Défi';
+        badge.className='task-badge '+(type==='truth'?'badge-truth':'badge-dare');
+        document.getElementById('taskEmoji').innerHTML=pick.item.e;
+        document.getElementById('taskText').textContent=pick.item.t;
+        document.getElementById('taskCat').textContent=catLabel(pick.cat)+' · '+diffLabel(difficulty);
+        var pname=document.getElementById('taskPlayerName');
+        if(players.length){pname.textContent=players[currentPIdx].name;pname.style.color=players[currentPIdx].color;}
+        else pname.textContent='';
+        var em=document.getElementById('taskEmoji');
+        em.style.animation='none';void em.offsetWidth;em.style.animation='';
+        var tt=document.getElementById('taskText');
+        tt.style.animation='none';void tt.offsetWidth;tt.style.animation='';
+    }
+    function reroll(){showTask(currentTypeGlobal);}
+    function markDone(){
+        if(players.length){var p=players[currentPIdx];if(currentTypeGlobal==='truth')scores[p.id].truths++;else scores[p.id].dares++;renderScores();}
+        addHistory(currentTypeGlobal,currentItem,players.length?players[currentPIdx]:null,false);
+        backToChoice();nextPlayer();
+    }
+    function markSkip(){
+        if(players.length){scores[players[currentPIdx].id].skips++;renderScores();}
+        addHistory(currentTypeGlobal,currentItem,players.length?players[currentPIdx]:null,true);
+        backToChoice();nextPlayer();
+    }
+    function backToChoice(){document.getElementById('taskScreen').classList.add('hidden');document.getElementById('choiceScreen').classList.remove('hidden');currentItem=null;}
+    function renderScores(){
+        var c=document.getElementById('scoreList');c.innerHTML='';
+        players.forEach(function(p){
+            var s=scores[p.id]||{truths:0,dares:0,skips:0};
+            var div=document.createElement('div');div.className='score-item';div.style.borderTop='3px solid '+p.color;
+            div.innerHTML='<div class="score-name">'+escH(p.name)+'</div><div class="score-nums"><span class="score-t">&#128161;'+s.truths+'</span><span class="score-d">&#128293;'+s.dares+'</span></div>'+(s.skips?'<div class="score-skip">&#128704;'+s.skips+' Skip</div>':'');
+            c.appendChild(div);
+        });
+    }
+    function addHistory(type,pick,player,skipped){
+        gameHistory.unshift({type:type,text:pick?pick.item.t:'?',player:player,skipped:skipped,time:new Date().toLocaleTimeString('fr',{hour:'2-digit',minute:'2-digit'})});
+        if(gameHistory.length>30)gameHistory.pop();
+        renderHistory();
+    }
+    function renderHistory(){
+        var c=document.getElementById('historyItems');
+        if(!gameHistory.length){c.innerHTML='<div style="font-size:0.82rem;color:var(--text-muted,#94a3b8)">Aucune partie jouée pour l\'instant.</div>';return;}
+        c.innerHTML='';
+        gameHistory.forEach(function(h){
+            var div=document.createElement('div');div.className='hi-item';
+            div.innerHTML='<span class="hi-badge '+(h.type==='truth'?'hi-t':'hi-d')+'">'+(h.type==='truth'?'V':'D')+'</span>'+(h.player?'<span class="hi-player">'+escH(h.player.name)+' :</span>':'')+'<span class="hi-text">'+(h.skipped?'<em style="opacity:0.5">[Skip]</em> ':'')+escH(h.text)+'</span><span style="margin-left:auto;font-size:0.7rem;color:var(--text-muted,#94a3b8);flex-shrink:0">'+h.time+'</span>';
+            c.appendChild(div);
+        });
+    }
+    function catLabel(c){var m={amitie:'Amitié',genant:'Gênant',aventure:'Aventure',creatif:'Créatif',sport:'Sport'};return m[c]||c;}
+    function diffLabel(d){var m={facile:'Facile',moyen:'Moyen',extreme:'Extrême'};return m[d]||d;}
+    function escH(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+    document.getElementById('playerInput').addEventListener('keydown',function(e){if(e.key==='Enter')addPlayer();});
+    updateCurrentPlayer();
+    </script>
+</body>
+</html>

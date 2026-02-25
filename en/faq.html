@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ – Frequently Asked Questions About the Spin Wheel | SpinSelector</title>
+    <meta name="description" content="All answers about SpinSelector: How does the spin wheel work? Is it free? How many options can I add? Privacy, technology & more – answered here.">
+    <meta name="keywords" content="spin wheel FAQ, SpinSelector questions, online spin wheel help, random generator FAQ, spin wheel free questions">
+    <link rel="canonical" href="https://spinselector.pages.dev/en/faq.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/faq.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/faq.html">
+    <link rel="alternate" hreflang="fr" href="https://spinselector.pages.dev/fr/faq.html">
+    <link rel="alternate" hreflang="es" href="https://spinselector.pages.dev/es/faq.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/faq.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="FAQ – Frequently Asked Questions About SpinSelector">
+    <meta property="og:description" content="All answers about the free online spin wheel SpinSelector.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinselector.pages.dev/en/faq.html">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta name="theme-color" content="#0f172a">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/en/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://spinselector.pages.dev/en/faq.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is SpinSelector?","acceptedAnswer":{"@type":"Answer","text":"SpinSelector is a free online spin wheel that lets you make decisions using a random algorithm. Enter your own options, click Spin, and the animated wheel picks a random winner – right in your browser, no download required."}},
+        {"@type":"Question","name":"Does SpinSelector cost anything?","acceptedAnswer":{"@type":"Answer","text":"No. SpinSelector is completely free and ad-supported. No registration, subscription or download is needed."}},
+        {"@type":"Question","name":"How many options can I add?","acceptedAnswer":{"@type":"Answer","text":"You can add up to 20 options at a time. Each option can be up to 50 characters long."}},
+        {"@type":"Question","name":"Are my options saved?","acceptedAnswer":{"@type":"Answer","text":"Yes, your options are automatically saved in your browser's Local Storage. They will still be there after you close and reopen the browser. No data is sent to external servers."}},
+        {"@type":"Question","name":"How fair is the random algorithm?","acceptedAnswer":{"@type":"Answer","text":"SpinSelector uses JavaScript's Math.random() combined with the actual rotation distance of the wheel. Every option has exactly the same probability of winning when all segments are the same size."}},
+        {"@type":"Question","name":"Does SpinSelector work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes, SpinSelector is fully optimized for all modern smartphones, tablets and desktop computers."}},
+        {"@type":"Question","name":"Can I use SpinSelector for raffles?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Enter all participant names, enable the Auto-remove after spin feature and draw round by round – each name can only be drawn once."}},
+        {"@type":"Question","name":"What does Auto-remove mean?","acceptedAnswer":{"@type":"Answer","text":"When the Auto-remove after spin checkbox is enabled, the winning option is automatically removed from the wheel after each spin. Ideal for tournaments, raffles and calling on students."}},
+        {"@type":"Question","name":"How do I change the language?","acceptedAnswer":{"@type":"Answer","text":"Click the globe icon in the top right corner. From the dropdown you can choose between Deutsch, English, Français and Español. Your language preference is saved."}},
+        {"@type":"Question","name":"Is there a SpinSelector app?","acceptedAnswer":{"@type":"Answer","text":"There is currently no native app. However, SpinSelector is designed as a Progressive Web App and can be installed on your smartphone's home screen – it then behaves like an app."}},
+        {"@type":"Question","name":"Can I randomly create teams with SpinSelector?","acceptedAnswer":{"@type":"Answer","text":"Yes – the free Team Generator on SpinSelector splits any number of participants fairly and randomly into teams. Number of teams is freely selectable, with colour-coded team cards."}},
+        {"@type":"Question","name":"Is there Truth or Dare on SpinSelector?","acceptedAnswer":{"@type":"Answer","text":"Yes! The full Truth or Dare game with over 100 questions and challenges, 3 difficulty levels, 5 categories and player management is available for free."}},
+        {"@type":"Question","name":"How does the Name Picker work?","acceptedAnswer":{"@type":"Answer","text":"The Name Picker lets you enter any participant list and then draw one or more names randomly. Features include history, anti-repeat function and bulk import."}}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <script>
+        window.i18n = {
+            t: function(k){ var s={'empty-state':'No options available.<br>Add at least 2 options!','canvas-empty':'Add options','confirm-clear':'Do you really want to delete all options?','default-options':['Option 1','Option 2','Option 3']}; return s[k]||k; },
+            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
+            initLanguage: function(){}, currentLanguage: function(){ return 'en'; }
+        };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Change language">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">EN</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+            <button data-lang="en" class="lang-option">🇬🇧 English</button>
+            <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+            <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="page-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/en/">🎡 SpinSelector</a>
+            <span>›</span>
+            <span>FAQ</span>
+        </nav>
+
+        <div class="page-hero">
+            <h1>❓ Frequently Asked Questions About SpinSelector</h1>
+            <p class="lead">Got questions about the free online spin wheel? Here you'll find detailed answers about features, technology, privacy and everything that makes SpinSelector special.</p>
+        </div>
+
+        <!-- BASICS -->
+        <div class="section-divider"><h2>Basics & Getting Started</h2></div>
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>What is SpinSelector and what is it used for?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>SpinSelector is a <strong>free online spin wheel</strong> that lets you enter your own options and have a random algorithm select one of them. It runs entirely in your browser – no download, no app installation, no registration required.</p>
+                    <p>The use cases are enormously varied: from simple everyday decisions (choosing lunch, picking a movie) to professional scenarios (selecting a meeting moderator, distributing tasks in a team) to games and entertainment (party games, classroom activities, raffles).</p>
+                    <p>What makes SpinSelector special: the visual animation of the spinning wheel turns decision-making into an experience – fair, transparent and entertaining for everyone involved.</p>
+                    <div class="tag-row">
+                        <span class="tag">Random Generator</span><span class="tag">Online Tool</span><span class="tag">Free</span><span class="tag">Browser-Based</span>
+                    </div>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Does SpinSelector cost anything? Are there hidden fees?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>SpinSelector is and will remain <strong>100% free</strong>. There is no premium version, no subscription, no in-app purchases and no hidden fees. The site is funded exclusively through advertising revenue (Google AdSense).</p>
+                    <p>You don't need to register or provide an email address. Simply open the page and start immediately.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>How many options can I add to the wheel?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>You can add <strong>up to 20 options</strong> to the wheel at a time. Each individual option can be a maximum of 50 characters long. On the wheel itself, only the first ~20 characters are displayed due to space constraints – but the full name stays visible in the list below the wheel.</p>
+                    <p>For most use cases this is more than sufficient. For very many participants (e.g. raffles with 50+ people) it is recommended to run the draw in multiple rounds.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Do I have to re-enter options every time I visit?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>No! SpinSelector automatically saves your entered options in your browser's <strong>Local Storage</strong>. This means: when you close the page and come back later, your options are still there – no need to re-enter them.</p>
+                    <p>Important to know: Local Storage is <strong>browser-specific</strong>. If you use a different device or browser, the saved options won't be available there. Also, data is deleted if you clear your browser cache or website data.</p>
+                </div></div>
+            </div>
+
+        </div>
+
+        <!-- TECHNOLOGY & FAIRNESS -->
+        <div class="section-divider"><h2>Technology, Fairness & Random Algorithm</h2></div>
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>How fair is the random algorithm? Is the wheel truly random?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Yes, the wheel is <strong>genuinely random and completely fair</strong>. SpinSelector uses JavaScript's <code>Math.random()</code> in combination with a random total rotation distance. Every segment has – with the same number of options – exactly the same probability of landing under the pointer.</p>
+                    <p>Here's how it works: when you click "SPIN", a random total rotation distance between 5 and 7 full rotations is calculated first. The wheel then spins with a realistic deceleration curve. At the end, it is determined precisely which segment is under the pointer.</p>
+                    <p>Since all calculations happen <strong>client-side in the browser</strong>, the result is not dependent on any server or external factors.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Why does the wheel sometimes spin very fast and sometimes slower?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>The initial speed and total rotation distance vary slightly with each spin – this is intentional and increases the suspense. The wheel briefly accelerates first and then slows down with an <strong>ease-out curve</strong>, just like a real physical wheel would.</p>
+                    <p>The total duration of an animation is always approximately 3.5 seconds – this is optimised for a good user experience: long enough for suspense, short enough to not be boring.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Does SpinSelector work offline?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Once SpinSelector has been loaded in the browser, the spin wheel itself (spinning, adding/removing options) works <strong>without an active internet connection</strong> – as long as you haven't closed the page. The options saved in Local Storage are also retained.</p>
+                    <p>For full offline use after a browser restart, SpinSelector would need to be installed as a Progressive Web App (PWA) on your device – a feature we are currently evaluating.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Which devices and browsers does SpinSelector run on?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>SpinSelector runs on all modern devices and browsers that support HTML5 Canvas – which includes virtually all current versions of:</p>
+                    <ul>
+                        <li><strong>Desktop:</strong> Chrome, Firefox, Safari, Edge, Opera</li>
+                        <li><strong>Mobile:</strong> Chrome for Android, Safari for iOS, Samsung Internet, Firefox Mobile</li>
+                        <li><strong>Tablets:</strong> iPad (Safari), Android tablets</li>
+                    </ul>
+                    <p>For the best experience, we recommend an up-to-date Chrome or Firefox browser. Very old browser versions (older than 5 years) may have display issues.</p>
+                </div></div>
+            </div>
+
+        </div>
+
+        <!-- PRIVACY -->
+        <div class="section-divider"><h2>Privacy & Data Security</h2></div>
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>What data does SpinSelector collect?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>SpinSelector itself collects <strong>no personal data whatsoever</strong>. The options you enter are stored exclusively locally in your browser and never leave your device.</p>
+                    <p>As an ad-funded site, <strong>Google AdSense</strong> is used, which may set its own cookies to personalise advertising. You can find more details in our <a href="/datenschutz.html">Privacy Policy</a>. You can disable personalisation via the AdSense settings portal or your browser's privacy settings.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Are my entered names and options stored anywhere?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p><strong>No.</strong> Your entered options – whether they are names, menu items or game options – are stored <strong>exclusively in your own browser's Local Storage</strong>. There is no database, no server that receives or processes this data.</p>
+                    <p>This also means: if you clear your browser's Local Storage, your SpinSelector options are permanently deleted.</p>
+                </div></div>
+            </div>
+
+        </div>
+
+        <!-- FEATURES -->
+        <div class="section-divider"><h2>Features & Usage</h2></div>
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>What does the "Auto-remove after spin" feature do?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>When this checkbox is enabled, the <strong>winning option is automatically removed from the wheel after each spin</strong> – approximately 2 seconds after the animation ends. This is particularly useful for:</p>
+                    <ul>
+                        <li><strong>Raffles:</strong> No participant can be drawn twice</li>
+                        <li><strong>Order determination:</strong> Who goes when?</li>
+                        <li><strong>Calling on students:</strong> Each student is called on exactly once</li>
+                        <li><strong>Tournaments:</strong> Elimination rounds without repetition</li>
+                    </ul>
+                    <p>When the checkbox is disabled, every option remains on the wheel even after a spin – ideal for party games where the same person may be selected multiple times.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>What does the "Shuffle" button do?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>The <strong>Shuffle button</strong> rearranges the segments on the wheel in a new, random order. This is useful when you want to prevent participants from memorising the positions of segments or guessing in advance.</p>
+                    <p>Since the wheel's starting position is always the same, without shuffling an experienced observer could theoretically start to recognise patterns after several rounds. The Shuffle button makes this impossible and increases genuine randomness from the user's perspective.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Can I use SpinSelector in online meetings or video conferences?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Absolutely – this is actually one of the most popular use cases! SpinSelector works great with <strong>Zoom, Teams, Google Meet or Webex</strong>. Simply share your browser tab via screen sharing, and all participants see the wheel spinning live.</p>
+                    <p>Tips for video conference use:</p>
+                    <ul>
+                        <li>Prepare the options (e.g. participant names) before the meeting</li>
+                        <li>Use dark mode for better visibility on shared screens</li>
+                        <li>Enable "Auto-remove" to ensure each person is called on exactly once</li>
+                    </ul>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>Can I embed SpinSelector on my own website?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>An official embed function (embed code / iFrame) is not yet available, but it is on the feature roadmap. For now, we recommend simply linking to SpinSelector or opening the page directly in a browser.</p>
+                    <p>As an alternative, you can open SpinSelector in a browser tab and share it via screen sharing in video conferences or presentations.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+                    <span>How do I change the language of SpinSelector?</span>
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-body"><div class="faq-inner">
+                    <p>Click the <strong>globe icon</strong> with the language abbreviation in the top right corner. In the dropdown that appears, choose your preferred language – currently available:</p>
+                    <ul>
+                        <li>🇩🇪 Deutsch</li>
+                        <li>🇬🇧 English</li>
+                        <li>🇫🇷 Français</li>
+                        <li>🇪🇸 Español</li>
+                    </ul>
+                    <p>Your language selection is saved in Local Storage and automatically restored on your next visit.</p>
+                </div></div>
+            </div>
+
+        </div>
+
+        <!-- USE CASES -->
+        <div class="section-divider"><h2>Use Cases & Ideas</h2></div>
+        <div class="content-block">
+            <h3>Which situations is SpinSelector particularly good for?</h3>
+            <p>SpinSelector is extremely versatile. Here are the most popular use cases from our users:</p>
+            <ul>
+                <li><strong>🎉 Parties & Gatherings:</strong> <a href="/en/truth-or-dare.html">Truth or Dare</a>, drinking games, challenge wheels, winner selection – more ideas on our <a href="/en/party-games.html">Party Games page</a></li>
+                <li><strong>🎓 School & Classroom:</strong> Randomly calling on students, <a href="/en/team-generator.html">splitting groups fairly</a>, <a href="/en/wheel-of-names.html">drawing names</a> – more on the <a href="/en/classroom.html">Classroom page</a></li>
+                <li><strong>💼 Teams & Offices:</strong> Deciding presentation order or creating fair project groups with the <a href="/en/team-generator.html">Team Generator</a></li>
+                <li><strong>📝 Name Picking:</strong> Use the <a href="/en/wheel-of-names.html">Name Picker</a> to enter participants and draw randomly – ideal for raffles</li>
+                <li><strong>🍽️ Everyday Life:</strong> Choosing a restaurant, picking a movie, planning the day – more on the <a href="/en/decisions.html">Decision Helper page</a></li>
+                <li><strong>🎰 Raffles:</strong> Giveaways, tombolas, assigning advent calendar doors</li>
+                <li><strong>🎮 Gaming:</strong> Random game mode, map selection, team composition with the <a href="/en/team-generator.html">Team Generator</a></li>
+            </ul>
+        </div>
+
+        <!-- RELATED PAGES -->
+        <div class="section-divider"><h2>More Helpful Pages</h2></div>
+        <nav class="related-links" aria-label="Related pages">
+            <a href="/en/tutorials.html">📖 Tutorials & Guides</a>
+            <a href="/en/party-games.html">🎉 Party Game Ideas</a>
+            <a href="/en/truth-or-dare.html">🤥 Truth or Dare</a>
+            <a href="/en/team-generator.html">👥 Team Generator</a>
+            <a href="/en/wheel-of-names.html">👤 Name Picker</a>
+            <a href="/en/classroom.html">🎓 Spin Wheel in the Classroom</a>
+            <a href="/en/decisions.html">🤔 Decision Helper</a>
+            <a href="/en/history.html">🏛️ History of the Spin Wheel</a>
+        </nav>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/en/" class="footer-link">🎡 To the Spin Wheel</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Imprint</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Privacy</a>
+                <span class="footer-separator">·</span>
+                <a href="/en/about.html" class="footer-link">About</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+        function toggleFaq(btn) {
+            var body = btn.nextElementSibling;
+            var open = body.classList.toggle('open');
+            btn.setAttribute('aria-expanded', String(open));
+        }
+        function initTheme() {
+            var t = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        }
+        initTheme();
+    </script>
+</body>
+</html>

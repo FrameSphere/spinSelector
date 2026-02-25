@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making Decisions with the Spin Wheel – Everyday Decision Helper | SpinSelector</title>
+    <meta name="description" content="Never miss a decision again: use the spin wheel to choose lunch, pick a film, find a restaurant, distribute tasks. Stress-free decision help for every day.">
+    <meta name="keywords" content="decision helper spin wheel, choose lunch random generator, pick a film wheel, choose restaurant random, distribute tasks tool, make decisions app free">
+    <link rel="canonical" href="https://spinselector.pages.dev/en/decisions.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/entscheidungen.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/decisions.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/decisions.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Make Decisions Easier – SpinSelector Decision Helper">
+    <meta property="og:description" content="Lunch, film, restaurant, tasks – the spin wheel decides fairly and instantly. Free, no sign-up.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://spinselector.pages.dev/en/decisions.html">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta name="theme-color" content="#0f172a">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/en/"},{"@type":"ListItem","position":2,"name":"Decision Helper","item":"https://spinselector.pages.dev/en/decisions.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can a spin wheel really help with decisions?","acceptedAnswer":{"@type":"Answer","text":"Yes. For equally good options, a spin wheel is ideal: it overcomes decision fatigue and the Paradox of Choice. The result is accepted as fair by everyone involved."}},{"@type":"Question","name":"How many options can I add to the spin wheel?","acceptedAnswer":{"@type":"Answer","text":"SpinSelector supports up to 20 options at a time. All are automatically saved in the browser and are available again on your next visit."}},{"@type":"Question","name":"Is the spin wheel really fair and random?","acceptedAnswer":{"@type":"Answer","text":"Yes. SpinSelector uses JavaScript's cryptographically secure random algorithm. Every option has exactly the same probability of winning when all segments are the same size – no hidden weights."}}]}
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Making Decisions with the Spin Wheel – Everyday Decision Helper",
+      "description": "How the online spin wheel helps make everyday and professional decisions quickly and without stress.",
+      "url": "https://spinselector.pages.dev/en/decisions.html",
+      "inLanguage": "en",
+      "publisher": { "@type": "Organization", "name": "SpinSelector", "url": "https://spinselector.pages.dev" }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+
+    <script>
+        window.i18n = {
+            t: function(k){ var s={'empty-state':'No options available.<br>Add at least 2 options!','canvas-empty':'Add options','confirm-clear':'Clear all?','default-options':['Option 1','Option 2','Option 3']}; return s[k]||k; },
+            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
+            initLanguage: function(){}, currentLanguage: function(){ return 'en'; }
+        };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Change language">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">EN</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+            <button data-lang="en" class="lang-option">🇬🇧 English</button>
+            <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+            <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="page-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/en/">🎡 SpinSelector</a><span>›</span><span>Decision Helper</span>
+        </nav>
+
+        <div class="page-hero">
+            <h1>🤔 Make Decisions Easier with the Spin Wheel</h1>
+            <p class="lead">Every day we make hundreds of small decisions – and many of them unnecessarily drain our time and energy. SpinSelector puts an end to that: enter your options, spin the wheel, decision made. Stress-free, fair and instant.</p>
+        </div>
+
+        <!-- PSYCHOLOGY -->
+        <div class="psychology-block">
+            <h2>🧠 Why Is Deciding So Hard?</h2>
+            <p>Behavioural psychology calls this phenomenon <strong>"decision paralysis"</strong> or "decision fatigue": the more decisions we make throughout a day, the worse our later judgements become – because our mental budget for decisions is simply exhausted.</p>
+            <p>Studies also show: the more options we have, the harder it is to choose – even when all options are good. This phenomenon, known as the <strong>Paradox of Choice</strong>, explains why we can spend ages debating even simple questions like "What should we eat today?"</p>
+            <p>The spin wheel solves this problem elegantly: instead of bearing the mental burden of the decision ourselves, we consciously transfer it to chance. The result feels neutral and acceptable – to everyone involved at the same time.</p>
+        </div>
+
+        <div class="cta-banner">
+            <h2>Let the Wheel Decide!</h2>
+            <p>Enter your options, spin the wheel – the decision is made in 10 seconds. Free and no sign-up required.</p>
+            <a href="/en/" class="cta-btn">🎡 Open SpinSelector</a>
+        </div>
+
+        <!-- FOOD & DRINK -->
+        <h2 class="section-title">🍽️ Food, Drink & Restaurants</h2>
+        <div class="content-prose">
+            <p>"What should we eat today?" is one of the most common everyday questions that takes a surprisingly large amount of time and energy. With SpinSelector it's answered in seconds – and fairly for everyone.</p>
+        </div>
+
+        <div class="scenario-grid">
+            <div class="scenario-card">
+                <h3>🍕 Choose Lunch</h3>
+                <p>Enter all the dishes you could imagine into the wheel. The wheel decides. Perfect for flat shares, office teams or couples with different tastes.</p>
+                <div class="options-box">
+                    <span>Example options:</span>
+                    <ul>
+                        <li>Pasta Bolognese</li>
+                        <li>Salad</li>
+                        <li>Sandwich</li>
+                        <li>Sushi</li>
+                        <li>Burger</li>
+                        <li>Heat up leftovers</li>
+                        <li>Kebab</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Pasta Bolognese','Salad','Sandwich','Sushi','Burger','Heat up leftovers','Kebab'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🍣 Choose a Restaurant</h3>
+                <p>You have five favourite restaurants and everyone is in the mood for something different. The wheel resolves the conflict in seconds – neutral and binding for everyone.</p>
+                <div class="options-box">
+                    <span>Example options:</span>
+                    <ul>
+                        <li>Greek</li>
+                        <li>Indian</li>
+                        <li>Italian</li>
+                        <li>Thai</li>
+                        <li>Mexican</li>
+                        <li>Japanese</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Greek','Indian','Italian','Thai','Mexican','Japanese'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🥂 What Are We Drinking Tonight?</h3>
+                <p>Cocktail, wine, beer or non-alcoholic? Enter all options and spin. Also works as a conversation starter on a date or at a dinner party.</p>
+                <div class="options-box">
+                    <span>Example options:</span>
+                    <ul>
+                        <li>White wine</li>
+                        <li>Red wine</li>
+                        <li>Craft beer</li>
+                        <li>Cocktail</li>
+                        <li>Sparkling water</li>
+                        <li>Tea</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['White wine','Red wine','Craft beer','Cocktail','Sparkling water','Tea'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🍳 Cook or Order?</h3>
+                <p>The eternal question after a long day. Enter all options – "cook at home" should definitely be included so the result is genuinely open.</p>
+                <div class="options-box">
+                    <span>Example options:</span>
+                    <ul>
+                        <li>Cook at home</li>
+                        <li>Order pizza</li>
+                        <li>Get sushi delivered</li>
+                        <li>Order burgers</li>
+                        <li>Eat leftovers</li>
+                        <li>Go to a restaurant</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Cook at home','Order pizza','Get sushi delivered','Order burgers','Eat leftovers','Go to a restaurant'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+        </div>
+
+        <!-- LEISURE & ENTERTAINMENT -->
+        <h2 class="section-title">🎬 Leisure, Entertainment & Weekends</h2>
+        <div class="scenario-grid">
+            <div class="scenario-card">
+                <h3>🎬 Which Film Do We Watch?</h3>
+                <p>Netflix evening with ten possible films and no consensus? Enter all candidates. Whatever fate decides gets watched tonight – no discussion.</p>
+                <div class="options-box">
+                    <span>Example options:</span>
+                    <ul>
+                        <li>Action</li>
+                        <li>Romantic comedy</li>
+                        <li>Documentary</li>
+                        <li>Horror</li>
+                        <li>Animated film</li>
+                        <li>Thriller</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Action','Romantic comedy','Documentary','Horror','Animated film','Thriller'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🏃 Sport or Relaxation?</h3>
+                <p>Gym, walk, yoga, swimming or just staying on the sofa? The wheel decides how you spend your evening or weekend.</p>
+                <div class="options-box">
+                    <span>Example options:</span>
+                    <ul>
+                        <li>Jogging</li>
+                        <li>Yoga</li>
+                        <li>Cycling</li>
+                        <li>Swimming</li>
+                        <li>Walk</li>
+                        <li>Netflix day</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Jogging','Yoga','Cycling','Swimming','Walk','Netflix day'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🌍 Where Should We Go on Holiday?</h3>
+                <p>Enter all the destinations on your bucket list. Perfect for couples or groups with different holiday preferences. The result is binding!</p>
+                <div class="options-box">
+                    <span>Example options:</span>
+                    <ul>
+                        <li>Barcelona</li>
+                        <li>Japan</li>
+                        <li>Scottish Highlands</li>
+                        <li>New York</li>
+                        <li>Thailand</li>
+                        <li>Austria</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Barcelona','Japan','Scottish Highlands','New York','Thailand','Austria'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🎮 Which Game Do We Play?</h3>
+                <p>Game night with friends and too many options? The wheel picks the game – ideal for Steam libraries, board game collections and console nights.</p>
+                <div class="options-box">
+                    <span>Example options:</span>
+                    <ul>
+                        <li>FIFA</li>
+                        <li>Catan</li>
+                        <li>Minecraft</li>
+                        <li>Mario Kart</li>
+                        <li>Poker</li>
+                        <li>Among Us</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['FIFA','Catan','Minecraft','Mario Kart','Poker','Among Us'])">
+                🎡 Load into Wheel
+                </button>
+            </div>
+        </div>
+
+        <!-- OFFICE & TEAM -->
+        <h2 class="section-title">💼 Office, Teams & Meetings</h2>
+        <div class="content-prose">
+            <p>In the workplace, small decisions come up every day that don't require deep analysis – but still take up time. SpinSelector handles them in seconds.</p>
+
+            <h3>Moderator, notetaker, cake bringer</h3>
+            <p>Who moderates the next meeting? Who takes the minutes? Who brings cake next week? These questions often consume more team time than necessary. Enter all names into the wheel, spin, done – no discussion, no "but I did it last week".</p>
+
+            <h3>Distributing tasks fairly</h3>
+            <p>For equally valid tasks that differ in popularity (e.g. different presentation topics, trip reports or project segments), the spin wheel provides fair allocation without cliques forming or favouritism.</p>
+
+            <h3>Prioritising agenda items</h3>
+            <p>Meeting with too many topics and too little time? Enter all agenda items into the wheel. The wheel determines the order. Whatever doesn't get covered moves to the next meeting – no tedious prioritisation debate.</p>
+
+            <h3>Deciding on team lunch</h3>
+            <p>The classic problem: ten colleagues, ten different food preferences. Enter all suggestions into the wheel, spin – whoever's suggestion wins gets to pick the restaurant (or pays, depending on company culture).</p>
+        </div>
+
+        <div class="tip-box">
+            <p><strong>Psychological trick:</strong> If after the wheel result you think "Oh, I actually didn't want that" – that's a valuable signal! You've just discovered what you really want. So use the wheel to also clarify your own preferences.</p>
+        </div>
+
+        <!-- HOUSEHOLD & HOME -->
+        <h2 class="section-title">🏠 Household, Flat Shares & Family</h2>
+        <div class="content-prose">
+            <p>In a shared household, SpinSelector ensures fair, transparent task distribution – without arguments, without guilt.</p>
+
+            <h3>Distributing household chores</h3>
+            <p>Enter all recurring household duties into the wheel (vacuuming, washing up, taking out the rubbish, shopping). Each person spins once – the assigned task is binding for the week. In flat shares with 3+ people, "Auto-remove" is recommended so each task is only assigned once.</p>
+
+            <h3>Who gets to go first...?</h3>
+            <p>Bathroom order in the morning, computer use, the TV remote in the evening – the wheel resolves conflicts fairly. Children often accept outcomes more readily when they are visibly random rather than decided by parents.</p>
+
+            <h3>Planning family activities</h3>
+            <p>Each family member can suggest what to do at the weekend. All suggestions go into the wheel. The result treats everyone equally – no voice is more important than another.</p>
+        </div>
+
+        <div class="section-title" style="font-size:1.1rem">More Resources</div>
+        <nav class="related-links" aria-label="Related pages">
+            <a href="/en/">🎡 To the Spin Wheel</a>
+            <a href="/en/faq.html">❓ FAQ</a>
+            <a href="/en/tutorials.html">📖 Tutorials</a>
+            <a href="/en/party-games.html">🎉 Party Games</a>
+            <a href="/en/classroom.html">🎓 In the Classroom</a>
+            <a href="/en/truth-or-dare.html">🤥 Truth or Dare</a>
+            <a href="/en/team-generator.html">👥 Team Generator</a>
+            <a href="/en/history.html">🏛️ History of the Spin Wheel</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/en/" class="footer-link">🎡 To the Spin Wheel</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Imprint</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Privacy</a>
+                <span class="footer-separator">·</span>
+                <a href="/en/faq.html" class="footer-link">FAQ</a>
+                <span class="footer-separator">·</span>
+                <a href="/en/about.html" class="footer-link">About</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script src="/seo-pages.js"></script>
+    <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
+</body>
+</html>

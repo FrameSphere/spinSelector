@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriels – Créer & utiliser la roue de la fortune | SpinSelector</title>
+    <meta name="description" content="Tutoriels SpinSelector : créer une roue, organiser un tirage au sort, utiliser en classe, sauvegarder des configurations. Guides étape par étape pour débutants & experts.">
+    <meta name="keywords" content="tutoriel roue de la fortune, guide roue en ligne, créer roue, configurer générateur aléatoire, guide pas à pas">
+    <link rel="canonical" href="https://spinselector.pages.dev/fr/tutoriels.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/tutorials.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/tutorials.html">
+    <link rel="alternate" hreflang="fr" href="https://spinselector.pages.dev/fr/tutoriels.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/tutorials.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Tutoriels SpinSelector – Guides étape par étape">
+    <meta property="og:description" content="Apprenez à utiliser la roue de la fortune pour des tirages au sort, en classe, pour des fêtes et des décisions quotidiennes.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://spinselector.pages.dev/fr/tutoriels.html">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta name="theme-color" content="#0f172a">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/fr/"},{"@type":"ListItem","position":2,"name":"Tutoriels","item":"https://spinselector.pages.dev/fr/tutoriels.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Configurer et utiliser SpinSelector",
+      "description": "Guide étape par étape pour configurer SpinSelector pour des tirages au sort, des cours et des jeux de fête.",
+      "url": "https://spinselector.pages.dev/fr/tutoriels.html",
+      "inLanguage": "fr",
+      "step": [
+        {"@type":"HowToStep","name":"Ouvrir la page","text":"Ouvrez spinselector.pages.dev/fr/ dans votre navigateur – aucune installation ni connexion nécessaire."},
+        {"@type":"HowToStep","name":"Entrer les options","text":"Tapez vos premières options dans le champ de saisie et cliquez sur Ajouter."},
+        {"@type":"HowToStep","name":"Ajuster les paramètres","text":"Choisissez si l'option gagnante doit être supprimée automatiquement, et utilisez le bouton Mélanger pour un maximum d'aléatoire."},
+        {"@type":"HowToStep","name":"Tourner la roue","text":"Cliquez sur le grand bouton TOURNER au centre de la roue. La roue tourne et s'arrête sur une option aléatoire."}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <script>
+        window.i18n = {
+            t: function(k){ var s={'empty-state':'Aucune option disponible.<br>Ajoutez au moins 2 options !','canvas-empty':'Ajoutez des options','confirm-clear':'Supprimer toutes les options ?','default-options':['Option 1','Option 2','Option 3']}; return s[k]||k; },
+            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
+            initLanguage: function(){}, currentLanguage: function(){ return 'fr'; }
+        };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Changer de langue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">FR</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+            <button data-lang="en" class="lang-option">🇬🇧 English</button>
+            <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+            <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Changer le thème">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="page-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/fr/">🎡 SpinSelector</a><span>›</span><span>Tutoriels</span>
+        </nav>
+
+        <div class="page-hero">
+            <h1>📖 Tutoriels SpinSelector – Étape par étape</h1>
+            <p class="lead">De la première saisie d'options à un tirage au sort professionnel : retrouvez ici tous les guides dont vous avez besoin pour utiliser SpinSelector de façon optimale – expliqués clairement pour les débutants et les utilisateurs avancés.</p>
+        </div>
+
+        <nav class="tut-nav" aria-label="Aperçu des tutoriels">
+            <a href="#premiers-pas">🚀 Premiers pas</a>
+            <a href="#tirage">🎰 Tirage au sort</a>
+            <a href="#classe">🎓 En classe</a>
+            <a href="#fete">🎉 Fête & soirée jeux</a>
+            <a href="#conseils">💡 Conseils pro</a>
+            <a href="#mobile">📱 Mobile & projecteur</a>
+        </nav>
+
+        <div class="tut-block" id="premiers-pas">
+            <div class="tut-label">Tutoriel 1 · Bases</div>
+            <h2>🚀 Premiers pas – SpinSelector en 2 minutes</h2>
+            <p>SpinSelector ne nécessite aucune installation, aucun compte et aucun téléchargement. Vous avez juste besoin d'un navigateur moderne. Voici tout ce que vous devez savoir pour commencer :</p>
+        </div>
+
+        <ol class="step-list">
+            <li><div class="step-text"><strong>Ouvrir la page.</strong> Naviguez vers <a href="/fr/">spinselector.pages.dev/fr/</a> dans Chrome, Firefox, Safari ou Edge. La roue se charge immédiatement – pas de temps d'attente.</div></li>
+            <li><div class="step-text"><strong>Saisir la première option.</strong> Cliquez dans le champ de texte avec le texte d'espace réservé. Entrez votre première entrée (maximum 50 caractères) et cliquez sur <em>« Ajouter »</em> ou appuyez sur Entrée. L'option apparaît immédiatement comme un segment sur la roue.</div></li>
+            <li><div class="step-text"><strong>Ajouter d'autres options.</strong> Répétez l'étape 2 pour toutes les autres entrées. Vous pouvez ajouter jusqu'à 20 options. La roue ajuste automatiquement la taille des segments.</div></li>
+            <li><div class="step-text"><strong>Tourner la roue.</strong> Cliquez sur le grand bouton <em>« TOURNER »</em> au centre de la roue. La roue tourne pendant environ 3,5 secondes et s'arrête sur une option aléatoire. Le résultat s'affiche sous la roue.</div></li>
+            <li><div class="step-text"><strong>Tourner à nouveau ou gérer les options.</strong> Cliquez à nouveau sur « TOURNER » pour le prochain tour. Les options individuelles peuvent être supprimées via l'icône poubelle dans la liste. « Tout supprimer » vide complètement la roue.</div></li>
+        </ol>
+
+        <div class="tip-box">
+            <p><strong>Bon à savoir :</strong> Vos options sont automatiquement sauvegardées dans la mémoire du navigateur (Local Storage). Si vous fermez la page et la rouvrez plus tard, toutes les entrées sont encore là – vous n'avez pas à recommencer.</p>
+        </div>
+
+        <div class="tut-block" id="tirage">
+            <div class="tut-label">Tutoriel 2 · Avancé</div>
+            <h2>🎰 Organiser un tirage au sort équitable avec SpinSelector</h2>
+            <p>SpinSelector est idéal pour les tirages au sort, tombolas et concours. Voici comment effectuer un tirage professionnel sans répétitions – en direct devant votre public.</p>
+        </div>
+
+        <ol class="step-list">
+            <li><div class="step-text"><strong>Préparer la liste des participants.</strong> Rassemblez d'abord tous les noms des participants. Utilisez des noms courts et uniques (prénom et nom ou numéro de participant).</div></li>
+            <li><div class="step-text"><strong>Entrer tous les noms dans la roue.</strong> Entrez chaque nom de participant individuellement. Pour de nombreux participants, chargez la roue avec jusqu'à 20 noms par tour.</div></li>
+            <li><div class="step-text"><strong>Activer « Suppression automatique ».</strong> Cochez la case <em>« Suppression automatique après le tour »</em>. Ainsi chaque gagnant est retiré de la roue après le tirage – un nom ne peut pas être tiré deux fois.</div></li>
+            <li><div class="step-text"><strong>Rendre l'écran visible pour tous.</strong> Projetez la roue sur un projecteur, un TV ou partagez votre écran en visioconférence. La transparence est essentielle lors des tirages au sort.</div></li>
+            <li><div class="step-text"><strong>Tourner et annoncer le gagnant.</strong> Cliquez sur « TOURNER ». La roue choisit le premier gagnant. Pour le gagnant suivant, cliquez à nouveau.</div></li>
+            <li><div class="step-text"><strong>Mélanger avant chaque tour.</strong> Cliquez sur le bouton <em>« Mélanger »</em> pour modifier l'ordre des segments. Cela augmente l'équité perçue et rend les patterns impossibles.</div></li>
+        </ol>
+
+        <div class="tut-block" id="classe">
+            <div class="tut-label">Tutoriel 3 · École</div>
+            <h2>🎓 Configurer SpinSelector en classe</h2>
+            <p>En tant qu'enseignant, vous gagnez du temps et rendez vos cours plus interactifs. Voici comment configurer la roue pour une utilisation quotidienne en classe.</p>
+        </div>
+
+        <ol class="step-list">
+            <li><div class="step-text"><strong>Créer la liste de classe en début d'année.</strong> Ouvrez SpinSelector sur l'ordinateur de classe et entrez tous les élèves. Les noms restent sauvegardés en permanence.</div></li>
+            <li><div class="step-text"><strong>Décider : suppression auto activée ou non ?</strong> Pour des interrogations aléatoires en cours : <em>activée</em> (chacun passe exactement une fois). Pour les notes orales sur la durée : <em>désactivée</em>.</div></li>
+            <li><div class="step-text"><strong>Poser la question d'abord, puis tourner.</strong> Formulez la question avant de tourner la roue. Cela donne à tous les élèves un moment pour réfléchir et améliore la qualité des réponses.</div></li>
+            <li><div class="step-text"><strong>Réinitialiser en fin de cours si nécessaire.</strong> Si la suppression auto était active et que vous voulez tous les noms pour le prochain cours, rechargez la page – le navigateur contient encore tous les noms d'origine tant que vous n'avez pas cliqué sur « Tout supprimer ».</div></li>
+        </ol>
+
+        <div class="tut-block" id="fete">
+            <div class="tut-label">Tutoriel 4 · Divertissement</div>
+            <h2>🎉 Préparer SpinSelector pour une fête ou soirée jeux</h2>
+            <p>Avec un peu de préparation, SpinSelector devient le clou de chaque soirée jeux. Voici comment préparer plusieurs configurations de roues pour une fête.</p>
+        </div>
+
+        <ol class="step-list">
+            <li><div class="step-text"><strong>Ouvrir plusieurs onglets.</strong> Ouvrez SpinSelector dans 2-3 onglets différents. Chaque onglet reçoit sa propre configuration : onglet 1 avec les prénoms, onglet 2 avec les défis, onglet 3 avec les boissons.</div></li>
+            <li><div class="step-text"><strong>Préremplir chaque configuration.</strong> Ajoutez les options appropriées dans chaque onglet. Les paramètres sont sauvegardés séparément par onglet.</div></li>
+            <li><div class="step-text"><strong>Connecter l'appareil au TV ou projecteur.</strong> Connectez votre smartphone via adaptateur HDMI ou Casting (Chromecast, AirPlay) au TV pour que tout le groupe voie la roue.</div></li>
+            <li><div class="step-text"><strong>Mode sombre pour l'ambiance fête.</strong> Cliquez sur l'icône lune en haut à droite pour activer le mode sombre.</div></li>
+            <li><div class="step-text"><strong>Mélanger avant chaque tour !</strong> Cliquez sur « Mélanger » avant chaque tour pour empêcher les joueurs de mémoriser les positions.</div></li>
+        </ol>
+
+        <h2 class="section-title" id="conseils">💡 Conseils pro pour utilisateurs avancés</h2>
+        <div class="content-prose">
+            <h3>Formuler les noms d'options de façon optimale</h3>
+            <p>La roue affiche au maximum environ 20 caractères lisibles par segment. Utilisez donc des désignations compactes et uniques.</p>
+
+            <h3>Technique à deux roues pour les jeux complexes</h3>
+            <p>Ouvrez SpinSelector dans deux onglets différents. L'onglet 1 contient les prénoms (qui passe ?), l'onglet 2 les défis ou actions (que doit-on faire ?). En basculant entre les onglets, vous créez un système doublement randomisé.</p>
+
+            <h3>Déterminer les plans de salle au hasard</h3>
+            <p>Entrez des numéros de place dans la roue. Chaque personne tourne une fois – le numéro affiché est sa place assignée. Idéal pour les examens, répétitions ou dîners.</p>
+
+            <h3>La roue comme minuteur de modération</h3>
+            <p>Utilisation créative : entrez des intervalles de temps dans la roue (ex. « 1 minute », « 2 minutes »). La roue détermine alors la durée d'une présentation ou d'une contribution.</p>
+        </div>
+
+        <h2 class="section-title" id="mobile">📱 Utiliser SpinSelector sur mobile et avec projecteur</h2>
+        <div class="content-prose">
+            <h3>Smartphone en main</h3>
+            <p>Tenez votre smartphone horizontalement (paysage) pour que la roue soit affichée le plus grand possible. Tous les boutons sont optimisés pour la commande tactile.</p>
+
+            <h3>iPad / Tablette sur la table</h3>
+            <p>Une tablette posée debout sur la table est idéale pour les soirées jeux : tous les participants peuvent voir la roue, et chacun peut tourner lui-même par tactile. Installez SpinSelector via « Ajouter à l'écran d'accueil » dans Safari ou Chrome.</p>
+
+            <h3>Présentation par projecteur</h3>
+            <p>Connectez votre ordinateur portable au projecteur via HDMI. Ouvrez SpinSelector en mode plein écran (F11). La roue remplit alors tout l'écran du projecteur.</p>
+
+            <h3>Partage d'écran en visioconférence</h3>
+            <p>Démarrez votre outil de visioconférence et choisissez « Partager un onglet ». Sélectionnez l'onglet SpinSelector. Tous les participants voient la roue en temps réel.</p>
+        </div>
+
+        <nav class="related-links" aria-label="Pages associées">
+            <a href="/fr/">🎡 Ouvrir la roue</a>
+            <a href="/fr/faq.html">❓ FAQ</a>
+            <a href="/fr/jeux-de-fete.html">🎉 Jeux de fête</a>
+            <a href="/fr/classe.html">🎓 En classe</a>
+            <a href="/fr/decisions.html">🤔 Aide à la décision</a>
+            <a href="/fr/histoire.html">🏛️ Histoire de la roue</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/fr/" class="footer-link">🎡 Roue de la fortune</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Mentions légales</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Confidentialité</a>
+                <span class="footer-separator">·</span>
+                <a href="/fr/faq.html" class="footer-link">FAQ</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
+</body>
+</html>

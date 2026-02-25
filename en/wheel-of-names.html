@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick a Random Name Online – Free Name Picker | SpinSelector</title>
+    <meta name="description" content="Pick a random name online: enter participants, randomly select one or more names. Free name picker for giveaways, school and teams. No download required.">
+    <meta name="keywords" content="pick random name online, name picker, select participant, random name, name draw, online giveaway, wheel of names, random name picker, draw names">
+    <link rel="canonical" href="https://spinselector.pages.dev/en/wheel-of-names.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/wheel-of-names.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/wheel-of-names.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Pick a Random Name Online – Free Name Picker">
+    <meta property="og:description" content="Enter names, have a random participant selected. Free, fair, no login. Perfect for giveaways, school and teams.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinselector.pages.dev/en/wheel-of-names.html">
+    <meta name="theme-color" content="#0f172a">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Name Picker","url":"https://spinselector.pages.dev/en/wheel-of-names.html","description":"Free name picker: enter names and randomly select one or more participants. For giveaways, school and teams.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    </script>
+    <link rel="stylesheet" href="/styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <style>
+        /* ── Mode Nav ── */
+        .mode-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin: 0 auto 1.25rem; max-width: 960px; }
+        .mode-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--card-bg,#1e293b); color: var(--text-secondary,#cbd5e1); text-decoration: none; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, color .18s, transform .18s; white-space: nowrap; }
+        .mode-btn:hover { background: var(--accent,#6366f1); color: #fff; transform: translateY(-1px); border-color: transparent; }
+        .mode-btn.active { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
+
+        /* ── Layout ── */
+        .picker-layout { max-width: 960px; margin: 0 auto 2rem; padding: 0 1.25rem; display: grid; grid-template-columns: 1fr 340px; gap: 1.25rem; align-items: start; }
+
+        /* ── Result Panel ── */
+        .result-panel { background: var(--card-bg,#1e293b); border-radius: 20px; padding: 2rem; text-align: center; }
+        .result-panel h2 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted,#94a3b8); margin: 0 0 1.25rem; }
+
+        .winner-display { position: relative; margin-bottom: 1.5rem; }
+        .winner-circle { width: 160px; height: 160px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #8b5cf6); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 0 rgba(99,102,241,0.4); transition: transform .3s; }
+        .winner-circle.bounce { animation: bounce-in .5s cubic-bezier(.34,1.56,.64,1); }
+        .winner-circle.spinning { animation: spin-circle 0.8s ease-out; }
+        @keyframes bounce-in { 0%{transform:scale(0.5);opacity:0} 100%{transform:scale(1);opacity:1} }
+        @keyframes spin-circle { 0%{transform:rotate(0deg) scale(0.8)} 60%{transform:rotate(360deg) scale(1.1)} 100%{transform:rotate(360deg) scale(1)} }
+        .winner-initial { font-size: 3.5rem; font-weight: 900; color: #fff; line-height: 1; }
+        .winner-name { font-size: 1.6rem; font-weight: 900; color: var(--text,#f8fafc); min-height: 2rem; word-break: break-word; }
+        .winner-sub { font-size: 0.82rem; color: var(--text-muted,#94a3b8); margin-top: 0.3rem; }
+
+        .pick-buttons { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
+        .btn-pick-one { background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; border: none; border-radius: 12px; padding: 0.85rem 1.5rem; font-size: 1rem; font-weight: 800; cursor: pointer; transition: opacity .18s, transform .18s; }
+        .btn-pick-one:hover { opacity: 0.88; transform: translateY(-2px); }
+        .btn-pick-one:active { transform: translateY(0); }
+        .btn-pick-one:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+        .multi-row { display: flex; gap: 0.5rem; align-items: center; }
+        .multi-row input { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 9px; padding: 0.6rem 0.75rem; color: var(--text,#f8fafc); font-size: 0.9rem; font-weight: 700; width: 60px; text-align: center; }
+        .btn-pick-multi { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 9px; padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; flex: 1; transition: background .15s, color .15s, border-color .15s; }
+        .btn-pick-multi:hover { background: #10b981; border-color: #10b981; color: #fff; }
+        .btn-pick-multi:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        .multi-result-list { display: flex; flex-wrap: wrap; gap: 0.45rem; min-height: 1rem; margin-bottom: 1rem; justify-content: center; }
+        .picked-pill { background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 0.88rem; font-weight: 700; animation: pop-in .3s cubic-bezier(.34,1.56,.64,1); }
+        @keyframes pop-in { 0%{transform:scale(0);opacity:0} 100%{transform:scale(1);opacity:1} }
+
+        .pick-options { display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--border,#334155); padding-top: 1rem; }
+        .opt-label { display: flex; align-items: center; gap: 0.5rem; font-size: 0.83rem; color: var(--text-secondary,#cbd5e1); cursor: pointer; }
+        .opt-label input[type=checkbox] { accent-color: #6366f1; width: 16px; height: 16px; }
+
+        .history-section { margin-top: 1rem; border-top: 1px solid var(--border,#334155); padding-top: 0.85rem; }
+        .history-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted,#94a3b8); margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .history-clear { background: none; border: none; color: var(--text-muted,#94a3b8); font-size: 0.75rem; cursor: pointer; text-decoration: underline; }
+        .history-list { display: flex; flex-direction: column; gap: 0.3rem; max-height: 120px; overflow-y: auto; }
+        .history-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.83rem; color: var(--text-secondary,#cbd5e1); }
+        .history-num { font-size: 0.7rem; color: var(--text-muted,#94a3b8); font-weight: 700; min-width: 18px; }
+
+        /* ── Name List Panel ── */
+        .list-panel { background: var(--card-bg,#1e293b); border-radius: 20px; padding: 1.5rem; }
+        .list-panel h2 { font-size: 1rem; font-weight: 800; color: var(--text,#f8fafc); margin: 0 0 1rem; }
+
+        .name-input-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+        .name-input-row input { flex: 1; background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 10px; padding: 0.65rem 0.9rem; color: var(--text,#f8fafc); font-size: 0.95rem; }
+        .name-input-row input:focus { outline: none; border-color: #6366f1; }
+        .btn-add-name { background: #6366f1; color: #fff; border: none; border-radius: 10px; padding: 0.65rem 1rem; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: opacity .15s; }
+        .btn-add-name:hover { opacity: 0.85; }
+
+        .example-strip { margin-bottom: 1rem; }
+        .example-strip p { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted,#94a3b8); margin: 0 0 0.45rem; }
+        .example-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .ex-pill { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 999px; padding: 0.22rem 0.7rem; font-size: 0.8rem; color: var(--text-secondary,#cbd5e1); cursor: pointer; transition: background .12s, color .12s; }
+        .ex-pill:hover { background: #6366f1; color: #fff; border-color: transparent; }
+
+        .name-list { display: flex; flex-direction: column; gap: 0.4rem; max-height: 320px; overflow-y: auto; margin-bottom: 1rem; }
+        .name-item { display: flex; align-items: center; gap: 0.6rem; background: var(--bg,#0f172a); border-radius: 9px; padding: 0.55rem 0.75rem; }
+        .name-item .ni-color { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .name-item .ni-text { flex: 1; font-size: 0.92rem; color: var(--text,#f8fafc); font-weight: 500; }
+        .name-item .ni-del { background: none; border: none; color: var(--text-muted,#94a3b8); cursor: pointer; font-size: 1rem; line-height: 1; padding: 0 0.2rem; }
+        .name-item .ni-del:hover { color: #ef4444; }
+        .name-item.drawn { opacity: 0.38; }
+
+        .bulk-section { border-top: 1px solid var(--border,#334155); padding-top: 0.85rem; }
+        .bulk-section p { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted,#94a3b8); margin: 0 0 0.4rem; }
+        .bulk-textarea { width: 100%; background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 10px; padding: 0.65rem 0.9rem; color: var(--text,#f8fafc); font-size: 0.85rem; resize: vertical; min-height: 80px; box-sizing: border-box; }
+        .bulk-textarea:focus { outline: none; border-color: #6366f1; }
+        .bulk-btns { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+        .btn-bulk { background: var(--card-bg,#1e293b); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 8px; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: background .12s, color .12s; }
+        .btn-bulk:hover { background: #6366f1; color: #fff; border-color: transparent; }
+        .btn-clear-all { background: var(--card-bg,#1e293b); border: 1px solid #ef4444; color: #ef4444; border-radius: 8px; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: background .12s, color .12s; }
+        .btn-clear-all:hover { background: #ef4444; color: #fff; }
+
+        .name-counter { font-size: 0.75rem; color: var(--text-muted,#94a3b8); margin-bottom: 0.5rem; }
+
+        /* ── SEO ── */
+        .seo-wrap { max-width: 960px; margin: 0 auto 3rem; padding: 0 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.4rem 1.6rem; }
+        .seo-box.full { grid-column: 1 / -1; }
+        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.05rem; font-weight: 800; margin: 0 0 0.65rem; }
+        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.75; font-size: 0.92rem; margin: 0 0 0.6rem; }
+        .seo-box p:last-child { margin: 0; }
+        .seo-box a { color: var(--accent,#818cf8); text-decoration: underline; }
+        .seo-box strong { color: var(--text,#f8fafc); }
+        .use-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+        .use-tag { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 7px; padding: 0.22rem 0.65rem; font-size: 0.78rem; color: var(--text-secondary,#cbd5e1); }
+
+        @media (max-width: 740px) {
+            .picker-layout { grid-template-columns: 1fr; }
+            .result-panel { order: -1; }
+            .seo-wrap { grid-template-columns: 1fr; }
+            .seo-box.full { grid-column: 1; }
+            .mode-nav { gap: 0.35rem; padding: 0 0.75rem; }
+            .mode-btn { font-size: 0.76rem; padding: 0.45rem 0.8rem; }
+        }
+    </style>
+    <script>
+        window.i18n = { t: function(k){ return k; }, setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; }, initLanguage: function(){}, currentLanguage: function(){ return 'en'; } };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Change language">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">EN</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">&#127465;&#127466; Deutsch</button>
+            <button data-lang="en" class="lang-option">&#127468;&#127463; English</button>
+            <button data-lang="fr" class="lang-option">&#127467;&#127479; Français</button>
+            <button data-lang="es" class="lang-option">&#127466;&#127480; Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>&#128100; Name Picker</h1>
+            <p class="subtitle">Pick a participant – fair, fast, free!</p>
+        </header>
+        <nav class="mode-nav" aria-label="App modes">
+            <a href="/en/" class="mode-btn">&#127921; Spin Wheel</a>
+            <a href="/en/wheel-of-names.html" class="mode-btn active">&#128100; Name Picker</a>
+            <a href="/en/random-number-generator.html" class="mode-btn">&#127922; Random Number</a>
+            <a href="/en/chooser.html" class="mode-btn">&#129300; Chooser</a>
+            <a href="/en/spin-the-wheel.html" class="mode-btn">&#127757; Spin the Wheel</a>
+            <a href="/en/team-generator.html" class="mode-btn">&#128101; Teams</a>
+        </nav>
+    </div>
+
+    <div class="picker-layout">
+
+        <!-- LEFT: Result + Controls -->
+        <div class="result-panel">
+            <h2>Selected Name</h2>
+            <div class="winner-display">
+                <div class="winner-circle" id="winnerCircle">
+                    <span class="winner-initial" id="winnerInitial">?</span>
+                </div>
+                <div class="winner-name" id="winnerName">–</div>
+                <div class="winner-sub" id="winnerSub">Add names and pick</div>
+            </div>
+
+            <div class="pick-buttons">
+                <button class="btn-pick-one" id="pickOneBtn" onclick="pickOne()" disabled>
+                    &#127881; Pick One Name
+                </button>
+                <div class="multi-row">
+                    <input type="number" id="multiCount" value="3" min="2" max="20" title="Count">
+                    <button class="btn-pick-multi" id="pickMultiBtn" onclick="pickMulti()" disabled>
+                        &#9889; Pick Multiple
+                    </button>
+                </div>
+                <div class="multi-result-list" id="multiResultList"></div>
+            </div>
+
+            <div class="pick-options">
+                <label class="opt-label">
+                    <input type="checkbox" id="optRemove" checked>
+                    Remove picked names from list
+                </label>
+                <label class="opt-label">
+                    <input type="checkbox" id="optNoDupes" checked>
+                    No duplicates when picking multiple
+                </label>
+            </div>
+
+            <div class="history-section">
+                <div class="history-title">
+                    <span>&#128221; History</span>
+                    <button class="history-clear" onclick="clearHistory()">Clear</button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <span style="font-size:0.8rem;color:var(--text-muted,#94a3b8)">No picks yet</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Name List Manager -->
+        <div class="list-panel">
+            <h2>&#128100; Participant List <span class="name-counter" id="nameCounter">(0 names)</span></h2>
+
+            <div class="name-input-row">
+                <input type="text" id="nameInput" placeholder="Enter name…" maxlength="40" aria-label="Enter name">
+                <button class="btn-add-name" onclick="addNameFromInput()">+</button>
+            </div>
+
+            <div class="example-strip">
+                <p>Examples – click to add:</p>
+                <div class="example-pills">
+                    <span class="ex-pill" onclick="addName('Alice')">Alice</span>
+                    <span class="ex-pill" onclick="addName('Bob')">Bob</span>
+                    <span class="ex-pill" onclick="addName('Charlie')">Charlie</span>
+                    <span class="ex-pill" onclick="addName('Diana')">Diana</span>
+                    <span class="ex-pill" onclick="addName('Emma')">Emma</span>
+                    <span class="ex-pill" onclick="addName('Frank')">Frank</span>
+                    <span class="ex-pill" onclick="addName('Grace')">Grace</span>
+                    <span class="ex-pill" onclick="addName('Henry')">Henry</span>
+                    <span class="ex-pill" onclick="addName('Isla')">Isla</span>
+                    <span class="ex-pill" onclick="addName('Jack')">Jack</span>
+                    <span class="ex-pill" onclick="addExamples()">Load all &#8618;</span>
+                </div>
+            </div>
+
+            <div class="name-list" id="nameList"></div>
+
+            <div class="bulk-section">
+                <p>Add multiple at once (one name per line):</p>
+                <textarea class="bulk-textarea" id="bulkInput" placeholder="Alice&#10;Bob&#10;Charlie&#10;Diana&#10;…"></textarea>
+                <div class="bulk-btns">
+                    <button class="btn-bulk" onclick="importBulk()">&#8618; Import</button>
+                    <button class="btn-bulk" onclick="shuffleList()">&#8635; Shuffle</button>
+                    <button class="btn-clear-all" onclick="clearAll()">&#128465; Clear all</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO Section -->
+    <div class="seo-wrap">
+        <div class="seo-box full">
+            <h2>Pick a Random Name Online – Free Name Picker</h2>
+            <p>With the <strong>Name Picker</strong> on SpinSelector you can randomly select one or more names from any participant list – fair, transparent and instant. Simply enter all names (or use the quick examples), choose whether to pick one or several, and click "Pick". The result appears large and animated – perfect for live presentations too.</p>
+        </div>
+        <div class="seo-box">
+            <h2>&#127891; In the Classroom</h2>
+            <p>Teachers use the name picker daily for fair student call-ons. Enter all names once, saved – then just click. No favouritism, no excuses.</p>
+            <div class="use-tags"><span class="use-tag">Student call-on</span><span class="use-tag">Group split</span><span class="use-tag">Quiz</span></div>
+        </div>
+        <div class="seo-box">
+            <h2>&#127881; Giveaways & Contests</h2>
+            <p>Enter all participant names, draw live in front of your audience. With "Remove picked names" each person is only included once – completely tamper-proof.</p>
+            <div class="use-tags"><span class="use-tag">Giveaway</span><span class="use-tag">Raffle</span><span class="use-tag">Draw</span></div>
+        </div>
+        <div class="seo-box">
+            <h2>&#128188; Teams & Meetings</h2>
+            <p>Who's facilitating? Who presents first? Simply enter team names and pick. For team splits we recommend the <a href="/en/team-generator.html">Team Generator</a>.</p>
+            <div class="use-tags"><span class="use-tag">Meeting</span><span class="use-tag">Presentation</span><span class="use-tag">Order</span></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/en/" class="footer-link">&#127921; Spin Wheel</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Imprint</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Privacy</a>
+                <span class="footer-separator">·</span>
+                <a href="/en/faq.html" class="footer-link">FAQ</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+    function initTheme(){ var t=localStorage.getItem('theme')||'dark'; document.documentElement.setAttribute('data-theme',t); }
+    initTheme();
+
+    var COLORS=['#FF6B6B','#4ECDC4','#45B7D1','#FFA07A','#98D8C8','#F7DC6F','#BB8FCE','#85C1E2','#F8B739','#52B788','#FF8B94','#A8DADC','#E76F51','#2A9D8F','#E9C46A'];
+    var names   = [];
+    var history = [];
+    var idCnt   = 0;
+
+    function rng(max){ var a=new Uint32Array(1); window.crypto.getRandomValues(a); return a[0]%max; }
+
+    function addName(text){
+        text = text.trim();
+        if(!text) return;
+        names.push({id: idCnt++, text: text, drawn: false});
+        saveNames(); renderList(); updateButtons();
+    }
+    function addNameFromInput(){
+        var inp = document.getElementById('nameInput');
+        addName(inp.value);
+        inp.value=''; inp.focus();
+    }
+    function removeName(id){
+        names = names.filter(function(n){ return n.id!==id; });
+        saveNames(); renderList(); updateButtons();
+    }
+    function clearAll(){
+        if(!names.length) return;
+        names=[]; saveNames(); renderList(); updateButtons();
+        document.getElementById('winnerName').textContent='–';
+        document.getElementById('winnerInitial').textContent='?';
+        document.getElementById('winnerSub').textContent='Add names and pick';
+        document.getElementById('multiResultList').innerHTML='';
+    }
+    function shuffleList(){
+        for(var i=names.length-1;i>0;i--){ var j=rng(i+1); var t=names[i]; names[i]=names[j]; names[j]=t; }
+        renderList();
+    }
+    function addExamples(){
+        ['Alice','Bob','Charlie','Diana','Emma','Frank','Grace','Henry','Isla','Jack'].forEach(addName);
+    }
+    function importBulk(){
+        var lines = document.getElementById('bulkInput').value.split('\n');
+        lines.forEach(function(l){ if(l.trim()) addName(l.trim()); });
+        document.getElementById('bulkInput').value='';
+    }
+
+    function renderList(){
+        var container = document.getElementById('nameList');
+        container.innerHTML='';
+        if(!names.length){
+            container.innerHTML='<div style="text-align:center;padding:1rem;color:var(--text-muted,#94a3b8);font-size:0.85rem">No names yet – add some!</div>';
+            return;
+        }
+        names.forEach(function(n,i){
+            var div=document.createElement('div');
+            div.className='name-item'+(n.drawn?' drawn':'');
+            div.innerHTML='<div class="ni-color" style="background:'+COLORS[i%COLORS.length]+'"></div>'
+                         +'<span class="ni-text">'+escHtml(n.text)+'</span>'
+                         +'<button class="ni-del" onclick="removeName('+n.id+')" title="Remove">&#x2715;</button>';
+            container.appendChild(div);
+        });
+        document.getElementById('nameCounter').textContent='('+names.length+' names)';
+    }
+    function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    function updateButtons(){
+        var avail = names.filter(function(n){ return !n.drawn; });
+        document.getElementById('pickOneBtn').disabled   = avail.length === 0;
+        document.getElementById('pickMultiBtn').disabled = avail.length < 2;
+    }
+
+    function pickOne(){
+        var avail = names.filter(function(n){ return !n.drawn; });
+        if(!avail.length) return;
+        var winner = avail[rng(avail.length)];
+        showWinner(winner, avail.indexOf(winner));
+        addToHistory(winner.text);
+        if(document.getElementById('optRemove').checked){
+            names = names.filter(function(n){ return n.id !== winner.id; });
+        } else {
+            names.forEach(function(n){ if(n.id===winner.id) n.drawn=true; });
+        }
+        saveNames(); renderList(); updateButtons();
+    }
+
+    function pickMulti(){
+        var count   = Math.max(2, parseInt(document.getElementById('multiCount').value)||3);
+        var noDupes = document.getElementById('optNoDupes').checked;
+        var avail   = names.filter(function(n){ return !n.drawn; });
+        if(avail.length < 2) return;
+        var picked = []; var tries = 0;
+        while(picked.length < count && tries < 1000){
+            var idx = rng(avail.length); var n = avail[idx];
+            if(!noDupes || picked.indexOf(n)===-1) picked.push(n);
+            tries++;
+        }
+        if(picked.length) showWinner(picked[0], 0);
+        var container = document.getElementById('multiResultList');
+        container.innerHTML='';
+        picked.forEach(function(n,i){
+            var p=document.createElement('span'); p.className='picked-pill';
+            p.style.animationDelay=(i*0.06)+'s'; p.textContent=n.text;
+            container.appendChild(p); addToHistory(n.text);
+        });
+        if(document.getElementById('optRemove').checked){
+            var ids = picked.map(function(n){ return n.id; });
+            names = names.filter(function(n){ return ids.indexOf(n.id)===-1; });
+        } else {
+            var ids2 = picked.map(function(n){ return n.id; });
+            names.forEach(function(n){ if(ids2.indexOf(n.id)!==-1) n.drawn=true; });
+        }
+        saveNames(); renderList(); updateButtons();
+    }
+
+    function showWinner(n, colorIdx){
+        var circle = document.getElementById('winnerCircle');
+        circle.style.background = 'linear-gradient(135deg,'+COLORS[colorIdx%COLORS.length]+','+COLORS[(colorIdx+3)%COLORS.length]+')';
+        document.getElementById('winnerInitial').textContent = n.text.charAt(0).toUpperCase();
+        document.getElementById('winnerName').textContent  = n.text;
+        document.getElementById('winnerSub').textContent   = '🎉 Selected!';
+        circle.classList.remove('bounce','spinning'); void circle.offsetWidth; circle.classList.add('bounce');
+    }
+
+    function addToHistory(name){
+        history.unshift({name:name, time:new Date().toLocaleTimeString('en',{hour:'2-digit',minute:'2-digit'})});
+        if(history.length>20) history.pop(); renderHistory();
+    }
+    function clearHistory(){ history=[]; renderHistory(); }
+    function renderHistory(){
+        var container = document.getElementById('historyList');
+        if(!history.length){ container.innerHTML='<span style="font-size:0.8rem;color:var(--text-muted,#94a3b8)">No picks yet</span>'; return; }
+        container.innerHTML='';
+        history.forEach(function(h,i){
+            var div=document.createElement('div'); div.className='history-item';
+            div.innerHTML='<span class="history-num">'+(i+1)+'.</span><span>'+escHtml(h.name)+'</span><span style="margin-left:auto;font-size:0.72rem;color:var(--text-muted,#94a3b8)">'+h.time+'</span>';
+            container.appendChild(div);
+        });
+    }
+
+    function saveNames(){ try{ localStorage.setItem('namePicker_names_en',JSON.stringify(names)); }catch(e){} }
+    function loadNames(){
+        try{ var s=localStorage.getItem('namePicker_names_en'); if(s){ names=JSON.parse(s); idCnt=names.reduce(function(m,n){return Math.max(m,n.id);},0)+1; } }catch(e){}
+        renderList(); updateButtons();
+    }
+
+    document.getElementById('nameInput').addEventListener('keydown', function(e){ if(e.key==='Enter') addNameFromInput(); });
+    loadNames();
+    </script>
+</body>
+</html>

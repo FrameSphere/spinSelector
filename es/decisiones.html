@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomar decisiones con la ruleta – Ayuda cotidiana | SpinSelector</title>
+    <meta name="description" content="Deja de dudar: usa la ruleta para elegir el almuerzo, la película, el restaurante y distribuir tareas. Ayuda para decidir sin estrés para cada día.">
+    <meta name="keywords" content="ayuda para decidir ruleta, elegir almuerzo generador aleatorio, escoger película ruleta, elegir restaurante azar, distribuir tareas herramienta, tomar decisiones app gratis">
+    <link rel="canonical" href="https://spinselector.pages.dev/es/decisiones.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/entscheidungen.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/decisions.html">
+    <link rel="alternate" hreflang="es" href="https://spinselector.pages.dev/es/decisiones.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/decisions.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Tomar decisiones con más facilidad – SpinSelector ayuda para decidir">
+    <meta property="og:description" content="Almuerzo, película, restaurante, tareas – la ruleta decide de forma justa e inmediata. Gratuito, sin registro.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://spinselector.pages.dev/es/decisiones.html">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta name="theme-color" content="#0f172a">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/es/"},{"@type":"ListItem","position":2,"name":"Ayuda para decidir","item":"https://spinselector.pages.dev/es/decisiones.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puede una ruleta realmente ayudar a tomar decisiones?","acceptedAnswer":{"@type":"Answer","text":"Sí. Para opciones equivalentes, una ruleta es ideal: supera la fatiga decisional y la paradoja de la elección. El resultado es aceptado por todos los participantes como justo."}},{"@type":"Question","name":"¿Cuántas opciones puedo añadir a la ruleta?","acceptedAnswer":{"@type":"Answer","text":"SpinSelector admite hasta 20 opciones simultáneamente. Todas se guardan automáticamente en el navegador y están disponibles en la próxima visita."}},{"@type":"Question","name":"¿Es la ruleta realmente justa y aleatoria?","acceptedAnswer":{"@type":"Answer","text":"Sí. SpinSelector usa el algoritmo aleatorio criptográficamente seguro de JavaScript. Cada opción tiene exactamente la misma probabilidad de ganar con el mismo tamaño de segmento – sin ponderaciones ocultas."}}]}
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <script>
+        window.i18n = {
+            t: function(k){ var s={'empty-state':'No hay opciones disponibles.<br>¡Añade al menos 2 opciones!','canvas-empty':'Añade opciones','confirm-clear':'¿Eliminar todo?','default-options':['Opción 1','Opción 2','Opción 3']}; return s[k]||k; },
+            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
+            initLanguage: function(){}, currentLanguage: function(){ return 'es'; }
+        };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Cambiar idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">ES</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+            <button data-lang="en" class="lang-option">🇬🇧 English</button>
+            <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+            <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="page-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/es/">🎡 SpinSelector</a><span>›</span><span>Ayuda para decidir</span>
+        </nav>
+
+        <div class="page-hero">
+            <h1>🤔 Tomar decisiones con más facilidad gracias a la ruleta</h1>
+            <p class="lead">Cada día tomamos cientos de pequeñas decisiones – y muchas nos roban tiempo y energía innecesariamente. SpinSelector acaba con eso: añade opciones, gira la ruleta, decisión tomada. Sin estrés, justo e inmediato.</p>
+        </div>
+
+        <!-- PSICOLOGÍA -->
+        <div class="psychology-block">
+            <h2>🧠 ¿Por qué nos cuesta tanto tomar decisiones?</h2>
+            <p>La psicología del comportamiento conoce este fenómeno como <strong>«parálisis por análisis»</strong> o «fatiga decisional»: cuantas más decisiones tomamos a lo largo del día, peores son nuestros juicios posteriores – porque nuestro presupuesto mental para decidir simplemente se agota.</p>
+            <p>Los estudios también muestran: cuantas más opciones tenemos, más difícil nos resulta elegir – aunque todas las opciones sean buenas. Este fenómeno, conocido como la <strong>Paradoja de la Elección</strong>, explica por qué incluso ante preguntas sencillas como «¿Qué comemos hoy?» podemos estar horas debatiendo.</p>
+            <p>La ruleta resuelve este problema de forma elegante: en lugar de cargar con el peso mental de la decisión, lo transferimos conscientemente al azar. El resultado se siente neutral y aceptable – para todos los participantes a la vez.</p>
+        </div>
+
+        <div class="cta-banner">
+            <h2>¡Deja decidir ahora!</h2>
+            <p>Añade opciones, gira la ruleta – en 10 segundos la decisión está tomada. Gratis y sin registro.</p>
+            <a href="/es/" class="cta-btn">🎡 Abrir SpinSelector</a>
+        </div>
+
+        <!-- COMIDA Y BEBIDA -->
+        <h2 class="section-title">🍽️ Comida, bebida y restaurantes</h2>
+        <div class="content-prose">
+            <p>«¿Qué comemos hoy?» es una de las preguntas cotidianas más frecuentes que sorprendentemente cuesta mucho tiempo y nervios. Con SpinSelector se responde en segundos – y de forma justa para todos.</p>
+        </div>
+
+        <div class="scenario-grid">
+            <div class="scenario-card">
+                <h3>🍕 Elegir el almuerzo</h3>
+                <p>Todos los platos que se te ocurran en la ruleta. La ruleta decide. Perfecto para compañeros de piso, equipos de oficina o parejas con gustos diferentes.</p>
+                <div class="options-box">
+                    <span>Opciones de ejemplo:</span>
+                    <ul>
+                        <li>Pasta boloñesa</li>
+                        <li>Ensalada</li>
+                        <li>Bocadillo</li>
+                        <li>Sushi</li>
+                        <li>Hamburguesa</li>
+                        <li>Sobras del día anterior</li>
+                        <li>Kebab</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Pasta boloñesa','Ensalada','Bocadillo','Sushi','Hamburguesa','Sobras del día anterior','Kebab'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🍣 Elegir restaurante</h3>
+                <p>Tienes cinco restaurantes favoritos y todos tienen ganas de algo diferente. La ruleta resuelve el conflicto en segundos – de forma neutral y vinculante para todos.</p>
+                <div class="options-box">
+                    <span>Opciones de ejemplo:</span>
+                    <ul>
+                        <li>Griego</li>
+                        <li>Indio</li>
+                        <li>Italiano</li>
+                        <li>Tailandés</li>
+                        <li>Mexicano</li>
+                        <li>Japonés</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Griego','Indio','Italiano','Tailandés','Mexicano','Japonés'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🥂 ¿Qué bebemos esta noche?</h3>
+                <p>¿Cóctel, vino, cerveza o sin alcohol? Todas las opciones en la ruleta y a girar. También funciona como rompehielos en una cita o cena.</p>
+                <div class="options-box">
+                    <span>Opciones de ejemplo:</span>
+                    <ul>
+                        <li>Vino blanco</li>
+                        <li>Vino tinto</li>
+                        <li>Cerveza artesanal</li>
+                        <li>Cóctel</li>
+                        <li>Agua con gas</li>
+                        <li>Té</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Vino blanco','Vino tinto','Cerveza artesanal','Cóctel','Agua con gas','Té'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🍳 ¿Cocinar o pedir a domicilio?</h3>
+                <p>La eterna pregunta después de un día agotador. Todas las opciones en la ruleta – también «cocinar en casa» debería estar representado para que el resultado sea realmente abierto.</p>
+                <div class="options-box">
+                    <span>Opciones de ejemplo:</span>
+                    <ul>
+                        <li>Cocinar en casa</li>
+                        <li>Pedir pizza</li>
+                        <li>Pedir sushi</li>
+                        <li>Pedir hamburguesa</li>
+                        <li>Comer sobras</li>
+                        <li>Ir a un restaurante</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Cocinar en casa','Pedir pizza','Pedir sushi','Pedir hamburguesa','Comer sobras','Ir a un restaurante'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+        </div>
+
+        <!-- OCIO Y ENTRETENIMIENTO -->
+        <h2 class="section-title">🎬 Ocio, entretenimiento y fin de semana</h2>
+        <div class="scenario-grid">
+            <div class="scenario-card">
+                <h3>🎬 ¿Qué película vemos?</h3>
+                <p>¿Noche de Netflix con diez películas posibles y sin acuerdo? Todos los candidatos en la ruleta. Lo que el destino determine se ve esta noche – sin discusión.</p>
+                <div class="options-box">
+                    <span>Opciones de ejemplo:</span>
+                    <ul>
+                        <li>Acción</li>
+                        <li>Comedia romántica</li>
+                        <li>Documental</li>
+                        <li>Terror</li>
+                        <li>Animación</li>
+                        <li>Thriller</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Acción','Comedia romántica','Documental','Terror','Animación','Thriller'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🏃 ¿Deporte o descanso?</h3>
+                <p>¿Fitness, paseo, yoga, natación o simplemente quedarse en el sofá? La ruleta decide cómo pasas tu tarde o fin de semana.</p>
+                <div class="options-box">
+                    <span>Opciones de ejemplo:</span>
+                    <ul>
+                        <li>Correr</li>
+                        <li>Yoga</li>
+                        <li>Ciclismo</li>
+                        <li>Nadar</li>
+                        <li>Paseo</li>
+                        <li>Día de Netflix</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Correr','Yoga','Ciclismo','Nadar','Paseo','Día de Netflix'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🌍 ¿A dónde de vacaciones?</h3>
+                <p>Todos los destinos de tu lista de deseos en la ruleta. Perfecto para parejas o grupos con preferencias de viaje diferentes. ¡El resultado es vinculante!</p>
+                <div class="options-box">
+                    <span>Opciones de ejemplo:</span>
+                    <ul>
+                        <li>Barcelona</li>
+                        <li>Japón</li>
+                        <li>Canarias</li>
+                        <li>Nueva York</li>
+                        <li>Tailandia</li>
+                        <li>Portugal</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Barcelona','Japón','Canarias','Nueva York','Tailandia','Portugal'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="scenario-card">
+                <h3>🎮 ¿A qué juego jugamos?</h3>
+                <p>¿Noche de juegos con amigos y demasiadas opciones? La ruleta elige el juego – ideal para bibliotecas de Steam, colecciones de juegos de mesa y noches de consola.</p>
+                <div class="options-box">
+                    <span>Opciones de ejemplo:</span>
+                    <ul>
+                        <li>FIFA</li>
+                        <li>Catan</li>
+                        <li>Minecraft</li>
+                        <li>Mario Kart</li>
+                        <li>Póker</li>
+                        <li>Among Us</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['FIFA','Catan','Minecraft','Mario Kart','Póker','Among Us'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+        </div>
+
+        <!-- OFICINA Y EQUIPO -->
+        <h2 class="section-title">💼 Oficina, equipo y reuniones</h2>
+        <div class="content-prose">
+            <p>En el día a día laboral surgen constantemente pequeñas decisiones que no necesitan un gran análisis – pero que igualmente cuestan tiempo. SpinSelector las resuelve en segundos.</p>
+
+            <h3>Moderador, secretario, quien trae el café</h3>
+            <p>¿Quién modera la próxima reunión? ¿Quién toma el acta? ¿Quién trae pastas la próxima semana? Estas preguntas suelen costar más tiempo del necesario en el equipo. Todos los nombres en la ruleta, girar, listo – sin discusiones ni «yo lo hice la semana pasada».</p>
+
+            <h3>Distribuir tareas de forma justa</h3>
+            <p>Con tareas equivalentes pero de diferente popularidad (por ejemplo distintos temas de presentación, informes de viaje o partes de proyecto), la ruleta garantiza una asignación justa sin favoritismos ni grupos.</p>
+
+            <h3>Priorizar puntos del orden del día</h3>
+            <p>¿Reunión con demasiados temas y poco tiempo? Añade todos los puntos del orden del día a la ruleta. La ruleta determina el orden. Lo que no se trate pasa a la siguiente reunión – sin tediosa discusión de prioridades.</p>
+
+            <h3>Decidir el almuerzo del equipo</h3>
+            <p>El problema clásico: diez compañeros, diez preferencias alimentarias diferentes. Todas las propuestas en la ruleta, girar – cuya propuesta gane invita al almuerzo del equipo (o no, según la cultura de la empresa).</p>
+        </div>
+
+        <div class="tip-box">
+            <p><strong>Truco psicológico:</strong> Si después del resultado de la ruleta piensas «Oh, en realidad no quería eso» – ¡es una señal valiosa! Acabas de descubrir lo que realmente quieres. Usa la ruleta también para ver con más claridad tus propias preferencias.</p>
+        </div>
+
+        <!-- HOGAR Y FAMILIA -->
+        <h2 class="section-title">🏠 Hogar, piso compartido y familia</h2>
+        <div class="content-prose">
+            <p>En el hogar compartido SpinSelector garantiza una distribución justa y transparente de tareas – sin peleas, sin sentimientos de culpa.</p>
+
+            <h3>Distribuir las tareas del hogar</h3>
+            <p>Añade todas las obligaciones domésticas recurrentes a la ruleta (aspirar, fregar, sacar la basura, hacer la compra). Cada persona gira una vez – la tarea asignada es vinculante para la semana. En pisos compartidos con 3 o más personas se recomienda la «eliminación automática» para que cada tarea se asigne solo una vez.</p>
+
+            <h3>¿Quién es el primero en...?</h3>
+            <p>El orden del baño por la mañana, el uso del ordenador, el mando de la tele por la tarde – la ruleta resuelve los conflictos de forma justa. Los niños suelen aceptar mejor los resultados cuando es obvio que son aleatorios y no decididos por los padres.</p>
+
+            <h3>Planificar actividades familiares</h3>
+            <p>Cada miembro de la familia puede hacer una propuesta sobre qué hacer el fin de semana. Todas las propuestas van a la ruleta. El resultado respeta a todos por igual – ninguna voz es más importante que otra.</p>
+        </div>
+
+        <div class="section-title" style="font-size:1.1rem">Más recursos</div>
+        <nav class="related-links" aria-label="Páginas relacionadas">
+            <a href="/es/">🎡 Ir a la ruleta</a>
+            <a href="/es/faq.html">❓ FAQ</a>
+            <a href="/es/tutoriales.html">📖 Tutoriales</a>
+            <a href="/es/juegos-de-fiesta.html">🎉 Juegos de fiesta</a>
+            <a href="/es/aula.html">🎓 En el aula</a>
+            <a href="/es/verdad-o-reto.html">🤥 Verdad o reto</a>
+            <a href="/es/team-generator.html">👥 Generador de equipos</a>
+            <a href="/es/historia.html">🏛️ Historia de la ruleta</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/es/" class="footer-link">🎡 Ir a la ruleta</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Aviso legal</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Privacidad</a>
+                <span class="footer-separator">·</span>
+                <a href="/es/faq.html" class="footer-link">FAQ</a>
+                <span class="footer-separator">·</span>
+                <a href="/es/about.html" class="footer-link">Sobre nosotros</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script src="/seo-pages.js"></script>
+    <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
+</body>
+</html>

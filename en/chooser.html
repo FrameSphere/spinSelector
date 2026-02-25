@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Finger Chooser – Who's Next? Random Touch Picker | SpinSelector</title>
+    <meta name="description" content="Finger Chooser: Everyone places a finger on the screen, the device randomly selects one person. Free touch picker for group decisions.">
+    <meta name="keywords" content="finger chooser, who's next, random chooser touch, random group selection, finger picker online, group decision, who goes first, touch picker">
+    <link rel="canonical" href="https://spinselector.pages.dev/en/chooser.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/chooser.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/chooser.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Finger Chooser – Everyone Taps, One Gets Picked">
+    <meta property="og:description" content="Everyone places a finger on the screen. The chooser randomly selects one person. Free, no login required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinselector.pages.dev/en/chooser.html">
+    <meta name="theme-color" content="#0f172a">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Finger Chooser","url":"https://spinselector.pages.dev/en/chooser.html","description":"Touch-based random selector for groups: everyone places a finger on the screen and one person is randomly chosen.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    </script>
+    <link rel="stylesheet" href="/styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <style>
+        /* ── Mode Nav ── */
+        .mode-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin: 0 auto 1.25rem; max-width: 900px; }
+        .mode-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--card-bg,#1e293b); color: var(--text-secondary,#cbd5e1); text-decoration: none; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, color .18s, transform .18s; white-space: nowrap; }
+        .mode-btn:hover { background: var(--accent,#6366f1); color: #fff; transform: translateY(-1px); border-color: transparent; }
+        .mode-btn.active { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
+
+        /* ── Touch Arena ── */
+        .chooser-wrap { max-width: 900px; margin: 0 auto 2rem; padding: 0 1.25rem; }
+        .chooser-card { background: var(--card-bg,#1e293b); border-radius: 20px; overflow: hidden; }
+
+        /* instruction bar */
+        .chooser-instruction { padding: 1.25rem 1.5rem; text-align: center; border-bottom: 1px solid var(--border,#334155); }
+        .chooser-instruction h2 { font-size: 1.1rem; font-weight: 800; color: var(--text,#f8fafc); margin: 0 0 0.3rem; }
+        .chooser-instruction p { font-size: 0.88rem; color: var(--text-secondary,#cbd5e1); margin: 0; line-height: 1.5; }
+
+        /* touch field */
+        #touchField {
+            position: relative;
+            width: 100%;
+            height: 52vw;
+            max-height: 420px;
+            min-height: 260px;
+            background: var(--bg,#0f172a);
+            cursor: crosshair;
+            touch-action: none;
+            user-select: none;
+            -webkit-user-select: none;
+            overflow: hidden;
+        }
+        #touchField .field-hint {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            gap: 0.6rem;
+            color: var(--text-muted,#94a3b8);
+            font-size: 0.9rem;
+            font-weight: 600;
+            pointer-events: none;
+            transition: opacity .3s;
+        }
+        #touchField .field-hint .hint-icon { font-size: 2.5rem; }
+        #touchField.has-touches .field-hint { opacity: 0; }
+
+        /* finger dots */
+        .finger-dot {
+            position: absolute;
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            transform: translate(-50%,-50%) scale(0);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; font-weight: 800; color: #fff;
+            transition: transform .15s cubic-bezier(.34,1.56,.64,1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            pointer-events: none;
+        }
+        .finger-dot.active { transform: translate(-50%,-50%) scale(1); }
+        .finger-dot.winner {
+            transform: translate(-50%,-50%) scale(1.45) !important;
+            z-index: 10;
+            box-shadow: 0 0 0 6px #fff, 0 8px 30px rgba(0,0,0,0.5);
+            animation: pulse-winner 0.6s ease infinite alternate;
+        }
+        @keyframes pulse-winner {
+            from { box-shadow: 0 0 0 4px rgba(255,255,255,0.6), 0 8px 30px rgba(0,0,0,0.5); }
+            to   { box-shadow: 0 0 0 12px rgba(255,255,255,0.15), 0 8px 30px rgba(0,0,0,0.5); }
+        }
+        .finger-dot.loser {
+            transform: translate(-50%,-50%) scale(0.5) !important;
+            opacity: 0.25;
+        }
+
+        /* result bar */
+        .chooser-result {
+            padding: 1rem 1.5rem;
+            text-align: center;
+            min-height: 56px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.6rem;
+            border-top: 1px solid var(--border,#334155);
+        }
+        .chooser-result .res-text { font-size: 1.05rem; font-weight: 700; color: var(--text,#f8fafc); }
+        .chooser-result .res-sub  { font-size: 0.82rem; color: var(--text-secondary,#cbd5e1); }
+
+        /* counter bar */
+        .chooser-counter { padding: 0.6rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; border-top: 1px solid var(--border,#334155); background: var(--bg,#0f172a); }
+        .chooser-counter .cnt-label { font-size: 0.78rem; color: var(--text-muted,#94a3b8); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; flex: 1; }
+        .cnt-badge { background: var(--accent,#6366f1); color: #fff; border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.82rem; font-weight: 700; }
+        .chooser-reset-btn { background: none; border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 8px; padding: 0.3rem 0.75rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background .15s, color .15s; }
+        .chooser-reset-btn:hover { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
+
+        /* SEO section */
+        .seo-wrap { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
+        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.4rem 1.75rem; margin-bottom: 1rem; }
+        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.1rem; font-weight: 800; margin: 0 0 0.65rem; }
+        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.78; font-size: 0.93rem; margin: 0 0 0.65rem; }
+        .seo-box p:last-child { margin: 0; }
+        .seo-box a { color: var(--accent,#818cf8); text-decoration: underline; }
+        .seo-box strong { color: var(--text,#f8fafc); }
+        .steps { counter-reset: steps; list-style: none; padding: 0; margin: 0.75rem 0 0; display: flex; flex-direction: column; gap: 0.6rem; }
+        .steps li { counter-increment: steps; display: flex; gap: 0.75rem; align-items: flex-start; color: var(--text-secondary,#cbd5e1); font-size: 0.92rem; line-height: 1.6; }
+        .steps li::before { content: counter(steps); background: var(--accent,#6366f1); color: #fff; min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+        .steps li strong { color: var(--text,#f8fafc); }
+
+        @media (max-width: 640px) {
+            .chooser-wrap { padding: 0 0.75rem; }
+            .mode-nav { gap: 0.35rem; padding: 0 0.75rem; }
+            .mode-btn { font-size: 0.76rem; padding: 0.45rem 0.8rem; }
+            #touchField { height: 65vw; min-height: 240px; }
+            .seo-wrap { padding: 0 0.75rem; }
+        }
+    </style>
+    <script>
+        window.i18n = { t: function(k){ return k; }, setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; }, initLanguage: function(){}, currentLanguage: function(){ return 'en'; } };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Change language">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">EN</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">&#127465;&#127466; Deutsch</button>
+            <button data-lang="en" class="lang-option">&#127468;&#127463; English</button>
+            <button data-lang="fr" class="lang-option">&#127467;&#127479; Français</button>
+            <button data-lang="es" class="lang-option">&#127466;&#127480; Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>&#129300; Finger Chooser</h1>
+            <p class="subtitle">Everyone taps – one gets picked!</p>
+        </header>
+
+        <nav class="mode-nav" aria-label="Game modes">
+            <a href="/en/" class="mode-btn">&#127921; Spin Wheel</a>
+            <a href="/en/wheel-of-names.html" class="mode-btn">&#128100; Name Picker</a>
+            <a href="/en/random-number-generator.html" class="mode-btn">&#127922; Random Number</a>
+            <a href="/en/chooser.html" class="mode-btn active">&#129300; Chooser</a>
+            <a href="/en/spin-the-wheel.html" class="mode-btn">&#127757; Spin the Wheel</a>
+            <a href="/en/team-generator.html" class="mode-btn">&#128101; Teams</a>
+            <a href="/en/truth-or-dare.html" class="mode-btn">&#129325; Truth/Dare</a>
+        </nav>
+    </div>
+
+    <!-- Touch Arena -->
+    <div class="chooser-wrap">
+        <div class="chooser-card">
+            <div class="chooser-instruction">
+                <h2>&#128072; Place all fingers on the field at the same time</h2>
+                <p>Each person holds one finger on the area below. After 2 seconds, one person lights up – they're chosen!</p>
+            </div>
+
+            <div id="touchField">
+                <div class="field-hint">
+                    <span class="hint-icon">&#128072;</span>
+                    <span>Place fingers to start</span>
+                </div>
+            </div>
+
+            <div class="chooser-result" id="chooserResult">
+                <span class="res-sub">Waiting for fingers …</span>
+            </div>
+
+            <div class="chooser-counter">
+                <span class="cnt-label">Fingers on the field</span>
+                <span class="cnt-badge" id="fingerCount">0</span>
+                <button class="chooser-reset-btn" onclick="resetChooser()">&#8635; Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-wrap">
+        <div class="seo-box">
+            <h2>How the Finger Chooser Works</h2>
+            <ul class="steps">
+                <li><strong>Everyone ready?</strong> Pass the smartphone or tablet around the group. Each participating person places one finger simultaneously on the dark area.</li>
+                <li><strong>Hold still!</strong> As soon as at least 2 fingers are detected, the countdown starts automatically. All fingers must remain on the screen for 2 seconds.</li>
+                <li><strong>The chosen one lights up!</strong> The chooser randomly selects one finger – that spot lights up and grows larger. That person is selected!</li>
+                <li><strong>Again?</strong> Tap "Reset" and start a new round.</li>
+            </ul>
+        </div>
+        <div class="seo-box">
+            <h2>When is the Finger Chooser ideal?</h2>
+            <p>Who starts the card game? Who asks the question today? Who pays for the first coffee? The <strong>Finger Chooser</strong> settles such group decisions in seconds – fairly, fun, and without debate. Everyone is involved simultaneously, no one can dodge, and the result is visible to all.</p>
+            <p>The tool is especially popular at <strong>party game nights</strong>, spontaneous decision rounds with friends, in <strong>the classroom</strong> for fairly selecting students, as well as in <strong>team games</strong> and group activities. Find more ideas on the <a href="/en/party-games.html">party games page</a>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/en/" class="footer-link">&#127921; Spin Wheel</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Imprint</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Privacy</a>
+                <span class="footer-separator">·</span>
+                <a href="/en/faq.html" class="footer-link">FAQ</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+        function initTheme(){ var t=localStorage.getItem('theme')||'dark'; document.documentElement.setAttribute('data-theme',t); }
+        initTheme();
+
+        // ── Finger Chooser Logic ──────────────────────────────────────
+        var DOT_COLORS = ['#FF6B6B','#4ECDC4','#45B7D1','#FFA07A','#98D8C8','#F7DC6F','#BB8FCE','#85C1E2','#F8B739','#52B788'];
+        var field      = document.getElementById('touchField');
+        var resultEl   = document.getElementById('chooserResult');
+        var countEl    = document.getElementById('fingerCount');
+        var touches    = {};
+        var timer      = null;
+        var chosen     = false;
+        var HOLD_MS    = 2000;
+        var countdown  = null;
+        var countdownVal = HOLD_MS / 1000;
+
+        function colorFor(idx){ return DOT_COLORS[idx % DOT_COLORS.length]; }
+
+        function makeDot(id, x, y) {
+            var idx  = Object.keys(touches).length;
+            var dot  = document.createElement('div');
+            dot.className = 'finger-dot';
+            dot.style.left  = x + 'px';
+            dot.style.top   = y + 'px';
+            dot.style.background = colorFor(idx);
+            dot.textContent = idx + 1;
+            field.appendChild(dot);
+            requestAnimationFrame(function(){ dot.classList.add('active'); });
+            touches[id] = { el: dot, x: x, y: y, idx: idx };
+            updateUI();
+        }
+
+        function removeDot(id) {
+            if (!touches[id]) return;
+            var dot = touches[id].el;
+            dot.classList.remove('active');
+            setTimeout(function(){ if(dot.parentNode) dot.parentNode.removeChild(dot); }, 200);
+            delete touches[id];
+            updateUI();
+        }
+
+        function updateUI() {
+            var n = Object.keys(touches).length;
+            countEl.textContent = n;
+            field.classList.toggle('has-touches', n > 0);
+            if (chosen) return;
+            if (n === 0) {
+                clearTimers();
+                resultEl.innerHTML = '<span class="res-sub">Waiting for fingers …</span>';
+            } else if (n === 1) {
+                clearTimers();
+                resultEl.innerHTML = '<span class="res-sub">Add more fingers …</span>';
+            } else {
+                if (!timer) startCountdown();
+            }
+        }
+
+        function startCountdown() {
+            clearTimers();
+            countdownVal = HOLD_MS / 1000;
+            updateCountdownDisplay();
+            countdown = setInterval(function(){
+                countdownVal = Math.max(0, countdownVal - 0.1);
+                updateCountdownDisplay();
+            }, 100);
+            timer = setTimeout(pickWinner, HOLD_MS);
+        }
+
+        function updateCountdownDisplay() {
+            if (chosen) return;
+            resultEl.innerHTML = '<span class="res-sub">Hold still … ' + countdownVal.toFixed(1) + 's</span>';
+        }
+
+        function clearTimers() {
+            if (timer)     { clearTimeout(timer);   timer = null; }
+            if (countdown) { clearInterval(countdown); countdown = null; }
+        }
+
+        function pickWinner() {
+            clearTimers();
+            var ids  = Object.keys(touches);
+            if (ids.length < 2) return;
+            chosen = true;
+            var arr  = new Uint32Array(1);
+            window.crypto.getRandomValues(arr);
+            var winId = ids[arr[0] % ids.length];
+            ids.forEach(function(id){
+                if (id === winId) {
+                    touches[id].el.classList.add('winner');
+                } else {
+                    touches[id].el.classList.add('loser');
+                }
+            });
+            var num = touches[winId].idx + 1;
+            resultEl.innerHTML = '<span class="res-text">&#127881; Finger ' + num + ' was selected!</span>';
+        }
+
+        function resetChooser() {
+            clearTimers();
+            chosen = false;
+            Object.keys(touches).forEach(function(id){
+                var dot = touches[id].el;
+                if (dot.parentNode) dot.parentNode.removeChild(dot);
+            });
+            touches = {};
+            countEl.textContent = '0';
+            field.classList.remove('has-touches');
+            resultEl.innerHTML = '<span class="res-sub">Waiting for fingers …</span>';
+        }
+
+        // ── Touch Events ──────────────────────────────────────────────
+        field.addEventListener('touchstart', function(e){
+            e.preventDefault();
+            if (chosen) return;
+            Array.from(e.changedTouches).forEach(function(t){
+                var rect = field.getBoundingClientRect();
+                makeDot(t.identifier, t.clientX - rect.left, t.clientY - rect.top);
+            });
+        }, { passive: false });
+
+        field.addEventListener('touchend', function(e){
+            e.preventDefault();
+            if (chosen) return;
+            Array.from(e.changedTouches).forEach(function(t){ removeDot(t.identifier); });
+            if (Object.keys(touches).length < 2) clearTimers();
+        }, { passive: false });
+
+        field.addEventListener('touchcancel', function(e){
+            e.preventDefault();
+            Array.from(e.changedTouches).forEach(function(t){ removeDot(t.identifier); });
+        }, { passive: false });
+
+        // ── Mouse fallback (desktop demo) ────────────────────────────
+        var mouseDown = false;
+        field.addEventListener('mousedown', function(e){
+            if ('ontouchstart' in window) return;
+            mouseDown = true;
+            var rect = field.getBoundingClientRect();
+            makeDot('mouse', e.clientX - rect.left, e.clientY - rect.top);
+            if (Object.keys(touches).length === 1) {
+                makeDot('mouse2', rect.width - (e.clientX - rect.left), rect.height - (e.clientY - rect.top));
+            }
+        });
+        document.addEventListener('mouseup', function(){
+            if (!mouseDown || 'ontouchstart' in window) return;
+            mouseDown = false;
+            if (!chosen) { removeDot('mouse'); removeDot('mouse2'); }
+        });
+    </script>
+</body>
+</html>

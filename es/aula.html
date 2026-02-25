@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La ruleta en el aula – Ideas para profesores | SpinSelector</title>
+    <meta name="description" content="La ruleta en el aula: llamar a alumnos aleatoriamente, formar grupos, quizzes y ejercicios de vocabulario. Plantillas listas para todas las asignaturas. ¡Gratis para profesores!">
+    <meta name="keywords" content="ruleta aula, generador aleatorio clase, llamar alumnos ruleta, dividir grupos clase, quiz ruleta, herramienta profesor gratis, clase interactiva">
+    <link rel="canonical" href="https://spinselector.pages.dev/es/aula.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/unterricht.html">
+    <link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/en/classroom.html">
+    <link rel="alternate" hreflang="es" href="https://spinselector.pages.dev/es/aula.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/classroom.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="La ruleta en el aula – Ideas y plantillas para profesores">
+    <meta property="og:description" content="Plantillas listas para el aula: llamar a alumnos, formar grupos, quizzes y ejercicios de vocabulario con la ruleta online.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://spinselector.pages.dev/es/aula.html">
+    <meta property="og:image" content="https://spinselector.pages.dev/assets/favicon.svg">
+    <meta name="theme-color" content="#0f172a">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/es/"},{"@type":"ListItem","position":2,"name":"En el aula","item":"https://spinselector.pages.dev/es/aula.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "La ruleta en el aula – Ideas y plantillas para profesores",
+      "description": "Plantillas listas para el aula: llamar a alumnos aleatoriamente, formar grupos, rondas de preguntas, ejercicios de vocabulario y más.",
+      "url": "https://spinselector.pages.dev/es/aula.html",
+      "inLanguage": "es",
+      "publisher": { "@type": "Organization", "name": "SpinSelector", "url": "https://spinselector.pages.dev" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"¿Cómo uso SpinSelector en el aula?","acceptedAnswer":{"@type":"Answer","text":"Abre SpinSelector en la pantalla de la clase o proyector, añade todos los nombres de los alumnos y gira la ruleta para llamadas aleatorias. También puedes añadir temas, vocabulario o tareas."}},
+        {"@type":"Question","name":"¿Es gratuito SpinSelector para profesores?","acceptedAnswer":{"@type":"Answer","text":"Sí, SpinSelector es completamente gratuito. No necesita registro, instalación de app y funciona en cualquier dispositivo con navegador – ideal para ordenadores escolares y tabletas."}}
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/seo-pages.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <script>
+        window.i18n = {
+            t: function(k){ var s={'empty-state':'No hay opciones disponibles.<br>¡Añade al menos 2 opciones!','canvas-empty':'Añade opciones','confirm-clear':'¿Eliminar todo?','default-options':['Opción 1','Opción 2','Opción 3']}; return s[k]||k; },
+            setLanguage: function(l){ localStorage.setItem('language',l); window.location.href='/'+l+'/'; },
+            initLanguage: function(){}, currentLanguage: function(){ return 'es'; }
+        };
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Cambiar idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">ES</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+            <button data-lang="en" class="lang-option">🇬🇧 English</button>
+            <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+            <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="page-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/es/">🎡 SpinSelector</a><span>›</span><span>La ruleta en el aula</span>
+        </nav>
+
+        <div class="page-hero">
+            <h1>🎓 La ruleta en el aula</h1>
+            <p class="lead">SpinSelector es la herramienta gratuita para profesores que transforma las rutinas aburridas del aula en experiencias interactivas. Llamar a alumnos, formar grupos, moderar rondas de preguntas, practicar vocabulario – aquí encontrarás plantillas listas para cada asignatura y nivel educativo.</p>
+        </div>
+
+        <!-- POR QUÉ LA RULETA -->
+        <h2 class="section-title">Por qué la ruleta mejora la clase</h2>
+        <div class="content-prose">
+            <p>Los profesores se enfrentan diariamente al reto de mantener la <strong>equidad, el compromiso y la motivación</strong> a la vez. La ruleta resuelve varios problemas típicos del aula de un solo golpe:</p>
+
+            <h3>El problema con el patrón de llamadas</h3>
+            <p>Los estudios sobre la interacción en el aula muestran que los profesores tienden inconscientemente a llamar siempre a los mismos alumnos – a menudo los que participan activamente. Esto hace que una parte de la clase permanezca pasiva y no se anime a pensar. Un llamador aleatorio como SpinSelector rompe este patrón y garantiza que todos se preparen, porque <em>cualquier persona</em> puede ser llamada.</p>
+
+            <h3>La gamificación aumenta la motivación</h3>
+            <p>La animación visual de la ruleta girando genera tensión real. Alumnos que normalmente parecen desinteresados de repente prestan atención. Esta forma de <strong>gamificación</strong> – la integración de elementos lúdicos en el proceso de aprendizaje – está bien investigada y conduce de forma demostrada a un mayor compromiso y mejor retención de contenidos.</p>
+
+            <h3>La transparencia genera confianza</h3>
+            <p>Cuando la ruleta gira ante toda la clase y todos ven el proceso aleatorio, la selección se percibe como justa. Ningún alumno puede afirmar haber sido favorecido o perjudicado intencionalmente. Esto mejora enormemente el clima de clase y la aceptación de las asignaciones de tareas.</p>
+        </div>
+
+        <div class="cta-banner">
+            <h2>Pruébalo ahora – gratis y sin registro</h2>
+            <p>Abre SpinSelector en el PC o proyector del aula. Añade los nombres de los alumnos y gira la ruleta en directo durante la clase.</p>
+            <a href="/es/" class="cta-btn">🎡 Abrir SpinSelector</a>
+        </div>
+
+        <!-- LLAMAR ALUMNOS -->
+        <h2 class="section-title">📋 Llamar a alumnos aleatoriamente</h2>
+        <div class="content-prose">
+            <p>Este es el uso más popular de SpinSelector en el aula: añade todos los nombres de la clase a la ruleta, gira la ruleta ante cada pregunta – quien aparezca responde. Así de sencillo y así de efectivo.</p>
+
+            <h3>Configuración paso a paso</h3>
+        </div>
+
+        <ol class="step-list">
+            <li><div class="step-text"><strong>Abrir SpinSelector</strong> – accede a <a href="/es/" style="color:var(--accent,#818cf8)">spinselector.pages.dev/es/</a> en el navegador, idealmente en el PC del aula conectado al proyector o pizarra digital.</div></li>
+            <li><div class="step-text"><strong>Añadir todos los nombres</strong> – escribe cada nombre en el campo de entrada y haz clic en «Añadir». Los nombres cortos son suficientes. Los nombres se guardan automáticamente y estarán disponibles la próxima vez que abras la página.</div></li>
+            <li><div class="step-text"><strong>Activar «Eliminar automáticamente»</strong> – así cada persona es llamada exactamente una vez en la clase. Para notas de participación oral: desactívalo, para que sea posible llamar varias veces.</div></li>
+            <li><div class="step-text"><strong>Hacer la pregunta, luego girar</strong> – importante: primero formula la pregunta, luego gira la ruleta. Así todos los alumnos tienen un momento para pensar antes de saber quién responde.</div></li>
+            <li><div class="step-text"><strong>Reiniciar al final de la clase</strong> – haz clic en «Borrar todo» o deja los nombres guardados para la próxima clase. Ambas opciones son posibles.</div></li>
+        </ol>
+
+        <div class="tip-box">
+            <p><strong>Consejo profesional para profesores:</strong> Mantén la clase en tensión girando la ruleta <em>antes</em> de hacer la pregunta. Solo cuando la ruleta se detenga y aparezca un nombre haces la pregunta real. ¡Mantiene a todos atentos y curiosos!</p>
+        </div>
+
+        <!-- PLANTILLAS POR ASIGNATURA -->
+        <h2 class="section-title">📚 Plantillas listas por asignatura</h2>
+
+        <div class="card-grid">
+            <div class="use-card">
+                <span class="fach-badge">Idiomas extranjeros</span>
+                <h3>🌍 Quiz de vocabulario</h3>
+                <p>Añade palabras en inglés, francés o alemán a la ruleta. Quien sea llamado debe dar la traducción – o viceversa.</p>
+                <div class="options-box">
+                    <span>Ejemplo inglés B1:</span>
+                    <ul>
+                        <li>appointment</li>
+                        <li>approximately</li>
+                        <li>consequence</li>
+                        <li>distinguish</li>
+                        <li>encounter</li>
+                        <li>furthermore</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['appointment','approximately','consequence','distinguish','encounter','furthermore'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">Matemáticas</span>
+                <h3>➗ Ruleta de problemas</h3>
+                <p>Añade problemas matemáticos directamente como opciones. Quien sea llamado debe dar el resultado. Ideal como rutina de inicio de clase.</p>
+                <div class="options-box">
+                    <span>Ejemplo 1.º ESO:</span>
+                    <ul>
+                        <li>12 × 7 = ?</li>
+                        <li>144 ÷ 12 = ?</li>
+                        <li>3² + 4² = ?</li>
+                        <li>15 % de 80 = ?</li>
+                        <li>½ + ⅓ = ?</li>
+                        <li>√49 = ?</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['12 × 7 = ?','144 ÷ 12 = ?','3² + 4² = ?','15 % de 80 = ?','½ + ⅓ = ?','√49 = ?'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">Historia / Ciencias sociales</span>
+                <h3>🏛️ Términos y eventos</h3>
+                <p>Fechas históricas, términos técnicos o conceptos políticos en la ruleta – quien sea llamado explica el término con sus propias palabras.</p>
+                <div class="options-box">
+                    <span>Ejemplo Historia:</span>
+                    <ul>
+                        <li>Revolución Francesa</li>
+                        <li>Primera Guerra Mundial</li>
+                        <li>Caída del Muro de Berlín</li>
+                        <li>Descubrimiento de América</li>
+                        <li>Declaración de Independencia</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Revolución Francesa','Primera Guerra Mundial','Caída del Muro de Berlín','Descubrimiento de América','Declaración de Independencia'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">Biología / Química</span>
+                <h3>🔬 Quiz de términos científicos</h3>
+                <p>Orgánulos, elementos, fórmulas químicas o procesos biológicos en la ruleta. Quien sea llamado define el término o da un ejemplo.</p>
+                <div class="options-box">
+                    <span>Ejemplo Biología:</span>
+                    <ul>
+                        <li>Mitocondria</li>
+                        <li>Fotosíntesis</li>
+                        <li>Replicación del ADN</li>
+                        <li>Ósmosis</li>
+                        <li>Enzima</li>
+                        <li>Cloroplasto</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Mitocondria','Fotosíntesis','Replicación del ADN','Ósmosis','Enzima','Cloroplasto'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+        </div>
+
+        <!-- DIVISIÓN DE GRUPOS -->
+        <h2 class="section-title">👥 División justa de grupos con la ruleta</h2>
+        <div class="content-prose">
+            <p>Los trabajos en grupo a menudo fracasan ya en la división: los amigos quieren estar juntos, otros se sienten excluidos, el profesor tiene que ponderar laboriosamente. La ruleta hace la división en segundos, de forma neutral y visiblemente justa para todos.</p>
+
+            <h3>Método 1: Selección de personas con eliminación automática</h3>
+            <p>Todos los nombres en la ruleta, activar «Eliminar automáticamente». Gira la ruleta una vez para el Grupo 1 – la persona pasa al Grupo 1 y se elimina automáticamente. Vuelve a girar para el Grupo 2, etc. Cuando un grupo está completo, pasas al siguiente.</p>
+
+            <h3>Método 2: Asignación de grupos</h3>
+            <p>En lugar de nombres de personas, añade los números o nombres de grupo a la ruleta (por ejemplo, «Grupo Rojo», «Grupo Azul», «Grupo Verde»). Cada alumno gira la ruleta por turno y descubre así en qué grupo está.</p>
+
+            <h3>Método 3: Distribución de temas</h3>
+            <p>Para presentaciones o proyectos: añade todos los temas a la ruleta. Cada alumno gira una vez y trabaja el tema asignado. Evita que los temas «populares» siempre se agoten primero.</p>
+        </div>
+
+        <div class="tip-box">
+            <p><strong>Consejo para trabajos en grupo:</strong> Mezcla la ruleta antes de cada formación de grupos. Así ningún alumno puede memorizar el orden de los segmentos y predecir el resultado. Simplemente haz clic en el botón «Mezclar».</p>
+        </div>
+
+        <!-- MÁS IDEAS -->
+        <h2 class="section-title">💡 Más ideas creativas para el aula</h2>
+        <div class="card-grid">
+            <div class="use-card">
+                <span class="fach-badge">Todas las asignaturas</span>
+                <h3>🎯 Repaso rápido al final de la clase</h3>
+                <p>5 minutos antes de terminar: ruleta con los temas de la clase. Quien sea llamado resume el tema en una frase. Excelente para la consolidación.</p>
+                <div class="options-box">
+                    <span>Contenido de la ruleta:</span>
+                    <ul>
+                        <li>Objetivo de aprendizaje principal</li>
+                        <li>Dar un ejemplo</li>
+                        <li>Explicar un término técnico</li>
+                        <li>Relación con la clase anterior</li>
+                        <li>Hacer una pregunta abierta</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Objetivo de aprendizaje principal','Dar un ejemplo','Explicar un término técnico','Relación con la clase anterior','Hacer una pregunta abierta'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">Educación física</span>
+                <h3>⚽ Selección de juego para Educación Física</h3>
+                <p>¿Qué juego o ejercicio viene a continuación? Deja que la clase decida con la ruleta – aumenta enormemente la motivación.</p>
+                <div class="options-box">
+                    <span>Ejemplo Educación Física:</span>
+                    <ul>
+                        <li>Balón prisionero</li>
+                        <li>Carrera de relevos</li>
+                        <li>Yoga</li>
+                        <li>Bádminton</li>
+                        <li>Ejercicios de coordinación</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Balón prisionero','Carrera de relevos','Yoga','Bádminton','Ejercicios de coordinación'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">Deberes</span>
+                <h3>📝 Distribuir tareas de forma justa</h3>
+                <p>Diferentes variantes de deberes en la ruleta: se asignan al azar distintos ejercicios, textos o proyectos. ¡Cada uno tiene una tarea diferente – no es posible copiar!</p>
+                <div class="options-box">
+                    <span>Ejemplo redacción en Lengua:</span>
+                    <ul>
+                        <li>Tema: Medio ambiente</li>
+                        <li>Tema: Tecnología</li>
+                        <li>Tema: El colegio del futuro</li>
+                        <li>Tema: Animales domésticos</li>
+                        <li>Tema: Deporte y salud</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Tema: Medio ambiente','Tema: Tecnología','Tema: El colegio del futuro','Tema: Animales domésticos','Tema: Deporte y salud'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+            <div class="use-card">
+                <span class="fach-badge">Presentaciones</span>
+                <h3>🎤 Sortear el orden de presentaciones</h3>
+                <p>Todos los presentadores en la ruleta. La ruleta determina el orden. Especialmente justo, ya que nadie puede ser favorecido.</p>
+                <div class="options-box">
+                    <span>Consejos:</span>
+                    <ul>
+                        <li>Añadir nombres solo tras el tiempo de preparación</li>
+                        <li>Activar eliminación automática</li>
+                        <li>Mezclar antes de empezar</li>
+                        <li>Proyectar en el proyector</li>
+                    </ul>
+                </div>
+                <button class="load-wheel-btn" onclick="loadToWheel(['Añadir nombres solo tras el tiempo de preparación','Activar eliminación automática','Mezclar antes de empezar','Proyectar en el proyector'])">
+                🎡 Cargar en la ruleta
+                </button>
+            </div>
+        </div>
+
+        <!-- AULA DIGITAL -->
+        <h2 class="section-title">💻 SpinSelector en el aula digital</h2>
+        <div class="content-prose">
+            <p>Las clases híbridas, las videoconferencias y las herramientas digitales son ya parte inseparable del día a día escolar moderno. SpinSelector se integra perfectamente en estos entornos:</p>
+
+            <h3>Videoconferencias (Zoom, Teams, Meet)</h3>
+            <p>Abre SpinSelector en una pestaña del navegador y comparte esa pestaña mediante la función de compartir pantalla de tu herramienta de conferencias. Todos los alumnos ven la ruleta girar en tiempo real – igual que en el aula física.</p>
+
+            <h3>Pizarras digitales interactivas</h3>
+            <p>La optimización táctil de SpinSelector lo hace ideal para pizarras digitales interactivas. Los alumnos pueden acercarse a la pizarra y lanzar la ruleta con el dedo. Esto genera activación física y aumenta la concentración de toda la clase.</p>
+
+            <h3>Clases con tabletas (1:1)</h3>
+            <p>En clases con tabletas individualizadas, cada alumno puede abrir SpinSelector en su propio dispositivo – por ejemplo para tareas de autoaprendizaje en las que la ruleta determina el orden en que se trabajan los distintos bloques.</p>
+
+            <h3>Google Classroom y Moodle</h3>
+            <p>Enlaza SpinSelector como recurso externo en tu sistema de gestión del aprendizaje. Añade el enlace <code>https://spinselector.pages.dev/es/</code> como material o actividad para que los alumnos puedan acceder en cualquier momento – también desde casa.</p>
+        </div>
+
+        <div class="section-title" style="font-size:1.1rem">Más recursos</div>
+        <nav class="related-links" aria-label="Páginas relacionadas">
+            <a href="/es/">🎡 Ir a la ruleta</a>
+            <a href="/es/faq.html">❓ FAQ</a>
+            <a href="/es/tutoriales.html">📖 Tutoriales</a>
+            <a href="/es/juegos-de-fiesta.html">🎉 Juegos de fiesta</a>
+            <a href="/es/decisiones.html">🤔 Ayuda para decidir</a>
+            <a href="/es/team-generator.html">👥 Generador de equipos</a>
+            <a href="/es/wheel-of-names.html">👤 Sortear nombres</a>
+            <a href="/es/historia.html">🏛️ Historia de la ruleta</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/es/" class="footer-link">🎡 Ir a la ruleta</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Aviso legal</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Privacidad</a>
+                <span class="footer-separator">·</span>
+                <a href="/es/faq.html" class="footer-link">FAQ</a>
+                <span class="footer-separator">·</span>
+                <a href="/es/about.html" class="footer-link">Sobre nosotros</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script src="/seo-pages.js"></script>
+    <script>function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();</script>
+</body>
+</html>

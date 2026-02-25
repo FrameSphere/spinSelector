@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirage au Sort en Ligne – Sélecteur de Noms Gratuit | SpinSelector</title>
+    <meta name="description" content="Tirage au sort en ligne : entrez les participants, laissez choisir un ou plusieurs noms au hasard. Sélecteur de noms gratuit pour les tirages, l'école et les équipes. Sans téléchargement.">
+    <meta name="keywords" content="tirage au sort en ligne, sélecteur de noms, choisir participant aléatoire, nom aléatoire, tirage de noms, tombola en ligne, wheel of names, random name picker, tirer au sort">
+    <link rel="canonical" href="https://spinselector.pages.dev/fr/tirage-au-sort.html">
+    <link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/de/wheel-of-names.html">
+    <link rel="alternate" hreflang="fr" href="https://spinselector.pages.dev/fr/tirage-au-sort.html">
+    <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta property="og:title" content="Tirage au Sort en Ligne – Sélecteur de Noms Gratuit">
+    <meta property="og:description" content="Entrez des noms, laissez choisir un participant au hasard. Gratuit, équitable, sans connexion. Parfait pour les tirages, l'école et les équipes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinselector.pages.dev/fr/tirage-au-sort.html">
+    <meta name="theme-color" content="#0f172a">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"SpinSelector – Tirage au sort","url":"https://spinselector.pages.dev/fr/tirage-au-sort.html","description":"Sélecteur de noms gratuit : entrez des noms et laissez choisir aléatoirement un ou plusieurs participants. Pour les tirages, l'école et les équipes.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","inLanguage":"fr","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+    </script>
+    <link rel="stylesheet" href="/styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <style>
+        .mode-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin: 0 auto 1.25rem; max-width: 960px; }
+        .mode-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--card-bg,#1e293b); color: var(--text-secondary,#cbd5e1); text-decoration: none; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, color .18s, transform .18s; white-space: nowrap; }
+        .mode-btn:hover { background: var(--accent,#6366f1); color: #fff; transform: translateY(-1px); border-color: transparent; }
+        .mode-btn.active { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
+        .picker-layout { max-width: 960px; margin: 0 auto 2rem; padding: 0 1.25rem; display: grid; grid-template-columns: 1fr 340px; gap: 1.25rem; align-items: start; }
+        .result-panel { background: var(--card-bg,#1e293b); border-radius: 20px; padding: 2rem; text-align: center; }
+        .result-panel h2 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted,#94a3b8); margin: 0 0 1.25rem; }
+        .winner-display { position: relative; margin-bottom: 1.5rem; }
+        .winner-circle { width: 160px; height: 160px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #8b5cf6); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 0 rgba(99,102,241,0.4); transition: transform .3s; }
+        .winner-circle.bounce { animation: bounce-in .5s cubic-bezier(.34,1.56,.64,1); }
+        @keyframes bounce-in { 0%{transform:scale(0.5);opacity:0} 100%{transform:scale(1);opacity:1} }
+        .winner-initial { font-size: 3.5rem; font-weight: 900; color: #fff; line-height: 1; }
+        .winner-name { font-size: 1.6rem; font-weight: 900; color: var(--text,#f8fafc); min-height: 2rem; word-break: break-word; }
+        .winner-sub { font-size: 0.82rem; color: var(--text-muted,#94a3b8); margin-top: 0.3rem; }
+        .pick-buttons { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
+        .btn-pick-one { background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; border: none; border-radius: 12px; padding: 0.85rem 1.5rem; font-size: 1rem; font-weight: 800; cursor: pointer; transition: opacity .18s, transform .18s; }
+        .btn-pick-one:hover { opacity: 0.88; transform: translateY(-2px); }
+        .btn-pick-one:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+        .multi-row { display: flex; gap: 0.5rem; align-items: center; }
+        .multi-row input { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 9px; padding: 0.6rem 0.75rem; color: var(--text,#f8fafc); font-size: 0.9rem; font-weight: 700; width: 60px; text-align: center; }
+        .btn-pick-multi { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 9px; padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; flex: 1; transition: background .15s, color .15s, border-color .15s; }
+        .btn-pick-multi:hover { background: #10b981; border-color: #10b981; color: #fff; }
+        .btn-pick-multi:disabled { opacity: 0.4; cursor: not-allowed; }
+        .multi-result-list { display: flex; flex-wrap: wrap; gap: 0.45rem; min-height: 1rem; margin-bottom: 1rem; justify-content: center; }
+        .picked-pill { background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 0.88rem; font-weight: 700; animation: pop-in .3s cubic-bezier(.34,1.56,.64,1); }
+        @keyframes pop-in { 0%{transform:scale(0);opacity:0} 100%{transform:scale(1);opacity:1} }
+        .pick-options { display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--border,#334155); padding-top: 1rem; }
+        .opt-label { display: flex; align-items: center; gap: 0.5rem; font-size: 0.83rem; color: var(--text-secondary,#cbd5e1); cursor: pointer; }
+        .opt-label input[type=checkbox] { accent-color: #6366f1; width: 16px; height: 16px; }
+        .history-section { margin-top: 1rem; border-top: 1px solid var(--border,#334155); padding-top: 0.85rem; }
+        .history-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted,#94a3b8); margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .history-clear { background: none; border: none; color: var(--text-muted,#94a3b8); font-size: 0.75rem; cursor: pointer; text-decoration: underline; }
+        .history-list { display: flex; flex-direction: column; gap: 0.3rem; max-height: 120px; overflow-y: auto; }
+        .history-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.83rem; color: var(--text-secondary,#cbd5e1); }
+        .history-num { font-size: 0.7rem; color: var(--text-muted,#94a3b8); font-weight: 700; min-width: 18px; }
+        .list-panel { background: var(--card-bg,#1e293b); border-radius: 20px; padding: 1.5rem; }
+        .list-panel h2 { font-size: 1rem; font-weight: 800; color: var(--text,#f8fafc); margin: 0 0 1rem; }
+        .name-input-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+        .name-input-row input { flex: 1; background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 10px; padding: 0.65rem 0.9rem; color: var(--text,#f8fafc); font-size: 0.95rem; }
+        .name-input-row input:focus { outline: none; border-color: #6366f1; }
+        .btn-add-name { background: #6366f1; color: #fff; border: none; border-radius: 10px; padding: 0.65rem 1rem; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: opacity .15s; }
+        .btn-add-name:hover { opacity: 0.85; }
+        .example-strip { margin-bottom: 1rem; }
+        .example-strip p { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted,#94a3b8); margin: 0 0 0.45rem; }
+        .example-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .ex-pill { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 999px; padding: 0.22rem 0.7rem; font-size: 0.8rem; color: var(--text-secondary,#cbd5e1); cursor: pointer; transition: background .12s, color .12s; }
+        .ex-pill:hover { background: #6366f1; color: #fff; border-color: transparent; }
+        .name-list { display: flex; flex-direction: column; gap: 0.4rem; max-height: 320px; overflow-y: auto; margin-bottom: 1rem; }
+        .name-item { display: flex; align-items: center; gap: 0.6rem; background: var(--bg,#0f172a); border-radius: 9px; padding: 0.55rem 0.75rem; }
+        .name-item .ni-color { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .name-item .ni-text { flex: 1; font-size: 0.92rem; color: var(--text,#f8fafc); font-weight: 500; }
+        .name-item .ni-del { background: none; border: none; color: var(--text-muted,#94a3b8); cursor: pointer; font-size: 1rem; line-height: 1; padding: 0 0.2rem; }
+        .name-item .ni-del:hover { color: #ef4444; }
+        .name-item.drawn { opacity: 0.38; }
+        .bulk-section { border-top: 1px solid var(--border,#334155); padding-top: 0.85rem; }
+        .bulk-section p { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted,#94a3b8); margin: 0 0 0.4rem; }
+        .bulk-textarea { width: 100%; background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 10px; padding: 0.65rem 0.9rem; color: var(--text,#f8fafc); font-size: 0.85rem; resize: vertical; min-height: 80px; box-sizing: border-box; }
+        .bulk-textarea:focus { outline: none; border-color: #6366f1; }
+        .bulk-btns { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+        .btn-bulk { background: var(--card-bg,#1e293b); border: 1px solid var(--border,#334155); color: var(--text-secondary,#cbd5e1); border-radius: 8px; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: background .12s, color .12s; }
+        .btn-bulk:hover { background: #6366f1; color: #fff; border-color: transparent; }
+        .btn-clear-all { background: var(--card-bg,#1e293b); border: 1px solid #ef4444; color: #ef4444; border-radius: 8px; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: background .12s, color .12s; }
+        .btn-clear-all:hover { background: #ef4444; color: #fff; }
+        .name-counter { font-size: 0.75rem; color: var(--text-muted,#94a3b8); margin-bottom: 0.5rem; }
+        .seo-wrap { max-width: 960px; margin: 0 auto 3rem; padding: 0 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .seo-box { background: var(--card-bg,#1e293b); border-radius: 14px; padding: 1.4rem 1.6rem; }
+        .seo-box.full { grid-column: 1 / -1; }
+        .seo-box h2 { color: var(--text,#f8fafc); font-size: 1.05rem; font-weight: 800; margin: 0 0 0.65rem; }
+        .seo-box p { color: var(--text-secondary,#cbd5e1); line-height: 1.75; font-size: 0.92rem; margin: 0 0 0.6rem; }
+        .seo-box p:last-child { margin: 0; }
+        .seo-box a { color: var(--accent,#818cf8); text-decoration: underline; }
+        .seo-box strong { color: var(--text,#f8fafc); }
+        .use-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+        .use-tag { background: var(--bg,#0f172a); border: 1px solid var(--border,#334155); border-radius: 7px; padding: 0.22rem 0.65rem; font-size: 0.78rem; color: var(--text-secondary,#cbd5e1); }
+        @media (max-width: 740px) {
+            .picker-layout { grid-template-columns: 1fr; }
+            .result-panel { order: -1; }
+            .seo-wrap { grid-template-columns: 1fr; }
+            .seo-box.full { grid-column: 1; }
+        }
+    </style>
+    <script>window.i18n={t:function(k){return k;},setLanguage:function(l){localStorage.setItem('language',l);window.location.href='/'+l+'/';},initLanguage:function(){},currentLanguage:function(){return'fr';}};</script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="langToggle" class="lang-button" aria-label="Changer de langue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="currentLang">FR</span>
+        </button>
+        <div id="langDropdown" class="lang-dropdown hidden">
+            <button data-lang="de" class="lang-option">&#127465;&#127466; Deutsch</button>
+            <button data-lang="en" class="lang-option">&#127468;&#127463; English</button>
+            <button data-lang="fr" class="lang-option">&#127467;&#127479; Français</button>
+            <button data-lang="es" class="lang-option">&#127466;&#127480; Español</button>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Changer le thème">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>&#128100; Tirage au Sort</h1>
+            <p class="subtitle">Sélectionner des participants – équitable, rapide, gratuit !</p>
+        </header>
+        <nav class="mode-nav" aria-label="Modes">
+            <a href="/fr/" class="mode-btn">&#127921; Roue</a>
+            <a href="/fr/tirage-au-sort.html" class="mode-btn active">&#128100; Noms</a>
+            <a href="/fr/generateur-equipes.html" class="mode-btn">&#128101; Équipes</a>
+            <a href="/fr/verite-ou-defi.html" class="mode-btn">&#129325; Vérité/Défi</a>
+        </nav>
+    </div>
+
+    <div class="picker-layout">
+        <div class="result-panel">
+            <h2>Nom tiré</h2>
+            <div class="winner-display">
+                <div class="winner-circle" id="winnerCircle">
+                    <span class="winner-initial" id="winnerInitial">?</span>
+                </div>
+                <div class="winner-name" id="winnerName">–</div>
+                <div class="winner-sub" id="winnerSub">Ajoutez des noms et tirez</div>
+            </div>
+            <div class="pick-buttons">
+                <button class="btn-pick-one" id="pickOneBtn" onclick="pickOne()" disabled>&#127881; Tirer un nom</button>
+                <div class="multi-row">
+                    <input type="number" id="multiCount" value="3" min="2" max="20" title="Nombre">
+                    <button class="btn-pick-multi" id="pickMultiBtn" onclick="pickMulti()" disabled>&#9889; Tirer plusieurs</button>
+                </div>
+                <div class="multi-result-list" id="multiResultList"></div>
+            </div>
+            <div class="pick-options">
+                <label class="opt-label">
+                    <input type="checkbox" id="optRemove" checked>
+                    Supprimer le nom tiré de la liste
+                </label>
+                <label class="opt-label">
+                    <input type="checkbox" id="optNoDupes" checked>
+                    Pas de doublons lors du tirage multiple
+                </label>
+            </div>
+            <div class="history-section">
+                <div class="history-title">
+                    <span>&#128221; Historique</span>
+                    <button class="history-clear" onclick="clearHistory()">Effacer</button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <span style="font-size:0.8rem;color:var(--text-muted,#94a3b8)">Aucun tirage encore</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-panel">
+            <h2>&#128100; Liste de participants <span class="name-counter" id="nameCounter">(0 noms)</span></h2>
+            <div class="name-input-row">
+                <input type="text" id="nameInput" placeholder="Entrer un nom…" maxlength="40" aria-label="Entrer un nom">
+                <button class="btn-add-name" onclick="addNameFromInput()">+</button>
+            </div>
+            <div class="example-strip">
+                <p>Exemples – cliquez pour ajouter :</p>
+                <div class="example-pills">
+                    <span class="ex-pill" onclick="addName('Alice')">Alice</span>
+                    <span class="ex-pill" onclick="addName('Maxime')">Maxime</span>
+                    <span class="ex-pill" onclick="addName('Lucie')">Lucie</span>
+                    <span class="ex-pill" onclick="addName('Thomas')">Thomas</span>
+                    <span class="ex-pill" onclick="addName('Sophie')">Sophie</span>
+                    <span class="ex-pill" onclick="addName('Jules')">Jules</span>
+                    <span class="ex-pill" onclick="addName('Léa')">Léa</span>
+                    <span class="ex-pill" onclick="addName('Emma')">Emma</span>
+                    <span class="ex-pill" onclick="addName('Hugo')">Hugo</span>
+                    <span class="ex-pill" onclick="addName('Camille')">Camille</span>
+                    <span class="ex-pill" onclick="addExamples()">Charger tout &#8618;</span>
+                </div>
+            </div>
+            <div class="name-list" id="nameList"></div>
+            <div class="bulk-section">
+                <p>Plusieurs à la fois (un nom par ligne) :</p>
+                <textarea class="bulk-textarea" id="bulkInput" placeholder="Alice&#10;Maxime&#10;Lucie&#10;Thomas&#10;…"></textarea>
+                <div class="bulk-btns">
+                    <button class="btn-bulk" onclick="importBulk()">&#8618; Importer</button>
+                    <button class="btn-bulk" onclick="shuffleList()">&#8635; Mélanger</button>
+                    <button class="btn-clear-all" onclick="clearAll()">&#128465; Tout supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seo-wrap">
+        <div class="seo-box full">
+            <h2>Tirage au sort en ligne – sélecteur de noms gratuit</h2>
+            <p>L'<strong>outil de tirage au sort</strong> de SpinSelector vous permet de sélectionner aléatoirement un ou plusieurs noms depuis une liste de participants – de façon équitable, transparente et instantanée. Entrez simplement tous les noms (ou utilisez les exemples rapides), choisissez si vous voulez tirer un ou plusieurs noms, et cliquez sur « Tirer ». Le résultat apparaît en grand et animé – parfait aussi pour les présentations en direct.</p>
+        </div>
+        <div class="seo-box">
+            <h2>&#127891; En classe</h2>
+            <p>Les enseignants utilisent le sélecteur de noms quotidiennement pour interroger les élèves équitablement. Entrez tous les noms une fois, sauvegardé – ensuite il suffit de cliquer. Pas de favoritisme, pas d'excuses.</p>
+            <div class="use-tags"><span class="use-tag">Interrogation</span><span class="use-tag">Groupes</span><span class="use-tag">Quiz</span></div>
+        </div>
+        <div class="seo-box">
+            <h2>&#127881; Tirages & concours</h2>
+            <p>Entrez tous les noms des participants, tirez en direct devant le public. Avec « Supprimer le nom tiré », chacun n'est considéré qu'une seule fois – absolument infalsifiable.</p>
+            <div class="use-tags"><span class="use-tag">Tirage</span><span class="use-tag">Concours</span><span class="use-tag">Tombola</span></div>
+        </div>
+        <div class="seo-box">
+            <h2>&#128188; Équipes & réunions</h2>
+            <p>Qui modère ? Qui présente en premier ? Entrez simplement les noms de l'équipe et tirez. Pour la répartition en équipes, nous recommandons le <a href="/fr/generateur-equipes.html">Générateur d'équipes</a>.</p>
+            <div class="use-tags"><span class="use-tag">Réunion</span><span class="use-tag">Présentation</span><span class="use-tag">Ordre</span></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/fr/" class="footer-link">&#127921; Roue de fortune</a>
+                <span class="footer-separator">·</span>
+                <a href="/impressum.html" class="footer-link">Mentions légales</a>
+                <span class="footer-separator">·</span>
+                <a href="/datenschutz.html" class="footer-link">Confidentialité</a>
+                <span class="footer-separator">·</span>
+                <a href="/fr/faq.html" class="footer-link">FAQ</a>
+            </div>
+            <div class="footer-copyright">© 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script>
+    function initTheme(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}initTheme();
+
+    var COLORS=['#FF6B6B','#4ECDC4','#45B7D1','#FFA07A','#98D8C8','#F7DC6F','#BB8FCE','#85C1E2','#F8B739','#52B788','#FF8B94','#A8DADC','#E76F51','#2A9D8F','#E9C46A'];
+    var names=[],history=[],idCnt=0;
+
+    function rng(max){var a=new Uint32Array(1);window.crypto.getRandomValues(a);return a[0]%max;}
+
+    function addName(text){text=text.trim();if(!text)return;names.push({id:idCnt++,text:text,drawn:false});saveNames();renderList();updateButtons();}
+    function addNameFromInput(){var inp=document.getElementById('nameInput');addName(inp.value);inp.value='';inp.focus();}
+    function removeName(id){names=names.filter(function(n){return n.id!==id;});saveNames();renderList();updateButtons();}
+    function clearAll(){if(!names.length)return;names=[];saveNames();renderList();updateButtons();document.getElementById('winnerName').textContent='–';document.getElementById('winnerInitial').textContent='?';document.getElementById('winnerSub').textContent='Ajoutez des noms et tirez';document.getElementById('multiResultList').innerHTML='';}
+    function shuffleList(){for(var i=names.length-1;i>0;i--){var j=rng(i+1);var t=names[i];names[i]=names[j];names[j]=t;}renderList();}
+    function addExamples(){['Alice','Maxime','Lucie','Thomas','Sophie','Jules','Léa','Emma','Hugo','Camille'].forEach(addName);}
+    function importBulk(){document.getElementById('bulkInput').value.split('\n').forEach(function(l){if(l.trim())addName(l.trim());});document.getElementById('bulkInput').value='';}
+
+    function renderList(){
+        var container=document.getElementById('nameList');
+        container.innerHTML='';
+        if(!names.length){container.innerHTML='<div style="text-align:center;padding:1rem;color:var(--text-muted,#94a3b8);font-size:0.85rem">Aucun nom encore – ajoutez-en !</div>';return;}
+        names.forEach(function(n,i){
+            var div=document.createElement('div');div.className='name-item'+(n.drawn?' drawn':'');
+            div.innerHTML='<div class="ni-color" style="background:'+COLORS[i%COLORS.length]+'"></div><span class="ni-text">'+escHtml(n.text)+'</span><button class="ni-del" onclick="removeName('+n.id+')" title="Supprimer">&#x2715;</button>';
+            container.appendChild(div);
+        });
+        document.getElementById('nameCounter').textContent='('+names.length+' noms)';
+    }
+    function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+    function updateButtons(){var avail=names.filter(function(n){return!n.drawn;});document.getElementById('pickOneBtn').disabled=avail.length===0;document.getElementById('pickMultiBtn').disabled=avail.length<2;}
+
+    function pickOne(){
+        var avail=names.filter(function(n){return!n.drawn;});if(!avail.length)return;
+        var winner=avail[rng(avail.length)];
+        showWinner(winner,avail.indexOf(winner));addToHistory(winner.text);
+        if(document.getElementById('optRemove').checked){names=names.filter(function(n){return n.id!==winner.id;});}
+        else{names.forEach(function(n){if(n.id===winner.id)n.drawn=true;});}
+        saveNames();renderList();updateButtons();
+    }
+    function pickMulti(){
+        var count=Math.max(2,parseInt(document.getElementById('multiCount').value)||3);
+        var noDupes=document.getElementById('optNoDupes').checked;
+        var avail=names.filter(function(n){return!n.drawn;});if(avail.length<2)return;
+        var picked=[],tries=0;
+        while(picked.length<count&&tries<1000){var idx=rng(avail.length);var n=avail[idx];if(!noDupes||picked.indexOf(n)===-1)picked.push(n);tries++;}
+        if(picked.length)showWinner(picked[0],0);
+        var container=document.getElementById('multiResultList');container.innerHTML='';
+        picked.forEach(function(n,i){var p=document.createElement('span');p.className='picked-pill';p.style.animationDelay=(i*0.06)+'s';p.textContent=n.text;container.appendChild(p);addToHistory(n.text);});
+        if(document.getElementById('optRemove').checked){var ids=picked.map(function(n){return n.id;});names=names.filter(function(n){return ids.indexOf(n.id)===-1;});}
+        else{var ids2=picked.map(function(n){return n.id;});names.forEach(function(n){if(ids2.indexOf(n.id)!==-1)n.drawn=true;});}
+        saveNames();renderList();updateButtons();
+    }
+    function showWinner(n,colorIdx){
+        var circle=document.getElementById('winnerCircle');
+        circle.style.background='linear-gradient(135deg,'+COLORS[colorIdx%COLORS.length]+','+COLORS[(colorIdx+3)%COLORS.length]+')';
+        document.getElementById('winnerInitial').textContent=n.text.charAt(0).toUpperCase();
+        document.getElementById('winnerName').textContent=n.text;
+        document.getElementById('winnerSub').textContent='&#127881; Sélectionné !';
+        circle.classList.remove('bounce');void circle.offsetWidth;circle.classList.add('bounce');
+    }
+    function addToHistory(name){history.unshift({name:name,time:new Date().toLocaleTimeString('fr',{hour:'2-digit',minute:'2-digit'})});if(history.length>20)history.pop();renderHistory();}
+    function clearHistory(){history=[];renderHistory();}
+    function renderHistory(){
+        var container=document.getElementById('historyList');
+        if(!history.length){container.innerHTML='<span style="font-size:0.8rem;color:var(--text-muted,#94a3b8)">Aucun tirage encore</span>';return;}
+        container.innerHTML='';
+        history.forEach(function(h,i){var div=document.createElement('div');div.className='history-item';div.innerHTML='<span class="history-num">'+(i+1)+'.</span><span>'+escHtml(h.name)+'</span><span style="margin-left:auto;font-size:0.72rem;color:var(--text-muted,#94a3b8)">'+h.time+'</span>';container.appendChild(div);});
+    }
+    function saveNames(){try{localStorage.setItem('namePicker_names_fr',JSON.stringify(names));}catch(e){}}
+    function loadNames(){try{var s=localStorage.getItem('namePicker_names_fr');if(s){names=JSON.parse(s);idCnt=names.reduce(function(m,n){return Math.max(m,n.id);},0)+1;}}catch(e){}renderList();updateButtons();}
+    document.getElementById('nameInput').addEventListener('keydown',function(e){if(e.key==='Enter')addNameFromInput();});
+    loadNames();
+    </script>
+</body>
+</html>

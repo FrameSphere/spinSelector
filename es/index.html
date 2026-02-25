@@ -6,12 +6,12 @@
 
     <!-- ═══ SEO: Meta Title & Description ═══ -->
     <title>Ruleta de la Suerte Online – Generador Aleatorio Gratis | SpinSelector</title>
-    <meta name="description" content="Ruleta de la suerte gratuita: añade tus opciones, gira la ruleta y deja que el azar decida. Perfecta para sorteos, juegos de fiesta, aula y decisiones de equipo.">
+    <meta name="description" content="Ruleta de la suerte gratuita: añade tus opciones, gira la ruleta y deja que el azar decida. Sorteos, juegos de fiesta, aula, equipos y generador de números aleatorios – todo gratis, sin app.">
     <meta name="keywords" content="ruleta de la suerte online, generador aleatorio gratis, ruleta aleatoria, selector aleatorio, rueda de decisiones, spin wheel español, girar ruleta gratis">
 
     <!-- ═══ Open Graph ═══ -->
     <meta property="og:title" content="SpinSelector – Ruleta de la Suerte Gratis en Línea">
-    <meta property="og:description" content="Añade tus opciones y deja que el destino decida. Gratis, sin registro.">
+    <meta property="og:description" content="Sorteos, equipos, números aleatorios, verdad o reto – todo en uno. Gratis, sin registro, listo para usar.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://spinselector.pages.dev/es/">
     <meta property="og:site_name" content="SpinSelector">
@@ -32,6 +32,7 @@
     <link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/">
     <link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/">
 
+    <!-- ═══ Favicon ═══ -->
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="apple-touch-icon" href="/assets/favicon.svg">
 
@@ -49,6 +50,11 @@
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
       "image": "https://spinselector.pages.dev/assets/favicon.svg"
     }
+    </script>
+
+    <!-- ═══ Structured Data: BreadcrumbList ═══ -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpinSelector","item":"https://spinselector.pages.dev/es/"}]}
     </script>
 
     <!-- ═══ Structured Data: FAQPage ═══ -->
@@ -76,11 +82,22 @@
           "@type": "Question",
           "name": "¿Funciona SpinSelector en móvil?",
           "acceptedAnswer": { "@type": "Answer", "text": "Sí, SpinSelector está completamente optimizado para smartphones y tabletas modernos." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo crear equipos aleatorios con SpinSelector?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sí – el generador de equipos gratuito de SpinSelector divide cualquier número de participantes de forma justa y aleatoria. El número de equipos es configurable libremente." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay Verdad o Reto en SpinSelector?",
+          "acceptedAnswer": { "@type": "Answer", "text": "¡Sí! El juego completo de Verdad o Reto con más de 100 preguntas y retos, niveles de dificultad y gestión de jugadores está disponible gratuitamente en SpinSelector." }
         }
       ]
     }
     </script>
 
+    <!-- ═══ PWA / Mobile ═══ -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -88,9 +105,13 @@
     <meta name="theme-color" content="#0f172a">
 
     <link rel="stylesheet" href="/styles.css">
+
+    <!-- ═══ AdSense ═══ -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
 
+    <!-- ═══ SEO Section Styles ═══ -->
     <style>
+        /* ── Quick Navigation ──────────────────────────── */
         .seo-section { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
         .quick-nav { background: var(--card-bg,#1e293b); border-radius: 16px; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
         .quick-nav-heading { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted,#94a3b8); margin: 0 0 1rem; }
@@ -100,6 +121,8 @@
         .quick-nav-links a .nav-icon { font-size: 1.15rem; flex-shrink: 0; }
         .quick-nav-links a .nav-label { display: flex; flex-direction: column; }
         .quick-nav-links a .nav-label span { font-size: 0.72rem; font-weight: 400; opacity: 0.8; }
+
+        /* ── Accordion ─────────────────────────────────── */
         .seo-accordion { display: flex; flex-direction: column; gap: 0.9rem; }
         .acc-item { background: var(--card-bg,#1e293b); border-radius: 14px; overflow: hidden; }
         .acc-btn { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 1.4rem; background: none; border: none; color: var(--text,#f8fafc); font-size: 0.97rem; font-weight: 700; cursor: pointer; text-align: left; gap: 1rem; line-height: 1.4; }
@@ -113,12 +136,21 @@
         .acc-inner ul { padding-left: 1.3rem; margin: 0 0 0.75rem; }
         .acc-inner ul li { margin-bottom: 0.3rem; }
         .acc-inner a { color: var(--accent,#818cf8); text-decoration: underline; text-underline-offset: 3px; }
-        .ad-slot { margin: 1.5rem 0; text-align: center; min-height: 90px; }
+
+        /* ── Mode Nav ───────────────────────────────── */
+        .mode-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin: 0 auto 1.25rem; max-width: 900px; }
+        .mode-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--card-bg,#1e293b); color: var(--text-secondary,#cbd5e1); text-decoration: none; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border,#334155); transition: background .18s, color .18s, transform .18s; white-space: nowrap; }
+        .mode-btn:hover { background: var(--accent,#6366f1); color: #fff; transform: translateY(-1px); border-color: transparent; }
+        .mode-btn.active { background: var(--accent,#6366f1); color: #fff; border-color: transparent; }
+        .mode-btn .m-icon { font-size: 1rem; }
+
         @media (max-width: 640px) {
             .acc-btn { font-size: 0.88rem; padding: 0.95rem 1.1rem; }
             .quick-nav-links { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
             .quick-nav-links a { font-size: 0.8rem; padding: 0.7rem 0.85rem; }
             .seo-section { padding: 0 0.75rem; }
+            .mode-nav { gap: 0.35rem; padding: 0 0.75rem; }
+            .mode-btn { font-size: 0.76rem; padding: 0.45rem 0.8rem; }
         }
     </style>
 
@@ -145,6 +177,7 @@
 </head>
 <body>
 
+    <!-- ═══ Language Selector ═══ -->
     <div class="language-selector">
         <button id="langToggle" class="lang-button" aria-label="Cambiar idioma">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
@@ -158,6 +191,7 @@
         </div>
     </div>
 
+    <!-- ═══ Theme Toggle ═══ -->
     <div class="theme-toggle">
         <button id="themeToggle" aria-label="Cambiar tema">
             <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -165,12 +199,27 @@
         </button>
     </div>
 
+    <!-- ═══ App Container ═══ -->
     <div class="container">
+
+        <!-- ── H1 Header ──────────────────────────────── -->
         <header>
             <h1>🎡 SpinSelector</h1>
             <p class="subtitle">¡Deja que el destino decida!</p>
         </header>
 
+        <!-- Mode Nav -->
+        <nav class="mode-nav" aria-label="Modos de juego">
+            <a href="/es/" class="mode-btn active">&#127921; Ruleta</a>
+            <a href="/es/wheel-of-names.html" class="mode-btn">&#128100; Nombres</a>
+            <a href="/es/random-number-generator.html" class="mode-btn">&#127922; Número aleatorio</a>
+            <a href="/es/chooser.html" class="mode-btn">&#129300; Elegidor</a>
+            <a href="/es/spin-the-wheel.html" class="mode-btn">&#127757; Girar la ruleta</a>
+            <a href="/es/team-generator.html" class="mode-btn">&#128101; Equipos</a>
+            <a href="/es/verdad-o-reto.html" class="mode-btn">&#129325; Verdad/Reto</a>
+        </nav>
+
+        <!-- ── Wheel + Controls ───────────────────────── -->
         <div class="main-content">
             <div class="wheel-section">
                 <div class="wheel-container">
@@ -219,6 +268,7 @@
             </div>
         </div>
 
+        <!-- ── How to Play ─────────────────────────────── -->
         <section class="how-to-play" aria-label="Cómo usar SpinSelector">
             <button class="how-to-play-toggle" onclick="toggleHowToPlay()" aria-expanded="false">
                 <h2 class="section-title">Cómo funciona</h2>
@@ -232,9 +282,12 @@
             </div>
         </section>
 
-        <!-- ═══ SEO SECTION ═══ -->
+        <!-- ═══════════════════════════════════════════════════════
+             SEO SECTION
+        ═══════════════════════════════════════════════════════ -->
         <section class="seo-section" aria-label="Información y recursos adicionales">
 
+            <!-- ── Quick Navigation ──────────────────── -->
             <nav class="quick-nav" aria-label="Explorar más">
                 <p class="quick-nav-heading">Explorar</p>
                 <div class="quick-nav-links">
@@ -245,11 +298,15 @@
                     <a href="/es/decisiones.html"><span class="nav-icon">🤔</span><span class="nav-label">Ayuda para decidir<span>Vida cotidiana</span></span></a>
                     <a href="/es/historia.html"><span class="nav-icon">🏛️</span><span class="nav-label">Historia<span>Orígenes & cultura</span></span></a>
                     <a href="/es/juegos-famosos.html"><span class="nav-icon">🎰</span><span class="nav-label">Juegos famosos<span>Programas TV & ruedas</span></span></a>
+                    <a href="/es/ventajas.html"><span class="nav-icon">&#9989;</span><span class="nav-label">Ventajas & azar justo<span>Por qué el azar es justo</span></span></a>
+                    <a href="/es/plantillas-ruleta.html"><span class="nav-icon">&#128204;</span><span class="nav-label">Biblioteca de plantillas<span>Plantillas listas para usar</span></span></a>
                 </div>
             </nav>
 
+            <!-- ── Accordion Items ───────────────────── -->
             <div class="seo-accordion">
 
+                <!-- Acordeón 1 -->
                 <div class="acc-item">
                     <button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)">
                         <span>¿Qué es una ruleta de la suerte online? – SpinSelector explicado</span>
@@ -275,6 +332,7 @@
                     </div>
                 </div>
 
+                <!-- Acordeón 2 -->
                 <div class="acc-item">
                     <button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)">
                         <span>¿Para qué sirve una ruleta aleatoria? – Ideas de uso para todos</span>
@@ -284,7 +342,7 @@
                         <div class="acc-inner">
                             <p>Una ruleta de la suerte en línea es mucho más versátil de lo que parece. Aquí van los casos de uso más populares de SpinSelector:</p>
                             <h3>🎉 Fiestas y celebraciones</h3>
-                            <p>En cumpleaños, fiestas entre amigos o noches de juegos, la ruleta aporta diversión espontánea y muchas risas. Escribe ideas de juegos, desafíos de verdad o atrevimiento, opciones de bebidas y deja que la ruleta decida – ¡completamente justo para todos! Todas las ideas en nuestra <a href="/es/juegos-de-fiesta.html">página de Juegos de fiesta</a>.</p>
+                            <p>En cumpleaños, fiestas entre amigos o noches de juegos, la ruleta aporta diversión espontánea y muchas risas. Escribe ideas de juegos, desafíos de verdad o reto, opciones de bebidas y deja que la ruleta decida – ¡completamente justo para todos! Todas las ideas en nuestra <a href="/es/juegos-de-fiesta.html">página de Juegos de fiesta</a>.</p>
                             <h3>🎓 Escuela y aula</h3>
                             <p>Los profesores usan SpinSelector para llamar a los alumnos de forma aleatoria, hacer ejercicios de vocabulario, rondas de preguntas, dividir grupos o asignar tareas. Hace cada clase más interactiva y motivadora. Más ideas en la <a href="/es/aula.html">página del Aula</a>.</p>
                             <h3>💼 Equipos y reuniones</h3>
@@ -297,6 +355,7 @@
                     </div>
                 </div>
 
+                <!-- Acordeón 3 -->
                 <div class="acc-item">
                     <button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)">
                         <span>Consejos y trucos – Saca el máximo partido a tu ruleta</span>
@@ -322,12 +381,13 @@
                     </div>
                 </div>
 
-            </div>
+            </div><!-- .seo-accordion -->
         </section>
         <!-- ═══ Fin SEO Section ═══ -->
 
-    </div>
+    </div><!-- .container -->
 
+    <!-- ═══ Footer ═══ -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
@@ -336,6 +396,8 @@
                 <a href="/datenschutz.html" class="footer-link">Privacidad</a>
                 <span class="footer-separator">·</span>
                 <a href="/es/faq.html" class="footer-link">FAQ</a>
+                <span class="footer-separator">·</span>
+                <a href="/es/about.html" class="footer-link">Sobre nosotros</a>
             </div>
             <div class="footer-copyright">
                 © 2026 SpinSelector · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a>

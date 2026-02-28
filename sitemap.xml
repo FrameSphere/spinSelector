@@ -1,33 +1,843 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    
-    <!-- Hauptseite -->
-    <url>
-        <loc>https://spinselector.pages.dev/</loc>
-        <lastmod>2026-01-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://spinselector.pages.dev/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://spinselector.pages.dev/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://spinselector.pages.dev/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://spinselector.pages.dev/"/>
-    </url>
-    
-    <!-- Impressum -->
-    <url>
-        <loc>https://spinselector.pages.dev/impressum.html</loc>
-        <lastmod>2026-01-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    
-    <!-- Datenschutz -->
-    <url>
-        <loc>https://spinselector.pages.dev/datenschutz.html</loc>
-        <lastmod>2026-01-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    
+
+  <!-- ══════════════════════════════════════════════
+       ROOT / STARTSEITE
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/impressum.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/datenschutz.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       INDEX / HOME
+       de: / | en: / | es: / | fr: /
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       ABOUT / ÜBER UNS / SOBRE NOSOTROS / À PROPOS
+       de: about.html | en: about.html | es: sobre.html | fr: a-propos.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/sobre.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/sobre.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/sobre.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/sobre.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/a-propos.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/sobre.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       FAMOUS WHEEL GAMES / BERÜHMTE GLÜCKSSPIELE / RULETAS FAMOSAS / JEUX CÉLÈBRES
+       de: beruehmte-gluecksspiele.html | en: famous-wheel-games.html | es: ruletas-famosas.html | fr: jeux-celebres.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/beruehmte-gluecksspiele.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/beruehmte-gluecksspiele.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/famous-wheel-games.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/ruletas-famosas.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/jeux-celebres.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/famous-wheel-games.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/famous-wheel-games.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/beruehmte-gluecksspiele.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/famous-wheel-games.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/ruletas-famosas.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/jeux-celebres.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/famous-wheel-games.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/ruletas-famosas.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/beruehmte-gluecksspiele.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/famous-wheel-games.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/ruletas-famosas.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/jeux-celebres.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/famous-wheel-games.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/jeux-celebres.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/beruehmte-gluecksspiele.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/famous-wheel-games.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/ruletas-famosas.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/jeux-celebres.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/famous-wheel-games.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       CHOOSER / ELEGIDOR
+       de: chooser.html | en: chooser.html | es: elegidor.html | fr: chooser.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/chooser.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/elegidor.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/chooser.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/chooser.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/elegidor.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/chooser.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/elegidor.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/elegidor.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/chooser.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/chooser.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/elegidor.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/chooser.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/chooser.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       DECISIONS / ENTSCHEIDUNGEN / DECISIONES / DÉCISIONS
+       de: entscheidungen.html | en: decisions.html | es: decisiones.html | fr: decisions.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/entscheidungen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/entscheidungen.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/decisions.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/decisiones.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/decisions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/decisions.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/decisions.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/entscheidungen.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/decisions.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/decisiones.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/decisions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/decisions.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/decisiones.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/entscheidungen.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/decisions.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/decisiones.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/decisions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/decisions.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/decisions.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/entscheidungen.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/decisions.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/decisiones.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/decisions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/decisions.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       FAQ
+       de: faq.html | en: faq.html | es: faq.html | fr: faq.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/faq.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/faq.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/faq.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/faq.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       HISTORY / GESCHICHTE / HISTORIA / HISTOIRE
+       de: geschichte.html | en: history.html | es: historia.html | fr: histoire.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/geschichte.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/geschichte.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/history.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/historia.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/history.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/history.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/geschichte.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/history.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/historia.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/history.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/historia.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/geschichte.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/history.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/historia.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/history.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/histoire.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/geschichte.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/history.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/historia.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/history.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       WHEEL TEMPLATES / GLÜCKSRAD VORLAGEN / PLANTILLAS / MODÈLES
+       de: gluecksrad-vorlagen.html | en: wheel-templates.html | es: plantillas-ruleta.html | fr: modeles-roue.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/gluecksrad-vorlagen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/gluecksrad-vorlagen.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/wheel-templates.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/plantillas-ruleta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/modeles-roue.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/wheel-templates.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/wheel-templates.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/gluecksrad-vorlagen.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/wheel-templates.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/plantillas-ruleta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/modeles-roue.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/wheel-templates.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/plantillas-ruleta.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/gluecksrad-vorlagen.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/wheel-templates.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/plantillas-ruleta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/modeles-roue.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/wheel-templates.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/modeles-roue.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/gluecksrad-vorlagen.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/wheel-templates.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/plantillas-ruleta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/modeles-roue.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/wheel-templates.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       PARTY GAMES / PARTYSPIELE / JUEGOS DE FIESTA / JEUX DE FÊTE
+       de: partyspiele.html | en: party-games.html | es: juegos-de-fiesta.html | fr: jeux-de-fete.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/partyspiele.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/partyspiele.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/party-games.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/juegos-de-fiesta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/jeux-de-fete.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/party-games.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/party-games.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/partyspiele.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/party-games.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/juegos-de-fiesta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/jeux-de-fete.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/party-games.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/juegos-de-fiesta.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/partyspiele.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/party-games.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/juegos-de-fiesta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/jeux-de-fete.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/party-games.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/jeux-de-fete.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/partyspiele.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/party-games.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/juegos-de-fiesta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/jeux-de-fete.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/party-games.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       SPIN THE WHEEL / GIRAR RULETA
+       de: spin-the-wheel.html | en: spin-the-wheel.html | es: girar-ruleta.html | fr: spin-the-wheel.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/spin-the-wheel.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/girar-ruleta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/spin-the-wheel.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/spin-the-wheel.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/girar-ruleta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/spin-the-wheel.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/girar-ruleta.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/girar-ruleta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/spin-the-wheel.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/spin-the-wheel.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/girar-ruleta.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/spin-the-wheel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/spin-the-wheel.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       TEAM GENERATOR / GENERADOR DE EQUIPOS / GÉNÉRATEUR D'ÉQUIPES
+       de: team-generator.html | en: team-generator.html | es: generador-de-equipos.html | fr: generateur-equipes.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/team-generator.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/team-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/team-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/generador-de-equipos.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/generateur-equipes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/team-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/team-generator.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/team-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/team-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/generador-de-equipos.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/generateur-equipes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/team-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/generador-de-equipos.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/team-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/team-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/generador-de-equipos.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/generateur-equipes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/team-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/generateur-equipes.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/team-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/team-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/generador-de-equipos.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/generateur-equipes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/team-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       TRUTH OR DARE / WAHRHEIT ODER PFLICHT / VERDAD O RETO / VÉRITÉ OU DÉFI
+       de: truth-or-dare.html | en: truth-or-dare.html | es: verdad-o-reto.html | fr: verite-ou-defi.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/truth-or-dare.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/truth-or-dare.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/truth-or-dare.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/verdad-o-reto.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/verite-ou-defi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/truth-or-dare.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/truth-or-dare.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/truth-or-dare.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/truth-or-dare.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/verdad-o-reto.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/verite-ou-defi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/truth-or-dare.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/verdad-o-reto.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/truth-or-dare.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/truth-or-dare.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/verdad-o-reto.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/verite-ou-defi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/truth-or-dare.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/verite-ou-defi.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/truth-or-dare.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/truth-or-dare.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/verdad-o-reto.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/verite-ou-defi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/truth-or-dare.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       TUTORIALS / TUTORIALES / TUTORIELS
+       de: tutorials.html | en: tutorials.html | es: tutoriales.html | fr: tutoriels.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/tutorials.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/tutorials.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/tutorials.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/tutoriales.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/tutoriels.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/tutorials.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/tutorials.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/tutorials.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/tutorials.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/tutoriales.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/tutoriels.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/tutorials.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/tutoriales.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/tutorials.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/tutorials.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/tutoriales.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/tutoriels.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/tutorials.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/tutoriels.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/tutorials.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/tutorials.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/tutoriales.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/tutoriels.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/tutorials.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       CLASSROOM / UNTERRICHT / AULA / CLASSE
+       de: unterricht.html | en: classroom.html | es: aula.html | fr: classe.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/unterricht.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/unterricht.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/classroom.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/aula.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/classe.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/classroom.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/classroom.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/unterricht.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/classroom.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/aula.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/classe.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/classroom.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/aula.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/unterricht.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/classroom.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/aula.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/classe.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/classroom.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/classe.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/unterricht.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/classroom.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/aula.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/classe.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/classroom.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       ADVANTAGES / VORTEILE / VENTAJAS / AVANTAGES
+       de: vorteile.html | en: advantages.html | es: ventajas.html | fr: avantages.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/vorteile.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/vorteile.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/advantages.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/ventajas.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/avantages.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/advantages.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/advantages.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/vorteile.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/advantages.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/ventajas.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/avantages.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/advantages.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/ventajas.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/vorteile.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/advantages.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/ventajas.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/avantages.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/advantages.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/avantages.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/vorteile.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/advantages.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/ventajas.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/avantages.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/advantages.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       WHEEL OF NAMES / NAME PICKER / ELEGIR NOMBRE / TIRAGE AU SORT
+       de: wheel-of-names.html | en: wheel-of-names.html | es: elegir-nombre.html | fr: tirage-au-sort.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/wheel-of-names.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/wheel-of-names.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/wheel-of-names.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/elegir-nombre.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/tirage-au-sort.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/wheel-of-names.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/wheel-of-names.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/wheel-of-names.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/wheel-of-names.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/elegir-nombre.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/tirage-au-sort.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/wheel-of-names.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/elegir-nombre.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/wheel-of-names.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/wheel-of-names.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/elegir-nombre.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/tirage-au-sort.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/wheel-of-names.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/tirage-au-sort.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/wheel-of-names.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/wheel-of-names.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/elegir-nombre.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/tirage-au-sort.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/wheel-of-names.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════
+       RANDOM NUMBER GENERATOR / ZUFALLSZAHL / GENERADOR NÚMEROS / GÉNÉRATEUR DE NOMBRE
+       de: zufallszahl-generator.html | en: random-number-generator.html | es: generador-numeros-aleatorios.html | fr: generateur-nombre.html
+  ══════════════════════════════════════════════ -->
+  <url>
+    <loc>https://spinselector.pages.dev/de/zufallszahl-generator.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/zufallszahl-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/random-number-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/generador-numeros-aleatorios.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/generateur-nombre.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/random-number-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/en/random-number-generator.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/zufallszahl-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/random-number-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/generador-numeros-aleatorios.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/generateur-nombre.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/random-number-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/es/generador-numeros-aleatorios.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/zufallszahl-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/random-number-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/generador-numeros-aleatorios.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/generateur-nombre.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/random-number-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://spinselector.pages.dev/fr/generateur-nombre.html</loc>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://spinselector.pages.dev/de/zufallszahl-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://spinselector.pages.dev/en/random-number-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://spinselector.pages.dev/es/generador-numeros-aleatorios.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://spinselector.pages.dev/fr/generateur-nombre.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinselector.pages.dev/en/random-number-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

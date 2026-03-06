@@ -486,3 +486,195 @@ function initApp() {
 
 // App starten
 initApp();
+
+// ============================================================
+// WebControl HQ Integration
+// ============================================================
+
+const HQ_API = 'https://webcontrol-hq-api.karol-paschek.workers.dev';
+const HQ_SITE_ID = 'spinselector';
+
+// ─ Error Tracking ──────────────────────────────────────────────────
+function reportError(type, message, stack) {
+    try {
+        fetch(HQ_API + '/api/errors', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                site_id: HQ_SITE_ID,
+                error_type: type,
+                message: String(message).slice(0, 500),
+                stack: stack ? String(stack).slice(0, 2000) : null,
+                path: window.location.pathname,
+            })
+        }).catch(() => {});
+    } catch(e) { /* never crash on HQ reporting */ }
+}
+
+window.addEventListener('error', (event) => {
+    reportError('JS Error', event.message, event.error?.stack);
+});
+
+window.addEventListener('unhandledrejection', (event) => {
+    const msg = event.reason?.message || String(event.reason);
+    const stack = event.reason?.stack || null;
+    reportError('Unhandled Promise Rejection', msg, stack);
+});
+
+// ─ Suggestion Modal ──────────────────────────────────────────────
+(function injectSuggestionUI() {
+    // Floating button
+    const btn = document.createElement('button');
+    btn.id = 'hq-sugg-btn';
+    btn.title = 'Vorschlag einreichen';
+    btn.innerHTML = '💡';
+    btn.style.cssText = [
+        'position:fixed', 'bottom:24px', 'right:24px', 'z-index:9999',
+        'width:48px', 'height:48px', 'border-radius:50%',
+        'background:linear-gradient(135deg,#7c3aed,#4f46e5)',
+        'color:#fff', 'font-size:20px', 'border:none', 'cursor:pointer',
+        'box-shadow:0 4px 18px rgba(124,58,237,.45)',
+        'transition:transform .15s,box-shadow .15s',
+        'display:flex', 'align-items:center', 'justify-content:center',
+    ].join(';');
+    btn.onmouseenter = () => { btn.style.transform = 'scale(1.1)'; };
+    btn.onmouseleave = () => { btn.style.transform = ''; };
+
+    // Modal backdrop
+    const backdrop = document.createElement('div');
+    backdrop.id = 'hq-sugg-backdrop';
+    backdrop.style.cssText = [
+        'display:none', 'position:fixed', 'inset:0', 'z-index:10000',
+        'background:rgba(0,0,0,.55)', 'backdrop-filter:blur(4px)',
+        'align-items:center', 'justify-content:center',
+    ].join(';');
+
+    // Modal box
+    const modal = document.createElement('div');
+    modal.style.cssText = [
+        'background:#1e1b4b', 'border:1px solid rgba(124,58,237,.3)',
+        'border-radius:16px', 'padding:28px 28px 24px',
+        'width:min(440px,92vw)', 'box-shadow:0 20px 60px rgba(0,0,0,.5)',
+        'position:relative',
+    ].join(';');
+
+    modal.innerHTML = `
+        <button id="hq-sugg-close" style="position:absolute;top:14px;right:16px;background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer;line-height:1">&times;</button>
+        <div style="font-size:22px;margin-bottom:4px">💡</div>
+        <h3 style="margin:0 0 6px;font-size:16px;color:#e2e8f0">Vorschlag einreichen</h3>
+        <p style="margin:0 0 18px;font-size:12px;color:#94a3b8;line-height:1.5">
+            Hast du eine Idee für eine neue Funktion? Schreib sie hier rein!<br>
+            (Anonym &ndash; keine Anmeldung nötig)
+        </p>
+        <textarea id="hq-sugg-text" placeholder="z.B. Füge das Spiel 'Drehe die Flasche' hinzu..." rows="4"
+            style="width:100%;box-sizing:border-box;resize:none;padding:10px 14px;
+                   background:#0f172a;border:1px solid rgba(124,58,237,.4);border-radius:10px;
+                   color:#e2e8f0;font-size:13px;font-family:inherit;outline:none;line-height:1.5;
+                   transition:border-color .15s"
+            onfocus="this.style.borderColor='#7c3aed'"
+            onblur="this.style.borderColor='rgba(124,58,237,.4)'"
+        ></textarea>
+        <div style="margin-top:10px;display:flex;align-items:center;gap:10px">
+            <input id="hq-sugg-cat" placeholder="Kategorie (optional)" 
+                style="flex:1;padding:8px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);
+                       border-radius:8px;color:#e2e8f0;font-size:12px;font-family:inherit;outline:none"
+            />
+        </div>
+        <div id="hq-sugg-status" style="min-height:20px;margin-top:10px;font-size:12px"></div>
+        <div style="display:flex;gap:10px;margin-top:14px">
+            <button id="hq-sugg-submit" style="flex:1;padding:10px;background:linear-gradient(135deg,#7c3aed,#4f46e5);
+                border:none;border-radius:10px;color:#fff;font-size:13px;font-weight:700;
+                cursor:pointer;transition:opacity .15s">Einreichen</button>
+            <button id="hq-sugg-cancel" style="padding:10px 18px;background:rgba(255,255,255,.07);
+                border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#94a3b8;
+                font-size:13px;cursor:pointer">Abbrechen</button>
+        </div>
+    `;
+
+    backdrop.appendChild(modal);
+    document.body.appendChild(btn);
+    document.body.appendChild(backdrop);
+
+    // Show / hide
+    function openModal() {
+        backdrop.style.display = 'flex';
+        document.getElementById('hq-sugg-status').textContent = '';
+        document.getElementById('hq-sugg-text').value = '';
+        document.getElementById('hq-sugg-cat').value = '';
+        setTimeout(() => document.getElementById('hq-sugg-text').focus(), 50);
+    }
+    function closeModal() { backdrop.style.display = 'none'; }
+
+    btn.addEventListener('click', openModal);
+    backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+    document.getElementById('hq-sugg-close').addEventListener('click', closeModal);
+    document.getElementById('hq-sugg-cancel').addEventListener('click', closeModal);
+
+    // Submit mit localStorage-Cooldown
+    document.getElementById('hq-sugg-submit').addEventListener('click', async () => {
+        const text = document.getElementById('hq-sugg-text').value.trim();
+        const cat  = document.getElementById('hq-sugg-cat').value.trim();
+        const statusEl = document.getElementById('hq-sugg-status');
+        const submitBtn = document.getElementById('hq-sugg-submit');
+
+        if (text.length < 5) {
+            statusEl.style.color = '#f87171';
+            statusEl.textContent = '⚠️ Bitte schreib mindestens 5 Zeichen.';
+            return;
+        }
+
+        // Client-side cooldown: max 3 per hour
+        const LS_KEY = 'hq_sugg_ts';
+        const now = Date.now();
+        let timestamps = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
+        timestamps = timestamps.filter(t => now - t < 3600 * 1000);
+        if (timestamps.length >= 3) {
+            const waitMin = Math.ceil((3600 * 1000 - (now - timestamps[0])) / 60000);
+            statusEl.style.color = '#fbbf24';
+            statusEl.textContent = `⏳ Noch ${waitMin} Min. warten – max. 3 Vorschläge pro Stunde.`;
+            return;
+        }
+
+        // Send
+        submitBtn.disabled = true;
+        submitBtn.textContent = '⏳ Sende…';
+        statusEl.textContent = '';
+
+        try {
+            const res = await fetch(HQ_API + '/api/suggestions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ site_id: HQ_SITE_ID, suggestion: text, category: cat })
+            });
+            const data = await res.json().catch(() => ({}));
+
+            if (res.status === 429) {
+                statusEl.style.color = '#fbbf24';
+                statusEl.textContent = '⏳ ' + (data.error || 'Zu viele Vorschläge. Bitte später nochmal.');
+            } else if (res.ok) {
+                // Save timestamp only on success
+                timestamps.push(now);
+                localStorage.setItem(LS_KEY, JSON.stringify(timestamps));
+                statusEl.style.color = '#34d399';
+                statusEl.textContent = '✓ Danke! Dein Vorschlag wurde eingereicht.';
+                document.getElementById('hq-sugg-text').value = '';
+                document.getElementById('hq-sugg-cat').value = '';
+                setTimeout(closeModal, 1800);
+            } else {
+                statusEl.style.color = '#f87171';
+                statusEl.textContent = '⚠️ ' + (data.error || 'Fehler beim Einreichen.');
+            }
+        } catch (e) {
+            statusEl.style.color = '#f87171';
+            statusEl.textContent = '⚠️ Netzwerkfehler. Bitte prüfe deine Verbindung.';
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Einreichen';
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+})();

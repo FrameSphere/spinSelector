@@ -651,8 +651,12 @@ window.addEventListener('unhandledrejection', (event) => {
             if (res.status === 429) {
                 statusEl.style.color = '#fbbf24';
                 statusEl.textContent = '⏳ ' + (data.error || 'Zu viele Vorschläge. Bitte später nochmal.');
-            } else if (res.ok) {
-                // Save timestamp only on success
+            } else if (!res.ok) {
+                reportError('Suggestion Submit Failed', `HTTP ${res.status}: ${data.error || 'unknown'}`, null);
+                statusEl.style.color = '#f87171';
+                statusEl.textContent = '⚠️ ' + (data.error || 'Fehler beim Einreichen.');
+            } else {
+                // Success
                 timestamps.push(now);
                 localStorage.setItem(LS_KEY, JSON.stringify(timestamps));
                 statusEl.style.color = '#34d399';
@@ -660,9 +664,6 @@ window.addEventListener('unhandledrejection', (event) => {
                 document.getElementById('hq-sugg-text').value = '';
                 document.getElementById('hq-sugg-cat').value = '';
                 setTimeout(closeModal, 1800);
-            } else {
-                statusEl.style.color = '#f87171';
-                statusEl.textContent = '⚠️ ' + (data.error || 'Fehler beim Einreichen.');
             }
         } catch (e) {
             statusEl.style.color = '#f87171';
